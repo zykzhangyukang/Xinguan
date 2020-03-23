@@ -1,0 +1,112 @@
+package com.coderman.api.biz.service.imp;
+
+import com.coderman.api.biz.converter.SupplierConverter;
+import com.coderman.api.biz.mapper.SupplierMapper;
+import com.coderman.api.biz.pojo.Supplier;
+import com.coderman.api.biz.service.SupplierService;
+import com.coderman.api.biz.vo.SupplierVO;
+import com.coderman.api.system.vo.PageVO;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Example;
+
+import java.util.Date;
+import java.util.List;
+
+/**
+ * @Author zhangyukang
+ * @Date 2020/3/16 17:19
+ * @Version 1.0
+ **/
+@Service
+public class SupplierServiceImpl implements SupplierService {
+
+
+    @Autowired
+    private SupplierMapper supplierMapper;
+
+    /**
+     * 供应商列表
+     * @param pageNum
+     * @param pageSize
+     * @param supplierVO
+     * @return
+     */
+    @Override
+    public PageVO<SupplierVO> findSupplierList(Integer pageNum, Integer pageSize, SupplierVO supplierVO) {
+        PageHelper.startPage(pageNum, pageSize);
+        Example o = new Example(Supplier.class);
+        o.setOrderByClause("sort asc");
+        if (supplierVO.getName() != null && !"".equals(supplierVO.getName())) {
+            o.createCriteria().andLike("name", "%" + supplierVO.getName() + "%");
+        }
+        List<Supplier> suppliers = supplierMapper.selectByExample(o);
+        List<SupplierVO> categoryVOS=SupplierConverter.converterToVOList(suppliers);
+        PageInfo<Supplier> info = new PageInfo<>(suppliers);
+        return new PageVO<>(info.getTotal(), categoryVOS);
+    }
+
+
+
+    /**
+     * 添加供应商
+     * @param SupplierVO
+     */
+    @Override
+    public void add(SupplierVO SupplierVO) {
+        Supplier supplier = new Supplier();
+        BeanUtils.copyProperties(SupplierVO,supplier);
+        supplier.setCreateTime(new Date());
+        supplier.setModifiedTime(new Date());
+        supplierMapper.insert(supplier);
+    }
+
+    /**
+     * 编辑供应商
+     * @param id
+     * @return
+     */
+    @Override
+    public SupplierVO edit(Long id) {
+        Supplier supplier = supplierMapper.selectByPrimaryKey(id);
+        SupplierVO supplierVO = SupplierConverter.converterToSupplierVO(supplier);
+        return supplierVO;
+    }
+
+    /**
+     * 更新供应商
+     * @param id
+     * @param SupplierVO
+     */
+    @Override
+    public void update(Long id, SupplierVO SupplierVO) {
+        Supplier supplier = new Supplier();
+        BeanUtils.copyProperties(SupplierVO,supplier);
+        supplier.setModifiedTime(new Date());
+        supplierMapper.updateByPrimaryKeySelective(supplier);
+    }
+
+    /**
+     * 删除供应商
+     * @param id
+     */
+    @Override
+    public void delete(Long id) {
+        supplierMapper.deleteByPrimaryKey(id);
+    }
+
+    /**
+     * 查询所有
+     * @return
+     */
+    @Override
+    public List<SupplierVO> findAll() {
+        List<Supplier> suppliers = supplierMapper.selectAll();
+        List<SupplierVO> supplierVOS = SupplierConverter.converterToVOList(suppliers);
+        return supplierVOS;
+    }
+
+}
