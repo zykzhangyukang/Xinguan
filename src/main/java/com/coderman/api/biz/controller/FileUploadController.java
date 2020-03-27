@@ -2,6 +2,8 @@ package com.coderman.api.biz.controller;
 
 import com.coderman.api.biz.utils.CommonFileUtil;
 import com.coderman.api.system.bean.ResponseBean;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ import java.io.IOException;
  * @Version 1.0
  **/
 @Slf4j
+@Api(tags = "文件上传接口")
 @RestController
 @RequestMapping("/upload")
 public class FileUploadController {
@@ -31,6 +34,7 @@ public class FileUploadController {
      * @param file
      * @return
      */
+    @ApiOperation(value = "上传图片")
     @RequiresPermissions({"upload:image"})
     @PostMapping("/image")
     public ResponseBean image(MultipartFile file){

@@ -30,8 +30,8 @@ public class SwaggerConfig {
     public ApiInfo apiInfo(){
         Contact contact=new Contact("zhangyukang","http://www.zykcoderman.xyz","3053161401@qq.com");
         return new ApiInfoBuilder()
-                .title("SpringBoo+JWT+SpringDataJPA API文档")
-                .description("小章鱼的API接口")
+                .title("新冠物资管理系统 API文档")
+                .description("talk is cheap , show me the code~")
                 .termsOfServiceUrl("")
                 .version("1.0")
                 .build();

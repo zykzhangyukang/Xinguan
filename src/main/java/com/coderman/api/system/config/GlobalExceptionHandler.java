@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
@@ -50,6 +51,18 @@ public class GlobalExceptionHandler {
     public ResponseBean MethodArgumentNotValidExceptionHandler(MethodArgumentNotValidException e) {
         String message = e.getBindingResult().getAllErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage).collect(Collectors.joining());
         return ResponseBean.error(message);
+    }
+
+    /**
+     * 处理servlet异常
+     * @param req
+     * @param e
+     * @return
+     */
+    @ExceptionHandler(value = ServletException.class)
+    @ResponseBody
+    public  ResponseBean servletExceptionHandler(HttpServletRequest req, ServletException e){
+        return ResponseBean.error(e.getMessage());
     }
 
     /**

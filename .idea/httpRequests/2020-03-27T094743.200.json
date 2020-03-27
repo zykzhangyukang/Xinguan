@@ -1,0 +1,93 @@
+{
+  "code": 200,
+  "msg": "成功",
+  "data": {
+    "total": 84,
+    "rows": [
+      {
+        "id": 2,
+        "username": "Scott1",
+        "nickname": "zhangyu",
+        "email": "scott@gmail.com",
+        "phoneNumber": "17722222222",
+        "status": false,
+        "createTime": "2019年06月14日 20:55:53",
+        "sex": 0,
+        "birth": "2020年03月03日",
+        "password": "1d685729d113cfd03872f154939bee1c"
+      },
+      {
+        "id": 3,
+        "username": "Reina",
+        "nickname": "zhangyu~",
+        "email": "Reina@hotmail.com",
+        "phoneNumber": "17711111111",
+        "status": false,
+        "createTime": "2019年06月14日 21:07:38",
+        "sex": 0,
+        "birth": "2020年03月17日",
+        "password": "1461afff857c02afbfb768aa3771503d"
+      },
+      {
+        "id": 4,
+        "username": "Micaela",
+        "nickname": "(NULL)zhangyu",
+        "email": "Micaela@163.com",
+        "phoneNumber": "17733333333",
+        "status": false,
+        "createTime": "2019年06月14日 21:10:13",
+        "sex": 0,
+        "birth": "2020年03月08日",
+        "password": "9f2daa2c7bed6870fcbb5b9a51d6300e"
+      },
+      {
+        "id": 5,
+        "username": "Jana",
+        "nickname": "zhangyu",
+        "email": "Jana@126.com",
+        "phoneNumber": "17744444444",
+        "status": false,
+        "createTime": "2019年06月14日 21:12:16",
+        "sex": 0,
+        "birth": "2020年03月27日",
+        "password": "9690bbd5a58d2eeefb0b7ca1324a1dca"
+      },
+      {
+        "id": 6,
+        "username": "Georgie",
+        "nickname": "zhangyu",
+        "email": "Georgie@qq.com",
+        "phoneNumber": "17766666666",
+        "status": true,
+        "createTime": "2019年06月14日 21:15:09",
+        "sex": 1,
+        "birth": "2020年03月25日",
+        "password": "dffc683378cdaa015a0ee9554c532225"
+      },
+      {
+        "id": 42,
+        "username": "coderman",
+        "nickname": "zhangyu",
+        "email": "zhangyukang@qq.com",
+        "phoneNumber": "13426528317",
+        "status": false,
+        "createTime": "2020年03月08日 10:26:47",
+        "sex": 1,
+        "birth": "2020年03月13日",
+        "password": "23c2a4e509ab9ab6f46ef35df9127c1d"
+      },
+      {
+        "id": 54,
+        "username": "coderman",
+        "nickname": "zhangyu",
+        "email": "zhangyukang@qq.com",
+        "phoneNumber": "13426528317",
+        "status": false,
+        "createTime": "2020年03月08日 10:32:54",
+        "sex": 1,
+        "birth": "2020年04月03日",
+        "password": "f27a2c2bcd2f742f1196e0f96cbb0507"
+      }
+    ]
+  }
+}

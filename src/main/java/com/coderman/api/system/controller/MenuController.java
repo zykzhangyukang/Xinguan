@@ -5,6 +5,7 @@ import com.coderman.api.system.pojo.Menu;
 import com.coderman.api.system.service.MenuService;
 import com.coderman.api.system.vo.MenuNodeVO;
 import com.coderman.api.system.vo.MenuVO;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import java.util.Map;
  * @Date 2020/3/10 11:51
  * @Version 1.0
  **/
+@Api(tags = "菜单权限接口")
 @RequestMapping("/menu")
 @RestController
 public class MenuController {
@@ -29,10 +31,10 @@ public class MenuController {
     private MenuService menuService;
 
     /**
-     * 获取菜单树
+     * 加载菜单树
      * @return
      */
-    @ApiOperation(value = "获取菜单树",notes = "获取所有菜单树，以及展开项")
+    @ApiOperation(value = "加载菜单树",notes = "获取所有菜单树，以及展开项")
     @GetMapping("/menuTree")
     public ResponseBean menuTree(){
         List<MenuNodeVO> menuTree = menuService.findMenuTree();
@@ -65,7 +67,7 @@ public class MenuController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "删除菜单节点",notes = "根据id删除菜单节点")
+    @ApiOperation(value = "删除菜单",notes = "根据id删除菜单节点")
     @RequiresPermissions({"menu:delete"})
     @DeleteMapping("/delete/{id}")
     public ResponseBean delete(@PathVariable Long id){
@@ -82,7 +84,7 @@ public class MenuController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "编辑菜单节点",notes = "根据id编辑菜单节点")
+    @ApiOperation(value = "编辑菜单",notes = "根据id编辑菜单节点")
     @RequiresPermissions({"menu:edit"})
     @GetMapping("/edit/{id}")
     public ResponseBean edit(@PathVariable Long id){
@@ -100,7 +102,7 @@ public class MenuController {
      * @param menuVO
      * @return
      */
-    @ApiOperation(value = "更新菜单节点",notes = "根据id更新菜单节点")
+    @ApiOperation(value = "更新菜单",notes = "根据id更新菜单节点")
     @RequiresPermissions({"menu:update"})
     @PostMapping("/update/{id}")
     public ResponseBean update(@PathVariable Long id, @RequestBody @Validated MenuVO menuVO){

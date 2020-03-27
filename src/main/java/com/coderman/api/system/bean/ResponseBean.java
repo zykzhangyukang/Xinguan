@@ -32,7 +32,7 @@ public class ResponseBean {
     public static ResponseBean error(int code,String message) {
         ResponseBean responseBean = new ResponseBean();
         responseBean.setMsg(message);
-        responseBean.setCode(-1);
+        responseBean.setCode(code);
         return responseBean;
     }
 

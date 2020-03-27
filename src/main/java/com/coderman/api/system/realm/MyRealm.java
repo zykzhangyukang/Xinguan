@@ -8,10 +8,7 @@ import com.coderman.api.system.pojo.User;
 import com.coderman.api.system.service.UserService;
 import com.coderman.api.system.util.JWTUtils;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
@@ -76,6 +73,7 @@ public class MyRealm extends AuthorizingRealm {
         String token = (String) auth.getCredentials();
         // 解密获得username，用于和数据库进行对比
         String username = JWTUtils.getUsername(token);
+
         if (username == null) {
             throw new AuthenticationException(" token失效，请重新登入！");
         }
@@ -83,15 +81,15 @@ public class MyRealm extends AuthorizingRealm {
         User userBean = userService.findUserByName(username);
 
         if (userBean == null) {
-            throw new AuthenticationException("用户不存在!");
+            throw new AccountException("账号不存在!");
         }
 
         if (! JWTUtils.verify(token, username, userBean.getPassword())) {
-            throw new AuthenticationException("用户名或密码错误!");
+            throw new CredentialsException("密码错误!");
         }
 
         if(userBean.getStatus()==0){
-            throw new AuthenticationException("该用户已被锁定!");
+            throw new LockedAccountException("账号已被锁定!");
         }
 
         //如果验证通过，获取用户的角色

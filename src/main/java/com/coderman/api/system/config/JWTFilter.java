@@ -8,7 +8,6 @@ import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
 import org.apache.shiro.web.util.WebUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -52,7 +51,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
         String token = httpServletRequest.getHeader("Authorization");
         //2. 如果客户端没有携带token，拦下请求
         if(null==token||"".equals(token)){
-            response401(response,"无权访问(Unauthorized):请求头中没有token");
+            response401(response,"Token无效，您无权访问该接口");
             return false;
         }
         //3. 如果有，对进行进行token验证
@@ -94,7 +93,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
         httpServletResponse.setCharacterEncoding("UTF-8");
         httpServletResponse.setContentType("application/json; charset=utf-8");
         try (PrintWriter out = httpServletResponse.getWriter()) {
-            String data = new Gson().toJson(new ResponseBean(4001, "无权访问(Unauthorized):" + msg, null));
+            String data = new Gson().toJson(new ResponseBean(4001,   msg, null));
             out.append(data);
         } catch (IOException e) {
             e.printStackTrace();

@@ -4,6 +4,7 @@ import com.coderman.api.biz.service.ProductService;
 import com.coderman.api.biz.vo.ProductVO;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.vo.PageVO;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
  * @Date 2020/3/17 09:19
  * @Version 1.0
  **/
+@Api(tags = "物资资料接口")
 @RestController
 @RequestMapping("/product")
 public class ProductController {

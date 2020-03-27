@@ -6,7 +6,7 @@ spring:
   datasource:
     username: root
     password: zhangyukang
-    url: jdbc:mysql://127.0.0.1:3306/vue_permission?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=CTT
+    url: jdbc:mysql://127.0.0.1:3306/xinguan?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=CTT
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:

@@ -5,6 +5,8 @@ import com.coderman.api.biz.vo.InStockDetailVO;
 import com.coderman.api.biz.vo.InStockVO;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.vo.PageVO;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
  * @Date 2020/3/19 09:53
  * @Version 1.0
  **/
+@Api(tags = "物资入库接口")
 @RestController
 @RequestMapping("/inStock")
 public class InStockController {
@@ -28,6 +31,7 @@ public class InStockController {
      * @param inStockVO
      * @return
      */
+    @ApiOperation(value = "入库单列表")
     @GetMapping("/findInStockList")
     public ResponseBean findInStockList(
             @RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
@@ -43,6 +47,7 @@ public class InStockController {
      * @param inStockVO
      * @return
      */
+    @ApiOperation(value = "物资入库")
     @PostMapping("/addIntoStock")
     public ResponseBean addIntoStock(@RequestBody @Validated InStockVO inStockVO){
         try {
@@ -59,6 +64,7 @@ public class InStockController {
      * @param id
      * @return
      */
+    @ApiOperation(value = "入库单明细")
     @GetMapping("/detail/{id}")
     public ResponseBean detail(@PathVariable Long id){
         InStockDetailVO detail = inStockService.detail(id);

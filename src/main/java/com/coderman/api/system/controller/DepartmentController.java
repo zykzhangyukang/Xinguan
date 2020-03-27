@@ -5,6 +5,7 @@ import com.coderman.api.system.service.DepartmentService;
 import com.coderman.api.system.vo.DeanVO;
 import com.coderman.api.system.vo.DepartmentVO;
 import com.coderman.api.system.vo.PageVO;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import java.util.List;
  * @Date 2020/3/15 14:11
  * @Version 1.0
  **/
+@Api(tags = "系统部门接口")
 @RestController
 @RequestMapping("/department")
 public class DepartmentController {
@@ -44,7 +46,7 @@ public class DepartmentController {
      * 查找部门主任
      * @return
      */
-    @ApiOperation(value = "查找部门主任",notes = "查找部门主任,排除掉已经禁用的用户")
+    @ApiOperation(value = "部门主任",notes = "查找部门主任,排除掉已经禁用的用户")
     @GetMapping("/findDeanList")
     public ResponseBean findDeanList(){
         List<DeanVO> managerList=departmentService.findDeanList();
@@ -73,6 +75,7 @@ public class DepartmentController {
      * @param id
      * @return
      */
+    @ApiOperation(value = "编辑部门")
     @RequiresPermissions({"department:edit"})
     @GetMapping("/edit/{id}")
     public ResponseBean edit(@PathVariable Long id){
@@ -89,6 +92,7 @@ public class DepartmentController {
      * 更新部门
      * @return
      */
+    @ApiOperation(value = "更新部门")
     @RequiresPermissions({"department:update"})
     @PostMapping("/update/{id}")
     public ResponseBean update(@PathVariable Long id,@RequestBody @Validated DepartmentVO departmentVO){
@@ -106,6 +110,7 @@ public class DepartmentController {
      * @param id
      * @return
      */
+    @ApiOperation(value = "删除部门")
     @RequiresPermissions({"department:delete"})
     @DeleteMapping("/delete/{id}")
     public ResponseBean delete(@PathVariable Long id){

@@ -4,6 +4,7 @@ import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.service.MenuService;
 import com.coderman.api.system.service.RoleService;
 import com.coderman.api.system.vo.*;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import java.util.Map;
  * @Date 2020/3/9 16:21
  * @Version 1.0
  **/
+@Api(tags = "系统角色接口")
 @RestController
 @RequestMapping("/role")
 public class RoleController {
@@ -54,7 +56,7 @@ public class RoleController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "角色拥有的菜单权限id和菜单树")
+    @ApiOperation(value = "角色菜单")
     @GetMapping("/findRoleMenu/{id}")
     public  ResponseBean findRoleMenu(@PathVariable Long id){
         List<MenuNodeVO> tree = menuService.findMenuTree();
@@ -86,7 +88,7 @@ public class RoleController {
      * @param roleVO
      * @return
      */
-    @ApiOperation(value = "添加角色信息")
+    @ApiOperation(value = "添加角色")
     @RequiresPermissions({"role:add"})
     @PostMapping("/add")
     public ResponseBean add(@RequestBody @Validated RoleVO roleVO){
@@ -139,7 +141,7 @@ public class RoleController {
      * @param roleVO
      * @return
      */
-    @ApiOperation(value = "更新角色信息",notes = "根据id更新角色信息")
+    @ApiOperation(value = "更新角色",notes = "根据id更新角色信息")
     @RequiresPermissions({"role:update"})
     @PostMapping("/update/{id}")
     public ResponseBean update(@PathVariable Long id,@RequestBody @Validated RoleVO roleVO){
@@ -157,7 +159,7 @@ public class RoleController {
      * @param status
      * @return
      */
-    @ApiOperation(value = "更新角色状态",notes = "禁用和更新两种状态")
+    @ApiOperation(value = "更新状态",notes = "禁用和更新两种状态")
     @RequiresPermissions({"role:status"})
     @PutMapping("/updateStatus/{id}/{status}")
     public ResponseBean updateStatus(@PathVariable Long id,@PathVariable Boolean status){

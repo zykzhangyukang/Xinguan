@@ -4,6 +4,7 @@ import com.coderman.api.biz.service.SupplierService;
 import com.coderman.api.biz.vo.SupplierVO;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.vo.PageVO;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import java.util.List;
  * @Date 2020/3/16 20:18
  * @Version 1.0
  **/
+@Api(tags = "物资来源接口")
 @RestController
 @RequestMapping("/supplier")
 public class SupplierController {

@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.coderman</groupId>
-    <artifactId>vue_permission</artifactId>
+    <artifactId>goods</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>vue_permission</name>
+    <name>goods</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

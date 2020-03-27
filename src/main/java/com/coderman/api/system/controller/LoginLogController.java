@@ -8,7 +8,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ import java.util.List;
  * @Date 2020/3/22 21:03
  * @Version 1.0
  **/
-@Api(tags = "系统登入日志")
+@Api(tags = "登入日志接口")
 @RestController
 @RequestMapping("/loginLog")
 public class LoginLogController {
@@ -33,7 +32,7 @@ public class LoginLogController {
      * 登入日志列表
      * @return
      */
-    @ApiOperation(value = "登入日志",notes = "登入日志列表，模糊查询")
+    @ApiOperation(value = "日志列表",notes = "登入日志列表，模糊查询")
     @GetMapping("/findLoginLogList")
     public ResponseBean findLoginLogList(@RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
                                            @RequestParam(value = "pageSize") Integer pageSize,
@@ -47,6 +46,7 @@ public class LoginLogController {
      * @param id
      * @return
      */
+    @ApiOperation(value = "删除日志")
     @RequiresPermissions({"loginLog:delete"})
     @DeleteMapping("/delete/{id}")
     public ResponseBean delete(@PathVariable Long id){
@@ -64,6 +64,7 @@ public class LoginLogController {
      * @param ids
      * @return
      */
+    @ApiOperation(value = "批量删除")
     @RequiresPermissions({"loginLog:batchDelete"})
     @DeleteMapping("/batchDelete/{ids}")
     public ResponseBean batchDelete(@PathVariable String ids){

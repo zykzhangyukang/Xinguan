@@ -28,6 +28,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.HashMap;
@@ -84,8 +85,8 @@ public class UserController {
      */
     @ApiOperation(value = "用户登入", notes = "用户名和密码登入系统，登入成功后返回JWTToken")
     @PostMapping("/login")
-    public ResponseBean login(@NotNull(message = "用户名不为空") String username,
-                              @NotNull(message = "密码不为空") String password,
+    public ResponseBean login(@NotBlank(message = "用户名必填") String username,
+                              @NotBlank(message = "密码必填") String password,
                               HttpServletRequest request) {
         Object token ;
         User user = userService.findUserByName(username);
