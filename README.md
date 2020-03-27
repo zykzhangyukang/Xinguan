@@ -1,5 +1,11 @@
 ## 新冠-物资管理系统
 
+## 前台项目地址
+https://github.com/zykzhangyukang/Vue-Xinguan
+
+## 后台项目地址
+https://github.com/zykzhangyukang/Xinguan
+
 项目预览地址：http://www.zykhome.club/#/login
 
 ## 技术栈
