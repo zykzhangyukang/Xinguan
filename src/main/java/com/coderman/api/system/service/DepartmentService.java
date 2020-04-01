@@ -52,4 +52,11 @@ public interface DepartmentService {
      * @param id
      */
     void delete(Long id);
+
+    /**
+     * 所有部门
+     * @return
+     */
+    List<DepartmentVO> findAll();
+
 }

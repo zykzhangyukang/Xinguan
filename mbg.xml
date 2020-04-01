@@ -11,7 +11,7 @@
 
 		<!-- 配置数据库连接 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://127.0.0.1:3306/vue_permission" userId="root"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/xinguan" userId="root"
 			password="zhangyukang">
 			<property name="serverTimezone" value="UTC"></property>
 		</jdbcConnection>
@@ -21,13 +21,13 @@
 		</javaTypeResolver>
 
 		<!-- 指定javaBean生成的位置 -->
-		<javaModelGenerator targetPackage="com.coderman.api.biz.pojo"
+		<javaModelGenerator targetPackage="com.coderman.api.system.pojo"
 			targetProject=".\src\main\java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
 		<!-- table指定每个表的生成策略 -->
-		<table tableName="biz_product_stock" domainObjectName="ProductStock"></table>
+		<table tableName="tb_user" domainObjectName="User"></table>
 	</context>
 </generatorConfiguration>

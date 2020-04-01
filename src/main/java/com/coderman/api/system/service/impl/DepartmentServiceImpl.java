@@ -159,4 +159,19 @@ public class DepartmentServiceImpl implements DepartmentService {
     public void delete(Long id) {
         departmentMapper.deleteByPrimaryKey(id);
     }
+
+    @Override
+    public List<DepartmentVO> findAll() {
+        List<Department> departments = departmentMapper.selectAll();
+        //转vo
+        List<DepartmentVO> departmentVOS = new ArrayList<>();
+        if (!CollectionUtils.isEmpty(departments)) {
+            for (Department department : departments) {
+                DepartmentVO d = new DepartmentVO();
+                BeanUtils.copyProperties(department, d);
+                departmentVOS.add(d);
+            }
+        }
+        return departmentVOS;
+    }
 }

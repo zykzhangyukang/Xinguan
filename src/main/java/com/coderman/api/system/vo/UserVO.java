@@ -32,7 +32,7 @@ public class UserVO{
 
     private Boolean status;
 
-    @JsonFormat(timezone = "GMT+8", pattern = "yyy年MM月dd日 HH:mm:ss")
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
     @NotNull(message = "性别不能为空")
@@ -44,5 +44,9 @@ public class UserVO{
 
     @NotBlank(message = "密码不能为空")
     private String password;
+
+    private String departmentName;
+
+    private Long departmentId;
 
 }

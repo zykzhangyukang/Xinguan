@@ -44,10 +44,16 @@ public class UserServiceImpl implements UserService {
     private RoleMapper roleMapper;
 
     @Autowired
+    private UserConverter userConverter;
+
+    @Autowired
     private RoleMenuMapper roleMenuMapper;
 
     @Autowired
     private MenuMapper menuMapper;
+
+    @Autowired
+    private DepartmentMapper departmentMapper;
 
     /**
      * 查询用户
@@ -163,6 +169,7 @@ public class UserServiceImpl implements UserService {
         Example o = new Example(User.class);
         String username = userVO.getUsername();
         String nickname = userVO.getNickname();
+        Long departmentId = userVO.getDepartmentId();
         Integer sex = userVO.getSex();
         String email = userVO.getEmail();
         Example.Criteria criteria = o.createCriteria();
@@ -178,10 +185,13 @@ public class UserServiceImpl implements UserService {
         if(sex!=null){
             criteria.andEqualTo("sex",sex);
         }
+        if(departmentId!=null){
+            criteria.andEqualTo("departmentId",departmentId);
+        }
 
         criteria.andNotEqualTo("type",0);
         List<User> userList = userMapper.selectByExample(o);
-        List<UserVO> userVOS = UserConverter.converterToUserVOList(userList);
+        List<UserVO> userVOS = userConverter.converterToUserVOList(userList);
         PageInfo<User> info=new PageInfo<>(userList);
         return new PageVO<>(info.getTotal(),userVOS);
     }
@@ -251,6 +261,10 @@ public class UserServiceImpl implements UserService {
         User user = userMapper.selectByPrimaryKey(id);
         UserEditVO userEditVO = new UserEditVO();
         BeanUtils.copyProperties(user,userEditVO);
+        Department department = departmentMapper.selectByPrimaryKey(user.getDepartmentId());
+        if(department!=null){
+            userEditVO.setDepartmentId(department.getId());
+        }
         return userEditVO;
     }
 

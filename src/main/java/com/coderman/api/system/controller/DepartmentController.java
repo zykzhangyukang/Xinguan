@@ -43,6 +43,17 @@ public class DepartmentController {
     }
 
     /**
+     * 所有部门
+     * @return
+     */
+    @ApiOperation(value = "所有部门")
+    @GetMapping("/findAll")
+    public ResponseBean findAll(){
+        List<DepartmentVO> departmentVOS=departmentService.findAll();
+        return ResponseBean.success(departmentVOS);
+    }
+
+    /**
      * 查找部门主任
      * @return
      */
