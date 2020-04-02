@@ -1,5 +1,6 @@
 package com.coderman.api.system.controller;
 
+import com.coderman.api.system.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ActiveUser;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.config.JWTToken;
@@ -29,7 +30,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -157,7 +157,8 @@ public class UserController {
      * @param rids
      * @return
      */
-    @ApiOperation(value = "分配角色",notes = "用户角色分配")
+    @ControllerEndpoint(exceptionMessage = "分配角色失败",operation ="分配角色")
+    @ApiOperation(value = "分配角色",notes = "角色分配给用户")
     @RequiresPermissions({"user:assign"})
     @PostMapping("/{id}/assignRoles")
     public ResponseBean assignRoles(@PathVariable Long id,@RequestBody Long[] rids){
@@ -174,6 +175,7 @@ public class UserController {
      * @param id 用户ID
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "删除用户失败",operation ="删除用户")
     @RequiresPermissions({"user:delete"})
     @ApiOperation(value = "删除用户",notes = "删除用户信息，根据用户ID")
     @DeleteMapping("/delete/{id}")
@@ -192,7 +194,8 @@ public class UserController {
      * @param status
      * @return
      */
-    @ApiOperation(value = "禁用状态",notes = "禁用和启用这两种状态")
+    @ControllerEndpoint(exceptionMessage = "更新用户状态失败",operation ="禁用用户/启用")
+    @ApiOperation(value = "用户状态",notes = "禁用和启用这两种状态")
     @RequiresPermissions({"user:status"})
     @PutMapping("/updateStatus/{id}/{status}")
     public ResponseBean updateStatus(@PathVariable Long id,@PathVariable Boolean status){
@@ -210,6 +213,7 @@ public class UserController {
      * @param userEditVO
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "更新用户失败",operation ="更新用户")
     @ApiOperation(value = "更新用户",notes = "更新用户信息")
     @RequiresPermissions({"user:update"})
     @PostMapping("/update/{id}")

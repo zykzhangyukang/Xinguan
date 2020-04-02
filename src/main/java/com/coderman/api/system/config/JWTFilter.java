@@ -51,7 +51,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
         String token = httpServletRequest.getHeader("Authorization");
         //2. 如果客户端没有携带token，拦下请求
         if(null==token||"".equals(token)){
-            response401(response,"Token无效，您无权访问该接口");
+            responseTokenError(response,"Token无效，您无权访问该接口");
             return false;
         }
         //3. 如果有，对进行进行token验证
@@ -60,7 +60,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
             SecurityUtils.getSubject().login(jwtToken);
         } catch (AuthenticationException e) {
             log.error(e.getMessage());
-            response401(response,e.getMessage());
+            responseTokenError(response,e.getMessage());
             return false;
         }
 
@@ -87,9 +87,9 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
     /**
      * 无需转发，直接返回Response信息
      */
-    private void response401(ServletResponse response, String msg) {
+    private void responseTokenError(ServletResponse response, String msg) {
         HttpServletResponse httpServletResponse = WebUtils.toHttp(response);
-        httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
+        httpServletResponse.setStatus(HttpStatus.OK.value());
         httpServletResponse.setCharacterEncoding("UTF-8");
         httpServletResponse.setContentType("application/json; charset=utf-8");
         try (PrintWriter out = httpServletResponse.getWriter()) {

@@ -1,3 +1,110 @@
+DELETE http://localhost:8081/user/delete/95?username=zhangyukang&password=zhangyukang
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODU4MzU0MDQsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.2T1J95aTOZXYaBeacpsvP_aZ8vWBazLzB5q3Q_dloSU
+
+<> 2020-04-02T085058.200.json
+
+###
+
+DELETE http://localhost:8081/user/delete/95?username=zhangyukang&password=zhangyukang
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODU4MzU0MDQsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.2T1J95aTOZXYaBeacpsvP_aZ8vWBazLzB5q3Q_dloSU
+
+<> 2020-04-02T085033.200.json
+
+###
+
+POST http://localhost:8081/user/login?username=zhangyukang&password=zhangyukang
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODU4MzQxNjAsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.mgsZRWWeKAqH_LdeVHca6pWyBmEsk5itxGzknGMVrIM
+
+<> 2020-04-02T085006.200.json
+
+###
+
+DELETE http://localhost:8081/user/delete/95?username=zhangyukang&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODU4MzQxNjAsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.mgsZRWWeKAqH_LdeVHca6pWyBmEsk5itxGzknGMVrIM
+
+<> 2020-04-02T084943.200.json
+
+###
+
+DELETE http://localhost:8081/user/delete/95?username=zhangyukang&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODU4MzQxNjAsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.mgsZRWWeKAqH_LdeVHca6pWyBmEsk5itxGzknGMVrIM
+
+<> 2020-04-02T084921.200.json
+
+###
+
+DELETE http://localhost:8081/user/delete/95?username=zhangyukang&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODU4MzQxNjAsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.mgsZRWWeKAqH_LdeVHca6pWyBmEsk5itxGzknGMVrIM
+
+<> 2020-04-02T084859.200.json
+
+###
+
+DELETE http://localhost:8081/user/delete/95?username=zhangyukang&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODU4MzQxNjAsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.mgsZRWWeKAqH_LdeVHca6pWyBmEsk5itxGzknGMVrIM
+
+###
+
+DELETE http://localhost:8081/user/delete/95?username=zhangyukang&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODU4MzQxNjAsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.mgsZRWWeKAqH_LdeVHca6pWyBmEsk5itxGzknGMVrIM
+
+###
+
+DELETE http://localhost:8081/user/delete/95?username=zhangyukang&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODU4MzQxNjAsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.mgsZRWWeKAqH_LdeVHca6pWyBmEsk5itxGzknGMVrIM
+
+###
+
+DELETE http://localhost:8081/user/delete/95?username=zhangyukang&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODU4MzQxNjAsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.mgsZRWWeKAqH_LdeVHca6pWyBmEsk5itxGzknGMVrIM
+
+###
+
+DELETE http://localhost:8081/user/delete/95?username=zhangyukang&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODU4MzQxNjAsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.mgsZRWWeKAqH_LdeVHca6pWyBmEsk5itxGzknGMVrIM
+
+###
+
+POST http://localhost:8081/user/login?username=zhangyukang&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODUzNTk5NzksInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.WgDJShex68vGLCLMG7SYrrvsxW3A_1sz0Hv_bz_mE64
+
+<> 2020-04-02T082922.200.json
+
+###
+
+GET http://localhost:8081/user/findUserList
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODUzNTk5NzksInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.WgDJShex68vGLCLMG7SYrrvsxW3A_1sz0Hv_bz_mE64
+
+<> 2020-04-02T082849.200.json
+
+###
+
 GET http://localhost:8081/user/findUserList
 Accept: */*
 Cache-Control: no-cache

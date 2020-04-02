@@ -1,0 +1,5 @@
+{
+  "code": 401,
+  "msg": "Subject does not have permission [user:delete]",
+  "data": null
+}

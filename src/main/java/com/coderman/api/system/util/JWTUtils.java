@@ -15,9 +15,10 @@ import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
 public class JWTUtils {
-
-    // 过期时间1天
-    private static final long EXPIRE_TIME = 60*60*1000*12;
+    /**
+     * 过期时间1小时
+     */
+    private static final long EXPIRE_TIME = 60*60*1000;
 
     /**
      * 校验token是否正确
@@ -69,6 +70,16 @@ public class JWTUtils {
         } catch (UnsupportedEncodingException e) {
             return null;
         }
+    }
+
+    /**
+     * 判断过期
+     * @param token
+     * @return
+     */
+    public static boolean isExpire(String token){
+        DecodedJWT jwt = JWT.decode(token);
+        return System.currentTimeMillis()>jwt.getExpiresAt().getTime();
     }
     }
 

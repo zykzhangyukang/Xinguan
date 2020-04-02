@@ -75,13 +75,16 @@ public class MyRealm extends AuthorizingRealm {
         String username = JWTUtils.getUsername(token);
 
         if (username == null) {
-            throw new AuthenticationException(" token失效，请重新登入！");
+            throw new AuthenticationException(" token错误，请重新登入！");
         }
 
         User userBean = userService.findUserByName(username);
 
         if (userBean == null) {
             throw new AccountException("账号不存在!");
+        }
+        if(JWTUtils.isExpire(token)){
+            throw new AuthenticationException(" token过期，请重新登入！");
         }
 
         if (! JWTUtils.verify(token, username, userBean.getPassword())) {
