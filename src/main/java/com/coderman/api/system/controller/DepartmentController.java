@@ -1,5 +1,6 @@
 package com.coderman.api.system.controller;
 
+import com.coderman.api.system.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.service.DepartmentService;
 import com.coderman.api.system.vo.DeanVO;
@@ -68,6 +69,7 @@ public class DepartmentController {
      * 添加部门
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "添加部门失败",operation ="添加部门")
     @RequiresPermissions({"department:delete"})
     @ApiOperation(value = "添加部门")
     @PostMapping("/add")
@@ -103,9 +105,10 @@ public class DepartmentController {
      * 更新部门
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "更新部门失败",operation ="更新部门")
     @ApiOperation(value = "更新部门")
     @RequiresPermissions({"department:update"})
-    @PostMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseBean update(@PathVariable Long id,@RequestBody @Validated DepartmentVO departmentVO){
         try {
             departmentService.update(id,departmentVO);
@@ -121,6 +124,7 @@ public class DepartmentController {
      * @param id
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "删除部门失败",operation ="删除部门")
     @ApiOperation(value = "删除部门")
     @RequiresPermissions({"department:delete"})
     @DeleteMapping("/delete/{id}")

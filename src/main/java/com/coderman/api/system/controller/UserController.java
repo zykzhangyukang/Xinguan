@@ -194,7 +194,7 @@ public class UserController {
      * @param status
      * @return
      */
-    @ControllerEndpoint(exceptionMessage = "更新用户状态失败",operation ="禁用用户/启用")
+    @ControllerEndpoint(exceptionMessage = "更新用户状态失败",operation ="用户|禁用/启用")
     @ApiOperation(value = "用户状态",notes = "禁用和启用这两种状态")
     @RequiresPermissions({"user:status"})
     @PutMapping("/updateStatus/{id}/{status}")
@@ -216,7 +216,7 @@ public class UserController {
     @ControllerEndpoint(exceptionMessage = "更新用户失败",operation ="更新用户")
     @ApiOperation(value = "更新用户",notes = "更新用户信息")
     @RequiresPermissions({"user:update"})
-    @PostMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseBean update(@PathVariable Long id,@RequestBody @Validated UserEditVO userEditVO){
         try {
             userService.update(id,userEditVO);
@@ -248,6 +248,7 @@ public class UserController {
      * @param userVO
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "添加用户失败",operation ="添加用户")
     @ApiOperation(value = "添加用户",notes = "添加用户信息")
     @RequiresPermissions({"user:add"})
     @PostMapping("/add")

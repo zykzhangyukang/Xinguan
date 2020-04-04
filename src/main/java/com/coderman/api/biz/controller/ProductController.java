@@ -26,10 +26,10 @@ public class ProductController {
     private ProductService productService;
 
     /**
-     * 商品列表
+     * 物资列表
      * @return
      */
-    @ApiOperation(value = "商品列表",notes = "商品列表,根据商品名模糊查询")
+    @ApiOperation(value = "物资列表",notes = "物资列表,根据物资名模糊查询")
     @GetMapping("/findProductList")
     public ResponseBean findProductList(@RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
                                          @RequestParam(value = "pageSize") Integer pageSize,
@@ -58,30 +58,31 @@ public class ProductController {
 
 
     /**
-     * 添加商品
+     * 添加物资
      * @return
      */
-    @ApiOperation(value = "添加商品")
+    @ApiOperation(value = "添加物资")
     @RequiresPermissions({"product:add"})
     @PostMapping("/add")
     public ResponseBean add(@RequestBody @Validated ProductVO productVO){
         try {
             if(productVO.getCategoryKeys().length!=3){
-                return ResponseBean.error("商品需要3级分类");
+                return ResponseBean.error("物资需要3级分类");
             }
             productService.add(productVO);
-            return ResponseBean.success("添加商品成功");
+            return ResponseBean.success("添加物资成功");
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseBean.error("添加商品失败");
+            return ResponseBean.error("添加物资失败");
         }
     }
 
     /**
-     * 编辑商品
+     * 编辑物资
      * @param id
      * @return
      */
+    @ApiOperation(value = "编辑物资",notes = "编辑物资信息")
     @RequiresPermissions({"product:edit"})
     @GetMapping("/edit/{id}")
     public ResponseBean edit(@PathVariable Long id){
@@ -90,40 +91,42 @@ public class ProductController {
             return ResponseBean.success(productVO);
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseBean.error("编辑商品失败");
+            return ResponseBean.error("编辑物资失败");
         }
     }
 
     /**
-     * 更新商品
+     * 更新物资
      * @return
      */
+    @ApiOperation(value = "更新物资",notes = "更新物资信息")
     @RequiresPermissions({"product:update"})
-    @PostMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseBean update(@PathVariable Long id, @RequestBody ProductVO productVO){
         try {
             productService.update(id,productVO);
-            return ResponseBean.success("更新商品成功");
+            return ResponseBean.success("更新物资成功");
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseBean.error("更新商品失败");
+            return ResponseBean.error("更新物资失败");
         }
     }
 
     /**
-     * 删除商品
+     * 删除物资
      * @param id
      * @return
      */
+    @ApiOperation(value = "删除物资",notes = "删除物资信息")
     @RequiresPermissions({"product:delete"})
     @DeleteMapping("/delete/{id}")
     public ResponseBean delete(@PathVariable Long id){
         try {
             productService.delete(id);
-            return ResponseBean.success("删除商品成功");
+            return ResponseBean.success("删除物资成功");
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseBean.error("删除商品失败");
+            return ResponseBean.error("删除物资失败");
         }
     }
 }

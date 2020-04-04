@@ -1,5 +1,6 @@
 package com.coderman.api.system.controller;
 
+import com.coderman.api.system.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.pojo.Menu;
 import com.coderman.api.system.service.MenuService;
@@ -35,8 +36,8 @@ public class MenuController {
      * @return
      */
     @ApiOperation(value = "加载菜单树",notes = "获取所有菜单树，以及展开项")
-    @GetMapping("/menuTree")
-    public ResponseBean menuTree(){
+    @GetMapping("/tree")
+    public ResponseBean tree(){
         List<MenuNodeVO> menuTree = menuService.findMenuTree();
         List<Long> ids=menuService.findOpenIds();
         Map<String,Object> map=new HashMap<>();
@@ -46,9 +47,10 @@ public class MenuController {
     }
 
     /**
-     * 新增菜单节点
+     * 新增菜单/按钮
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "新增菜单/按钮失败",operation ="新增菜单/按钮")
     @ApiOperation(value = "新增菜单")
     @RequiresPermissions({"menu:add"})
     @PostMapping("/add")
@@ -63,10 +65,11 @@ public class MenuController {
     }
 
     /**
-     * 删除菜单节点
+     * 删除菜单/按钮
      * @param id
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "删除菜单/按钮失败",operation ="删除菜单/按钮")
     @ApiOperation(value = "删除菜单",notes = "根据id删除菜单节点")
     @RequiresPermissions({"menu:delete"})
     @DeleteMapping("/delete/{id}")
@@ -80,11 +83,11 @@ public class MenuController {
     }
 
     /**
-     * 编辑菜单节点
+     * 菜单详情
      * @param id
      * @return
      */
-    @ApiOperation(value = "编辑菜单",notes = "根据id编辑菜单节点")
+    @ApiOperation(value = "菜单详情",notes = "根据id编辑菜单，获取菜单详情")
     @RequiresPermissions({"menu:edit"})
     @GetMapping("/edit/{id}")
     public ResponseBean edit(@PathVariable Long id){
@@ -97,14 +100,15 @@ public class MenuController {
     }
 
     /**
-     * 更新菜单节点
+     * 更新菜单
      * @param id
      * @param menuVO
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "更新菜单失败",operation ="更新菜单")
     @ApiOperation(value = "更新菜单",notes = "根据id更新菜单节点")
     @RequiresPermissions({"menu:update"})
-    @PostMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseBean update(@PathVariable Long id, @RequestBody @Validated MenuVO menuVO){
         try {
             menuService.update(id,menuVO);

@@ -1,5 +1,6 @@
 package com.coderman.api.system.controller;
 
+import com.coderman.api.system.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.service.LoginLogService;
 import com.coderman.api.system.vo.LoginLogVO;
@@ -29,7 +30,7 @@ public class LoginLogController {
     private LoginLogService loginLogService;
 
     /**
-     * 登入日志列表
+     * 日志列表
      * @return
      */
     @ApiOperation(value = "日志列表",notes = "登入日志列表，模糊查询")
@@ -42,10 +43,11 @@ public class LoginLogController {
     }
 
     /**
-     * 删除登入日志
+     * 删除日志
      * @param id
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "删除登入日志失败",operation ="删除登入日志")
     @ApiOperation(value = "删除日志")
     @RequiresPermissions({"loginLog:delete"})
     @DeleteMapping("/delete/{id}")
@@ -64,6 +66,7 @@ public class LoginLogController {
      * @param ids
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "批量删除登入日志失败",operation ="批量删除登入日志")
     @ApiOperation(value = "批量删除")
     @RequiresPermissions({"loginLog:batchDelete"})
     @DeleteMapping("/batchDelete/{ids}")

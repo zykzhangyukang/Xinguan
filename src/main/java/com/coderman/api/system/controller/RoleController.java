@@ -1,5 +1,6 @@
 package com.coderman.api.system.controller;
 
+import com.coderman.api.system.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.service.MenuService;
 import com.coderman.api.system.service.RoleService;
@@ -39,6 +40,7 @@ public class RoleController {
      * @param mids
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "角色授权失败",operation ="角色授权")
     @ApiOperation(value = "角色授权")
     @RequiresPermissions({"role:authority"})
     @PostMapping("/authority/{id}")
@@ -88,6 +90,7 @@ public class RoleController {
      * @param roleVO
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "添加角色失败",operation ="添加角色")
     @ApiOperation(value = "添加角色")
     @RequiresPermissions({"role:add"})
     @PostMapping("/add")
@@ -101,10 +104,11 @@ public class RoleController {
     }
 
     /**
-     * 删除角色信息
+     * 删除角色
      * @param id 角色ID
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "删除角色失败",operation ="删除角色")
     @ApiOperation(value = "删除角色",notes = "根据id删除角色信息")
     @RequiresPermissions({"role:delete"})
     @DeleteMapping("/delete/{id}")
@@ -141,9 +145,10 @@ public class RoleController {
      * @param roleVO
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "更新角色失败",operation ="更新角色")
     @ApiOperation(value = "更新角色",notes = "根据id更新角色信息")
     @RequiresPermissions({"role:update"})
-    @PostMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseBean update(@PathVariable Long id,@RequestBody @Validated RoleVO roleVO){
         try {
             roleService.update(id,roleVO);
@@ -159,6 +164,7 @@ public class RoleController {
      * @param status
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "角色更新状态失败",operation ="角色|禁用/启用")
     @ApiOperation(value = "更新状态",notes = "禁用和更新两种状态")
     @RequiresPermissions({"role:status"})
     @PutMapping("/updateStatus/{id}/{status}")

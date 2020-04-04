@@ -86,9 +86,9 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseBean globalException(HttpServletRequest request, Throwable ex) {
         String message = ex.getMessage();
-        log.error("【系统异常】={}",ex.getMessage());
+        log.error("系统异常=>{}",ex.getMessage());
         ex.printStackTrace();
-        return new ResponseBean(getStatus(request).value(), "系统异常："+message, null);
+        return new ResponseBean(getStatus(request).value(), "系统异常"+message, null);
     }
 
     /**
