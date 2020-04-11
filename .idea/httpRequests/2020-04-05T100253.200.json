@@ -1,0 +1,5 @@
+{
+  "code": 500,
+  "msg": "系统异常\r\n### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'xinguan.consumer' doesn't exist\r\n### The error may exist in com/coderman/api/biz/mapper/ConsumerMapper.java (best guess)\r\n### The error may involve com.coderman.api.biz.mapper.ConsumerMapper.selectByExample-Inline\r\n### The error occurred while setting parameters\r\n### SQL: SELECT count(0) FROM consumer\r\n### Cause: java.sql.SQLSyntaxErrorException: Table 'xinguan.consumer' doesn't exist\n; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'xinguan.consumer' doesn't exist",
+  "data": null
+}

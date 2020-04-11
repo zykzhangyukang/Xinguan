@@ -17,7 +17,8 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 /**
- *物资分类管理
+ * 物资分类管理
+ *
  * @Author zhangyukang
  * @Date 2020/3/16 17:16
  * @Version 1.0
@@ -33,121 +34,108 @@ public class ProductCategoryController {
 
     /**
      * 物资分类列表
+     *
      * @return
      */
-    @ApiOperation(value = "分类列表",notes = "物资分类列表,根据物资分类名模糊查询")
+    @ApiOperation(value = "分类列表", notes = "物资分类列表,根据物资分类名模糊查询")
     @GetMapping("/findProductCategoryList")
     public ResponseBean findProductCategoryList(
-            @RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
-                                           @RequestParam(value = "pageSize") Integer pageSize,
-                                           ProductCategoryVO productCategoryVO){
+            @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+            @RequestParam(value = "pageSize") Integer pageSize,
+            ProductCategoryVO productCategoryVO) {
 
-        PageVO<ProductCategoryVO> departmentsList= productCategoryService.findProductCategoryList(pageNum,pageSize,productCategoryVO);
+        PageVO<ProductCategoryVO> departmentsList = productCategoryService.findProductCategoryList(pageNum, pageSize, productCategoryVO);
         return ResponseBean.success(departmentsList);
     }
 
     /**
      * 分类树形结构(分页)
-     * @return
      *
+     * @return
      */
     @ApiOperation(value = "分类树形结构")
     @GetMapping("/categoryTree")
-    public ResponseBean categoryTree( @RequestParam(value = "pageNum",required = false) Integer pageNum,
-                                      @RequestParam(value = "pageSize",required = false) Integer pageSize){
-        PageVO<ProductCategoryTreeNodeVO> pageVO=productCategoryService.categoryTree(pageNum,pageSize);
+    public ResponseBean categoryTree(@RequestParam(value = "pageNum", required = false) Integer pageNum,
+                                     @RequestParam(value = "pageSize", required = false) Integer pageSize) {
+        PageVO<ProductCategoryTreeNodeVO> pageVO = productCategoryService.categoryTree(pageNum, pageSize);
         return ResponseBean.success(pageVO);
     }
 
     /**
      * 获取父级分类树：2级树
+     *
      * @return
      */
     @ApiOperation(value = "父级分类树")
     @GetMapping("/getParentCategoryTree")
-    public ResponseBean getParentCategoryTree(){
-        List<ProductCategoryTreeNodeVO> parentTree=productCategoryService.getParentCategoryTree();
+    public ResponseBean getParentCategoryTree() {
+        List<ProductCategoryTreeNodeVO> parentTree = productCategoryService.getParentCategoryTree();
         return ResponseBean.success(parentTree);
     }
 
     /**
      * 查询所有分类
+     *
      * @return
      */
     @ApiOperation(value = "所有分类")
     @GetMapping("/findAll")
-    public ResponseBean findAll(){
-        List<ProductCategoryVO> productCategoryVOS=productCategoryService.findAll();
+    public ResponseBean findAll() {
+        List<ProductCategoryVO> productCategoryVOS = productCategoryService.findAll();
         return ResponseBean.success(productCategoryVOS);
     }
 
     /**
      * 添加物资分类
+     *
      * @return
      */
     @RequiresPermissions({"productCategory:add"})
     @ApiOperation(value = "添加分类")
     @PostMapping("/add")
-    public ResponseBean add(@RequestBody @Validated ProductCategoryVO productCategoryVO){
-        try {
+    public ResponseBean add(@RequestBody @Validated ProductCategoryVO productCategoryVO) {
             productCategoryService.add(productCategoryVO);
-            return ResponseBean.success("添加物资分类成功");
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseBean.error("添加物资分类失败");
-        }
+            return ResponseBean.success();
     }
 
     /**
      * 编辑物资分类
+     *
      * @param id
      * @return
      */
     @ApiOperation(value = "编辑分类")
     @RequiresPermissions({"productCategory:edit"})
     @GetMapping("/edit/{id}")
-    public ResponseBean edit(@PathVariable Long id){
-        try {
-            ProductCategoryVO productCategoryVO=productCategoryService.edit(id);
-            return ResponseBean.success(productCategoryVO);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseBean.error("编辑物资分类失败");
-        }
+    public ResponseBean edit(@PathVariable Long id) {
+        ProductCategoryVO productCategoryVO = productCategoryService.edit(id);
+        return ResponseBean.success(productCategoryVO);
     }
 
     /**
      * 更新物资分类
+     *
      * @return
      */
     @ApiOperation(value = "更新分类")
     @RequiresPermissions({"productCategory:update"})
     @PutMapping("/update/{id}")
-    public ResponseBean update(@PathVariable Long id, @RequestBody @Validated ProductCategoryVO productCategoryVO){
-        try {
-            productCategoryService.update(id,productCategoryVO);
-            return ResponseBean.success("更新物资分类成功");
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseBean.error("更新物资分类失败");
-        }
+    public ResponseBean update(@PathVariable Long id, @RequestBody @Validated ProductCategoryVO productCategoryVO) {
+        productCategoryService.update(id, productCategoryVO);
+        return ResponseBean.success();
     }
 
     /**
      * 删除物资分类
+     *
      * @param id
      * @return
      */
     @ApiOperation(value = "删除分类")
     @RequiresPermissions({"productCategory:delete"})
     @DeleteMapping("/delete/{id}")
-    public ResponseBean delete(@PathVariable Long id){
-        try {
-            productCategoryService.delete(id);
-            return ResponseBean.success("删除物资分类成功");
-        }catch(Exception e) {
-            e.printStackTrace();
-            return ResponseBean.error("删除物资分类失败");
-        }
+    public ResponseBean delete(@PathVariable Long id) {
+        productCategoryService.delete(id);
+        return ResponseBean.success();
     }
 }

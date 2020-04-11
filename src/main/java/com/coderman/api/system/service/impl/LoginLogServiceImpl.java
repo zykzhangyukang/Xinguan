@@ -2,7 +2,6 @@ package com.coderman.api.system.service.impl;
 
 import com.coderman.api.system.mapper.LoginLogMapper;
 import com.coderman.api.system.pojo.LoginLog;
-import com.coderman.api.system.pojo.Role;
 import com.coderman.api.system.service.LoginLogService;
 import com.coderman.api.system.vo.LoginLogVO;
 import com.coderman.api.system.vo.PageVO;
@@ -10,13 +9,11 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -29,7 +26,6 @@ public class LoginLogServiceImpl implements LoginLogService {
 
     @Autowired
     private LoginLogMapper loginLogMapper;
-
 
     /**
      * 登入日志列表
@@ -49,8 +45,8 @@ public class LoginLogServiceImpl implements LoginLogService {
         if(loginLogVO.getIp()!=null&&!"".equals(loginLogVO.getIp())){
             o.createCriteria().andLike("ip","%"+loginLogVO.getIp()+"%");
         }
-        if(loginLogVO.getUserName()!=null&&!"".equals(loginLogVO.getUserName())){
-            o.createCriteria().andLike("userName","%"+loginLogVO.getUserName()+"%");
+        if(loginLogVO.getUsername()!=null&&!"".equals(loginLogVO.getUsername())){
+            o.createCriteria().andLike("username","%"+loginLogVO.getUsername()+"%");
         }
         List<LoginLog> loginLogs = loginLogMapper.selectByExample(o);
         List<LoginLogVO> loginLogVOS=new ArrayList<>();
@@ -65,6 +61,10 @@ public class LoginLogServiceImpl implements LoginLogService {
         return new PageVO<>(info.getTotal(),loginLogVOS);
     }
 
+    /**
+     * 批量删除日志
+     * @param list
+     */
     @Override
     public void batchDelete(List<Long> list) {
         for (Long id : list) {

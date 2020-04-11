@@ -1,10 +1,10 @@
 package com.coderman.api.system.config;
 
 import com.coderman.api.system.exception.BizException;
-import com.coderman.api.system.exception.UnauthorizedException;
 import com.coderman.api.system.bean.ResponseBean;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.ShiroException;
+import org.apache.shiro.authz.UnauthorizedException;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindException;
@@ -100,19 +100,6 @@ public class GlobalExceptionHandler {
     public ResponseBean handle401(ShiroException e) {
         return new ResponseBean(401, e.getMessage(), null);
     }
-
-
-    /**
-     * 自定义的授权异常
-     * UnauthorizedException
-     * @param e
-     * @return
-     */
-    @ExceptionHandler(UnauthorizedException.class)
-    public ResponseBean handle401(UnauthorizedException e) {
-        return new ResponseBean(401, e.getMessage(), null);
-    }
-
 
 
     /**

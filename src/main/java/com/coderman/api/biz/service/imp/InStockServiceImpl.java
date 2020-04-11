@@ -72,6 +72,12 @@ public class InStockServiceImpl implements InStockService {
         PageHelper.startPage(pageNum,pageSize);
         Example o = new Example(InStock.class);
         o.setOrderByClause("create_time desc");
+        if(inStockVO.getInNum()!=null&&!"".equals(inStockVO.getInNum())){
+            o.createCriteria().andLike("inNum","%"+inStockVO.getInNum()+"%");
+        }
+        if(inStockVO.getType()!=null){
+            o.createCriteria().andEqualTo("type",inStockVO.getType());
+        }
         List<InStock> inStocks = inStockMapper.selectByExample(o);
         List<InStockVO> inStockVOS=inStockConverter.converterToVOList(inStocks);
         PageInfo<InStock> inStockPageInfo = new PageInfo<>(inStocks);
@@ -92,9 +98,9 @@ public class InStockServiceImpl implements InStockService {
         //查询该单所有的物资
         Example o = new Example(InStockInfo.class);
         o.createCriteria().andEqualTo("inNum",inNum);
-        List<InStockInfo> inStockInfos = inStockInfoMapper.selectByExample(o);
-        if(!CollectionUtils.isEmpty(inStockInfos)){
-            for (InStockInfo inStockInfo : inStockInfos) {
+        List<InStockInfo> inStockInfoList = inStockInfoMapper.selectByExample(o);
+        if(!CollectionUtils.isEmpty(inStockInfoList)){
+            for (InStockInfo inStockInfo : inStockInfoList) {
                 String pNum = inStockInfo.getPNum();
                 //查出物资
                 Example o1 = new Example(Product.class);

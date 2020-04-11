@@ -1,6 +1,5 @@
 package com.coderman.api.system.vo;
 
-import com.coderman.api.system.pojo.Log;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
@@ -11,7 +10,7 @@ import java.util.Date;
  * Created by zhangyukang on 2019/11/15 17:29
  */
 @Data
-public class LogVo extends Log {
+public class LogVO {
     @Id
     private Long id;
 

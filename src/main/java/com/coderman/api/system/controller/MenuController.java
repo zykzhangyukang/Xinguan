@@ -33,88 +33,81 @@ public class MenuController {
 
     /**
      * 加载菜单树
+     *
      * @return
      */
-    @ApiOperation(value = "加载菜单树",notes = "获取所有菜单树，以及展开项")
+    @ApiOperation(value = "加载菜单树", notes = "获取所有菜单树，以及展开项")
     @GetMapping("/tree")
-    public ResponseBean tree(){
+    public ResponseBean tree() {
         List<MenuNodeVO> menuTree = menuService.findMenuTree();
-        List<Long> ids=menuService.findOpenIds();
-        Map<String,Object> map=new HashMap<>();
-        map.put("tree",menuTree);
-        map.put("open",ids);
+        List<Long> ids = menuService.findOpenIds();
+        Map<String, Object> map = new HashMap<>();
+        map.put("tree", menuTree);
+        map.put("open", ids);
         return ResponseBean.success(map);
     }
 
     /**
      * 新增菜单/按钮
+     *
      * @return
      */
-    @ControllerEndpoint(exceptionMessage = "新增菜单/按钮失败",operation ="新增菜单/按钮")
+    @ControllerEndpoint(exceptionMessage = "新增菜单/按钮失败", operation = "新增菜单/按钮")
     @ApiOperation(value = "新增菜单")
     @RequiresPermissions({"menu:add"})
     @PostMapping("/add")
-    public ResponseBean add(@RequestBody @Validated MenuVO menuVO){
+    public ResponseBean add(@RequestBody @Validated MenuVO menuVO) {
         Menu node = menuService.add(menuVO);
-        Map<String,Object> map=new HashMap<>();
-        map.put("id",node.getId());
-        map.put("menuName",node.getMenuName());
-        map.put("children",new ArrayList<>());
-        map.put("icon",node.getIcon());
+        Map<String, Object> map = new HashMap<>();
+        map.put("id", node.getId());
+        map.put("menuName", node.getMenuName());
+        map.put("children", new ArrayList<>());
+        map.put("icon", node.getIcon());
         return ResponseBean.success(map);
     }
 
     /**
      * 删除菜单/按钮
+     *
      * @param id
      * @return
      */
-    @ControllerEndpoint(exceptionMessage = "删除菜单/按钮失败",operation ="删除菜单/按钮")
-    @ApiOperation(value = "删除菜单",notes = "根据id删除菜单节点")
+    @ControllerEndpoint(exceptionMessage = "删除菜单/按钮失败", operation = "删除菜单/按钮")
+    @ApiOperation(value = "删除菜单", notes = "根据id删除菜单节点")
     @RequiresPermissions({"menu:delete"})
     @DeleteMapping("/delete/{id}")
-    public ResponseBean delete(@PathVariable Long id){
-        try {
-            menuService.delete(id);
-            return ResponseBean.success("删除节点成功");
-        } catch (Exception e) {
-            return ResponseBean.error("删除节点失败");
-        }
+    public ResponseBean delete(@PathVariable Long id) {
+        menuService.delete(id);
+        return ResponseBean.success();
     }
 
     /**
      * 菜单详情
+     *
      * @param id
      * @return
      */
-    @ApiOperation(value = "菜单详情",notes = "根据id编辑菜单，获取菜单详情")
+    @ApiOperation(value = "菜单详情", notes = "根据id编辑菜单，获取菜单详情")
     @RequiresPermissions({"menu:edit"})
     @GetMapping("/edit/{id}")
-    public ResponseBean edit(@PathVariable Long id){
-        try {
-            MenuVO menuVO=menuService.edit(id);
-            return ResponseBean.success(menuVO);
-        } catch (Exception e) {
-            return ResponseBean.error("编辑失败");
-        }
+    public ResponseBean edit(@PathVariable Long id) {
+        MenuVO menuVO = menuService.edit(id);
+        return ResponseBean.success(menuVO);
     }
 
     /**
      * 更新菜单
+     *
      * @param id
      * @param menuVO
      * @return
      */
-    @ControllerEndpoint(exceptionMessage = "更新菜单失败",operation ="更新菜单")
-    @ApiOperation(value = "更新菜单",notes = "根据id更新菜单节点")
+    @ControllerEndpoint(exceptionMessage = "更新菜单失败", operation = "更新菜单")
+    @ApiOperation(value = "更新菜单", notes = "根据id更新菜单节点")
     @RequiresPermissions({"menu:update"})
     @PutMapping("/update/{id}")
-    public ResponseBean update(@PathVariable Long id, @RequestBody @Validated MenuVO menuVO){
-        try {
-            menuService.update(id,menuVO);
-            return ResponseBean.success("更新节点成功");
-        } catch (Exception e) {
-            return ResponseBean.error("更新节点失败");
-        }
+    public ResponseBean update(@PathVariable Long id, @RequestBody @Validated MenuVO menuVO) {
+        menuService.update(id, menuVO);
+        return ResponseBean.success();
     }
 }

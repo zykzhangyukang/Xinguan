@@ -12,7 +12,7 @@ public class LoginLog {
     @Id
     private Long id;
 
-    private String userName;
+    private String username;
 
     private Date loginTime;
 

@@ -14,7 +14,7 @@ import java.util.Date;
 public class LoginLogVO {
     private Long id;
 
-    private String userName;
+    private String username;
 
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date loginTime;

@@ -17,6 +17,7 @@ import java.util.List;
 
 /**
  * 部门管理
+ *
  * @Author zhangyukang
  * @Date 2020/3/15 14:11
  * @Version 1.0
@@ -32,110 +33,97 @@ public class DepartmentController {
 
     /**
      * 部门列表
+     *
      * @return
      */
-    @ApiOperation(value = "部门列表",notes = "部门列表,根据部门名模糊查询")
+    @ApiOperation(value = "部门列表", notes = "部门列表,根据部门名模糊查询")
     @GetMapping("/findDepartmentList")
-    public ResponseBean findDepartmentList(@RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
-                                     @RequestParam(value = "pageSize") Integer pageSize,
-                                     DepartmentVO departmentVO){
-        PageVO<DepartmentVO> departmentsList= departmentService.findDepartmentList(pageNum,pageSize,departmentVO);
+    public ResponseBean findDepartmentList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                                           @RequestParam(value = "pageSize") Integer pageSize,
+                                           DepartmentVO departmentVO) {
+        PageVO<DepartmentVO> departmentsList = departmentService.findDepartmentList(pageNum, pageSize, departmentVO);
         return ResponseBean.success(departmentsList);
     }
 
     /**
      * 所有部门
+     *
      * @return
      */
     @ApiOperation(value = "所有部门")
     @GetMapping("/findAll")
-    public ResponseBean findAll(){
-        List<DepartmentVO> departmentVOS=departmentService.findAll();
+    public ResponseBean findAll() {
+        List<DepartmentVO> departmentVOS = departmentService.findAll();
         return ResponseBean.success(departmentVOS);
     }
 
     /**
      * 查找部门主任
+     *
      * @return
      */
-    @ApiOperation(value = "部门主任",notes = "查找部门主任,排除掉已经禁用的用户")
+    @ApiOperation(value = "部门主任", notes = "查找部门主任,排除掉已经禁用的用户")
     @GetMapping("/findDeanList")
-    public ResponseBean findDeanList(){
-        List<DeanVO> managerList=departmentService.findDeanList();
+    public ResponseBean findDeanList() {
+        List<DeanVO> managerList = departmentService.findDeanList();
         return ResponseBean.success(managerList);
     }
 
     /**
      * 添加部门
+     *
      * @return
      */
-    @ControllerEndpoint(exceptionMessage = "添加部门失败",operation ="添加部门")
+    @ControllerEndpoint(exceptionMessage = "添加部门失败", operation = "添加部门")
     @RequiresPermissions({"department:delete"})
     @ApiOperation(value = "添加部门")
     @PostMapping("/add")
-    public ResponseBean add(@RequestBody @Validated DepartmentVO departmentVO){
-        try {
-            departmentService.add(departmentVO);
-            return ResponseBean.success("添加部门成功");
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseBean.error("添加部门失败");
-        }
+    public ResponseBean add(@RequestBody @Validated DepartmentVO departmentVO) {
+        departmentService.add(departmentVO);
+        return ResponseBean.success();
     }
 
     /**
      * 编辑部门
+     *
      * @param id
      * @return
      */
     @ApiOperation(value = "编辑部门")
     @RequiresPermissions({"department:edit"})
     @GetMapping("/edit/{id}")
-    public ResponseBean edit(@PathVariable Long id){
-        try {
-            DepartmentVO departmentVO=departmentService.edit(id);
-            return ResponseBean.success(departmentVO);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseBean.error("编辑部门失败");
-        }
+    public ResponseBean edit(@PathVariable Long id) {
+        DepartmentVO departmentVO = departmentService.edit(id);
+        return ResponseBean.success(departmentVO);
     }
 
     /**
      * 更新部门
+     *
      * @return
      */
-    @ControllerEndpoint(exceptionMessage = "更新部门失败",operation ="更新部门")
+    @ControllerEndpoint(exceptionMessage = "更新部门失败", operation = "更新部门")
     @ApiOperation(value = "更新部门")
     @RequiresPermissions({"department:update"})
     @PutMapping("/update/{id}")
-    public ResponseBean update(@PathVariable Long id,@RequestBody @Validated DepartmentVO departmentVO){
-        try {
-            departmentService.update(id,departmentVO);
-            return ResponseBean.success("更新部门成功");
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseBean.error("更新部门失败");
-        }
+    public ResponseBean update(@PathVariable Long id, @RequestBody @Validated DepartmentVO departmentVO) {
+        departmentService.update(id, departmentVO);
+        return ResponseBean.success();
     }
 
     /**
      * 删除部门
+     *
      * @param id
      * @return
      */
-    @ControllerEndpoint(exceptionMessage = "删除部门失败",operation ="删除部门")
+    @ControllerEndpoint(exceptionMessage = "删除部门失败", operation = "删除部门")
     @ApiOperation(value = "删除部门")
     @RequiresPermissions({"department:delete"})
     @DeleteMapping("/delete/{id}")
-    public ResponseBean delete(@PathVariable Long id){
-        try {
-            departmentService.delete(id);
-            return ResponseBean.success("删除部门成功");
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseBean.error("删除部门失败");
-        }
+    public ResponseBean delete(@PathVariable Long id) {
+        departmentService.delete(id);
+        return ResponseBean.success();
     }
 
 

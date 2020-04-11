@@ -21,4 +21,12 @@ public class Role {
     private Date modifiedTime;
 
     private Integer status;
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "id=" + id +
+                ", roleName='" + roleName + '\'' +
+                '}';
+    }
 }

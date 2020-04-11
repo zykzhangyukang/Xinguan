@@ -5,6 +5,8 @@ import lombok.Data;
 @Data
 public class ResponseBean {
 
+    /** 200:操作成功  -1：操作失败**/
+
     // http 状态码
     private int code;
 
@@ -49,6 +51,14 @@ public class ResponseBean {
         responseBean.setData(null);
         responseBean.setCode(200);
         responseBean.setMsg(message);
+        return responseBean;
+    }
+
+    public static ResponseBean success() {
+        ResponseBean responseBean = new ResponseBean();
+        responseBean.setData(null);
+        responseBean.setCode(200);
+        responseBean.setMsg("Success");
         return responseBean;
     }
 }
