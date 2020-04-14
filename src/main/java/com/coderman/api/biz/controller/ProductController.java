@@ -97,6 +97,9 @@ public class ProductController {
     @RequiresPermissions({"product:update"})
     @PutMapping("/update/{id}")
     public ResponseBean update(@PathVariable Long id, @RequestBody ProductVO productVO) {
+        if (productVO.getCategoryKeys().length != 3) {
+            return ResponseBean.error("物资需要3级分类");
+        }
         productService.update(id, productVO);
         return ResponseBean.success();
     }

@@ -76,8 +76,7 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
     @Override
     public ProductCategoryVO edit(Long id) {
         ProductCategory productCategory = productCategoryMapper.selectByPrimaryKey(id);
-        ProductCategoryVO productCategoryVO = ProductCategoryConverter.converterToProductCategoryVO(productCategory);
-        return productCategoryVO;
+        return  ProductCategoryConverter.converterToProductCategoryVO(productCategory);
     }
 
     /**

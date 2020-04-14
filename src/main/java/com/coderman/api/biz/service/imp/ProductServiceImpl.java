@@ -125,7 +125,13 @@ public class ProductServiceImpl implements ProductService {
         Product product = new Product();
         BeanUtils.copyProperties(ProductVO,product);
         product.setModifiedTime(new Date());
-        productMapper.updateByPrimaryKeySelective(product);
+        @NotNull(message = "分类不能为空") Long[] categoryKeys = ProductVO.getCategoryKeys();
+        if(categoryKeys.length==3){
+            product.setOneCategoryId(categoryKeys[0]);
+            product.setTwoCategoryId(categoryKeys[1]);
+            product.setThreeCategoryId(categoryKeys[2]);
+        }
+        productMapper.updateByPrimaryKey(product);
     }
 
     /**

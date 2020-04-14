@@ -56,6 +56,7 @@ public class UserController {
     @Autowired
     private LoginLogService loginLogService;
 
+
     /**
      * 创建登入日志
      *
@@ -112,6 +113,8 @@ public class UserController {
         loginLogService.add(loginLog);
         return ResponseBean.success(token);
     }
+
+
 
     /**
      * 用户列表
