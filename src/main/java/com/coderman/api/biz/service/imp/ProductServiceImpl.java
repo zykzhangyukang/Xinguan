@@ -2,8 +2,11 @@ package com.coderman.api.biz.service.imp;
 
 import com.coderman.api.biz.converter.ProductConverter;
 import com.coderman.api.biz.mapper.ProductMapper;
+import com.coderman.api.biz.mapper.ProductStockMapper;
 import com.coderman.api.biz.pojo.Product;
+import com.coderman.api.biz.pojo.ProductStock;
 import com.coderman.api.biz.service.ProductService;
+import com.coderman.api.biz.vo.ProductStockVO;
 import com.coderman.api.biz.vo.ProductVO;
 import com.coderman.api.system.vo.PageVO;
 import com.github.pagehelper.PageHelper;
@@ -11,6 +14,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.validation.constraints.NotNull;
@@ -31,8 +35,11 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductMapper productMapper;
 
+
     @Autowired
-    private ProductConverter productConverter;
+    private ProductStockMapper productStockMapper;
+
+
 
     /**
      * 商品列表
@@ -56,7 +63,7 @@ public class ProductServiceImpl implements ProductService {
                     .andEqualTo("twoCategoryId",productVO.getTwoCategoryId())
                     .andEqualTo("threeCategoryId",productVO.getThreeCategoryId());
             products = productMapper.selectByExample(o);
-            List<ProductVO> categoryVOS=productConverter.converterToVOList(products);
+            List<ProductVO> categoryVOS= ProductConverter.converterToVOList(products);
             PageInfo<Product> info = new PageInfo<>(products);
             return new PageVO<>(info.getTotal(), categoryVOS);
         }
@@ -64,19 +71,19 @@ public class ProductServiceImpl implements ProductService {
             o.createCriteria().andEqualTo("oneCategoryId",productVO.getOneCategoryId())
                     .andEqualTo("twoCategoryId",productVO.getTwoCategoryId());
             products = productMapper.selectByExample(o);
-            List<ProductVO> categoryVOS=productConverter.converterToVOList(products);
+            List<ProductVO> categoryVOS=ProductConverter.converterToVOList(products);
             PageInfo<Product> info = new PageInfo<>(products);
             return new PageVO<>(info.getTotal(), categoryVOS);
         }
         if(productVO.getOneCategoryId()!=null){
             o.createCriteria().andEqualTo("oneCategoryId",productVO.getOneCategoryId());
             products = productMapper.selectByExample(o);
-            List<ProductVO> categoryVOS=productConverter.converterToVOList(products);
+            List<ProductVO> categoryVOS=ProductConverter.converterToVOList(products);
             PageInfo<Product> info = new PageInfo<>(products);
             return new PageVO<>(info.getTotal(), categoryVOS);
         }
         products = productMapper.selectByExample(o);
-        List<ProductVO> categoryVOS=productConverter.converterToVOList(products);
+        List<ProductVO> categoryVOS=ProductConverter.converterToVOList(products);
         PageInfo<Product> info = new PageInfo<>(products);
         return new PageVO<>(info.getTotal(), categoryVOS);
     }
@@ -111,8 +118,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductVO edit(Long id) {
         Product product = productMapper.selectByPrimaryKey(id);
-        ProductVO productVO = productConverter.converterToProductVO(product);
-        return productVO;
+        return ProductConverter.converterToProductVO(product);
     }
 
     /**
@@ -141,6 +147,30 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void delete(Long id) {
         productMapper.deleteByPrimaryKey(id);
+    }
+
+    /**
+     * 物资库存列表
+     * @param pageNum
+     * @param pageSize
+     * @param productVO
+     * @return
+     */
+    @Override
+    public PageVO<ProductStockVO> findProductStocks(Integer pageNum, Integer pageSize, ProductVO productVO) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<ProductStockVO> productStockVOList=productStockMapper.selectProductStockList(productVO);
+        PageInfo<ProductStockVO> info = new PageInfo<>(productStockVOList);
+        return new PageVO<>(info.getTotal(), productStockVOList);
+    }
+
+    /**
+     * 所有库存信息
+     * @return
+     */
+    @Override
+    public List<ProductStockVO> findAllStocks() {
+        return productStockMapper.findAllStocks();
     }
 
 }

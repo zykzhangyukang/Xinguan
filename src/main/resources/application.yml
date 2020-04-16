@@ -26,6 +26,6 @@ spring:
         url-pattern: /druid/*
 
 mybatis:
-  mapper-locations: classpath:mapper/*Mapper.xml
+  mapper-locations: classpath:mapper/*/*Mapper.xml
   type-aliases-package: com.coderman.api.*.pojo
 

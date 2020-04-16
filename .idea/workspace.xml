@@ -2,122 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc0098de-1555-475b-b0df-4f7e5b9cd099" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/CreateVerifyCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductStockVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/biz/ProductStockMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T091912.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T092224.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T092226.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T092322.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T092543.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T092618.401.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T092840.401.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T093035.401.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductCategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/ProductConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/ProductConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductStockMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductStockMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/ShiroConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/JWTUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/JWTUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/VuePermission.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/VuePermission.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/ConsumerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/ConsumerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/FileUploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/FileUploadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/InStockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/InStockController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/ProductCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/ProductCategoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/SupplierController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/SupplierController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/ConsumerConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/ConsumerConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/InStockConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/InStockConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/ProductCategoryConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/ProductCategoryConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/ProductConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/ProductConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/SupplierConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/SupplierConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/Consumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/InStock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/InStock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/InStockInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/InStockInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/ProductCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/ProductCategory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/ProductStock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/ProductStock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/Supplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/Supplier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/ConsumerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/ConsumerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/InStockService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/InStockService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/ProductCategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/ProductCategoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/SupplierService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/SupplierService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/ConsumerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/ConsumerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/InStockServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/InStockServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/ProductServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/SupplierServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/SupplierServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/utils/CategoryTreeBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/utils/CategoryTreeBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/utils/CommonFileUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/utils/CommonFileUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/utils/ListPageUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/utils/ListPageUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ConsumerVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ConsumerVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockDetailVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockDetailVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockItemVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockItemVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ProductCategoryTreeNodeVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ProductCategoryTreeNodeVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ProductCategoryVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ProductCategoryVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ProductVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ProductVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/SupplierVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/SupplierVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/aspect/AspectSupport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/aspect/AspectSupport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/aspect/ControllerEndpointAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/aspect/ControllerEndpointAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/bean/ActiveUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/bean/ActiveUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/bean/ResponseBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/bean/ResponseBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/CorsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/CorsConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/FdfsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/FdfsConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/GlobalExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/JWTFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/JWTFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/JWTToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/JWTToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/ShiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/ShiroConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/DepartmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/DepartmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/LogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/LogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/LoginLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/LoginLogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/RoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/DepartmentConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/DepartmentConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/MenuConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/MenuConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/RoleConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/RoleConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/UserConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/UserConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/enums/BizUserTypeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/enums/BizUserTypeEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/enums/ErrorCodeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/enums/ErrorCodeEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/exception/BizException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/exception/BizException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Department.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Department.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Log.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/LoginLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/LoginLog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/RoleMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/RoleMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/UserRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/realm/MyRealm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/realm/MyRealm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/DepartmentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/DepartmentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/LogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/LogService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/LoginLogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/LoginLogService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/MenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/MenuService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/RoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/RoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/DepartmentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/DepartmentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/LogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/LogServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/LoginLogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/LoginLogServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/MenuServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/ProductCategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/ProductCategoryServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/RoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/RoleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/test/TestMbg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/test/TestMbg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/AddressUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/AddressUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/BrowserUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/BrowserUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/IPUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/IPUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/MD5Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/MD5Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/MenuTreeBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/MenuTreeBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/DeanVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/DeanVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/DepartmentVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/DepartmentVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/LogVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/LogVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/LoginLogVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/LoginLogVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/MenuNodeVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/MenuNodeVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/MenuVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/MenuVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/PageVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/PageVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/RoleTransferItemVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/RoleTransferItemVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/RoleVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/RoleVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/UserEditVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/UserEditVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/UserInfoVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/UserInfoVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/UserVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/UserVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/goods-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/goods-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/goods-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/goods-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.coderman.DemoApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.coderman.DemoApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.coderman.DemoApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.coderman.DemoApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -131,69 +35,180 @@
     <session id="30398950">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.37" value="2" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.40" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="4" />
-          <entry key="java" value="162" />
+          <entry key="java" value="187" />
           <entry key="md" value="2" />
-          <entry key="properties" value="2" />
+          <entry key="properties" value="3" />
           <entry key="sql" value="1" />
-          <entry key="xml" value="6" />
-          <entry key="yml" value="2" />
+          <entry key="xml" value="8" />
+          <entry key="yml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="4" />
-          <entry key="JAVA" value="162" />
+          <entry key="JAVA" value="187" />
           <entry key="Markdown" value="2" />
-          <entry key="Properties" value="2" />
+          <entry key="Properties" value="3" />
           <entry key="SQL" value="1" />
-          <entry key="XML" value="6" />
-          <entry key="YAML" value="2" />
+          <entry key="XML" value="8" />
+          <entry key="YAML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3691" />
+          <entry key="java" value="5949" />
           <entry key="md" value="174" />
-          <entry key="txt" value="45" />
-          <entry key="xml" value="47" />
+          <entry key="txt" value="53" />
+          <entry key="xml" value="183" />
+          <entry key="yml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3691" />
+          <entry key="JAVA" value="5949" />
           <entry key="Markdown" value="174" />
-          <entry key="PLAIN_TEXT" value="45" />
-          <entry key="XML" value="47" />
+          <entry key="PLAIN_TEXT" value="53" />
+          <entry key="SQL" value="6" />
+          <entry key="XML" value="177" />
+          <entry key="YAML" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="669">
+              <caret line="67" column="31" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/ProductConverter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ProductService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="489">
+              <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="159" column="25" selection-start-line="159" selection-start-column="25" selection-end-line="159" selection-end-column="25" />
+              <folding>
+                <element signature="e#5050#5051#0" expanded="true" />
+                <element signature="e#5102#5103#0" expanded="true" />
+                <element signature="e#5915#5916#0" expanded="true" />
+                <element signature="e#5990#5991#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductStockMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/VuePermission.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+              <folding>
+                <element signature="e#668#669#0" expanded="true" />
+                <element signature="e#732#733#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/biz/ProductStockMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductStockVO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -223,17 +238,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="dummy://restClient/response17.txt" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/DepartmentService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/DepartmentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/converter/UserConverter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/vo/UserEditVO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/JWTFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/realm/MyRealm.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/annotation/ControllerEndpoint.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/aspect/AspectSupport.java" />
@@ -275,8 +285,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/JWTUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductCategoryServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/ProductConverter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductStockExtMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/biz/UserExtMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductStockMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/biz/ProductStockMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductStockVO.java" />
       </list>
     </option>
   </component>
@@ -334,6 +352,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -342,11 +361,108 @@
               <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
               <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="coderman" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="coderman" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="coderman" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="biz" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="coderman" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="biz" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="coderman" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="biz" type="462c0819:PsiDirectoryNode" />
+              <item name="converter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="coderman" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,7 +472,8 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586842903779" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587015325852" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -372,16 +489,220 @@
       <recent name="com.coderman.api.system.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\resources\mapper\biz" />
       <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\system\util" />
       <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\system\pojo" />
       <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\system\vo" />
       <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\system\service" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\system" />
     </key>
   </component>
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="623ABDB0C3AD1CA3D4A2E8AD71467EEB" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8081" />
+          <option name="urlPath" value="/product/findProductStocks" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="pageSize" />
+                <option name="value" value="9" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="27DB4108E69FC40ADC9A65455AFC1C95" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8081" />
+          <option name="urlPath" value="/product/findProductStocks" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="pageSize" />
+                <option name="value" value="5" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="A915C5D518351B2597F54850646343EA" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8081" />
+          <option name="urlPath" value="/product/findProductStocks" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="pageSize" />
+                <option name="value" value="5" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="895E214BB40141AF8EFA840221E10808" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8081" />
+          <option name="urlPath" value="/product/findProductStocks" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="pageSize" />
+                <option name="value" value="5" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8081" />
+          <option name="urlPath" value="/product/findProductStocks" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="zhangyukang" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="POST" />
           <option name="urlBase" value="http://localhost:8081" />
@@ -1193,17 +1514,29 @@
       <workItem from="1585997958133" duration="6391000" />
       <workItem from="1586049737466" duration="3526000" />
       <workItem from="1586569768615" duration="11730000" />
-      <workItem from="1586827400953" duration="7231000" />
+      <workItem from="1586827400953" duration="8182000" />
+      <workItem from="1586952540732" duration="3841000" />
+      <workItem from="1586995986050" duration="10918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57440000" />
+    <option name="totallyTimeSpent" value="73150000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29959786" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2989276" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1213,18 +1546,18 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34545454" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39300698" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.51888114" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.565035" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.57062936" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32867134" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.32867134" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.57062936" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="REST Client" order="13" weight="0.52587414" />
+      <window_info anchor="bottom" id="REST Client" order="13" weight="0.77482516" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32867134" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1244,92 +1577,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java</url>
-          <line>99</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-    </breakpoint-manager>
-  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductCategoryTreeNodeVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="24" column="68" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ConsumerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ConsumerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/ConsumerConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/vo/MenuNodeVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/BaseCodeInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/IPUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/ErrorCodeEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/BizUserTypeEnum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1365,38 +1617,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/LoginLogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/LogController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ConsumerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/InStockServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="92" column="27" selection-start-line="92" selection-start-column="27" selection-end-line="92" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/InStockService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1436,24 +1660,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/DepartmentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/vo/UserVO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/RoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="41" column="14" lean-forward="true" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1468,13 +1678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/GlobalExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="105" column="12" lean-forward="true" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1511,13 +1714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2087">
-          <caret line="27" column="58" lean-forward="true" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/ShiroConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-663">
@@ -1525,57 +1721,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/InStockController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="59" column="7" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/realm/MyRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="791">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/JWTUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="990">
           <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductCategoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="110" column="71" lean-forward="true" selection-start-line="110" selection-start-column="71" selection-end-line="110" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/ProductConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="57" column="52" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -1586,20 +1735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="127" column="87" selection-start-line="127" selection-start-column="87" selection-end-line="127" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ProductCategoryService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -1607,10 +1742,215 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/realm/MyRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1548">
+          <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/GlobalExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1548">
+          <caret line="105" column="12" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ConsumerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/InStockController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/InStockService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/InStockServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1926">
+          <caret line="136" column="16" selection-start-line="136" selection-start-column="16" selection-end-line="136" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/LoginLogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/JWTFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="59" column="55" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="135" column="14" lean-forward="true" selection-start-line="135" selection-start-column="14" selection-end-line="135" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductCategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="110" column="71" lean-forward="true" selection-start-line="110" selection-start-column="71" selection-end-line="110" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="32" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/ProductStock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/DepartmentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="107" column="31" lean-forward="true" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/biz/ProductStockExtMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductStockExtMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/VuePermission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding>
+            <element signature="e#668#669#0" expanded="true" />
+            <element signature="e#732#733#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/biz/ProductStockMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductStockMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="159" column="25" selection-start-line="159" selection-start-column="25" selection-end-line="159" selection-end-column="25" />
+          <folding>
+            <element signature="e#5050#5051#0" expanded="true" />
+            <element signature="e#5102#5103#0" expanded="true" />
+            <element signature="e#5915#5916#0" expanded="true" />
+            <element signature="e#5990#5991#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductStockVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/ProductConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="72" column="25" lean-forward="true" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+        <state relative-caret-position="669">
+          <caret line="67" column="31" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

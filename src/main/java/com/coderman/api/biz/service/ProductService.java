@@ -1,7 +1,10 @@
 package com.coderman.api.biz.service;
 
+import com.coderman.api.biz.vo.ProductStockVO;
 import com.coderman.api.biz.vo.ProductVO;
 import com.coderman.api.system.vo.PageVO;
+
+import java.util.List;
 
 /**
  * @Author zhangyukang
@@ -46,4 +49,20 @@ public interface ProductService {
      * @param id
      */
     void delete(Long id);
+
+    /**
+     * 库存列表
+     * @param pageNum
+     * @param pageSize
+     * @param productVO
+     * @return
+     */
+    PageVO<ProductStockVO> findProductStocks(Integer pageNum, Integer pageSize, ProductVO productVO);
+
+    /**
+     * 所有库存信息
+     * @return
+     */
+    List<ProductStockVO> findAllStocks();
+
 }

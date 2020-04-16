@@ -1,6 +1,7 @@
 package com.coderman.api.biz.controller;
 
 import com.coderman.api.biz.service.ProductService;
+import com.coderman.api.biz.vo.ProductStockVO;
 import com.coderman.api.biz.vo.ProductVO;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.vo.PageVO;
@@ -10,6 +11,8 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @Author zhangyukang
@@ -36,6 +39,47 @@ public class ProductController {
                                         @RequestParam(value = "pageSize") Integer pageSize,
                                         @RequestParam(value = "categorys", required = false) String categorys,
                                         ProductVO productVO) {
+        buildCategorySearch(categorys, productVO);
+        PageVO<ProductVO> productVOPageVO = productService.findProductList(pageNum, pageSize, productVO);
+        return ResponseBean.success(productVOPageVO);
+    }
+
+    /**
+     * 库存列表
+     *
+     * @return
+     */
+    @ApiOperation(value = "库存列表", notes = "物资列表,根据物资名模糊查询")
+    @GetMapping("/findProductStocks")
+    public ResponseBean findProductStocks(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                                        @RequestParam(value = "pageSize") Integer pageSize,
+                                        @RequestParam(value = "categorys", required = false) String categorys,
+                                        ProductVO productVO) {
+
+        buildCategorySearch(categorys, productVO);
+        PageVO<ProductStockVO> productVOPageVO = productService.findProductStocks(pageNum, pageSize, productVO);
+        return ResponseBean.success(productVOPageVO);
+    }
+    /**
+     * 所有库存
+     *
+     * @return
+     */
+    @ApiOperation(value = "所有库存", notes = "物资所有库存信息")
+    @GetMapping("/findAllStocks")
+    public ResponseBean findAllStocks() {
+        List<ProductStockVO> list = productService.findAllStocks();
+        return ResponseBean.success(list);
+    }
+
+
+
+    /**
+     * 封装物资查询条件
+     * @param categorys
+     * @param productVO
+     */
+    private void buildCategorySearch(@RequestParam(value = "categorys", required = false) String categorys, ProductVO productVO) {
         if (categorys != null && !"".equals(categorys)) {
             String[] split = categorys.split(",");
             switch (split.length) {
@@ -53,8 +97,6 @@ public class ProductController {
                     break;
             }
         }
-        PageVO<ProductVO> productVOPageVO = productService.findProductList(pageNum, pageSize, productVO);
-        return ResponseBean.success(productVOPageVO);
     }
 
 

@@ -1,0 +1,90 @@
+{
+  "code": 200,
+  "msg": "成功",
+  "data": {
+    "total": 17,
+    "rows": [
+      {
+        "name": "N95口罩",
+        "model": "10个/包",
+        "unit": "包",
+        "remark": "救命的口罩",
+        "stock": 130,
+        "percentage": null,
+        "pnum": "3DFC8EA0-6"
+      },
+      {
+        "name": "防毒面具",
+        "model": "舒适版",
+        "unit": "个",
+        "remark": "防毒气的",
+        "stock": 258,
+        "percentage": null,
+        "pnum": "2C15F1B6-1"
+      },
+      {
+        "name": "普通温度计",
+        "model": "10只/盒",
+        "unit": "盒",
+        "remark": "温度计",
+        "stock": 526,
+        "percentage": null,
+        "pnum": "6976D3B4-A"
+      },
+      {
+        "name": "维生素葡萄糖",
+        "model": "100ml",
+        "unit": "瓶",
+        "remark": "葡萄糖",
+        "stock": 257,
+        "percentage": null,
+        "pnum": "52A0F5B9-5"
+      },
+      {
+        "name": "小型救护车",
+        "model": "1吨",
+        "unit": "俩",
+        "remark": "车车",
+        "stock": 126,
+        "percentage": null,
+        "pnum": "967CE098-3"
+      },
+      {
+        "name": "霸王洗发水",
+        "model": "10ml",
+        "unit": "瓶",
+        "remark": "洗发水挺好的",
+        "stock": 50,
+        "percentage": null,
+        "pnum": "894b8218-36ee-4a0d-9ad1-d9c5e455"
+      },
+      {
+        "name": "卫龙辣条",
+        "model": "大包",
+        "unit": "包",
+        "remark": "好吃",
+        "stock": 15,
+        "percentage": null,
+        "pnum": "0b9e9176-f996-4384-bb6c-209f55d0"
+      },
+      {
+        "name": "生理盐水",
+        "model": "500ml",
+        "unit": "瓶",
+        "remark": "生理盐水",
+        "stock": 4,
+        "percentage": null,
+        "pnum": "AB0E206E-A"
+      },
+      {
+        "name": "东北大米",
+        "model": "1斤/袋",
+        "unit": "袋",
+        "remark": "老鼠爱大米",
+        "stock": 10,
+        "percentage": null,
+        "pnum": "6AF405A1-C"
+      }
+    ]
+  }
+}

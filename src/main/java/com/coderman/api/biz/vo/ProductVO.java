@@ -52,6 +52,4 @@ public class ProductVO {
 
     private Long threeCategoryId;
 
-    //商品库存
-    private Long stock=0L;
 }
