@@ -16,6 +16,7 @@ import com.coderman.api.system.util.IPUtil;
 import com.coderman.api.system.util.JWTUtils;
 import com.coderman.api.system.util.MD5Utils;
 import com.coderman.api.system.vo.*;
+import com.wuwenze.poi.ExcelKit;
 import eu.bitwalker.useragentutils.Browser;
 import eu.bitwalker.useragentutils.OperatingSystem;
 import eu.bitwalker.useragentutils.UserAgent;
@@ -29,6 +30,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
 import java.util.HashMap;
@@ -55,7 +57,6 @@ public class UserController {
 
     @Autowired
     private LoginLogService loginLogService;
-
 
     /**
      * 创建登入日志
@@ -258,7 +259,6 @@ public class UserController {
 
     /**
      * 拥有角色ID
-     *
      * @param id
      * @return
      */
@@ -273,6 +273,19 @@ public class UserController {
         map.put("roles", items);
         map.put("values", values);
         return ResponseBean.success(map);
+    }
+
+    /**
+     * 导出excel
+     * @param response
+     */
+    @ApiOperation(value = "导出excel", notes = "导出所有用户的excel表格")
+    @PostMapping("excel")
+    @RequiresPermissions("user:export")
+    @ControllerEndpoint(exceptionMessage = "导出Excel失败",operation = "导出用户excel")
+    public void export(HttpServletResponse response) {
+        List<User> users = this.userService.findAll();
+        ExcelKit.$Export(User.class, response).downXlsx(users, false);
     }
 
 }

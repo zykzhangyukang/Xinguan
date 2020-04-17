@@ -97,4 +97,11 @@ public interface UserService {
      * @param rids
      */
     void assignRoles(Long id, Long[] rids);
+
+    /**
+     * 全部用户
+     * @return
+     */
+    List<User> findAll();
+
 }

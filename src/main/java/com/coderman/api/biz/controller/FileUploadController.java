@@ -44,7 +44,7 @@ public class FileUploadController {
         String originalFilename = file.getOriginalFilename();
         assert originalFilename != null;
         String fileSuffix = originalFilename.substring(originalFilename.lastIndexOf("."));
-        if(!fileSuffix.equalsIgnoreCase(".jpg") && !fileSuffix.equalsIgnoreCase(".png")){
+        if(!fileSuffix.equalsIgnoreCase("gif")&&!fileSuffix.equalsIgnoreCase(".jpg") && !fileSuffix.equalsIgnoreCase(".png")){
             log.info("文件格式不正确");
             return ResponseBean.error("文件格式不正确");
         }

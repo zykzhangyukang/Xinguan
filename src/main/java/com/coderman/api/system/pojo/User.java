@@ -1,159 +1,69 @@
 package com.coderman.api.system.pojo;
 
+import com.wuwenze.poi.annotation.Excel;
+import com.wuwenze.poi.annotation.ExcelField;
+import lombok.Data;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
+@Data
+@Excel("user")
 @Table(name = "tb_user")
 public class User {
     @Id
+    @ExcelField(value = "编号", width = 50)
     private Long id;
 
+    @ExcelField(value = "用户名", width = 100)
     private String username;
 
+    @ExcelField(value = "昵称", width = 100)
     private String nickname;
 
+    @ExcelField(value = "邮箱", width = 150)
     private String email;
 
+    @ExcelField(value = "电话号码", width = 100)
     private String phoneNumber;
 
     private Integer status;
 
+    @ExcelField(value = "创建时间", dateFormat = "yyyy年MM月dd日 HH:mm:ss", width = 180)
     private Date createTime;
 
+    @ExcelField(value = "修改时间", dateFormat = "yyyy年MM月dd日 HH:mm:ss",width = 180)
     private Date modifiedTime;
 
+    @ExcelField(//
+            value = "性别",
+            readConverterExp = "男=1,女=0",
+            writeConverterExp = "1=男,0=女"
+            ,width = 50
+    )
     private Integer sex;
 
+    @ExcelField(value = "密码盐值", width = 100)
     private String salt;
 
+    @ExcelField(//
+            value = "用户类型",
+            readConverterExp = "超级管理员=0,普通用户=1",
+            writeConverterExp = "0=超级管理员,1=普通用户"
+            ,width = 80
+    )
     private Integer type;
 
+    @ExcelField(value = "用户密码", width = 100)
     private String password;
 
+    @ExcelField(value = "出生日期", dateFormat = "yyyy/MM/dd",width = 100)
     private Date birth;
 
     private Long departmentId;
 
+    @ExcelField(value = "头像url", width = 200)
     private String avatar;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname == null ? null : nickname.trim();
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber == null ? null : phoneNumber.trim();
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getModifiedTime() {
-        return modifiedTime;
-    }
-
-    public void setModifiedTime(Date modifiedTime) {
-        this.modifiedTime = modifiedTime;
-    }
-
-    public Integer getSex() {
-        return sex;
-    }
-
-    public void setSex(Integer sex) {
-        this.sex = sex;
-    }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt == null ? null : salt.trim();
-    }
-
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    public Date getBirth() {
-        return birth;
-    }
-
-    public void setBirth(Date birth) {
-        this.birth = birth;
-    }
-
-    public Long getDepartmentId() {
-        return departmentId;
-    }
-
-    public void setDepartmentId(Long departmentId) {
-        this.departmentId = departmentId;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar == null ? null : avatar.trim();
-    }
 }

@@ -22,8 +22,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
 import java.util.*;
 
 /**
@@ -308,5 +306,10 @@ public class UserServiceImpl implements UserService {
                 userRoleMapper.insert(userRole);
             }
         }
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userMapper.selectAll();
     }
 }

@@ -130,7 +130,7 @@ public class RoleController {
     }
 
     /**
-     * 更新角色信息
+     * 更新角色
      *
      * @param id
      * @param roleVO
