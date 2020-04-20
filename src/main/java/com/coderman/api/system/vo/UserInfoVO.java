@@ -17,9 +17,14 @@ public class UserInfoVO {
 
     private String username;
 
+    private String nickname;
+
     private String avatar;
 
     private List<Menu> menus=new ArrayList<>();
 
     private List<Role> roles=new ArrayList<>();
+
+    private String department;
+
 }

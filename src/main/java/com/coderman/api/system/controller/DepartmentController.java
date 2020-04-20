@@ -2,10 +2,13 @@ package com.coderman.api.system.controller;
 
 import com.coderman.api.system.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
+import com.coderman.api.system.pojo.Department;
+import com.coderman.api.system.pojo.Role;
 import com.coderman.api.system.service.DepartmentService;
 import com.coderman.api.system.vo.DeanVO;
 import com.coderman.api.system.vo.DepartmentVO;
 import com.coderman.api.system.vo.PageVO;
+import com.wuwenze.poi.ExcelKit;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -13,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -53,7 +57,7 @@ public class DepartmentController {
     @ApiOperation(value = "所有部门")
     @GetMapping("/findAll")
     public ResponseBean findAll() {
-        List<DepartmentVO> departmentVOS = departmentService.findAll();
+        List<DepartmentVO> departmentVOS = departmentService.findAllVO();
         return ResponseBean.success(departmentVOS);
     }
 
@@ -126,5 +130,17 @@ public class DepartmentController {
         return ResponseBean.success();
     }
 
+    /**
+     * 导出excel
+     * @param response
+     */
+    @ApiOperation(value = "导出excel", notes = "导出所有部门的excel表格")
+    @PostMapping("/excel")
+    @RequiresPermissions("department:export")
+    @ControllerEndpoint(exceptionMessage = "导出Excel失败",operation = "导出部门excel")
+    public void export(HttpServletResponse response) {
+        List<Department> departments = this.departmentService.findAll();
+        ExcelKit.$Export(Department.class, response).downXlsx(departments, false);
+    }
 
 }

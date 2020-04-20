@@ -108,18 +108,20 @@ public class UserServiceImpl implements UserService {
         List<Menu> menus=new ArrayList<>();
         if(!CollectionUtils.isEmpty(roles)){
             Set<Long> menuIds=new HashSet<>();
-            List<RoleMenu> roleMenus=new ArrayList<>();
+            List<RoleMenu> roleMenus;
             for (Role role : roles) {
                 //根据角色ID查询权限ID
                 RoleMenu t = new RoleMenu();
                 t.setRoleId(role.getId());
                 roleMenus= roleMenuMapper.select(t);
-            }
-            if(!CollectionUtils.isEmpty(roleMenus)){
-                for (RoleMenu roleMenu : roleMenus) {
-                    menuIds.add(roleMenu.getMenuId());
+
+                if(!CollectionUtils.isEmpty(roleMenus)){
+                    for (RoleMenu roleMenu : roleMenus) {
+                        menuIds.add(roleMenu.getMenuId());
+                    }
                 }
             }
+
             if(!CollectionUtils.isEmpty(menuIds)){
                 for (Long menuId : menuIds) {
                     //该用户所有的菜单

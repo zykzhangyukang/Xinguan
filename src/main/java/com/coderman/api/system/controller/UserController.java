@@ -5,9 +5,11 @@ import com.coderman.api.system.bean.ActiveUser;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.config.JWTToken;
 import com.coderman.api.system.converter.RoleConverter;
+import com.coderman.api.system.pojo.Department;
 import com.coderman.api.system.pojo.LoginLog;
 import com.coderman.api.system.pojo.Role;
 import com.coderman.api.system.pojo.User;
+import com.coderman.api.system.service.DepartmentService;
 import com.coderman.api.system.service.LoginLogService;
 import com.coderman.api.system.service.RoleService;
 import com.coderman.api.system.service.UserService;
@@ -57,6 +59,10 @@ public class UserController {
 
     @Autowired
     private LoginLogService loginLogService;
+
+
+    @Autowired
+    private DepartmentService departmentService;
 
     /**
      * 创建登入日志
@@ -145,6 +151,11 @@ public class UserController {
         userInfoVO.setUsername(activeUser.getUser().getUsername());
         userInfoVO.setRoles(activeUser.getRoles());
         userInfoVO.setMenus(activeUser.getMenus());
+        userInfoVO.setNickname(activeUser.getUser().getNickname());
+        DepartmentVO dept = departmentService.edit(activeUser.getUser().getDepartmentId());
+        if(dept!=null){
+            userInfoVO.setDepartment(dept.getName());
+        }
         return ResponseBean.success(userInfoVO);
     }
 
@@ -280,7 +291,7 @@ public class UserController {
      * @param response
      */
     @ApiOperation(value = "导出excel", notes = "导出所有用户的excel表格")
-    @PostMapping("excel")
+    @PostMapping("/excel")
     @RequiresPermissions("user:export")
     @ControllerEndpoint(exceptionMessage = "导出Excel失败",operation = "导出用户excel")
     public void export(HttpServletResponse response) {

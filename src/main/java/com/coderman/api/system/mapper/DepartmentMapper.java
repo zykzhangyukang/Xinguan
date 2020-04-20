@@ -9,4 +9,5 @@ import tk.mybatis.mapper.common.Mapper;
  * @Version 1.0
  **/
 public interface DepartmentMapper extends Mapper<Department> {
+
 }

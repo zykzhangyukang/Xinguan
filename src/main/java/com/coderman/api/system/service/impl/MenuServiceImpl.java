@@ -115,5 +115,14 @@ public class MenuServiceImpl implements MenuService {
         }
     }
 
+    /**
+     * 获取所有菜单
+     * @return
+     */
+    @Override
+    public List<Menu> findAll() {
+        return menuMapper.selectAll();
+    }
+
 
 }

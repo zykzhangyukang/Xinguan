@@ -3,9 +3,11 @@ package com.coderman.api.system.controller;
 import com.coderman.api.system.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.pojo.Menu;
+import com.coderman.api.system.pojo.User;
 import com.coderman.api.system.service.MenuService;
 import com.coderman.api.system.vo.MenuNodeVO;
 import com.coderman.api.system.vo.MenuVO;
+import com.wuwenze.poi.ExcelKit;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -13,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -110,4 +113,18 @@ public class MenuController {
         menuService.update(id, menuVO);
         return ResponseBean.success();
     }
+
+    /**
+     * 导出excel
+     * @param response
+     */
+    @ApiOperation(value = "导出excel", notes = "导出所有菜单的excel表格")
+    @PostMapping("excel")
+    @RequiresPermissions("menu:export")
+    @ControllerEndpoint(exceptionMessage = "导出Excel失败",operation = "导出菜单excel")
+    public void export(HttpServletResponse response) {
+        List<Menu> menus = this.menuService.findAll();
+        ExcelKit.$Export(Menu.class, response).downXlsx(menus, false);
+    }
+
 }

@@ -161,7 +161,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public List<DepartmentVO> findAll() {
+    public List<DepartmentVO> findAllVO() {
         List<Department> departments = departmentMapper.selectAll();
         //转vo
         List<DepartmentVO> departmentVOS = new ArrayList<>();
@@ -173,5 +173,10 @@ public class DepartmentServiceImpl implements DepartmentService {
             }
         }
         return departmentVOS;
+    }
+
+    @Override
+    public List<Department> findAll() {
+        return departmentMapper.selectAll();
     }
 }

@@ -54,4 +54,11 @@ public interface MenuService {
      * @param mids
      */
     void authority(Long id,Long[] mids);
+
+    /**
+     * 获取所有菜单
+     * @return
+     */
+    List<Menu> findAll();
+
 }

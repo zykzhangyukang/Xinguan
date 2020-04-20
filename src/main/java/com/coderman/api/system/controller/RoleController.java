@@ -2,9 +2,12 @@ package com.coderman.api.system.controller;
 
 import com.coderman.api.system.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
+import com.coderman.api.system.pojo.Menu;
+import com.coderman.api.system.pojo.Role;
 import com.coderman.api.system.service.MenuService;
 import com.coderman.api.system.service.RoleService;
 import com.coderman.api.system.vo.*;
+import com.wuwenze.poi.ExcelKit;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -12,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -159,6 +164,19 @@ public class RoleController {
     public ResponseBean updateStatus(@PathVariable Long id, @PathVariable Boolean status) {
         roleService.updateStatus(id, status);
         return ResponseBean.success();
+    }
+
+    /**
+     * 导出excel
+     * @param response
+     */
+    @ApiOperation(value = "导出excel", notes = "导出所有角色的excel表格")
+    @PostMapping("/excel")
+    @RequiresPermissions("role:export")
+    @ControllerEndpoint(exceptionMessage = "导出Excel失败",operation = "导出角色excel")
+    public void export(HttpServletResponse response) {
+        List<Role> roles = this.roleService.findAll();
+        ExcelKit.$Export(Role.class, response).downXlsx(roles, false);
     }
 
 
