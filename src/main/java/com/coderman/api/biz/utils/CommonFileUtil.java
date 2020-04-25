@@ -110,6 +110,14 @@ public class CommonFileUtil {
         }
     }
 
+    /**
+     * 上传图片
+     * @param is
+     * @param size
+     * @param fileExtName
+     * @param metaData
+     * @return
+     */
     public String upfileImage(InputStream is, long size, String fileExtName, Set<MateData> metaData) {
         StorePath path = storageClient.uploadImageAndCrtThumbImage(is, size, fileExtName, metaData);
         return getResAccessUrl(path);

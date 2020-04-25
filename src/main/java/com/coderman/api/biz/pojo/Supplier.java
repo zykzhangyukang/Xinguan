@@ -27,4 +27,6 @@ public class Supplier {
 
     private Integer sort;
 
+    private String contact;
+
 }

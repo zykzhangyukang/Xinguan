@@ -29,4 +29,6 @@ public class ConsumerVO {
 
     private  Integer sort;
 
+    private String contact;
+
 }

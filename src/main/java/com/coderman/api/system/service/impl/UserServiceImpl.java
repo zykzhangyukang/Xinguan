@@ -107,21 +107,19 @@ public class UserServiceImpl implements UserService {
     public List<Menu> findMenuById(List<Role> roles) {
         List<Menu> menus=new ArrayList<>();
         if(!CollectionUtils.isEmpty(roles)){
-            Set<Long> menuIds=new HashSet<>();
+            Set<Long> menuIds=new HashSet<>();//存放用户的菜单id
             List<RoleMenu> roleMenus;
             for (Role role : roles) {
                 //根据角色ID查询权限ID
-                RoleMenu t = new RoleMenu();
-                t.setRoleId(role.getId());
-                roleMenus= roleMenuMapper.select(t);
-
+                Example o = new Example(RoleMenu.class);
+                o.createCriteria().andEqualTo("roleId",role.getId());
+                roleMenus= roleMenuMapper.selectByExample(o);
                 if(!CollectionUtils.isEmpty(roleMenus)){
                     for (RoleMenu roleMenu : roleMenus) {
                         menuIds.add(roleMenu.getMenuId());
                     }
                 }
             }
-
             if(!CollectionUtils.isEmpty(menuIds)){
                 for (Long menuId : menuIds) {
                     //该用户所有的菜单

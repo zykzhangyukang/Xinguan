@@ -24,4 +24,6 @@ public class Consumer {
     private String phone;
 
     private  Integer sort;
+
+    private String contact;
 }

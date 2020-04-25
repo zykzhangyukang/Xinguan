@@ -43,6 +43,12 @@ public class ConsumerServiceImpl implements ConsumerService {
         if (consumerVO.getName() != null && !"".equals(consumerVO.getName())) {
             o.createCriteria().andLike("name", "%" + consumerVO.getName() + "%");
         }
+        if (consumerVO.getAddress() != null && !"".equals(consumerVO.getAddress())) {
+            o.createCriteria().andLike("address", "%" + consumerVO.getAddress() + "%");
+        }
+        if (consumerVO.getContact() != null && !"".equals(consumerVO.getContact())) {
+            o.createCriteria().andLike("contact", "%" + consumerVO.getContact() + "%");
+        }
         List<Consumer> consumers = consumerMapper.selectByExample(o);
         List<ConsumerVO> categoryVOS= ConsumerConverter.converterToVOList(consumers);
         PageInfo<Consumer> info = new PageInfo<>(consumers);

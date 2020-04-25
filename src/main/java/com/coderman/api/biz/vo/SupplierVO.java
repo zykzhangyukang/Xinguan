@@ -36,4 +36,6 @@ public class SupplierVO {
 
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
     private Date modifiedTime;
+
+    private String contact;
 }
