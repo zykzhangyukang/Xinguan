@@ -62,6 +62,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = ServletException.class)
     @ResponseBody
     public  ResponseBean servletExceptionHandler(HttpServletRequest req, ServletException e){
+        log.error("web服务器异常 {}",e.getMessage());
         return ResponseBean.error(e.getMessage());
     }
 
@@ -74,6 +75,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = BizException.class)
     @ResponseBody
     public  ResponseBean bizExceptionHandler(HttpServletRequest req, BizException e){
+        log.error("业务异常=>{}",e.getMessage());
         return ResponseBean.error(e.getErrorCode(),e.getErrorMsg());
     }
 
@@ -98,6 +100,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(ShiroException.class)
     public ResponseBean handle401(ShiroException e) {
+        log.error("shiro异常=>{}",e.getMessage());
         return new ResponseBean(401, e.getMessage(), null);
     }
 

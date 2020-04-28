@@ -3,8 +3,10 @@ package com.coderman.api.system.service;
 import com.coderman.api.system.pojo.LoginLog;
 import com.coderman.api.system.vo.LoginLogVO;
 import com.coderman.api.system.vo.PageVO;
+import com.coderman.api.system.vo.UserVO;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author zhangyukang
@@ -41,4 +43,11 @@ public interface LoginLogService {
      * @param list
      */
     void batchDelete(List<Long> list);
+
+    /**
+     * 用户登入报表
+     * @param userVO
+     * @return
+     */
+    List<Map<String, Object>> loginReport(UserVO userVO);
 }

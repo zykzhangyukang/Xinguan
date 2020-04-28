@@ -5,6 +5,7 @@ import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.service.LoginLogService;
 import com.coderman.api.system.vo.LoginLogVO;
 import com.coderman.api.system.vo.PageVO;
+import com.coderman.api.system.vo.UserVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 登入日志
@@ -79,6 +81,17 @@ public class LoginLogController {
         }
         loginLogService.batchDelete(list);
         return ResponseBean.success();
+    }
+
+    /**
+     * 登入报表
+     * @return
+     */
+    @PostMapping("/loginReport")
+    @ApiOperation(value = "登入报表",notes = "用户登入报表")
+    public ResponseBean loginReport(@RequestBody UserVO userVO){
+        List<Map<String,Object>> mapList= loginLogService.loginReport(userVO);
+        return ResponseBean.success(mapList);
     }
 
 

@@ -5,6 +5,7 @@ import com.coderman.api.system.pojo.LoginLog;
 import com.coderman.api.system.service.LoginLogService;
 import com.coderman.api.system.vo.LoginLogVO;
 import com.coderman.api.system.vo.PageVO;
+import com.coderman.api.system.vo.UserVO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.BeanUtils;
@@ -15,6 +16,7 @@ import tk.mybatis.mapper.entity.Example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author zhangyukang
@@ -70,6 +72,16 @@ public class LoginLogServiceImpl implements LoginLogService {
         for (Long id : list) {
             delete(id);
         }
+    }
+
+    /**
+     * 登入报表
+     * @param userVO
+     * @return
+     */
+    @Override
+    public List<Map<String, Object>> loginReport(UserVO userVO) {
+        return loginLogMapper.userLoginReport(userVO);
     }
 
     /**

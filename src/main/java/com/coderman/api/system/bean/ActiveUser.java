@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Set;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,9 +24,18 @@ public class ActiveUser {
      */
     private List<Role> roles;
     /**
-     * 当前用户具有的权限
+     * 当前用户具有的url
+     */
+    private Set<String> urls;
+
+    /**
+     * 包括url+permission
      */
     private List<Menu> menus;
+    /**
+     * 当前用户具有的权限API:例如[user:add],[user:delete]...
+     */
+    private Set<String> permissions;
 
     /**
      * session id

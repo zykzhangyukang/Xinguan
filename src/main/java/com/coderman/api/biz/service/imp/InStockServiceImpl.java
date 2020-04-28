@@ -14,6 +14,7 @@ import com.coderman.api.biz.vo.InStockDetailVO;
 import com.coderman.api.biz.vo.InStockItemVO;
 import com.coderman.api.biz.vo.InStockVO;
 import com.coderman.api.system.bean.ActiveUser;
+import com.coderman.api.system.enums.ErrorCodeEnum;
 import com.coderman.api.system.exception.BizException;
 import com.coderman.api.system.vo.PageVO;
 import com.github.pagehelper.PageHelper;
@@ -150,8 +151,11 @@ public class InStockServiceImpl implements InStockService {
                 int productNumber = (int) item.get("productNumber");
                 Product dbProduct = productMapper.selectByPrimaryKey(productId);
                 if (dbProduct == null) {
-                    throw new BizException("该物资不存在");
-                } else {
+                    throw new BizException(ErrorCodeEnum.PRODUCT_NOT_FOUND);
+                }else if(dbProduct.getDel()==1) {
+                    throw new BizException(ErrorCodeEnum.PRODUCT_IS_REMOVE, dbProduct.getName() + "物资已被回收,无法入库");
+                }
+                else {
                     itemNumber += productNumber;
                     //插入入库单明细
                     InStockInfo inStockInfo = new InStockInfo();

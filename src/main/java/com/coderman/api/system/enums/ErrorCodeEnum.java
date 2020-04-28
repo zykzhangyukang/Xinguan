@@ -23,7 +23,12 @@ public enum  ErrorCodeEnum implements BaseCodeInterface {
     PASSWORD_OR_USERNAME_ERROR(10001, "用户名或密码错误!"),
     DELETE_ERROR(10002,"删除失败"),
     UPDATE_ERROR(10003,"更新失败"),
-    ADD_ERROR(10004,"添加失败");
+    ADD_ERROR(10004,"添加失败"),
+    //业务异常
+    PRODUCT_IS_REMOVE(30001,"物资已移入回收站"),
+    PRODUCT_NOT_FOUND(30002,"物资找不到"),
+    ;
+
 
 
     /** 错误码 */

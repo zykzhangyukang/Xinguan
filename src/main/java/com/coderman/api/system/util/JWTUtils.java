@@ -18,7 +18,7 @@ public class JWTUtils {
     /**
      * 过期时间2小时
      */
-    private static final long EXPIRE_TIME = 12*60*60*1000;
+    private static final long EXPIRE_TIME = 2*60*60*1000;
 
     /**
      * 校验token是否正确

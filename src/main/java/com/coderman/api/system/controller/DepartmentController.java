@@ -79,7 +79,7 @@ public class DepartmentController {
      * @return
      */
     @ControllerEndpoint(exceptionMessage = "添加部门失败", operation = "添加部门")
-    @RequiresPermissions({"department:delete"})
+    @RequiresPermissions({"department:add"})
     @ApiOperation(value = "添加部门")
     @PostMapping("/add")
     public ResponseBean add(@RequestBody @Validated DepartmentVO departmentVO) {

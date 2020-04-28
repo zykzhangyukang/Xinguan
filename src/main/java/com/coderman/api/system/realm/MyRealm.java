@@ -16,8 +16,12 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class MyRealm extends AuthorizingRealm {
@@ -45,7 +49,7 @@ public class MyRealm extends AuthorizingRealm {
         if(activeUser.getUser().getType()==0){
             authorizationInfo.addStringPermission("*:*");
         }else {
-            List<Menu> menuList = activeUser.getMenus();
+            List<String> permissions = new ArrayList<>(activeUser.getPermissions());
             List<Role> roleList = activeUser.getRoles();
             //授权角色
             if (!CollectionUtils.isEmpty(roleList)) {
@@ -54,10 +58,10 @@ public class MyRealm extends AuthorizingRealm {
                 }
             }
             //授权权限
-            if (!CollectionUtils.isEmpty(menuList)) {
-                for (Menu menu : menuList) {
-                    if (menu.getPerms() != null && !"".equals(menu.getPerms())) {
-                        authorizationInfo.addStringPermission(menu.getPerms());
+            if (!CollectionUtils.isEmpty(permissions)) {
+                for (String  permission : permissions) {
+                    if (permission != null && !"".equals(permission)) {
+                        authorizationInfo.addStringPermission(permission);
                     }
                 }
             }
@@ -97,13 +101,30 @@ public class MyRealm extends AuthorizingRealm {
 
         //如果验证通过，获取用户的角色
         List<Role> roles= userService.findRolesById(userBean.getId());
-        //查询用户的所有菜单
+        //查询用户的所有菜单(包括了菜单和按钮)
         List<Menu> menus=userService.findMenuById(roles);
 
+        Set<String> urls=new HashSet<>();
+        Set<String> perms=new HashSet<>();
+        if(!CollectionUtils.isEmpty(menus)){
+            for (Menu menu : menus) {
+                String url = menu.getUrl();
+                String per = menu.getPerms();
+                if(menu.getType()==0&& !StringUtils.isEmpty(url)){
+                    urls.add(menu.getUrl());
+                }
+                if(menu.getType()==1&&!StringUtils.isEmpty(per)){
+                    perms.add(menu.getPerms());
+                }
+            }
+        }
+        //过滤出url,和用户的权限
         ActiveUser activeUser = new ActiveUser();
         activeUser.setRoles(roles);
-        activeUser.setMenus(menus);
         activeUser.setUser(userBean);
+        activeUser.setMenus(menus);
+        activeUser.setUrls(urls);
+        activeUser.setPermissions(perms);
 
         return new SimpleAuthenticationInfo(activeUser, token, getName());
     }

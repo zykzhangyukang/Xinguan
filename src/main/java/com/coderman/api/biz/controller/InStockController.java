@@ -8,6 +8,7 @@ import com.coderman.api.system.exception.BizException;
 import com.coderman.api.system.vo.PageVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -52,6 +53,7 @@ public class InStockController {
      */
     @ApiOperation(value = "物资入库")
     @PostMapping("/addIntoStock")
+    @RequiresPermissions({"inStock:in"})
     public ResponseBean addIntoStock(@RequestBody @Validated InStockVO inStockVO) {
         inStockService.addIntoStock(inStockVO);
         return ResponseBean.success();
@@ -63,6 +65,7 @@ public class InStockController {
      * @param id
      * @return
      */
+    @RequiresPermissions({"inStock:detail"})
     @ApiOperation(value = "入库单明细")
     @GetMapping("/detail/{id}")
     public ResponseBean detail(@PathVariable Long id) {

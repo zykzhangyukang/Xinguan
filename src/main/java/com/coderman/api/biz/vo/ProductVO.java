@@ -39,7 +39,6 @@ public class ProductVO {
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
     private Date modifiedTime;
 
-
     private String imageUrl;
 
 
@@ -51,5 +50,7 @@ public class ProductVO {
     private Long twoCategoryId;
 
     private Long threeCategoryId;
+
+    private Integer del;//是否已经进入回收站:1:逻辑删除,0:正常数据
 
 }

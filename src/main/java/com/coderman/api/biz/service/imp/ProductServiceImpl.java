@@ -14,6 +14,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
@@ -58,6 +59,9 @@ public class ProductServiceImpl implements ProductService {
         if (productVO.getName() != null && !"".equals(productVO.getName())) {
             o.createCriteria().andLike("name", "%" + productVO.getName() + "%");
         }
+        if (productVO.getDel() != null) {
+            o.createCriteria().andEqualTo("del", productVO.getDel());
+        }
         if(productVO.getThreeCategoryId()!=null){
             o.createCriteria().andEqualTo("oneCategoryId",productVO.getOneCategoryId())
                     .andEqualTo("twoCategoryId",productVO.getTwoCategoryId())
@@ -75,10 +79,10 @@ public class ProductServiceImpl implements ProductService {
             PageInfo<Product> info = new PageInfo<>(products);
             return new PageVO<>(info.getTotal(), categoryVOS);
         }
-        if(productVO.getOneCategoryId()!=null){
-            o.createCriteria().andEqualTo("oneCategoryId",productVO.getOneCategoryId());
+        if(productVO.getOneCategoryId()!=null) {
+            o.createCriteria().andEqualTo("oneCategoryId", productVO.getOneCategoryId());
             products = productMapper.selectByExample(o);
-            List<ProductVO> categoryVOS=ProductConverter.converterToVOList(products);
+            List<ProductVO> categoryVOS = ProductConverter.converterToVOList(products);
             PageInfo<Product> info = new PageInfo<>(products);
             return new PageVO<>(info.getTotal(), categoryVOS);
         }
@@ -172,5 +176,30 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductStockVO> findAllStocks() {
         return productStockMapper.findAllStocks();
     }
+
+    /**
+     * remove
+     * @param id
+     */
+    @Override
+    public void remove(Long id) {
+        Product t = new Product();
+        t.setId(id);
+        t.setDel(1);
+        productMapper.updateByPrimaryKeySelective(t);
+    }
+
+    /**
+     * 从回收站恢复数据
+     * @param id
+     */
+    @Override
+    public void back(Long id) {
+        Product t = new Product();
+        t.setId(id);
+        t.setDel(0);
+        productMapper.updateByPrimaryKeySelective(t);
+    }
+
 
 }

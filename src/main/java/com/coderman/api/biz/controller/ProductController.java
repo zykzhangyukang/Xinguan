@@ -159,6 +159,31 @@ public class ProductController {
         productService.delete(id);
         return ResponseBean.success();
     }
+
+    /**
+     * 移入回收站
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "移入回收站", notes = "移入回收站")
+    @RequiresPermissions({"product:remove"})
+    @GetMapping("/remove/{id}")
+    public ResponseBean remove(@PathVariable Long id) {
+        productService.remove(id);
+        return ResponseBean.success();
+    }
+    /**
+     * 恢复数据从回收站
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "恢复数据", notes = "从回收站中恢复物资")
+    @RequiresPermissions({"product:back"})
+    @GetMapping("/back/{id}")
+    public ResponseBean back(@PathVariable Long id) {
+        productService.back(id);
+        return ResponseBean.success();
+    }
 }
 
 

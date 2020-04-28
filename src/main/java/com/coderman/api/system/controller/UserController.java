@@ -38,6 +38,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @Author zhangyukang
@@ -149,9 +150,12 @@ public class UserController {
         UserInfoVO userInfoVO = new UserInfoVO();
         userInfoVO.setAvatar(activeUser.getUser().getAvatar());
         userInfoVO.setUsername(activeUser.getUser().getUsername());
-        userInfoVO.setRoles(activeUser.getRoles());
-        userInfoVO.setMenus(activeUser.getMenus());
+        userInfoVO.setUrl(activeUser.getUrls());
         userInfoVO.setNickname(activeUser.getUser().getNickname());
+        List<String> roleNames = activeUser.getRoles().stream().map(Role::getRoleName).collect(Collectors.toList());
+        userInfoVO.setRoles(roleNames);
+        userInfoVO.setPerms(activeUser.getPermissions());
+        userInfoVO.setIsAdmin(activeUser.getUser().getType()==0);
         DepartmentVO dept = departmentService.edit(activeUser.getUser().getDepartmentId());
         if(dept!=null){
             userInfoVO.setDepartment(dept.getName());

@@ -65,4 +65,15 @@ public interface ProductService {
      */
     List<ProductStockVO> findAllStocks();
 
+    /**
+     * 移入回收站
+     * @param id
+     */
+    void remove(Long id);
+
+    /**
+     * 从回收站恢复数据
+     * @param id
+     */
+    void back(Long id);
 }

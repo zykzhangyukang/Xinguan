@@ -1,7 +1,11 @@
 package com.coderman.api.system.mapper;
 
 import com.coderman.api.system.pojo.LoginLog;
+import com.coderman.api.system.vo.UserVO;
 import tk.mybatis.mapper.common.Mapper;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @Author zhangyukang
@@ -9,4 +13,12 @@ import tk.mybatis.mapper.common.Mapper;
  * @Version 1.0
  **/
 public interface LoginLogMapper extends Mapper<LoginLog> {
+
+    /**
+     * 用户登入报表
+     * @param userVO
+     * @return
+     */
+    List<Map<String,Object>> userLoginReport(UserVO userVO);
+
 }

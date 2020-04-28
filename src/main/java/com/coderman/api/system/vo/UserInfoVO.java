@@ -1,11 +1,9 @@
 package com.coderman.api.system.vo;
 
-import com.coderman.api.system.pojo.Menu;
-import com.coderman.api.system.pojo.Role;
 import lombok.Data;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @Author zhangyukang
@@ -21,10 +19,14 @@ public class UserInfoVO {
 
     private String avatar;
 
-    private List<Menu> menus=new ArrayList<>();
+    private Set<String> url;
 
-    private List<Role> roles=new ArrayList<>();
+    private Set<String> perms;
+
+    private List<String> roles;
 
     private String department;
+
+    private Boolean isAdmin=false;
 
 }
