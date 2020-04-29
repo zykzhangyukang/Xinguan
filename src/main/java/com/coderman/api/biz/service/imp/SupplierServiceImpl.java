@@ -39,9 +39,10 @@ public class SupplierServiceImpl implements SupplierService {
     public PageVO<SupplierVO> findSupplierList(Integer pageNum, Integer pageSize, SupplierVO supplierVO) {
         PageHelper.startPage(pageNum, pageSize);
         Example o = new Example(Supplier.class);
+        Example.Criteria criteria = o.createCriteria();
         o.setOrderByClause("sort asc");
         if (supplierVO.getName() != null && !"".equals(supplierVO.getName())) {
-            o.createCriteria().andLike("name", "%" + supplierVO.getName() + "%");
+            criteria.andLike("name", "%" + supplierVO.getName() + "%");
         }
         List<Supplier> suppliers = supplierMapper.selectByExample(o);
         List<SupplierVO> categoryVOS=SupplierConverter.converterToVOList(suppliers);

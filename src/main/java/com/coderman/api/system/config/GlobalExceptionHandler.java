@@ -75,7 +75,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = BizException.class)
     @ResponseBody
     public  ResponseBean bizExceptionHandler(HttpServletRequest req, BizException e){
-        log.error("业务异常=>{}",e.getMessage());
+        log.error("业务异常=>{}",e.getErrorMsg());
         return ResponseBean.error(e.getErrorCode(),e.getErrorMsg());
     }
 

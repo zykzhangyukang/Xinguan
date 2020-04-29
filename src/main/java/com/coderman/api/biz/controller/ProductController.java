@@ -29,7 +29,7 @@ public class ProductController {
     private ProductService productService;
 
     /**
-     * 物资列表
+     * 全部物资列表
      *
      * @return
      */
@@ -39,6 +39,22 @@ public class ProductController {
                                         @RequestParam(value = "pageSize") Integer pageSize,
                                         @RequestParam(value = "categorys", required = false) String categorys,
                                         ProductVO productVO) {
+        buildCategorySearch(categorys, productVO);
+        PageVO<ProductVO> productVOPageVO = productService.findProductList(pageNum, pageSize, productVO);
+        return ResponseBean.success(productVOPageVO);
+    }
+
+    /**
+     * 可入库物资列表
+     * @return
+     */
+    @ApiOperation(value = "物资列表", notes = "物资列表,根据物资名模糊查询")
+    @GetMapping("/findProducts")
+    public ResponseBean findProducts(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                                     @RequestParam(value = "pageSize") Integer pageSize,
+                                     @RequestParam(value = "categorys", required = false) String categorys,
+                                     ProductVO productVO){
+        productVO.setStatus(0);
         buildCategorySearch(categorys, productVO);
         PageVO<ProductVO> productVOPageVO = productService.findProductList(pageNum, pageSize, productVO);
         return ResponseBean.success(productVOPageVO);
@@ -60,6 +76,9 @@ public class ProductController {
         PageVO<ProductStockVO> productVOPageVO = productService.findProductStocks(pageNum, pageSize, productVO);
         return ResponseBean.success(productVOPageVO);
     }
+
+
+
     /**
      * 所有库存
      *
@@ -160,6 +179,8 @@ public class ProductController {
         return ResponseBean.success();
     }
 
+
+
     /**
      * 移入回收站
      * @param id
@@ -167,9 +188,21 @@ public class ProductController {
      */
     @ApiOperation(value = "移入回收站", notes = "移入回收站")
     @RequiresPermissions({"product:remove"})
-    @GetMapping("/remove/{id}")
+    @PutMapping("/remove/{id}")
     public ResponseBean remove(@PathVariable Long id) {
         productService.remove(id);
+        return ResponseBean.success();
+    }
+    /**
+     * 物资添加审核
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "物资添加审核", notes = "物资添加审核")
+    @RequiresPermissions({"product:publish"})
+    @PutMapping("/publish/{id}")
+    public ResponseBean publish(@PathVariable Long id) {
+        productService.publish(id);
         return ResponseBean.success();
     }
     /**
@@ -179,7 +212,7 @@ public class ProductController {
      */
     @ApiOperation(value = "恢复数据", notes = "从回收站中恢复物资")
     @RequiresPermissions({"product:back"})
-    @GetMapping("/back/{id}")
+    @PutMapping("/back/{id}")
     public ResponseBean back(@PathVariable Long id) {
         productService.back(id);
         return ResponseBean.success();

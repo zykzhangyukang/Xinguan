@@ -1,3 +1,37 @@
+POST http://localhost:8081/user/login?username=3242342442<script>alert(10)</script>&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI
+
+###
+
+POST http://localhost:8081/user/login?username=3242342442<script>alert(10)</script>&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI
+
+<> 2020-04-29T102342.200.json
+
+###
+
+POST http://localhost:8081/user/login?username=<script>alert(10)</script>&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI
+
+<> 2020-04-29T102313.200.json
+
+###
+
+POST http://localhost:8081/user/login?username=<script>alert(10)</script>&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI
+
+<> 2020-04-29T102224.200.json
+
+###
+
 GET http://localhost:8081/product/findProductStocks?pageSize=9
 Accept: */*
 Cache-Control: no-cache
@@ -393,42 +427,6 @@ Cache-Control: no-cache
 Authorization: fdasfdasf
 
 <> 2020-03-27T093639.200.json
-
-###
-
-POST http://localhost:8081/user/login?password=123456fdfas&username=zhangyukang
-Accept: */*
-Cache-Control: no-cache
-Authorization: fdasfdasf
-
-<> 2020-03-27T093237.200.json
-
-###
-
-POST http://localhost:8081/user/login?password=123456&username=fdsaf
-Accept: */*
-Cache-Control: no-cache
-Authorization: fdasfdasf
-
-<> 2020-03-27T093203.200.json
-
-###
-
-GET http://localhost:8081/user/login?password=123456&username=fdsaf
-Accept: */*
-Cache-Control: no-cache
-Authorization: fdasfdasf
-
-<> 2020-03-27T093135.200.json
-
-###
-
-POS http://localhost:8081/user/login?password=123456&username=fdsaf
-Accept: */*
-Cache-Control: no-cache
-Authorization: fdasfdasf
-
-<> 2020-03-27T093125.200.json
 
 ###
 

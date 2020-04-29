@@ -80,15 +80,16 @@ public class LogServiceImpl implements LogService {
     public PageVO<LogVO> findLogList(Integer pageNum, Integer pageSize, LogVO logVO) {
         PageHelper.startPage(pageNum,pageSize);
         Example o = new Example(LoginLog.class);
+        Example.Criteria criteria = o.createCriteria();
         o.setOrderByClause("create_time desc");
         if(logVO.getLocation()!=null&&!"".equals(logVO.getLocation())){
-            o.createCriteria().andLike("location","%"+logVO.getLocation()+"%");
+            criteria.andLike("location","%"+logVO.getLocation()+"%");
         }
         if(logVO.getIp()!=null&&!"".equals(logVO.getIp())){
-            o.createCriteria().andLike("ip","%"+logVO.getIp()+"%");
+            criteria.andLike("ip","%"+logVO.getIp()+"%");
         }
         if(logVO.getUsername()!=null&&!"".equals(logVO.getUsername())){
-            o.createCriteria().andLike("username","%"+logVO.getUsername()+"%");
+            criteria.andLike("username","%"+logVO.getUsername()+"%");
         }
         List<Log> loginLogs = logMapper.selectByExample(o);
         List<LogVO> logVOS=new ArrayList<>();

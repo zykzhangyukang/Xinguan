@@ -100,16 +100,17 @@ public class FileUploadController {
                                       ImageAttachmentVO imageAttachmentVO) {
         PageHelper.startPage(pageNum,pageSize);
         Example o = new Example(ImageAttachment.class);
+        Example.Criteria criteria = o.createCriteria();
         o.setOrderByClause("create_time desc");
         if(imageAttachmentVO!=null){
             if(imageAttachmentVO.getMediaType()!=null&&!"".equalsIgnoreCase(imageAttachmentVO.getMediaType())){
-                o.createCriteria().andEqualTo("mediaType",imageAttachmentVO.getMediaType());
+                criteria.andEqualTo("mediaType",imageAttachmentVO.getMediaType());
             }
             if(imageAttachmentVO.getPath()!=null&&!"".equalsIgnoreCase(imageAttachmentVO.getPath())){
-                o.createCriteria().andLike("path","%"+imageAttachmentVO.getPath()+"%");
+                criteria.andLike("path","%"+imageAttachmentVO.getPath()+"%");
             }
             if(imageAttachmentVO.getSuffix()!=null&&!"".equalsIgnoreCase(imageAttachmentVO.getSuffix())){
-                o.createCriteria().andEqualTo("suffix",imageAttachmentVO.getSuffix());
+                criteria.andEqualTo("suffix",imageAttachmentVO.getSuffix());
             }
         }
         List<ImageAttachment> imageAttachments = imageAttachmentMapper.selectByExample(o);

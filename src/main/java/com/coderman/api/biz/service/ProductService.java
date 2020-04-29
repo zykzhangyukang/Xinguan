@@ -76,4 +76,12 @@ public interface ProductService {
      * @param id
      */
     void back(Long id);
+
+    /**
+     * 物资添加审核
+     * @param id
+     */
+    void publish(Long id);
+
+
 }

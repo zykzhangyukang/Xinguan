@@ -51,6 +51,6 @@ public class ProductVO {
 
     private Long threeCategoryId;
 
-    private Integer del;//是否已经进入回收站:1:逻辑删除,0:正常数据
+    private Integer status;//是否已经进入回收站:1:逻辑删除,0:正常数据,2:添加待审核
 
 }

@@ -130,7 +130,7 @@ public class InStockServiceImpl implements InStockService {
     }
 
     /**
-     * 入库
+     * 物资入库
      * @param inStockVO
      */
     @Transactional
@@ -152,10 +152,11 @@ public class InStockServiceImpl implements InStockService {
                 Product dbProduct = productMapper.selectByPrimaryKey(productId);
                 if (dbProduct == null) {
                     throw new BizException(ErrorCodeEnum.PRODUCT_NOT_FOUND);
-                }else if(dbProduct.getDel()==1) {
+                }else if(dbProduct.getStatus()==1) {
                     throw new BizException(ErrorCodeEnum.PRODUCT_IS_REMOVE, dbProduct.getName() + "物资已被回收,无法入库");
-                }
-                else {
+                } else if(dbProduct.getStatus()==2){
+                    throw new BizException(ErrorCodeEnum.PRODUCT_WAIT_PASS, dbProduct.getName() + "物资待审核,无法入库");
+                } else {
                     itemNumber += productNumber;
                     //插入入库单明细
                     InStockInfo inStockInfo = new InStockInfo();

@@ -10,11 +10,10 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 登入日志
@@ -91,7 +90,12 @@ public class LoginLogController {
     @ApiOperation(value = "登入报表",notes = "用户登入报表")
     public ResponseBean loginReport(@RequestBody UserVO userVO){
         List<Map<String,Object>> mapList= loginLogService.loginReport(userVO);
-        return ResponseBean.success(mapList);
+        Map<String,Object> map=new HashMap<>();
+        userVO.setUsername(null);
+        List<Map<String,Object>> meList= loginLogService.loginReport(userVO);
+        map.put("me",mapList);
+        map.put("all",meList);
+        return ResponseBean.success(map);
     }
 
 

@@ -43,9 +43,10 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
     public PageVO<ProductCategoryVO> findProductCategoryList(Integer pageNum, Integer pageSize, ProductCategoryVO ProductCategoryVO) {
         PageHelper.startPage(pageNum, pageSize);
         Example o = new Example(ProductCategory.class);
+        Example.Criteria criteria = o.createCriteria();
         o.setOrderByClause("sort asc");
         if (ProductCategoryVO.getName() != null && !"".equals(ProductCategoryVO.getName())) {
-            o.createCriteria().andLike("name", "%" + ProductCategoryVO.getName() + "%");
+            criteria.andLike("name", "%" + ProductCategoryVO.getName() + "%");
         }
         List<ProductCategory> productCategories = productCategoryMapper.selectByExample(o);
         List<ProductCategoryVO> categoryVOS=ProductCategoryConverter.converterToVOList(productCategories);

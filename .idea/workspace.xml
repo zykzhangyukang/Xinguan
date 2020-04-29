@@ -2,236 +2,202 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc0098de-1555-475b-b0df-4f7e5b9cd099" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/SSLConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/3828034_www.zykhome.club.pfx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/system/LoginLogExtMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pfx-password.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Xinguan.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/ComponetImport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/xss/XssFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/xss/XssFilterConfigurer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/xss/XssFilterUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/xss/XssHttpServletRequestWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T093125.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T093135.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T093203.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T093237.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/InStockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/InStockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/VuePermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/VuePermission.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ConsumerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ConsumerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/InStockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/InStockServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductCategoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ConsumerVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ConsumerVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/SupplierServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/SupplierServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/bean/ActiveUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/bean/ActiveUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/DepartmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/FileUploadController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/LoginLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/LoginLogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/ErrorCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/ErrorCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/exception/BizException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/exception/BizException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/LoginLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/LoginLogMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/realm/MyRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/realm/MyRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/LoginLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/LoginLogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LogServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LoginLogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LoginLogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/UserMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/UserMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/JWTUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/JWTUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/vo/UserInfoVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/vo/UserInfoVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/TestMbg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/TestMbg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/3828034_www.zykhome.club.pfx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/VuePermission.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/ConsumerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/InStockController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/ProductCategoryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/SupplierController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/ConsumerConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/InStockConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/ProductCategoryConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/ProductConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/SupplierConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/mapper/ConsumerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/mapper/InStockInfoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/mapper/InStockMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/mapper/ProductCategoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/mapper/ProductMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/mapper/ProductStockMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/mapper/SupplierMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/Consumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/InStock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/InStockInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/ProductCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/ProductStock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/Supplier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/ConsumerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/InStockService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/ProductCategoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/SupplierService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/ConsumerServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/InStockServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/SupplierServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/test/FastDFSTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/test/ProductCategoryMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/utils/CategoryTreeBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/utils/CommonFileUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/utils/ListPageUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ConsumerVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockDetailVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockItemVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ProductCategoryTreeNodeVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ProductCategoryVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ProductStockVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ProductVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/SupplierVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/annotation/ControllerEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/aspect/AspectSupport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/aspect/ControllerEndpointAspect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/bean/ActiveUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/bean/ResponseBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/FdfsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/JWTFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/JWTToken.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/SSLConfig$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/SSLConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/ShiroConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/SwaggerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/DepartmentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/FileUploadController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/LogController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/LoginLogController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/MenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/RoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/DepartmentConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/MenuConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/RoleConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/UserConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/enums/BaseCodeInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/enums/BizUserTypeEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/enums/ErrorCodeEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/exception/BizException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/DepartmentMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/ImageAttachmentMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/LogMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/LoginLogMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/MenuMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/RoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/RoleMenuMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/UserRoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Department.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/ImageAttachment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Log.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/LoginLog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/RoleMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/UserRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/realm/MyRealm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/DepartmentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/LogService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/LoginLogService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/MenuService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/RoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/DepartmentServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/LogServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/LoginLogServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/MenuServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/ProductCategoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/RoleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/test/JWTTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/test/TestMbg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/test/UserMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/AddressUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/BrowserUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/CreateVerifyCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/IPUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/JWTUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/MD5Utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/MenuTreeBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/DeanVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/DepartmentVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/ImageAttachmentVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/LogVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/LoginLogVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/MenuNodeVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/MenuVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/PageVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/RoleTransferItemVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/RoleVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/UserEditVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/UserInfoVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/UserVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ip2region/ip2region.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/biz/ProductStockMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/system/LoginLogExtMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pfx-password.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/json/provinces.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/goods-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/goods-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.coderman.DemoApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.coderman.DemoApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/coderman/DemoApplicationTests.class" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="30398950">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="35" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.20" value="1" />
-          <entry key="project.open.time.26" value="1" />
-          <entry key="project.open.time.27" value="1" />
-          <entry key="project.open.time.28" value="1" />
-          <entry key="project.open.time.29" value="3" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.30" value="3" />
-          <entry key="project.open.time.31" value="1" />
-          <entry key="project.open.time.34" value="3" />
-          <entry key="project.open.time.37" value="3" />
-          <entry key="project.open.time.39" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.40" value="1" />
-          <entry key="project.open.time.42" value="1" />
-          <entry key="project.open.time.51" value="1" />
-          <entry key="project.open.time.55" value="1" />
-          <entry key="project.open.time.67" value="1" />
-          <entry key="project.open.time.77" value="1" />
-          <entry key="project.open.time.79" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.86" value="1" />
-          <entry key="project.opened" value="36" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="class" value="9" />
-          <entry key="java" value="301" />
-          <entry key="json" value="1" />
-          <entry key="md" value="2" />
-          <entry key="properties" value="6" />
-          <entry key="sql" value="1" />
-          <entry key="txt" value="2" />
-          <entry key="xml" value="14" />
-          <entry key="yml" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="9" />
-          <entry key="JAVA" value="301" />
-          <entry key="JSON" value="1" />
-          <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Properties" value="6" />
-          <entry key="SQL" value="1" />
-          <entry key="XML" value="14" />
-          <entry key="YAML" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="10108" />
-          <entry key="md" value="174" />
-          <entry key="properties" value="97" />
-          <entry key="txt" value="53" />
-          <entry key="xml" value="350" />
-          <entry key="yml" value="59" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="10108" />
-          <entry key="Markdown" value="174" />
-          <entry key="PLAIN_TEXT" value="53" />
-          <entry key="Properties" value="97" />
-          <entry key="SQL" value="8" />
-          <entry key="XML" value="342" />
-          <entry key="YAML" value="59" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/system/LoginLogExtMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-              <folding>
-                <element signature="e#508#512#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/LoginLogMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/LoginLogController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="92" selection-start-line="92" selection-end-line="92" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/LoginLogService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LoginLogServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="83" column="39" lean-forward="true" selection-start-line="83" selection-start-column="39" selection-end-line="83" selection-end-column="39" />
-              <folding>
-                <element signature="e#2672#2673#0" expanded="true" />
-                <element signature="e#2699#2700#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/UserMapperTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/InStockMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="10" column="54" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductStockMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="14" column="64" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/biz/ProductStockMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="63" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -264,418 +230,43 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/MenuService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/MenuServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/Menu.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/MenuController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/Role.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/DepartmentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/DepartmentMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/RoleController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/Department.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/DepartmentService.java" />
-        <option value="$PROJECT_DIR$/mbg.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/ImageAttachmentMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/FileUploadController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/utils/CommonFileUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/ImageAttachment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/vo/ImageAttachmentVO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/FileUploadController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/json/provinces.json" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Consumer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ConsumerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Supplier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/SupplierVO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ConsumerVO.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/bean/ActiveUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/realm/MyRealm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/InStockController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/vo/UserInfoVO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/JWTUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/DepartmentController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/SSLConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductVO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Product.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/exception/BizException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/ErrorCodeEnum.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/InStockServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/GlobalExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ProductService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/LoginLogExtMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/LoginLogMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/UserMapperTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/LoginLogService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LoginLogServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/LoginLogController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/system/LoginLogExtMapper.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="dummy://restClient/response7.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\openSourse\tools\RepMaven" />
-        <option name="mavenHome" value="D:/openSourse/tools/apache-maven-3.2.2" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../openSourse/tools/apache-maven-3.2.2" />
         <option name="userSettingsFile" value="D:\openSourse\tools\apache-maven-3.2.2\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="Profiles" type="6783ec58:MavenProjectsStructure$ProfilesNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="goods" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="goods" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1060" />
-  </component>
+  <component name="ProjectId" id="1bAcWvbNGttQep23Om4oagD645X" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="biz" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="biz" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="biz" type="462c0819:PsiDirectoryNode" />
-              <item name="converter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="biz" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="biz" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="biz" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="biz" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="biz" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="biz" type="462c0819:PsiDirectoryNode" />
-              <item name="vo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="annotation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="aspect" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="enums" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coderman" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Xinguan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Xinguan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588051369754" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588053406354" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -695,6 +286,100 @@
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="623ABDB0C3AD1CA3D4A2E8AD71467EEB" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8081" />
+          <option name="urlPath" value="/user/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="3242342442&lt;script&gt;alert(10)&lt;/script&gt;" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="password" />
+                <option name="value" value="123456" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="623ABDB0C3AD1CA3D4A2E8AD71467EEB" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8081" />
+          <option name="urlPath" value="/user/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="&lt;script&gt;alert(10)&lt;/script&gt;" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="password" />
+                <option name="value" value="123456" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="biscuits">
             <list>
@@ -1646,34 +1331,9 @@
       </list>
     </option>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Spring Boot.VuePermission">
-    <configuration name="TestMbg" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.coderman.api.system.test.TestMbg" />
-      <module name="goods" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.coderman.api.system.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserMapperTest.testUserLoginReport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="goods" />
+    <configuration name="TestMbg.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Xinguan" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.coderman.api.system.test.*" />
@@ -1681,29 +1341,30 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.coderman.api.system.test" />
-      <option name="MAIN_CLASS_NAME" value="com.coderman.api.system.test.UserMapperTest" />
-      <option name="METHOD_NAME" value="testUserLoginReport" />
+      <option name="MAIN_CLASS_NAME" value="com.coderman.api.system.test.TestMbg" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VuePermission" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="goods" />
+    <configuration name="VuePermission" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Xinguan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.coderman.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.coderman.VuePermission" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Spring Boot.VuePermission" />
-      <item itemvalue="Application.TestMbg" />
-      <item itemvalue="JUnit.UserMapperTest.testUserLoginReport" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserMapperTest.testUserLoginReport" />
-        <item itemvalue="Application.TestMbg" />
+        <item itemvalue="Spring Boot.VuePermission" />
+        <item itemvalue="JUnit.TestMbg.test" />
       </list>
     </recent_temporary>
   </component>
@@ -1752,29 +1413,15 @@
       <workItem from="1587976970839" duration="3418000" />
       <workItem from="1587991060807" duration="2700000" />
       <workItem from="1587996362981" duration="60000" />
-      <workItem from="1588033508684" duration="13819000" />
+      <workItem from="1588033508684" duration="15863000" />
+      <workItem from="1588060625611" duration="7710000" />
+      <workItem from="1588078380582" duration="442000" />
+      <workItem from="1588078848789" duration="231000" />
+      <workItem from="1588079102604" duration="1021000" />
+      <workItem from="1588080425930" duration="125000" />
+      <workItem from="1588119739022" duration="5585000" />
     </task>
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="UserMapperTest_testUserLoginReport - 2020.04.28 at 10h 57m 02s.xml">
-      <configuration name="UserMapperTest.testUserLoginReport" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserMapperTest_testUserLoginReport - 2020.04.28 at 10h 57m 29s.xml">
-      <configuration name="UserMapperTest.testUserLoginReport" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserMapperTest_testUserLoginReport - 2020.04.28 at 10h 57m 55s.xml">
-      <configuration name="UserMapperTest.testUserLoginReport" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserMapperTest_testUserLoginReport - 2020.04.28 at 11h 00m 38s.xml">
-      <configuration name="UserMapperTest.testUserLoginReport" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserMapperTest_testUserLoginReport - 2020.04.28 at 11h 05m 28s.xml">
-      <configuration name="UserMapperTest.testUserLoginReport" configurationId="JUnit" />
-    </history-entry>
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170131000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1785,430 +1432,97 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2774799" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.48251748" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5608392" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32867134" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.32867134" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.5804196" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Java Enterprise" order="10" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="REST Client" order="13" weight="0.77482516" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.7944056" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.21447721" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="WindowStateProjectService">
+    <state x="395" y="95" key="#Inspections" timestamp="1588080027833">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="395" y="95" key="#Inspections/0.0.1536.834@0.0.1536.834" timestamp="1588080027833" />
+    <state x="403" y="11" key="#VuePermission" timestamp="1588079271768">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="403" y="11" key="#VuePermission/0.0.1536.834@0.0.1536.834" timestamp="1588079271768" />
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588079551601">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1588079551601" />
+    <state x="498" y="206" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588079205110">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="498" y="206" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.834@0.0.1536.834" timestamp="1588079205110" />
+    <state width="1493" height="266" key="GridCell.Tab.0.bottom" timestamp="1588127852272">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="266" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588127852272" />
+    <state width="1493" height="266" key="GridCell.Tab.0.center" timestamp="1588127852272">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="266" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1588127852272" />
+    <state width="1493" height="266" key="GridCell.Tab.0.left" timestamp="1588127852272">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="266" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1588127852272" />
+    <state width="1493" height="266" key="GridCell.Tab.0.right" timestamp="1588127852272">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="266" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1588127852272" />
+    <state width="1493" height="266" key="GridCell.Tab.1.bottom" timestamp="1588127852272">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="266" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588127852272" />
+    <state width="1493" height="266" key="GridCell.Tab.1.center" timestamp="1588127852272">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="266" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1588127852272" />
+    <state width="1493" height="266" key="GridCell.Tab.1.left" timestamp="1588127852272">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="266" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1588127852272" />
+    <state width="1493" height="266" key="GridCell.Tab.1.right" timestamp="1588127852272">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="266" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1588127852272" />
+    <state width="1493" height="266" key="GridCell.Tab.2.bottom" timestamp="1588127852272">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="266" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588127852272" />
+    <state width="1493" height="266" key="GridCell.Tab.2.center" timestamp="1588127852272">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="266" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1588127852272" />
+    <state width="1493" height="266" key="GridCell.Tab.2.left" timestamp="1588127852272">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="266" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1588127852272" />
+    <state width="1493" height="266" key="GridCell.Tab.2.right" timestamp="1588127852272">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="266" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1588127852272" />
+    <state x="346" y="75" key="SettingsEditor" timestamp="1588080543604">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="346" y="75" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1588080543604" />
+    <state x="499" y="176" key="extract.method.dialog" timestamp="1588120024233">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="499" y="176" key="extract.method.dialog/0.0.1536.834@0.0.1536.834" timestamp="1588120024233" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ConsumerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ConsumerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/ImageAttachment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/pfx-password.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Supplier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/SupplierVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ConsumerVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.2.3.RELEASE/spring-core-5.2.3.RELEASE.jar!/org/springframework/util/StringUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/realm/MyRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="118" selection-start-line="118" selection-end-line="118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/converter/RoleConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ConsumerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="80" column="42" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="44" column="32" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/vo/UserVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2268">
-          <caret line="148" column="41" selection-start-line="148" selection-start-column="41" selection-end-line="148" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/RoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="50" column="41" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2142">
-          <caret line="157" column="65" selection-start-line="157" selection-start-column="65" selection-end-line="157" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/vo/UserInfoVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="29" column="27" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductCategoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1404">
-          <caret line="92" column="46" selection-start-line="92" selection-start-column="27" selection-end-line="92" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/bean/ActiveUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/JWTUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/DepartmentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" selection-start-line="18" selection-start-column="1" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/SSLConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-91">
-          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="39" column="24" lean-forward="true" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.2.3.RELEASE/spring-core-5.2.3.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/BizUserTypeEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/InStockService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/RuntimeException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="60" column="11" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
-          <folding>
-            <element signature="e#1598#1599#0" expanded="true" />
-            <element signature="e#1628#1629#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/exception/BizException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-          <folding>
-            <element signature="e#457#458#0" expanded="true" />
-            <element signature="e#480#481#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/InStockServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="156" column="17" selection-start-line="156" selection-start-column="17" selection-end-line="156" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/InStockController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="57" column="28" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/GlobalExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-267">
-          <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/ErrorCodeEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="183" column="25" lean-forward="true" selection-start-line="183" selection-start-column="25" selection-end-line="183" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="74" column="15" lean-forward="true" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2235">
-          <caret line="199" column="20" lean-forward="true" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/InStockMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/LoginLogExtMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="38" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/biz/ProductStockMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="63" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductStockMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="14" column="64" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/UserMapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/LoginLogService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LoginLogServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="83" column="39" lean-forward="true" selection-start-line="83" selection-start-column="39" selection-end-line="83" selection-end-column="39" />
-          <folding>
-            <element signature="e#2672#2673#0" expanded="true" />
-            <element signature="e#2699#2700#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/LoginLogMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/LoginLogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/system/LoginLogExtMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-          <folding>
-            <element signature="e#508#512#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>

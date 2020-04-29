@@ -27,6 +27,8 @@ public enum  ErrorCodeEnum implements BaseCodeInterface {
     //业务异常
     PRODUCT_IS_REMOVE(30001,"物资已移入回收站"),
     PRODUCT_NOT_FOUND(30002,"物资找不到"),
+    PRODUCT_WAIT_PASS(30003,"物资等待审核"),
+    PRODUCT_STATUS_ERROR(30004,"物资状态错误"),
     ;
 
 

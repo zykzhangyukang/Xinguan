@@ -20,7 +20,6 @@
       and l.username = #{username}
     </if>
     group by
-
     days
   </select>
 

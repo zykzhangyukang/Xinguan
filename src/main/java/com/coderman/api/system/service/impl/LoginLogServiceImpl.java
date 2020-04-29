@@ -40,15 +40,16 @@ public class LoginLogServiceImpl implements LoginLogService {
     public PageVO<LoginLogVO> findLoginLogList(Integer pageNum, Integer pageSize, LoginLogVO loginLogVO) {
         PageHelper.startPage(pageNum,pageSize);
         Example o = new Example(LoginLog.class);
+        Example.Criteria criteria = o.createCriteria();
         o.setOrderByClause("login_time desc");
         if(loginLogVO.getLocation()!=null&&!"".equals(loginLogVO.getLocation())){
-            o.createCriteria().andLike("location","%"+loginLogVO.getLocation()+"%");
+            criteria.andLike("location","%"+loginLogVO.getLocation()+"%");
         }
         if(loginLogVO.getIp()!=null&&!"".equals(loginLogVO.getIp())){
-            o.createCriteria().andLike("ip","%"+loginLogVO.getIp()+"%");
+            criteria.andLike("ip","%"+loginLogVO.getIp()+"%");
         }
         if(loginLogVO.getUsername()!=null&&!"".equals(loginLogVO.getUsername())){
-            o.createCriteria().andLike("username","%"+loginLogVO.getUsername()+"%");
+            criteria.andLike("username","%"+loginLogVO.getUsername()+"%");
         }
         List<LoginLog> loginLogs = loginLogMapper.selectByExample(o);
         List<LoginLogVO> loginLogVOS=new ArrayList<>();

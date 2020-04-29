@@ -8,6 +8,8 @@ import com.coderman.api.biz.pojo.ProductStock;
 import com.coderman.api.biz.service.ProductService;
 import com.coderman.api.biz.vo.ProductStockVO;
 import com.coderman.api.biz.vo.ProductVO;
+import com.coderman.api.system.enums.ErrorCodeEnum;
+import com.coderman.api.system.exception.BizException;
 import com.coderman.api.system.vo.PageVO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -30,6 +32,7 @@ import java.util.UUID;
  * @Version 1.0
  **/
 @Service
+@Transactional
 public class ProductServiceImpl implements ProductService {
 
 
@@ -54,16 +57,11 @@ public class ProductServiceImpl implements ProductService {
         PageHelper.startPage(pageNum, pageSize);
         List<Product> products;
         Example o = new Example(Product.class);
-        o.setOrderByClause("sort asc");
+        Example.Criteria criteria = o.createCriteria();
 
-        if (productVO.getName() != null && !"".equals(productVO.getName())) {
-            o.createCriteria().andLike("name", "%" + productVO.getName() + "%");
-        }
-        if (productVO.getDel() != null) {
-            o.createCriteria().andEqualTo("del", productVO.getDel());
-        }
+
         if(productVO.getThreeCategoryId()!=null){
-            o.createCriteria().andEqualTo("oneCategoryId",productVO.getOneCategoryId())
+            criteria.andEqualTo("oneCategoryId",productVO.getOneCategoryId())
                     .andEqualTo("twoCategoryId",productVO.getTwoCategoryId())
                     .andEqualTo("threeCategoryId",productVO.getThreeCategoryId());
             products = productMapper.selectByExample(o);
@@ -72,7 +70,7 @@ public class ProductServiceImpl implements ProductService {
             return new PageVO<>(info.getTotal(), categoryVOS);
         }
         if(productVO.getTwoCategoryId()!=null){
-            o.createCriteria().andEqualTo("oneCategoryId",productVO.getOneCategoryId())
+            criteria.andEqualTo("oneCategoryId",productVO.getOneCategoryId())
                     .andEqualTo("twoCategoryId",productVO.getTwoCategoryId());
             products = productMapper.selectByExample(o);
             List<ProductVO> categoryVOS=ProductConverter.converterToVOList(products);
@@ -80,11 +78,18 @@ public class ProductServiceImpl implements ProductService {
             return new PageVO<>(info.getTotal(), categoryVOS);
         }
         if(productVO.getOneCategoryId()!=null) {
-            o.createCriteria().andEqualTo("oneCategoryId", productVO.getOneCategoryId());
+            criteria.andEqualTo("oneCategoryId", productVO.getOneCategoryId());
             products = productMapper.selectByExample(o);
             List<ProductVO> categoryVOS = ProductConverter.converterToVOList(products);
             PageInfo<Product> info = new PageInfo<>(products);
             return new PageVO<>(info.getTotal(), categoryVOS);
+        }
+        o.setOrderByClause("sort asc");
+        if (productVO.getName() != null && !"".equals(productVO.getName())) {
+            criteria.andLike("name", "%" + productVO.getName() + "%");
+        }
+        if (productVO.getStatus() != null) {
+            criteria.andEqualTo("status", productVO.getStatus());
         }
         products = productMapper.selectByExample(o);
         List<ProductVO> categoryVOS=ProductConverter.converterToVOList(products);
@@ -110,6 +115,7 @@ public class ProductServiceImpl implements ProductService {
             product.setTwoCategoryId(categoryKeys[1]);
             product.setThreeCategoryId(categoryKeys[2]);
         }
+        product.setStatus(2);//未审核
         product.setPNum(UUID.randomUUID().toString().substring(0,32));
         productMapper.insert(product);
     }
@@ -150,7 +156,15 @@ public class ProductServiceImpl implements ProductService {
      */
     @Override
     public void delete(Long id) {
-        productMapper.deleteByPrimaryKey(id);
+        Product t = new Product();
+        t.setId(id);
+        Product product = productMapper.selectByPrimaryKey(t);
+        //只有物资处于回收站,或者待审核的情况下可删除
+        if(product.getStatus()!=1&&product.getStatus()!=2){
+            throw new BizException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
+        }else {
+            productMapper.deleteByPrimaryKey(id);
+        }
     }
 
     /**
@@ -178,15 +192,20 @@ public class ProductServiceImpl implements ProductService {
     }
 
     /**
-     * remove
+     * 移入回收站
      * @param id
      */
     @Override
     public void remove(Long id) {
         Product t = new Product();
         t.setId(id);
-        t.setDel(1);
-        productMapper.updateByPrimaryKeySelective(t);
+        Product product = productMapper.selectByPrimaryKey(t);
+        if(product.getStatus()!=0){
+            throw new BizException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
+        }else {
+            t.setStatus(1);
+            productMapper.updateByPrimaryKeySelective(t);
+        }
     }
 
     /**
@@ -197,9 +216,32 @@ public class ProductServiceImpl implements ProductService {
     public void back(Long id) {
         Product t = new Product();
         t.setId(id);
-        t.setDel(0);
-        productMapper.updateByPrimaryKeySelective(t);
+        Product product = productMapper.selectByPrimaryKey(t);
+        if(product.getStatus()!=1){
+            throw new BizException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
+        }else {
+            t.setStatus(0);
+            productMapper.updateByPrimaryKeySelective(t);
+        }
     }
+
+    /**
+     * 物资审核
+     * @param id
+     */
+    @Override
+    public void publish(Long id) {
+        Product t = new Product();
+        t.setId(id);
+        Product product = productMapper.selectByPrimaryKey(t);
+        if(product.getStatus()!=2){
+            throw new BizException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
+        }else {
+            t.setStatus(0);
+            productMapper.updateByPrimaryKeySelective(t);
+        }
+    }
+
 
 
 }

@@ -1,5 +1,6 @@
 package com.coderman.api.system.test;
 
+import org.junit.jupiter.api.Test;
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
@@ -21,4 +22,9 @@ public class TestMbg {
         MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
         myBatisGenerator.generate(null);
     }
+    @Test
+    public void test(){
+        System.out.println("hello world");
+    }
+
 }

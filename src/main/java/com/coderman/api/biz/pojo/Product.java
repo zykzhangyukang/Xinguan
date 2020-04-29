@@ -37,6 +37,6 @@ public class Product {
 
     private String imageUrl;
 
-    private Integer del;
+    private Integer status;
 
 }
