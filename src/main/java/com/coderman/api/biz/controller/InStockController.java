@@ -58,6 +58,18 @@ public class InStockController {
         inStockService.addIntoStock(inStockVO);
         return ResponseBean.success();
     }
+    /**
+     * 入库审核
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "入库审核")
+    @PutMapping("/publish/{id}")
+    @RequiresPermissions({"inStock:publish"})
+    public ResponseBean publish(@PathVariable Long id) {
+        inStockService.publish(id);
+        return ResponseBean.success();
+    }
 
     /**
      * 物资入库单详细
@@ -71,5 +83,44 @@ public class InStockController {
     public ResponseBean detail(@PathVariable Long id) {
         InStockDetailVO detail = inStockService.detail(id);
         return ResponseBean.success(detail);
+    }
+    /**
+     * 删除物资入库单
+     *
+     * @param id
+     * @return
+     */
+    @RequiresPermissions({"inStock:delete"})
+    @ApiOperation(value = "删除物资入库单")
+    @GetMapping("/delete/{id}")
+    public ResponseBean delete(@PathVariable Long id) {
+        inStockService.delete(id);
+        return ResponseBean.success();
+    }
+
+    /**
+     * 移入回收站
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "移入回收站", notes = "移入回收站")
+    @RequiresPermissions({"inStock:remove"})
+    @PutMapping("/remove/{id}")
+    public ResponseBean remove(@PathVariable Long id) {
+        inStockService.remove(id);
+        return ResponseBean.success();
+    }
+
+    /**
+     * 恢复数据从回收站
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "恢复数据", notes = "从回收站中恢复入库单")
+    @RequiresPermissions({"inStock:back"})
+    @PutMapping("/back/{id}")
+    public ResponseBean back(@PathVariable Long id) {
+        inStockService.back(id);
+        return ResponseBean.success();
     }
 }

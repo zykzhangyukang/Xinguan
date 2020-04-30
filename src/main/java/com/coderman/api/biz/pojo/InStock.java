@@ -28,4 +28,6 @@ public class InStock {
     private Integer productNumber;
 
     private String remark;
+
+    private Integer status;
 }

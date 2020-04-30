@@ -1,3 +1,48 @@
+POST http://localhost:8081/user/login?username=<script>alert("helloword")</script>&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI
+
+<> 2020-04-29T115717.200.json
+
+###
+
+POST http://localhost:8081/user/login?username=<script>alert("helloword")</script>&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI
+
+<> 2020-04-29T115708.200.json
+
+###
+
+POST http://localhost:8081/user/login?username=3242342442&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI
+
+<> 2020-04-29T115348.200.json
+
+###
+
+POST http://localhost:8081/user/login?username=3242342442<script>alert(10)</script>&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI
+
+<> 2020-04-29T115326.200.json
+
+###
+
+POST http://localhost:8081/user/login?username=3242342442<script>alert(10)</script>&password=123456
+Accept: */*
+Cache-Control: no-cache
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODcwMDQyNDIsInVzZXJuYW1lIjoiemhhbmd5dWthbmcifQ.1OJc5Y7LwYRLeayA_O7_ilLKXaLvptyzqCg8bs_MEAI
+
+<> 2020-04-29T114158.200.json
+
+###
+
 POST http://localhost:8081/user/login?username=3242342442<script>alert(10)</script>&password=123456
 Accept: */*
 Cache-Control: no-cache
@@ -382,51 +427,6 @@ Cache-Control: no-cache
 Authorization: fdasfdasf
 
 <> 2020-03-27T094041.200.json
-
-###
-
-POST http://localhost:8081/user/login?password=123456fdfas&username=zhangyukang
-Accept: */*
-Cache-Control: no-cache
-Authorization: fdasfdasf
-
-<> 2020-03-27T094019.200.json
-
-###
-
-POST http://localhost:8081/user/login?password=123456fdfas&username=zhangyukang
-Accept: */*
-Cache-Control: no-cache
-Authorization: fdasfdasf
-
-<> 2020-03-27T094016.200.json
-
-###
-
-POST http://localhost:8081/user/login?password=123456fdfas&username=zhangyukang
-Accept: */*
-Cache-Control: no-cache
-Authorization: fdasfdasf
-
-<> 2020-03-27T093915.200.json
-
-###
-
-POST http://localhost:8081/user/login?password=123456fdfas&username=zhangyukang
-Accept: */*
-Cache-Control: no-cache
-Authorization: fdasfdasf
-
-<> 2020-03-27T093730.200.json
-
-###
-
-POST http://localhost:8081/user/login?password=123456fdfas&username=zhangyukang
-Accept: */*
-Cache-Control: no-cache
-Authorization: fdasfdasf
-
-<> 2020-03-27T093639.200.json
 
 ###
 

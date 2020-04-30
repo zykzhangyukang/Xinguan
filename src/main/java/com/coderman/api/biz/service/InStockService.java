@@ -53,4 +53,22 @@ public interface InStockService {
      * @param inStockVO
      */
     void addIntoStock(InStockVO inStockVO);
+
+    /**
+     * 移入回收站
+     * @param id
+     */
+    void remove(Long id);
+
+    /**
+     * 还原从回收站中
+     * @param id
+     */
+    void back(Long id);
+
+    /**
+     * 入库审核
+     * @param id
+     */
+    void publish(Long id);
 }

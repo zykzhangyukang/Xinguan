@@ -16,9 +16,13 @@ public class InStockDetailVO {
 
     private String inNum;
 
+    private Integer status;
+
     private Integer type;
 
     private String operator;
+
+    private SupplierVO supplierVO;
 
     private List<InStockItemVO> itemVOS=new ArrayList<>();
 

@@ -46,4 +46,6 @@ public class InStockVO {
 
     private List<Object>products=new ArrayList<>();
 
+    private Integer status;
+
 }
