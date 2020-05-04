@@ -2,38 +2,165 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc0098de-1555-475b-b0df-4f7e5b9cd099" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T093639.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T093730.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T093915.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T094016.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T094019.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/4.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/NcovAPIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/InStockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/InStockController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/InStock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/InStock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/InStockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/InStockService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/InStockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/InStockServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/InStockDetailVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/InStockDetailVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/InStockVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/InStockVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/ComponetImport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/ComponentImport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/xss/XssFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/xss/XssFilterConfigurer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/xss/XssFilterUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/xss/XssHttpServletRequestWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/FileUploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/InStockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/InStockController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/InStock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/InStock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/InStockService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/InStockService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/InStockServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/InStockServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockDetailVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockDetailVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/ComponetImport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/xss/XssFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/xss/XssFilterConfigurer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/xss/XssFilterUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/xss/XssHttpServletRequestWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/FileUploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/FileUploadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/xinguan.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/xinguan.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/SSLConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/SSLConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/3828034_www.zykhome.club.pfx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/VuePermission.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/ConsumerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/InStockController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/ProductCategoryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/controller/SupplierController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/ConsumerConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/InStockConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/ProductCategoryConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/ProductConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/converter/SupplierConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/mapper/ConsumerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/mapper/InStockInfoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/mapper/InStockMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/mapper/ProductCategoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/mapper/ProductMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/mapper/ProductStockMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/mapper/SupplierMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/Consumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/InStock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/InStockInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/ProductCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/ProductStock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/pojo/Supplier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/ConsumerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/InStockService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/ProductCategoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/SupplierService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/ConsumerServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/InStockServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/service/imp/SupplierServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/test/FastDFSTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/test/ProductCategoryMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/utils/CategoryTreeBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/utils/CommonFileUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/utils/ListPageUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ConsumerVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockDetailVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockItemVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/InStockVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ProductCategoryTreeNodeVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ProductCategoryVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ProductStockVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/ProductVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/biz/vo/SupplierVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/annotation/ControllerEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/aspect/AspectSupport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/aspect/ControllerEndpointAspect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/bean/ActiveUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/bean/ResponseBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/ComponentImport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/FdfsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/JWTFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/JWTToken.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/SSLConfig$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/SSLConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/ShiroConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/config/SwaggerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/DepartmentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/FileUploadController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/LogController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/LoginLogController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/MenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/RoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/DepartmentConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/MenuConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/RoleConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/converter/UserConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/enums/BaseCodeInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/enums/BizUserTypeEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/enums/ErrorCodeEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/exception/BizException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/DepartmentMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/ImageAttachmentMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/LogMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/LoginLogMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/MenuMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/RoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/RoleMenuMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/mapper/UserRoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Department.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/ImageAttachment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Log.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/LoginLog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/RoleMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/pojo/UserRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/realm/MyRealm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/DepartmentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/LogService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/LoginLogService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/MenuService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/RoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/DepartmentServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/LogServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/LoginLogServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/MenuServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/ProductCategoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/RoleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/test/JWTTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/test/TestMbg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/test/UserMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/AddressUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/BrowserUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/CreateVerifyCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/IPUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/JWTUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/MD5Utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/util/MenuTreeBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/DeanVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/DepartmentVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/ImageAttachmentVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/LogVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/LoginLogVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/MenuNodeVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/MenuVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/PageVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/RoleTransferItemVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/RoleVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/UserEditVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/UserInfoVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coderman/api/system/vo/UserVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ip2region/ip2region.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/biz/ProductStockMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/system/LoginLogExtMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pfx-password.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/json/provinces.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/goods-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/goods-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.coderman.DemoApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.coderman.DemoApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/coderman/DemoApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +206,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588053406354" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -94,11 +222,11 @@
       <recent name="com.coderman.api.system.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\images" />
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\sql" />
       <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\resources\mapper\system" />
       <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\system\config" />
       <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\resources" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\resources\static" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\resources\mapper\biz" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -1244,11 +1372,27 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.VuePermission">
+    <configuration name="HttpTest.testGetJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Xinguan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.coderman.api.biz.pojo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.coderman.api.system.test" />
+      <option name="MAIN_CLASS_NAME" value="com.coderman.api.system.test.HttpTest" />
+      <option name="METHOD_NAME" value="testGetJson" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestMbg.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Xinguan" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.coderman.api.system.test.*" />
+          <option name="PATTERN" value="com.coderman.api.biz.pojo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1276,6 +1420,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.VuePermission" />
+        <item itemvalue="JUnit.HttpTest.testGetJson" />
         <item itemvalue="JUnit.TestMbg.test" />
       </list>
     </recent_temporary>
@@ -1335,7 +1480,11 @@
       <workItem from="1588150881953" duration="2163000" />
       <workItem from="1588165063030" duration="3226000" />
       <workItem from="1588207542667" duration="13509000" />
-      <workItem from="1588242002994" duration="1528000" />
+      <workItem from="1588242002994" duration="2816000" />
+      <workItem from="1588299462791" duration="2219000" />
+      <workItem from="1588302246185" duration="6469000" />
+      <workItem from="1588333310039" duration="1865000" />
+      <workItem from="1588595888949" duration="919000" />
     </task>
     <servers />
   </component>
@@ -1372,54 +1521,62 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="498" y="206" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.834@0.0.1536.834" timestamp="1588079205110" />
-    <state width="1493" height="211" key="GridCell.Tab.0.bottom" timestamp="1588244513616">
+    <state x="499" y="163" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588310631400">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588244513616" />
-    <state width="1493" height="211" key="GridCell.Tab.0.center" timestamp="1588244513616">
+    <state x="499" y="163" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1588310631400" />
+    <state x="524" y="119" key="#xdebugger.evaluate" timestamp="1588300742809">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1588244513616" />
-    <state width="1493" height="211" key="GridCell.Tab.0.left" timestamp="1588244513616">
+    <state x="524" y="119" key="#xdebugger.evaluate/0.0.1536.834@0.0.1536.834" timestamp="1588300742809" />
+    <state width="1493" height="301" key="GridCell.Tab.0.bottom" timestamp="1588338525218">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1588244513616" />
-    <state width="1493" height="211" key="GridCell.Tab.0.right" timestamp="1588244513616">
+    <state width="1493" height="301" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588338525218" />
+    <state width="1493" height="301" key="GridCell.Tab.0.center" timestamp="1588338525218">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1588244513616" />
-    <state width="1493" height="211" key="GridCell.Tab.1.bottom" timestamp="1588244513617">
+    <state width="1493" height="301" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1588338525218" />
+    <state width="1493" height="301" key="GridCell.Tab.0.left" timestamp="1588338525218">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588244513617" />
-    <state width="1493" height="211" key="GridCell.Tab.1.center" timestamp="1588244513617">
+    <state width="1493" height="301" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1588338525218" />
+    <state width="1493" height="301" key="GridCell.Tab.0.right" timestamp="1588338525218">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1588244513617" />
-    <state width="1493" height="211" key="GridCell.Tab.1.left" timestamp="1588244513617">
+    <state width="1493" height="301" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1588338525218" />
+    <state width="1493" height="280" key="GridCell.Tab.1.bottom" timestamp="1588337790359">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1588244513617" />
-    <state width="1493" height="211" key="GridCell.Tab.1.right" timestamp="1588244513617">
+    <state width="1493" height="280" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588337790359" />
+    <state width="1493" height="280" key="GridCell.Tab.1.center" timestamp="1588337790359">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1588244513617" />
-    <state width="1493" height="267" key="GridCell.Tab.2.bottom" timestamp="1588228288087">
+    <state width="1493" height="280" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1588337790359" />
+    <state width="1493" height="280" key="GridCell.Tab.1.left" timestamp="1588337790359">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="267" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588228288087" />
-    <state width="1493" height="267" key="GridCell.Tab.2.center" timestamp="1588228288087">
+    <state width="1493" height="280" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1588337790359" />
+    <state width="1493" height="280" key="GridCell.Tab.1.right" timestamp="1588337790359">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="267" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1588228288087" />
-    <state width="1493" height="267" key="GridCell.Tab.2.left" timestamp="1588228288087">
+    <state width="1493" height="280" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1588337790359" />
+    <state width="1493" height="505" key="GridCell.Tab.2.bottom" timestamp="1588311823686">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="267" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1588228288087" />
-    <state width="1493" height="267" key="GridCell.Tab.2.right" timestamp="1588228288087">
+    <state width="1493" height="505" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588311823686" />
+    <state width="1493" height="505" key="GridCell.Tab.2.center" timestamp="1588311823686">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="267" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1588228288087" />
+    <state width="1493" height="505" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1588311823686" />
+    <state width="1493" height="505" key="GridCell.Tab.2.left" timestamp="1588311823686">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="505" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1588311823686" />
+    <state width="1493" height="505" key="GridCell.Tab.2.right" timestamp="1588311823686">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="505" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1588311823686" />
     <state x="346" y="75" key="SettingsEditor" timestamp="1588080543604">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
