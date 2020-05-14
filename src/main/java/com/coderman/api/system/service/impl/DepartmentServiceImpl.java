@@ -70,6 +70,10 @@ public class DepartmentServiceImpl implements DepartmentService {
                 BeanUtils.copyProperties(department, d);
                 User user = userMapper.selectByPrimaryKey(d.getMgrId());
                 d.setMgrName(user.getUsername());
+                Example o1 = new Example(User.class);
+                o1.createCriteria().andEqualTo("departmentId",department.getId())
+                        .andNotEqualTo("type",0);
+                d.setTotal(userMapper.selectCountByExample(o1));
                 departmentVOS.add(d);
             }
         }
@@ -169,6 +173,10 @@ public class DepartmentServiceImpl implements DepartmentService {
             for (Department department : departments) {
                 DepartmentVO d = new DepartmentVO();
                 BeanUtils.copyProperties(department, d);
+                Example o = new Example(User.class);
+                o.createCriteria().andEqualTo("departmentId",department.getId())
+                .andNotEqualTo("type",0);
+                d.setTotal(userMapper.selectCountByExample(o));
                 departmentVOS.add(d);
             }
         }

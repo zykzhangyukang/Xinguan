@@ -81,6 +81,12 @@ public class InStockServiceImpl implements InStockService {
         if(inStockVO.getStatus()!=null){
             criteria.andEqualTo("status",inStockVO.getStatus());
         }
+        if(inStockVO.getStartTime()!=null){
+            criteria.andGreaterThanOrEqualTo("createTime",inStockVO.getStartTime());
+        }
+        if(inStockVO.getEndTime()!=null){
+            criteria.andLessThanOrEqualTo("createTime",inStockVO.getEndTime());
+        }
         List<InStock> inStocks = inStockMapper.selectByExample(o);
         List<InStockVO> inStockVOS=inStockConverter.converterToVOList(inStocks);
         PageInfo<InStock> inStockPageInfo = new PageInfo<>(inStocks);
@@ -93,7 +99,7 @@ public class InStockServiceImpl implements InStockService {
      * @return
      */
     @Override
-    public InStockDetailVO detail(Long id) {
+    public InStockDetailVO detail(Long id,int pageNum,int pageSize) {
         InStockDetailVO inStockDetailVO = new InStockDetailVO();
         InStock inStock = inStockMapper.selectByPrimaryKey(id);
         if(inStock==null){
@@ -110,8 +116,10 @@ public class InStockServiceImpl implements InStockService {
         String inNum = inStock.getInNum();//入库单号
         //查询该单所有的物资
         Example o = new Example(InStockInfo.class);
+        PageHelper.startPage(pageNum,pageSize);
         o.createCriteria().andEqualTo("inNum",inNum);
         List<InStockInfo> inStockInfoList = inStockInfoMapper.selectByExample(o);
+        inStockDetailVO.setTotal(new PageInfo<>(inStockInfoList).getTotal());
         if(!CollectionUtils.isEmpty(inStockInfoList)){
             for (InStockInfo inStockInfo : inStockInfoList) {
                 String pNum = inStockInfo.getPNum();

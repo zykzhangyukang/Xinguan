@@ -5,6 +5,7 @@ import com.coderman.api.system.vo.LoginLogVO;
 import com.coderman.api.system.vo.PageVO;
 import com.coderman.api.system.vo.UserVO;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -17,9 +18,9 @@ public interface LoginLogService {
 
     /**
      * 添加登入日志
-     * @param loginLog
+     * @param request
      */
-    void add(LoginLog loginLog);
+    void add(HttpServletRequest request);
 
 
     /**

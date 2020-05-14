@@ -1,0 +1,1 @@
+{"code":200,"msg":"成功","data":{"total":2,"rows":[{"id":24,"address":"湖北省/武汉市/汉南区","userId":5,"situation":0,"touch":0,"passby":0,"reception":0,"createTime":"2020-05-07T07:23:40.000+0000"},{"id":25,"address":"河北省/秦皇岛市/北戴河区","userId":5,"situation":0,"touch":1,"passby":1,"reception":1,"createTime":"2020-05-10T03:26:27.000+0000"}]}}

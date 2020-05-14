@@ -60,7 +60,8 @@ public class FileUploadController {
         String fileSuffix = originalFilename.substring(originalFilename.lastIndexOf("."));
         if(!fileSuffix.equalsIgnoreCase(".gif")
                 &&!fileSuffix.equalsIgnoreCase(".jpg")
-                && !fileSuffix.equalsIgnoreCase(".png")){
+                && !fileSuffix.equalsIgnoreCase(".png")
+                && !fileSuffix.equalsIgnoreCase(".webp")){
             log.info("文件格式不正确");
             return ResponseBean.error("文件格式不正确");
         }
@@ -129,8 +130,8 @@ public class FileUploadController {
     @DeleteMapping("/delete/{id}")
     public ResponseBean delete(@PathVariable Long id){
         ImageAttachment imageAttachment = imageAttachmentMapper.selectByPrimaryKey(id);
-        commonFileUtil.deleteFile(imageAttachment.getPath());
         imageAttachmentMapper.deleteByPrimaryKey(id);
+        commonFileUtil.deleteFile(imageAttachment.getPath());
         return ResponseBean.success();
     }
 

@@ -1,6 +1,5 @@
 package com.coderman.api.biz.vo;
 
-import com.coderman.api.biz.pojo.Product;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -23,6 +22,8 @@ public class InStockDetailVO {
     private String operator;
 
     private SupplierVO supplierVO;
+
+    private long total;/** 总数**/
 
     private List<InStockItemVO> itemVOS=new ArrayList<>();
 

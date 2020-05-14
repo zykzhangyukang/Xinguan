@@ -38,4 +38,7 @@ public class DepartmentVO {
     /** 系主任的名字*/
     private String mgrName;
 
+    /** 部门内人数**/
+    private int total;
+
 }

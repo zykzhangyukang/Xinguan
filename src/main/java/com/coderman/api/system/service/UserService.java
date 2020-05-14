@@ -104,4 +104,11 @@ public interface UserService {
      */
     List<User> findAll();
 
+    /**
+     * 用户登入
+     * @param username
+     * @param password
+     * @return
+     */
+    String login(String username, String password);
 }

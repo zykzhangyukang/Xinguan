@@ -21,4 +21,6 @@ public class ProductStockVO {
     private String remark;
 
     private Long stock;
+
+    private String imageUrl;
 }

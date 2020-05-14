@@ -44,6 +44,12 @@ public class SupplierServiceImpl implements SupplierService {
         if (supplierVO.getName() != null && !"".equals(supplierVO.getName())) {
             criteria.andLike("name", "%" + supplierVO.getName() + "%");
         }
+        if (supplierVO.getContact() != null && !"".equals(supplierVO.getContact())) {
+            criteria.andLike("contact", "%" + supplierVO.getContact() + "%");
+        }
+        if (supplierVO.getAddress() != null && !"".equals(supplierVO.getAddress())) {
+            criteria.andLike("address", "%" + supplierVO.getAddress() + "%");
+        }
         List<Supplier> suppliers = supplierMapper.selectByExample(o);
         List<SupplierVO> categoryVOS=SupplierConverter.converterToVOList(suppliers);
         PageInfo<Supplier> info = new PageInfo<>(suppliers);

@@ -6,6 +6,7 @@ import com.coderman.api.biz.vo.InStockVO;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.exception.BizException;
 import com.coderman.api.system.vo.PageVO;
+import com.github.pagehelper.PageHelper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -80,8 +81,10 @@ public class InStockController {
     @RequiresPermissions({"inStock:detail"})
     @ApiOperation(value = "入库单明细")
     @GetMapping("/detail/{id}")
-    public ResponseBean detail(@PathVariable Long id) {
-        InStockDetailVO detail = inStockService.detail(id);
+    public ResponseBean detail(@PathVariable Long id,
+                               @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                               @RequestParam(value = "pageSize",defaultValue = "3") Integer pageSize) {
+        InStockDetailVO detail = inStockService.detail(id,pageNum,pageSize);
         return ResponseBean.success(detail);
     }
     /**

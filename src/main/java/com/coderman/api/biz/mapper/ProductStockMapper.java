@@ -19,10 +19,10 @@ public interface ProductStockMapper extends Mapper<ProductStock> {
      * @param productVO
      * @return
      */
-    List<ProductStockVO> selectProductStockList(ProductVO productVO);
+    List<ProductStockVO> findProductStocks(ProductVO productVO);
 
     /**
-     * 所有库存信息
+     * 库存信息(饼图使用)
      * @return
      */
     List<ProductStockVO> findAllStocks();

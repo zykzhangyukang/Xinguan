@@ -30,7 +30,6 @@ public class ProductController {
 
     /**
      * 全部物资列表
-     *
      * @return
      */
     @ApiOperation(value = "物资列表", notes = "物资列表,根据物资名模糊查询")
@@ -45,10 +44,10 @@ public class ProductController {
     }
 
     /**
-     * 可入库物资列表
+     * 可入库物资(入库页面使用)
      * @return
      */
-    @ApiOperation(value = "物资列表", notes = "物资列表,根据物资名模糊查询")
+    @ApiOperation(value = "可入库物资列表", notes = "物资列表,根据物资名模糊查询")
     @GetMapping("/findProducts")
     public ResponseBean findProducts(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                      @RequestParam(value = "pageSize") Integer pageSize,
@@ -62,7 +61,6 @@ public class ProductController {
 
     /**
      * 库存列表
-     *
      * @return
      */
     @ApiOperation(value = "库存列表", notes = "物资列表,根据物资名模糊查询")
@@ -80,11 +78,10 @@ public class ProductController {
 
 
     /**
-     * 所有库存
-     *
+     * 所有库存(饼图使用)
      * @return
      */
-    @ApiOperation(value = "所有库存", notes = "物资所有库存信息")
+    @ApiOperation(value = "全部库存", notes = "物资所有库存信息,饼图使用")
     @GetMapping("/findAllStocks")
     public ResponseBean findAllStocks() {
         List<ProductStockVO> list = productService.findAllStocks();

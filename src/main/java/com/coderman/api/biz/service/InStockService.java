@@ -33,7 +33,7 @@ public interface InStockService {
      * @param id
      * @return
      */
-    InStockDetailVO detail(Long id);
+    InStockDetailVO detail(Long id,int pageNo,int pageSize);
 
     /**
      * 更新入库单

@@ -1,20 +1,29 @@
 package com.coderman.api.system.service.impl;
 
+import com.coderman.api.system.bean.ActiveUser;
 import com.coderman.api.system.mapper.LoginLogMapper;
 import com.coderman.api.system.pojo.LoginLog;
 import com.coderman.api.system.service.LoginLogService;
+import com.coderman.api.system.util.AddressUtil;
+import com.coderman.api.system.util.IPUtil;
 import com.coderman.api.system.vo.LoginLogVO;
 import com.coderman.api.system.vo.PageVO;
 import com.coderman.api.system.vo.UserVO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import eu.bitwalker.useragentutils.Browser;
+import eu.bitwalker.useragentutils.OperatingSystem;
+import eu.bitwalker.useragentutils.UserAgent;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -87,11 +96,32 @@ public class LoginLogServiceImpl implements LoginLogService {
 
     /**
      * 插入登入日志
-     * @param loginLog
+     * @param request
      */
     @Override
-    public void add(LoginLog loginLog) {
-        loginLogMapper.insert(loginLog);
+    public void add(HttpServletRequest request) {
+        loginLogMapper.insert(createLoginLog(request));
+    }
+
+    /**
+     * 创建登入日志
+     * @param
+     * @return
+     */
+    public static LoginLog createLoginLog(HttpServletRequest request) {
+        ActiveUser activeUser = (ActiveUser) SecurityUtils.getSubject().getPrincipal();
+        LoginLog loginLog = new LoginLog();
+        loginLog.setUsername(activeUser.getUser().getUsername());
+        loginLog.setIp(IPUtil.getIpAddr(request));
+        loginLog.setLocation(AddressUtil.getCityInfo(IPUtil.getIpAddr(request)));
+        // 获取客户端操作系统
+        UserAgent userAgent = UserAgent.parseUserAgentString(request.getHeader("User-Agent"));
+        Browser browser = userAgent.getBrowser();
+        OperatingSystem os = userAgent.getOperatingSystem();
+        loginLog.setUserSystem(os.getName());
+        loginLog.setUserBrowser(browser.getName());
+        loginLog.setLoginTime(new Date());
+        return loginLog;
     }
 
     /**

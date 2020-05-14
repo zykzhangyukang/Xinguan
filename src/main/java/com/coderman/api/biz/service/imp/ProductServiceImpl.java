@@ -58,8 +58,9 @@ public class ProductServiceImpl implements ProductService {
         List<Product> products;
         Example o = new Example(Product.class);
         Example.Criteria criteria = o.createCriteria();
-
-
+        if (productVO.getStatus() != null) {
+            criteria.andEqualTo("status", productVO.getStatus());
+        }
         if(productVO.getThreeCategoryId()!=null){
             criteria.andEqualTo("oneCategoryId",productVO.getOneCategoryId())
                     .andEqualTo("twoCategoryId",productVO.getTwoCategoryId())
@@ -88,9 +89,7 @@ public class ProductServiceImpl implements ProductService {
         if (productVO.getName() != null && !"".equals(productVO.getName())) {
             criteria.andLike("name", "%" + productVO.getName() + "%");
         }
-        if (productVO.getStatus() != null) {
-            criteria.andEqualTo("status", productVO.getStatus());
-        }
+
         products = productMapper.selectByExample(o);
         List<ProductVO> categoryVOS=ProductConverter.converterToVOList(products);
         PageInfo<Product> info = new PageInfo<>(products);
@@ -177,7 +176,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public PageVO<ProductStockVO> findProductStocks(Integer pageNum, Integer pageSize, ProductVO productVO) {
         PageHelper.startPage(pageNum, pageSize);
-        List<ProductStockVO> productStockVOList=productStockMapper.selectProductStockList(productVO);
+        List<ProductStockVO> productStockVOList=productStockMapper.findProductStocks(productVO);
         PageInfo<ProductStockVO> info = new PageInfo<>(productStockVOList);
         return new PageVO<>(info.getTotal(), productStockVOList);
     }

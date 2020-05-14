@@ -5,6 +5,7 @@ import com.coderman.api.system.bean.ActiveUser;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.config.JWTToken;
 import com.coderman.api.system.converter.RoleConverter;
+import com.coderman.api.system.exception.BizException;
 import com.coderman.api.system.pojo.Department;
 import com.coderman.api.system.pojo.LoginLog;
 import com.coderman.api.system.pojo.Role;
@@ -65,27 +66,6 @@ public class UserController {
     @Autowired
     private DepartmentService departmentService;
 
-    /**
-     * 创建登入日志
-     *
-     * @param
-     * @return
-     */
-    public static LoginLog createLoginLog(HttpServletRequest request) {
-        ActiveUser activeUser = (ActiveUser) SecurityUtils.getSubject().getPrincipal();
-        LoginLog loginLog = new LoginLog();
-        loginLog.setUsername(activeUser.getUser().getUsername());
-        loginLog.setIp(IPUtil.getIpAddr(request));
-        loginLog.setLocation(AddressUtil.getCityInfo(IPUtil.getIpAddr(request)));
-        // 获取客户端操作系统
-        UserAgent userAgent = UserAgent.parseUserAgentString(request.getHeader("User-Agent"));
-        Browser browser = userAgent.getBrowser();
-        OperatingSystem os = userAgent.getOperatingSystem();
-        loginLog.setUserSystem(os.getName());
-        loginLog.setUserBrowser(browser.getName());
-        loginLog.setLoginTime(new Date());
-        return loginLog;
-    }
 
     /**
      * 用户登入
@@ -99,27 +79,10 @@ public class UserController {
     public ResponseBean login(@NotBlank(message = "用户名必填") String username,
                               @NotBlank(message = "密码必填") String password,
                               HttpServletRequest request) {
-        Object token;
-        User user = userService.findUserByName(username);
-        if (user != null) {
-            String salt = user.getSalt();
-            //秘钥为盐
-            String target = MD5Utils.md5Encryption(password, salt);
-            //生成Token
-            token = JWTUtils.sign(username, target);
-            JWTToken jwtToken = new JWTToken((String) token);
-            try {
-                SecurityUtils.getSubject().login(jwtToken);
-            } catch (AuthenticationException e) {
-                return ResponseBean.error(e.getMessage());
-            }
-        } else {
-            return ResponseBean.error("用户名不存在");
-        }
-        //登入日志
-        LoginLog loginLog = createLoginLog(request);
-        loginLogService.add(loginLog);
-        return ResponseBean.success(token);
+        //用户登入
+        String token=userService.login(username,password);
+        loginLogService.add(request);
+        return ResponseBean.success((Object) token);
     }
 
 

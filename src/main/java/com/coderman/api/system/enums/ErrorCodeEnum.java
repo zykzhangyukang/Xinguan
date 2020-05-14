@@ -17,10 +17,8 @@ public enum  ErrorCodeEnum implements BaseCodeInterface {
     NOT_FOUND(404, "未找到该资源!"),
     INTERNAL_SERVER_ERROR(500, "服务器内部错误!"),
     SERVER_BUSY(503,"服务器正忙，请稍后再试!"),
-    //系统异常2000**
-    DATA_LOAD_ERROR(20001,"数据加载异常"),
     //用户相关：10000**
-    PASSWORD_OR_USERNAME_ERROR(10001, "用户名或密码错误!"),
+    USER_ACCOUNT_NOT_FOUND(10001, "账号不存在!"),
     DELETE_ERROR(10002,"删除失败"),
     UPDATE_ERROR(10003,"更新失败"),
     ADD_ERROR(10004,"添加失败"),

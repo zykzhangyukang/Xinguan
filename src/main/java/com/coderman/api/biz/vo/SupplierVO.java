@@ -31,7 +31,7 @@ public class SupplierVO {
     @NotNull(message = "排序号不能为空")
     private Integer sort;
 
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")

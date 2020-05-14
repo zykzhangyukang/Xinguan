@@ -29,4 +29,6 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*/*Mapper.xml
   type-aliases-package: com.coderman.api.*.pojo
+  configuration:
+    map-underscore-to-camel-case: true
 

@@ -1,11 +1,16 @@
 package com.coderman.api.system.service.impl;
 
 import com.coderman.api.system.bean.ActiveUser;
+import com.coderman.api.system.bean.ResponseBean;
+import com.coderman.api.system.config.JWTToken;
 import com.coderman.api.system.converter.MenuConverter;
 import com.coderman.api.system.converter.UserConverter;
+import com.coderman.api.system.enums.ErrorCodeEnum;
+import com.coderman.api.system.exception.BizException;
 import com.coderman.api.system.mapper.*;
 import com.coderman.api.system.pojo.*;
 import com.coderman.api.system.service.UserService;
+import com.coderman.api.system.util.JWTUtils;
 import com.coderman.api.system.util.MD5Utils;
 import com.coderman.api.system.util.MenuTreeBuilder;
 import com.coderman.api.system.vo.MenuNodeVO;
@@ -15,6 +20,7 @@ import com.coderman.api.system.vo.UserVO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -311,5 +317,33 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> findAll() {
         return userMapper.selectAll();
+    }
+
+    /**
+     * 用户登入
+     * @param username
+     * @param password
+     * @return
+     */
+    @Override
+    public String login(String username, String password) {
+        String token;
+        User user = findUserByName(username);
+        if (user != null) {
+            String salt = user.getSalt();
+            //秘钥为盐
+            String target = MD5Utils.md5Encryption(password, salt);
+            //生成Token
+            token = JWTUtils.sign(username, target);
+            JWTToken jwtToken = new JWTToken(token);
+            try {
+                SecurityUtils.getSubject().login(jwtToken);
+            } catch (AuthenticationException e) {
+                throw new BizException(e.getMessage());
+            }
+        } else {
+            throw new BizException(ErrorCodeEnum.USER_ACCOUNT_NOT_FOUND);
+        }
+        return token;
     }
 }
