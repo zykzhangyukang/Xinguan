@@ -20,7 +20,7 @@ public class LogVO {
 
     private String ip;
 
-    @JsonFormat(pattern = "yyyy年MM月dd日 HH时mm分ss秒")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
     private String location;

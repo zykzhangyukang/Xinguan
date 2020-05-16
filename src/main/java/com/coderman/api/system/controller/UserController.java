@@ -5,6 +5,7 @@ import com.coderman.api.system.bean.ActiveUser;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.config.JWTToken;
 import com.coderman.api.system.converter.RoleConverter;
+import com.coderman.api.system.enums.ErrorCodeEnum;
 import com.coderman.api.system.exception.BizException;
 import com.coderman.api.system.pojo.Department;
 import com.coderman.api.system.pojo.LoginLog;
@@ -166,12 +167,12 @@ public class UserController {
     @DeleteMapping("/delete/{id}")
     public ResponseBean delete(@PathVariable Long id) {
         userService.deleteById(id);
-        return ResponseBean.success();
+        throw new BizException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
+//        return ResponseBean.success();
     }
 
     /**
      * 更新状态
-     *
      * @param id
      * @param status
      * @return

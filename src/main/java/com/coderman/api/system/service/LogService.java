@@ -1,5 +1,6 @@
 package com.coderman.api.system.service;
 
+import com.coderman.api.system.pojo.Log;
 import com.coderman.api.system.vo.LogVO;
 import com.coderman.api.system.vo.PageVO;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -17,15 +18,9 @@ public interface LogService  {
 
     /**
      * 异步保存操作日志
-     *
-     * @param point     切点
-     * @param method    Method
-     * @param request   HttpServletRequest
-     * @param operation 操作内容
-     * @param start     开始时间
      */
     @Async("CodeAsyncThreadPool")
-    void saveLog(ProceedingJoinPoint point, Method method, HttpServletRequest request, String operation, long start);
+    void saveLog(Log log);
 
 
     /**

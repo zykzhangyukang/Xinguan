@@ -1,32 +1,20 @@
 package com.coderman.api.system.service.impl;
 
-import com.coderman.api.system.bean.ActiveUser;
 import com.coderman.api.system.mapper.LogMapper;
 import com.coderman.api.system.pojo.Log;
 import com.coderman.api.system.pojo.LoginLog;
-import com.coderman.api.system.pojo.User;
 import com.coderman.api.system.service.LogService;
-import com.coderman.api.system.util.AddressUtil;
-import com.coderman.api.system.util.IPUtil;
 import com.coderman.api.system.vo.LogVO;
-import com.coderman.api.system.vo.LoginLogVO;
 import com.coderman.api.system.vo.PageVO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.apache.shiro.SecurityUtils;
-import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.LocalVariableTableParameterNameDiscoverer;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
-import javax.servlet.http.HttpServletRequest;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -41,34 +29,8 @@ public class LogServiceImpl implements LogService {
     private LogMapper logMapper;
 
     @Override
-    public void saveLog(ProceedingJoinPoint point, Method method, HttpServletRequest request, String operation, long start) {
-        // 设置 IP地址
-        Log systemLog = new Log();
-        String ip = IPUtil.getIpAddr(request);
-        systemLog.setIp(ip);
-        // 设置操作用户
-        ActiveUser activeUser= (ActiveUser) SecurityUtils.getSubject().getPrincipal();
-        User user=activeUser.getUser();
-        if (user != null)
-            systemLog.setUsername(user.getUsername());
-        // 设置耗时
-        systemLog.setTime(System.currentTimeMillis() - start);
-        // 设置操作描述
-        systemLog.setOperation(operation);
-        // 请求的类名
-        String className = point.getTarget().getClass().getName();
-        // 请求的方法名
-        String methodName = method.getName();
-        systemLog.setMethod(className + "." + methodName + "()");
-        // 请求的方法参数值
-        Object[] args = point.getArgs();
-        // 请求的方法参数名称
-        LocalVariableTableParameterNameDiscoverer u = new LocalVariableTableParameterNameDiscoverer();
-        String[] paramNames = u.getParameterNames(method);
-        systemLog.setParams("paramName:"+ Arrays.toString(paramNames) +",args:"+ Arrays.toString(args) +",role:"+activeUser.getRoles());
-        systemLog.setCreateTime(new Date());
-        systemLog.setLocation(AddressUtil.getCityInfo(IPUtil.getIpAddr(request)));
-        logMapper.insert(systemLog);
+    public void saveLog(Log log) {
+        logMapper.insert(log);
     }
 
     @Override

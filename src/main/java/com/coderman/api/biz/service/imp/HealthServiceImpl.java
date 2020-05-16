@@ -66,6 +66,7 @@ public class HealthServiceImpl implements HealthService {
     @Override
     public PageVO<Health> history(Long id,Integer pageNum,Integer pageSize) {
         Example o = new Example(Health.class);
+        o.setOrderByClause("create_time desc");
         PageHelper.startPage(pageNum,pageSize);
         o.createCriteria().andEqualTo("userId",id);
         List<Health> health = healthMapper.selectByExample(o);
