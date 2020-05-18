@@ -167,8 +167,7 @@ public class UserController {
     @DeleteMapping("/delete/{id}")
     public ResponseBean delete(@PathVariable Long id) {
         userService.deleteById(id);
-        throw new BizException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
-//        return ResponseBean.success();
+        return ResponseBean.success();
     }
 
     /**

@@ -25,5 +25,5 @@ public interface ProductStockMapper extends Mapper<ProductStock> {
      * 库存信息(饼图使用)
      * @return
      */
-    List<ProductStockVO> findAllStocks();
+    List<ProductStockVO> findAllStocks(ProductVO productVO);
 }

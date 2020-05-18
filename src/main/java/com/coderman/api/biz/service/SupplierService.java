@@ -1,5 +1,6 @@
 package com.coderman.api.biz.service;
 
+import com.coderman.api.biz.pojo.Supplier;
 import com.coderman.api.biz.vo.SupplierVO;
 import com.coderman.api.system.vo.PageVO;
 
@@ -16,7 +17,7 @@ public interface SupplierService {
      * 添加供应商
      * @param supplierVO
      */
-    void add(SupplierVO supplierVO);
+    Supplier add(SupplierVO supplierVO);
 
 
     /**

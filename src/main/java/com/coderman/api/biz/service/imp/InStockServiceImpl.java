@@ -263,11 +263,15 @@ public class InStockServiceImpl implements InStockService {
     @Override
     public void publish(Long id) {
         InStock inStock = inStockMapper.selectByPrimaryKey(id);
+        Supplier supplier = supplierMapper.selectByPrimaryKey(inStock.getSupplierId());
         if(inStock==null){
             throw new BizException("入库单不存在");
         }
         if(inStock.getStatus()!=2){
             throw new BizException("入库单状态错误");
+        }
+        if(supplier==null){
+            throw new BizException("入库来源信息错误");
         }
         String inNum = inStock.getInNum();//单号
         Example o = new Example(InStockInfo.class);
@@ -299,6 +303,7 @@ public class InStockServiceImpl implements InStockService {
                         productStockMapper.insert(productStock);
                     }
                     //修改入库单状态.
+                    inStock.setCreateTime(new Date());
                     inStock.setStatus(0);
                     inStockMapper.updateByPrimaryKeySelective(inStock);
                 }else {

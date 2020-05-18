@@ -204,9 +204,14 @@ public class UserServiceImpl implements UserService {
      * 删除用户
      * @param id 用户ID
      */
+    @Transactional
     @Override
     public void deleteById(Long id) {
         userMapper.deleteByPrimaryKey(id);
+        //删除对应[用户-角色]记录
+        Example o = new Example(UserRole.class);
+        o.createCriteria().andEqualTo("userId",id);
+        userRoleMapper.deleteByExample(o);
     }
 
     /**

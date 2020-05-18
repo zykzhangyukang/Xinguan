@@ -2,44 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc0098de-1555-475b-b0df-4f7e5b9cd099" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T094652.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T094700.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-03-27T094743.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-02T082849.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-02T082922.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-02T084859.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-02T084921.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-02T084943.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-02T085006.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-02T085033.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-02T085058.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-05T100145.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-05T100158.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-05T100221.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-05T100234.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-05T100253.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-05T100359.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-05T100427.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-11T103350.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-11T103443.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-11T103546.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-11T103654.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-11T103721.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-16T090800.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-16T090818.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-16T094041.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-16T094409.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-16T094554.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-04-16T094602.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/HealthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/HealthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/aspect/ControllerEndpointAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/aspect/ControllerEndpointAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ConsumerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ConsumerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/HealthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/HealthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/InStockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/InStockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductCategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/SupplierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/SupplierController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductStockMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductStockMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Supplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/SupplierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/SupplierService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/InStockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/InStockServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/SupplierServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/SupplierServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/InStockVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/InStockVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/LogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/vo/LogVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/vo/LogVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/BizUserTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/BizUserTypeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LoginLogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LoginLogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/biz/ProductStockMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/biz/ProductStockMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,9 +39,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="dummy://restClient/response67.json" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -2469,7 +2449,9 @@
       <workItem from="1589379720566" duration="1711000" />
       <workItem from="1589457967844" duration="4777000" />
       <workItem from="1589464040021" duration="146000" />
-      <workItem from="1589592726405" duration="9100000" />
+      <workItem from="1589592726405" duration="9476000" />
+      <workItem from="1589617225681" duration="7573000" />
+      <workItem from="1589762916162" duration="8225000" />
     </task>
     <servers />
   </component>
@@ -2514,54 +2496,54 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="524" y="119" key="#xdebugger.evaluate/0.0.1536.834@0.0.1536.834" timestamp="1588300742809" />
-    <state width="1493" height="264" key="GridCell.Tab.0.bottom" timestamp="1589602033959">
+    <state width="1493" height="361" key="GridCell.Tab.0.bottom" timestamp="1589782781842">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1589602033959" />
-    <state width="1493" height="264" key="GridCell.Tab.0.center" timestamp="1589602033959">
+    <state width="1493" height="361" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1589782781842" />
+    <state width="1493" height="361" key="GridCell.Tab.0.center" timestamp="1589782781842">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1589602033959" />
-    <state width="1493" height="264" key="GridCell.Tab.0.left" timestamp="1589602033959">
+    <state width="1493" height="361" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1589782781842" />
+    <state width="1493" height="361" key="GridCell.Tab.0.left" timestamp="1589782781842">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1589602033959" />
-    <state width="1493" height="264" key="GridCell.Tab.0.right" timestamp="1589602033959">
+    <state width="1493" height="361" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1589782781842" />
+    <state width="1493" height="361" key="GridCell.Tab.0.right" timestamp="1589782781842">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1589602033959" />
-    <state width="1493" height="264" key="GridCell.Tab.1.bottom" timestamp="1589602033959">
+    <state width="1493" height="361" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1589782781842" />
+    <state width="1493" height="361" key="GridCell.Tab.1.bottom" timestamp="1589782781842">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1589602033959" />
-    <state width="1493" height="264" key="GridCell.Tab.1.center" timestamp="1589602033959">
+    <state width="1493" height="361" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1589782781842" />
+    <state width="1493" height="361" key="GridCell.Tab.1.center" timestamp="1589782781842">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1589602033959" />
-    <state width="1493" height="264" key="GridCell.Tab.1.left" timestamp="1589602033959">
+    <state width="1493" height="361" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1589782781842" />
+    <state width="1493" height="361" key="GridCell.Tab.1.left" timestamp="1589782781842">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1589602033959" />
-    <state width="1493" height="264" key="GridCell.Tab.1.right" timestamp="1589602033959">
+    <state width="1493" height="361" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1589782781842" />
+    <state width="1493" height="361" key="GridCell.Tab.1.right" timestamp="1589782781842">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1589602033959" />
-    <state width="1493" height="218" key="GridCell.Tab.2.bottom" timestamp="1589598747910">
+    <state width="1493" height="361" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1589782781842" />
+    <state width="1493" height="313" key="GridCell.Tab.2.bottom" timestamp="1589773310996">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="218" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1589598747910" />
-    <state width="1493" height="218" key="GridCell.Tab.2.center" timestamp="1589598747910">
+    <state width="1493" height="313" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1589773310996" />
+    <state width="1493" height="313" key="GridCell.Tab.2.center" timestamp="1589773310996">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="218" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1589598747910" />
-    <state width="1493" height="218" key="GridCell.Tab.2.left" timestamp="1589598747910">
+    <state width="1493" height="313" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1589773310996" />
+    <state width="1493" height="313" key="GridCell.Tab.2.left" timestamp="1589773310996">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="218" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1589598747910" />
-    <state width="1493" height="218" key="GridCell.Tab.2.right" timestamp="1589598747910">
+    <state width="1493" height="313" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1589773310996" />
+    <state width="1493" height="313" key="GridCell.Tab.2.right" timestamp="1589773310996">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="218" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1589598747910" />
+    <state width="1493" height="313" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1589773310996" />
     <state width="212" height="477" key="HiddenNamespacesPopup" timestamp="1589459548093">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -2578,6 +2560,17 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="178" y="27" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1589592795583" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/InStockController.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

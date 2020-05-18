@@ -63,7 +63,7 @@ public interface ProductService {
      * 所有库存信息
      * @return
      */
-    List<ProductStockVO> findAllStocks();
+    List<ProductStockVO> findAllStocks(Integer pageNum, Integer pageSize,ProductVO productVO);
 
     /**
      * 移入回收站

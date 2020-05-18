@@ -40,7 +40,6 @@ public class InStockVO {
     /** 该入库单的总数**/
     private Integer productNumber;
 
-    private String phone;
 
     @NotBlank(message = "入库备注不能为空")
     private String remark;
@@ -56,4 +55,19 @@ public class InStockVO {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date endTime;
+
+
+    /** 如果supplierId不存在需要添加供应商信息**/
+
+    private String name;
+
+    private String address;
+
+    private String email;
+
+    private String phone;
+
+    private Integer sort;
+
+    private String contact;
 }

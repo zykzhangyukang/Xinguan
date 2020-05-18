@@ -186,8 +186,9 @@ public class ProductServiceImpl implements ProductService {
      * @return
      */
     @Override
-    public List<ProductStockVO> findAllStocks() {
-        return productStockMapper.findAllStocks();
+    public List<ProductStockVO> findAllStocks(Integer pageNum, Integer pageSize, ProductVO productVO) {
+        PageHelper.startPage(pageNum, pageSize);
+        return productStockMapper.findAllStocks(productVO);
     }
 
     /**

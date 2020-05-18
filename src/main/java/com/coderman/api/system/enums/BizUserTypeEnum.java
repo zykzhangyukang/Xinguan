@@ -8,9 +8,7 @@ package com.coderman.api.system.enums;
  **/
 public enum  BizUserTypeEnum {
 
-    TEACHER("老师"),
-    STUDENT("学生"),
-    DEAN("系主任");
+    DEAN("部门主任");
     private String val;
 
     BizUserTypeEnum(String val) {

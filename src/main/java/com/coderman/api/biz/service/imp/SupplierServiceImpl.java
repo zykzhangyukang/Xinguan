@@ -63,12 +63,13 @@ public class SupplierServiceImpl implements SupplierService {
      * @param SupplierVO
      */
     @Override
-    public void add(SupplierVO SupplierVO) {
+    public Supplier add(SupplierVO SupplierVO) {
         Supplier supplier = new Supplier();
         BeanUtils.copyProperties(SupplierVO,supplier);
         supplier.setCreateTime(new Date());
         supplier.setModifiedTime(new Date());
         supplierMapper.insert(supplier);
+        return supplier;
     }
 
     /**
@@ -79,8 +80,7 @@ public class SupplierServiceImpl implements SupplierService {
     @Override
     public SupplierVO edit(Long id) {
         Supplier supplier = supplierMapper.selectByPrimaryKey(id);
-        SupplierVO supplierVO = SupplierConverter.converterToSupplierVO(supplier);
-        return supplierVO;
+        return SupplierConverter.converterToSupplierVO(supplier);
     }
 
     /**

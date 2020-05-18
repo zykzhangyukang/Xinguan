@@ -14,6 +14,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
@@ -77,9 +78,14 @@ public class RoleServiceImpl implements RoleService {
      * 删除角色
      * @param id
      */
+    @Transactional
     @Override
     public void deleteById(Long id) {
         roleMapper.deleteByPrimaryKey(id);
+        //删除对应的[角色-菜单]记录
+        Example o = new Example(RoleMenu.class);
+        o.createCriteria().andEqualTo("roleId",id);
+        roleMenuMapper.deleteByExample(o);
     }
 
     @Override

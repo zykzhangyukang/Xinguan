@@ -3,6 +3,7 @@ package com.coderman.api.biz.controller;
 import com.coderman.api.biz.service.ConsumerService;
 import com.coderman.api.biz.service.ConsumerService;
 import com.coderman.api.biz.vo.ConsumerVO;
+import com.coderman.api.system.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.vo.PageVO;
 import io.swagger.annotations.Api;
@@ -44,12 +45,12 @@ public class ConsumerController {
         return ResponseBean.success(consumerVOPageVO);
     }
 
-
     /**
      * 添加去向
      *
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "物资去向添加失败", operation = "物资去向添加")
     @RequiresPermissions({"consumer:add"})
     @ApiOperation(value = "添加去向")
     @PostMapping("/add")
@@ -77,6 +78,7 @@ public class ConsumerController {
      *
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "物资去向更新失败", operation = "物资去向更新")
     @ApiOperation(value = "更新去向", notes = "更新去向信息")
     @RequiresPermissions({"consumer:update"})
     @PutMapping("/update/{id}")
@@ -91,6 +93,7 @@ public class ConsumerController {
      * @param id
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "物资去向删除失败", operation = "物资去向删除")
     @ApiOperation(value = "删除去向", notes = "删除去向信息")
     @RequiresPermissions({"consumer:delete"})
     @DeleteMapping("/delete/{id}")

@@ -2,6 +2,7 @@ package com.coderman.api.biz.controller;
 
 import com.coderman.api.biz.service.ProductCategoryService;
 import com.coderman.api.biz.vo.ProductCategoryTreeNodeVO;
+import com.coderman.api.system.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.vo.PageVO;
 import com.coderman.api.biz.vo.ProductCategoryVO;
@@ -90,6 +91,7 @@ public class ProductCategoryController {
      *
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "物资分类添加失败", operation = "物资分类添加")
     @RequiresPermissions({"productCategory:add"})
     @ApiOperation(value = "添加分类")
     @PostMapping("/add")
@@ -117,6 +119,7 @@ public class ProductCategoryController {
      *
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "物资分类更新失败", operation = "物资分类更新")
     @ApiOperation(value = "更新分类")
     @RequiresPermissions({"productCategory:update"})
     @PutMapping("/update/{id}")
@@ -131,6 +134,7 @@ public class ProductCategoryController {
      * @param id
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "物资分类删除失败", operation = "物资分类删除")
     @ApiOperation(value = "删除分类")
     @RequiresPermissions({"productCategory:delete"})
     @DeleteMapping("/delete/{id}")

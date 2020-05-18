@@ -2,6 +2,7 @@ package com.coderman.api.biz.controller;
 
 import com.coderman.api.biz.service.SupplierService;
 import com.coderman.api.biz.vo.SupplierVO;
+import com.coderman.api.system.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.vo.PageVO;
 import io.swagger.annotations.Api;
@@ -49,6 +50,7 @@ public class SupplierController {
      *
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "物资来源添加失败", operation = "物资来源添加")
     @RequiresPermissions({"supplier:add"})
     @ApiOperation(value = "添加来源")
     @PostMapping("/add")
@@ -76,6 +78,7 @@ public class SupplierController {
      *
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "物资来源更新失败", operation = "物资来源更新")
     @ApiOperation(value = "更新来源", notes = "更新来源信息")
     @RequiresPermissions({"supplier:update"})
     @PutMapping("/update/{id}")
@@ -90,6 +93,7 @@ public class SupplierController {
      * @param id
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "物资来源删除失败", operation = "物资来源删除")
     @ApiOperation(value = "删除来源", notes = "删除来源信息")
     @RequiresPermissions({"supplier:delete"})
     @DeleteMapping("/delete/{id}")

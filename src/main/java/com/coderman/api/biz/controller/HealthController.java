@@ -3,6 +3,7 @@ package com.coderman.api.biz.controller;
 import com.coderman.api.biz.pojo.Health;
 import com.coderman.api.biz.service.HealthService;
 import com.coderman.api.biz.vo.HealthVO;
+import com.coderman.api.system.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ActiveUser;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.vo.PageVO;
@@ -32,6 +33,7 @@ public class HealthController {
      * @param healthVO
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "健康上报失败", operation = "健康上报")
     @ApiOperation(value = "健康上报",notes = "用户健康上报")
     @RequiresPermissions({"health:report"})
     @PostMapping("/report")

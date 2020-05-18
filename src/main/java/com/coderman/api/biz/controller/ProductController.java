@@ -3,6 +3,7 @@ package com.coderman.api.biz.controller;
 import com.coderman.api.biz.service.ProductService;
 import com.coderman.api.biz.vo.ProductStockVO;
 import com.coderman.api.biz.vo.ProductVO;
+import com.coderman.api.system.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.vo.PageVO;
 import io.swagger.annotations.Api;
@@ -83,8 +84,12 @@ public class ProductController {
      */
     @ApiOperation(value = "全部库存", notes = "物资所有库存信息,饼图使用")
     @GetMapping("/findAllStocks")
-    public ResponseBean findAllStocks() {
-        List<ProductStockVO> list = productService.findAllStocks();
+    public ResponseBean findAllStocks(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                                      @RequestParam(value = "pageSize") Integer pageSize,
+                                      @RequestParam(value = "categorys", required = false) String categorys,
+                                      ProductVO productVO) {
+        buildCategorySearch(categorys, productVO);
+        List<ProductStockVO> list = productService.findAllStocks(pageNum, pageSize,productVO);
         return ResponseBean.success(list);
     }
 
@@ -118,9 +123,9 @@ public class ProductController {
 
     /**
      * 添加物资
-     *
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "添加物资失败", operation = "物资资料添加")
     @ApiOperation(value = "添加物资")
     @RequiresPermissions({"product:add"})
     @PostMapping("/add")
@@ -134,7 +139,6 @@ public class ProductController {
 
     /**
      * 编辑物资
-     *
      * @param id
      * @return
      */
@@ -151,6 +155,7 @@ public class ProductController {
      *
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "更新物资失败", operation = "物资资料更新")
     @ApiOperation(value = "更新物资", notes = "更新物资信息")
     @RequiresPermissions({"product:update"})
     @PutMapping("/update/{id}")
@@ -164,10 +169,10 @@ public class ProductController {
 
     /**
      * 删除物资
-     *
      * @param id
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "删除物资失败", operation = "物资资料删除")
     @ApiOperation(value = "删除物资", notes = "删除物资信息")
     @RequiresPermissions({"product:delete"})
     @DeleteMapping("/delete/{id}")
@@ -183,6 +188,7 @@ public class ProductController {
      * @param id
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "回收物资失败", operation = "物资资料回收")
     @ApiOperation(value = "移入回收站", notes = "移入回收站")
     @RequiresPermissions({"product:remove"})
     @PutMapping("/remove/{id}")
@@ -195,6 +201,7 @@ public class ProductController {
      * @param id
      * @return
      */
+    @ControllerEndpoint(exceptionMessage = "物资添加审核失败", operation = "物资资料审核")
     @ApiOperation(value = "物资添加审核", notes = "物资添加审核")
     @RequiresPermissions({"product:publish"})
     @PutMapping("/publish/{id}")
@@ -207,7 +214,8 @@ public class ProductController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "恢复数据", notes = "从回收站中恢复物资")
+    @ControllerEndpoint(exceptionMessage = "恢复物资失败", operation = "物资资料恢复")
+    @ApiOperation(value = "恢复物资", notes = "从回收站中恢复物资")
     @RequiresPermissions({"product:back"})
     @PutMapping("/back/{id}")
     public ResponseBean back(@PathVariable Long id) {
