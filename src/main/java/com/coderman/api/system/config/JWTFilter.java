@@ -85,7 +85,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
         return super.preHandle(request, response);
     }
     /**
-     * 无需转发，直接返回Response信息
+     * 无需转发，直接返回Response信息 Token认证错误
      */
     private void responseTokenError(ServletResponse response, String msg) {
         HttpServletResponse httpServletResponse = WebUtils.toHttp(response);

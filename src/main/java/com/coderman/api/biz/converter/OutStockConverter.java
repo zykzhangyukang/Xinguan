@@ -36,7 +36,7 @@ public class OutStockConverter {
                 BeanUtils.copyProperties(outStock,outStockVO);
                 Consumer consumer = consumerMapper.selectByPrimaryKey(outStock.getConsumerId());
                 if(consumer!=null){
-                    outStockVO.setConsumerName(consumer.getName());
+                    outStockVO.setName(consumer.getName());
                     outStockVO.setPhone(consumer.getPhone());
                 }
                 outStockVOS.add(outStockVO);

@@ -63,12 +63,13 @@ public class ConsumerServiceImpl implements ConsumerService {
      * @param ConsumerVO
      */
     @Override
-    public void add(ConsumerVO ConsumerVO) {
+    public Consumer add(ConsumerVO ConsumerVO) {
         Consumer consumer = new Consumer();
         BeanUtils.copyProperties(ConsumerVO,consumer);
         consumer.setCreateTime(new Date());
         consumer.setModifiedTime(new Date());
         consumerMapper.insert(consumer);
+        return consumer;
     }
 
     /**

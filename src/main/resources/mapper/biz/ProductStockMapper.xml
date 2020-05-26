@@ -4,10 +4,10 @@
     <!--库存列表-->
     <select id="findProductStocks"  parameterType="com.coderman.api.biz.vo.ProductVO"
             resultType="com.coderman.api.biz.vo.ProductStockVO">
-        SELECT s.id,s.p_num,s.stock ,p.name,
+        SELECT s.p_num,s.stock ,p.name,p.id,
         p.model,p.unit,p.image_url
         FROM biz_product_stock s
-        , biz_product p WHERE s.`p_num`=p.`p_num`
+        , biz_product p WHERE s.`p_num`=p.`p_num` and s.`stock`>0
         <if test="name!=null and name!=''">
             and p.name like concat('%',#{name}, '%')
         </if>
@@ -26,7 +26,7 @@
     <!--所有库存信息-->
     <select id="findAllStocks"
             resultType="com.coderman.api.biz.vo.ProductStockVO">
-        SELECT s.id,s.p_num,s.stock ,p.name,
+        SELECT s.p_num,s.stock ,p.name,p.id,
         p.model,p.unit
         FROM biz_product_stock s
         , biz_product p WHERE s.`p_num`=p.`p_num`

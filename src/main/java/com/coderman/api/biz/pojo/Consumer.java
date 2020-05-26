@@ -2,6 +2,7 @@ package com.coderman.api.biz.pojo;
 
 import lombok.Data;
 
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Date;
 public class Consumer {
 
     @Id
+    @GeneratedValue(generator = "JDBC")
     private Long id;
 
     private String name;

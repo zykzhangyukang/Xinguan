@@ -1,5 +1,6 @@
 package com.coderman.api.biz.service;
 
+import com.coderman.api.biz.pojo.Consumer;
 import com.coderman.api.biz.vo.ConsumerVO;
 import com.coderman.api.system.vo.PageVO;
 
@@ -16,7 +17,7 @@ public interface ConsumerService {
      * 添加物资去向
      * @param consumerVO
      */
-    void add(ConsumerVO consumerVO);
+    Consumer add(ConsumerVO consumerVO);
 
 
     /**

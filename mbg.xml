@@ -28,6 +28,6 @@
 		</javaModelGenerator>
 
 		<!-- table指定每个表的生成策略 -->
-		<table tableName="biz_out_stock" domainObjectName="OutStock"></table>
+		<table tableName="biz_out_stock_info" domainObjectName="OutStockInfo"></table>
 	</context>
 </generatorConfiguration>

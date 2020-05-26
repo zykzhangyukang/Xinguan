@@ -12,13 +12,6 @@ import com.coderman.api.system.vo.PageVO;
 public interface InStockService {
 
     /**
-     * 添加入库单
-     * @param inStockVO
-     */
-    void add(InStockVO inStockVO);
-
-
-    /**
      * 入库单列表
      * @param pageNum
      * @param pageSize
@@ -34,13 +27,6 @@ public interface InStockService {
      * @return
      */
     InStockDetailVO detail(Long id,int pageNo,int pageSize);
-
-    /**
-     * 更新入库单
-     * @param id
-     * @param inStockVO
-     */
-    void update(Long id, InStockVO inStockVO);
 
     /**
      * 删除入库单

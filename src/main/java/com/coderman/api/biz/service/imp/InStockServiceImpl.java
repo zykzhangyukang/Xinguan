@@ -54,11 +54,6 @@ public class InStockServiceImpl implements InStockService {
     @Autowired
     private SupplierMapper supplierMapper;
 
-    @Override
-    public void add(InStockVO inStockVO) {
-
-    }
-
     /**
      * 入库单
      * @param pageNum
@@ -143,18 +138,17 @@ public class InStockServiceImpl implements InStockService {
         return inStockDetailVO;
     }
 
-    @Override
-    public void update(Long id, InStockVO inStockVO) {
-
-    }
 
     @Override
     public void delete(Long id) {
         InStock in = new InStock();
         in.setId(id);
         InStock inStock = inStockMapper.selectByPrimaryKey(in);
+        //只有处于回收站,或者待审核的情况下可删除
         if(inStock==null){
             throw new BizException("入库单不存在");
+        }else if(inStock.getStatus()!=1&&inStock.getStatus()!=2){
+           throw new BizException("入库单状态错误,无法删除");
         }else {
             int i = inStockMapper.deleteByPrimaryKey(id);
             System.out.println(i);
@@ -171,21 +165,19 @@ public class InStockServiceImpl implements InStockService {
      */
     @Transactional
     @Override
-    public void addIntoStock(InStockVO inStockVO) {
+    public  void addIntoStock(InStockVO inStockVO) {
+        //随机生成入库单号
         String IN_STOCK_NUM = UUID.randomUUID().toString().substring(0, 32);
         int itemNumber=0;//记录该单的总数
-        InStock inStock = new InStock();
-        BeanUtils.copyProperties(inStockVO,inStock);
-        inStock.setCreateTime(new Date());
-        inStock.setModified(new Date());
-
         //获取商品的明细
         List<Object> products = inStockVO.getProducts();
         if(!CollectionUtils.isEmpty(products)) {
             for (Object product : products) {
                 LinkedHashMap item = (LinkedHashMap) product;
-                Integer productId = (Integer) item.get("productId");
+                //入库数量
                 int productNumber = (int) item.get("productNumber");
+                //物资编号
+                Integer productId = (Integer) item.get("productId");
                 Product dbProduct = productMapper.selectByPrimaryKey(productId);
                 if (dbProduct == null) {
                     throw new BizException(ErrorCodeEnum.PRODUCT_NOT_FOUND);
@@ -193,6 +185,8 @@ public class InStockServiceImpl implements InStockService {
                     throw new BizException(ErrorCodeEnum.PRODUCT_IS_REMOVE, dbProduct.getName() + "物资已被回收,无法入库");
                 } else if(dbProduct.getStatus()==2){
                     throw new BizException(ErrorCodeEnum.PRODUCT_WAIT_PASS, dbProduct.getName() + "物资待审核,无法入库");
+                }else if(productNumber<=0){
+                    throw new BizException(ErrorCodeEnum.PRODUCT_IN_STOCK_NUMBER_ERROR,dbProduct.getName()+"入库数量不合法,无法入库");
                 } else {
                     itemNumber += productNumber;
                     //插入入库单明细
@@ -203,18 +197,24 @@ public class InStockServiceImpl implements InStockService {
                     inStockInfo.setPNum(dbProduct.getPNum());
                     inStockInfo.setInNum(IN_STOCK_NUM);
                     inStockInfoMapper.insert(inStockInfo);
-
                 }
             }
+
+            InStock inStock = new InStock();
+            BeanUtils.copyProperties(inStockVO,inStock);
+            inStock.setCreateTime(new Date());
+            inStock.setModified(new Date());
             inStock.setProductNumber(itemNumber);
             ActiveUser activeUser = (ActiveUser) SecurityUtils.getSubject().getPrincipal();
             inStock.setOperator(activeUser.getUser().getUsername());
             //生成入库单
             inStock.setInNum(IN_STOCK_NUM);
+            //设置为待审核
             inStock.setStatus(2);
             inStockMapper.insert(inStock);
+        }else {
+            throw new BizException(ErrorCodeEnum.PRODUCT_IN_STOCK_EMPTY);
         }
-
     }
 
     /**
