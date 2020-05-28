@@ -2,26 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc0098de-1555-475b-b0df-4f7e5b9cd099" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/OutStockInfoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/OutStockDetailVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/OutStockItemVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mbg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mbg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/OutStockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/OutStockController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/OutStockConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/OutStockConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Consumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ConsumerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ConsumerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/InStockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/InStockService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/OutStockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/OutStockService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ConsumerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ConsumerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/InStockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/InStockServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/OutStockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/OutStockServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/OutStockVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/OutStockVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductStockVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/vo/ProductStockVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/JWTFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/JWTFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/ErrorCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/ErrorCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/JWTUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/JWTUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/biz/ProductStockMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/biz/ProductStockMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/aspect/ControllerEndpointAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/aspect/ControllerEndpointAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/SSLConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/SSLConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/JWTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/JWTTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,9 +35,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1bAcWvbNGttQep23Om4oagD645X" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -69,7 +53,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588053406354" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sql" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -78,8 +62,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.coderman.api.biz.vo" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\sql" />
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\images" />
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\resources\mapper\system" />
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\system\config" />
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.coderman.api.biz.mapper" />
@@ -88,12 +76,8 @@
       <recent name="com.coderman.api.biz.service.imp" />
       <recent name="com.coderman.api.system.controller" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\images" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\sql" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\resources\mapper\system" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\system\config" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\resources" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.coderman.api.biz.vo" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -2291,20 +2275,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.VuePermission">
-    <configuration name="TestMbg" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.coderman.api.system.test.TestMbg" />
-      <module name="Xinguan" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.coderman.api.system.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.JWTTest.testMd5">
     <configuration name="HttpTest.testGetJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Xinguan" />
       <extension name="coverage">
@@ -2316,6 +2287,22 @@
       <option name="PACKAGE_NAME" value="com.coderman.api.system.test" />
       <option name="MAIN_CLASS_NAME" value="com.coderman.api.system.test.HttpTest" />
       <option name="METHOD_NAME" value="testGetJson" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JWTTest.testMd5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Xinguan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.coderman.api.system.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.coderman.api.system.test" />
+      <option name="MAIN_CLASS_NAME" value="com.coderman.api.system.test.JWTTest" />
+      <option name="METHOD_NAME" value="testMd5" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -2368,8 +2355,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JWTTest.testMd5" />
         <item itemvalue="Spring Boot.VuePermission" />
-        <item itemvalue="Application.TestMbg" />
         <item itemvalue="JUnit.ProductCategoryMapperTest.test2" />
         <item itemvalue="JUnit.HttpTest.testGetJson" />
         <item itemvalue="JUnit.TestMbg.test" />
@@ -2459,7 +2446,8 @@
       <workItem from="1590319814898" duration="5323000" />
       <workItem from="1590372507886" duration="9051000" />
       <workItem from="1590392524102" duration="5349000" />
-      <workItem from="1590454949172" duration="3089000" />
+      <workItem from="1590454949172" duration="5467000" />
+      <workItem from="1590677263281" duration="989000" />
     </task>
     <servers />
   </component>
@@ -2504,38 +2492,38 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="524" y="119" key="#xdebugger.evaluate/0.0.1536.834@0.0.1536.834" timestamp="1588300742809" />
-    <state width="1493" height="368" key="GridCell.Tab.0.bottom" timestamp="1590458670287">
+    <state width="1493" height="368" key="GridCell.Tab.0.bottom" timestamp="1590678260654">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1590458670287" />
-    <state width="1493" height="368" key="GridCell.Tab.0.center" timestamp="1590458670287">
+    <state width="1493" height="368" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1590678260654" />
+    <state width="1493" height="368" key="GridCell.Tab.0.center" timestamp="1590678260654">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1590458670287" />
-    <state width="1493" height="368" key="GridCell.Tab.0.left" timestamp="1590458670287">
+    <state width="1493" height="368" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1590678260654" />
+    <state width="1493" height="368" key="GridCell.Tab.0.left" timestamp="1590678260654">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1590458670287" />
-    <state width="1493" height="368" key="GridCell.Tab.0.right" timestamp="1590458670287">
+    <state width="1493" height="368" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1590678260654" />
+    <state width="1493" height="368" key="GridCell.Tab.0.right" timestamp="1590678260654">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1590458670287" />
-    <state width="1493" height="368" key="GridCell.Tab.1.bottom" timestamp="1590458670289">
+    <state width="1493" height="368" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1590678260654" />
+    <state width="1493" height="368" key="GridCell.Tab.1.bottom" timestamp="1590458907575">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1590458670289" />
-    <state width="1493" height="368" key="GridCell.Tab.1.center" timestamp="1590458670287">
+    <state width="1493" height="368" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1590458907575" />
+    <state width="1493" height="368" key="GridCell.Tab.1.center" timestamp="1590458907575">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1590458670287" />
-    <state width="1493" height="368" key="GridCell.Tab.1.left" timestamp="1590458670287">
+    <state width="1493" height="368" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1590458907575" />
+    <state width="1493" height="368" key="GridCell.Tab.1.left" timestamp="1590458907575">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1590458670287" />
-    <state width="1493" height="368" key="GridCell.Tab.1.right" timestamp="1590458670288">
+    <state width="1493" height="368" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1590458907575" />
+    <state width="1493" height="368" key="GridCell.Tab.1.right" timestamp="1590458907575">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1590458670288" />
+    <state width="1493" height="368" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1590458907575" />
     <state width="1493" height="624" key="GridCell.Tab.2.bottom" timestamp="1590381858534">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

@@ -42,6 +42,7 @@ public class OutStockController {
     @ControllerEndpoint(exceptionMessage = "发放单申请失败", operation = "发放单申请")
     @ApiOperation("提交发放单")
     @PostMapping("/addOutStock")
+    @RequiresPermissions({"outStock:out"})
     public ResponseBean addOutStock(@RequestBody @Validated OutStockVO outStockVO){
         if(outStockVO.getConsumerId()==null){
             //说明现在添加物资来源

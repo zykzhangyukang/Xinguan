@@ -32,14 +32,7 @@ public class JWTTest {
         System.out.println(token);
     }
 
-    @Test
-    public void testMd5(){
-       String salt= UUID.randomUUID().toString();
-        String password="zhangyukang";
-        String s = MD5Utils.md5Encryption(password, salt);
-        System.out.println("salt="+salt);
-        System.out.println("password="+s);
-    }
+
     @Test
     public void test1(){
         System.out.println(new Date());
@@ -67,6 +60,15 @@ public class JWTTest {
             userMapper.insert(user);
         }
 
+    }
+
+    @Test
+    public void testMd5(){
+        String salt= UUID.randomUUID().toString();
+        String password="zyk199907316414";
+        String s = MD5Utils.md5Encryption(password, salt);
+        System.out.println("salt="+salt);
+        System.out.println("password="+s);
     }
 
 }
