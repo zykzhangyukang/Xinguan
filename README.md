@@ -19,7 +19,7 @@ http://www.zykhome.club/#/login
 
 #### 技术栈
 
-SpringBoot,Shiro,mybatis,JWT,Mysql,通用mapper,Vue+element-ui,FastDFS
+SpringBoot,Shiro,mybatis,JWT,Mysql,通用mapper,Vue.js+element-ui,FastDFS,Nginx
 
 #### 演示页面
 
@@ -38,6 +38,10 @@ SpringBoot,Shiro,mybatis,JWT,Mysql,通用mapper,Vue+element-ui,FastDFS
 ![6](https://coderman-blog.oss-cn-beijing.aliyuncs.com/6_1588596788146.PNG)
 
 ### 联系作者
+- QQ交流群
+
+830790908
+
 
 - BBS论坛
 
@@ -49,13 +53,7 @@ https://www.zykcoderman.xyz
 
 ### 打赏作者
 
-> 一分一毛也是爱,用于服务器维护.
+> 一分一毛也是爱,用于服务器维护. 欢迎大家提意哦见~
 
-- 微信打赏
 
-![weixinpay](https://coderman-blog.oss-cn-beijing.aliyuncs.com/weixinpay_1587726894102.png)
-
-- 支付宝打赏
-
-![ailipay](https://coderman-blog.oss-cn-beijing.aliyuncs.com/ailipay_1587726891328.jpg)
-
+![](http://myforum.oss-cn-beijing.aliyuncs.com/postImages/15906789481049ab74aee-3679-4de1-b252-d9fbdda90a08pay.PNG?Expires=1685286948&OSSAccessKeyId=LTAI4FsV5R1tnt8W8kqFqBYh&Signature=yvXZZiVP1pYWeIMkKBILRcHWkHg%3D)
