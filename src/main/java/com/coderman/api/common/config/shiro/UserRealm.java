@@ -1,12 +1,12 @@
 package com.coderman.api.common.config.shiro;
 
-import com.coderman.api.system.bean.ActiveUser;
+import com.coderman.api.common.bean.ActiveUser;
 import com.coderman.api.common.config.jwt.JWTToken;
 import com.coderman.api.common.pojo.system.Menu;
 import com.coderman.api.common.pojo.system.Role;
 import com.coderman.api.common.pojo.system.User;
-import com.coderman.api.system.service.UserService;
 import com.coderman.api.common.utils.JWTUtils;
+import com.coderman.api.system.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -102,7 +102,7 @@ public class UserRealm extends AuthorizingRealm {
         //如果验证通过，获取用户的角色
         List<Role> roles= userService.findRolesById(userBean.getId());
         //查询用户的所有菜单(包括了菜单和按钮)
-        List<Menu> menus=userService.findMenuById(roles);
+        List<Menu> menus=userService.findMenuByRoles(roles);
 
         Set<String> urls=new HashSet<>();
         Set<String> perms=new HashSet<>();
@@ -125,7 +125,6 @@ public class UserRealm extends AuthorizingRealm {
         activeUser.setMenus(menus);
         activeUser.setUrls(urls);
         activeUser.setPermissions(perms);
-
         return new SimpleAuthenticationInfo(activeUser, token, getName());
     }
 }

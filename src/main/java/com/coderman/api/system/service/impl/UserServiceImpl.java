@@ -1,5 +1,6 @@
 package com.coderman.api.system.service.impl;
 
+import com.coderman.api.common.bean.ActiveUser;
 import com.coderman.api.common.config.jwt.JWTToken;
 import com.coderman.api.common.exception.ErrorCodeEnum;
 import com.coderman.api.common.exception.ServiceException;
@@ -7,7 +8,6 @@ import com.coderman.api.common.pojo.system.*;
 import com.coderman.api.common.utils.JWTUtils;
 import com.coderman.api.common.utils.MD5Utils;
 import com.coderman.api.common.utils.MenuTreeBuilder;
-import com.coderman.api.system.bean.ActiveUser;
 import com.coderman.api.system.converter.MenuConverter;
 import com.coderman.api.system.converter.UserConverter;
 import com.coderman.api.system.enums.UserStatusEnum;
@@ -27,6 +27,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -83,9 +85,13 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public List<Role> findRolesById(Long id) {
+        User dbUser = userMapper.selectByPrimaryKey(id);
+        if(dbUser==null){
+            throw new ServiceException("该用户不存在");
+        }
         List<Role> roles=new ArrayList<>();
         UserRole t = new UserRole();
-        t.setUserId(id);
+        t.setUserId(dbUser.getId());
         List<UserRole> userRoleList = userRoleMapper.select(t);
         List<Long> rids=new ArrayList<>();
         if(!CollectionUtils.isEmpty(userRoleList)){
@@ -105,12 +111,12 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 查询用户的权限
+     * 查询权限
      * @param roles 用户的角色
      * @return
      */
     @Override
-    public List<Menu> findMenuById(List<Role> roles) {
+    public List<Menu> findMenuByRoles(List<Role> roles) {
         List<Menu> menus=new ArrayList<>();
         if(!CollectionUtils.isEmpty(roles)){
             Set<Long> menuIds=new HashSet<>();//存放用户的菜单id
@@ -208,6 +214,10 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public void deleteById(Long id) {
+        User user = userMapper.selectByPrimaryKey(id);
+        if(user==null){
+            throw new ServiceException("要删除的用户不存在");
+        }
         userMapper.deleteByPrimaryKey(id);
         //删除对应[用户-角色]记录
         Example o = new Example(UserRole.class);
@@ -223,6 +233,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public void updateStatus(Long id, Boolean status) {
         User dbUser = userMapper.selectByPrimaryKey(id);
+        if(dbUser==null){
+            throw new ServiceException("要更新状态的用户不存在");
+        }
         ActiveUser activeUser= (ActiveUser) SecurityUtils.getSubject().getPrincipal();
         if(dbUser.getId().equals(activeUser.getUser().getId())){
             throw new ServiceException(ErrorCodeEnum.DoNotAllowToDisableTheCurrentUser);
@@ -239,8 +252,21 @@ public class UserServiceImpl implements UserService {
      * 添加用户
      * @param userVO
      */
+    @Transactional
     @Override
     public void add(UserVO userVO) {
+        @NotBlank(message = "用户名不能为空") String username = userVO.getUsername();
+        @NotNull(message = "部门id不能为空") Long departmentId = userVO.getDepartmentId();
+        Example o = new Example(User.class);
+        o.createCriteria().andEqualTo("username",username);
+        int i = userMapper.selectCountByExample(o);
+        if(i!=0){
+            throw new ServiceException("该用户名已被占用");
+        }
+        Department department = departmentMapper.selectByPrimaryKey(departmentId);
+        if(department==null){
+            throw new ServiceException("该部门不存在");
+        }
         User user = new User();
         BeanUtils.copyProperties(userVO,user);
         String salt=UUID.randomUUID().toString().substring(0,32);
@@ -259,12 +285,31 @@ public class UserServiceImpl implements UserService {
      * @param id
      * @param userVO
      */
+    @Transactional
     @Override
     public void update(Long id,UserEditVO userVO) {
+        User dbUser = userMapper.selectByPrimaryKey(id);
+        @NotBlank(message = "用户名不能为空") String username = userVO.getUsername();
+        @NotNull(message = "部门不能为空") Long departmentId = userVO.getDepartmentId();
+        if(dbUser==null){
+            throw new ServiceException("要删除的用户不存在");
+        }
+        Department department = departmentMapper.selectByPrimaryKey(departmentId);
+        if(department==null){
+            throw new ServiceException("该部门不存在");
+        }
+        Example o = new Example(User.class);
+        o.createCriteria().andEqualTo("username",username);
+        List<User> users = userMapper.selectByExample(o);
+        if(!CollectionUtils.isEmpty(users)){
+            if(!users.get(0).getId().equals(id)){
+                throw new ServiceException("该用户名已被占用");
+            }
+        }
         User user = new User();
         BeanUtils.copyProperties(userVO,user);
         user.setModifiedTime(new Date());
-        user.setId(id);
+        user.setId(dbUser.getId());
         userMapper.updateByPrimaryKeySelective(user);
     }
 
@@ -273,9 +318,13 @@ public class UserServiceImpl implements UserService {
      * @param id
      * @return
      */
+    @Transactional
     @Override
     public UserEditVO edit(Long id) {
         User user = userMapper.selectByPrimaryKey(id);
+        if(user==null){
+            throw new ServiceException("要编辑的用户不存在");
+        }
         UserEditVO userEditVO = new UserEditVO();
         BeanUtils.copyProperties(user,userEditVO);
         Department department = departmentMapper.selectByPrimaryKey(user.getDepartmentId());
@@ -290,15 +339,23 @@ public class UserServiceImpl implements UserService {
      * @param id 用户id
      * @return
      */
+    @Transactional
     @Override
     public List<Long> roles(Long id) {
+        User user = userMapper.selectByPrimaryKey(id);
+        if(user==null){
+            throw new ServiceException("该用户不存在");
+        }
         Example o = new Example(UserRole.class);
-        o.createCriteria().andEqualTo("userId",id);
+        o.createCriteria().andEqualTo("userId",user.getId());
         List<UserRole> userRoleList = userRoleMapper.selectByExample(o);
         List<Long> roleIds=new ArrayList<>();
         if(!CollectionUtils.isEmpty(userRoleList)){
             for (UserRole userRole : userRoleList) {
-                roleIds.add(userRole.getRoleId());
+                Role role = roleMapper.selectByPrimaryKey(userRole.getRoleId());
+                if(role!=null){
+                    roleIds.add(role.getId());
+                }
             }
         }
         return roleIds;
@@ -313,12 +370,25 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void assignRoles(Long id, Long[] rids) {
         //删除之前用户的所有角色
+        User user = userMapper.selectByPrimaryKey(id);
+        if(user==null){
+            throw new ServiceException("用户不存在");
+        }
+        //删除之前分配的
         Example o = new Example(UserRole.class);
-        o.createCriteria().andEqualTo("userId",id);
+        o.createCriteria().andEqualTo("userId",user.getId());
         userRoleMapper.deleteByExample(o);
         //增加现在分配的
         if(rids.length>0){
             for (Long rid : rids) {
+                Role role = roleMapper.selectByPrimaryKey(rid);
+                if(role==null){
+                    throw new ServiceException("roleId="+rid+",该角色不存在");
+                }
+                //判断角色状态
+                if(role.getStatus()==0){
+                    throw new ServiceException("roleName="+role.getRoleName()+",该角色已禁用");
+                }
                 UserRole userRole = new UserRole();
                 userRole.setUserId(id);
                 userRole.setRoleId(rid);

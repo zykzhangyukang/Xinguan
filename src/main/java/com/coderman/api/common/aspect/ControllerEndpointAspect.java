@@ -2,7 +2,7 @@ package com.coderman.api.common.aspect;
 
 import com.alibaba.fastjson.JSON;
 import com.coderman.api.common.annotation.ControllerEndpoint;
-import com.coderman.api.system.bean.ActiveUser;
+import com.coderman.api.common.bean.ActiveUser;
 import com.coderman.api.common.pojo.system.Log;
 import com.coderman.api.system.service.LogService;
 import com.coderman.api.common.utils.AddressUtil;

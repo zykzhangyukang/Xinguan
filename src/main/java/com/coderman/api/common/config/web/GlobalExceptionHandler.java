@@ -1,7 +1,7 @@
 package com.coderman.api.common.config.web;
 
 import com.coderman.api.common.exception.ServiceException;
-import com.coderman.api.system.bean.ResponseBean;
+import com.coderman.api.common.bean.ResponseBean;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.ShiroException;
 import org.springframework.context.support.DefaultMessageSourceResolvable;

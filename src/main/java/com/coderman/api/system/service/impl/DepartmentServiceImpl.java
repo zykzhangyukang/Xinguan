@@ -1,15 +1,18 @@
 package com.coderman.api.system.service.impl;
 
-import com.coderman.api.system.converter.DepartmentConverter;
 import com.coderman.api.biz.enums.BizUserTypeEnum;
-import com.coderman.api.system.mapper.DepartmentMapper;
-import com.coderman.api.system.mapper.RoleMapper;
-import com.coderman.api.system.mapper.UserMapper;
-import com.coderman.api.system.mapper.UserRoleMapper;
+import com.coderman.api.common.exception.ServiceException;
 import com.coderman.api.common.pojo.system.Department;
 import com.coderman.api.common.pojo.system.Role;
 import com.coderman.api.common.pojo.system.User;
 import com.coderman.api.common.pojo.system.UserRole;
+import com.coderman.api.system.converter.DepartmentConverter;
+import com.coderman.api.system.enums.UserStatusEnum;
+import com.coderman.api.system.enums.UserTypeEnum;
+import com.coderman.api.system.mapper.DepartmentMapper;
+import com.coderman.api.system.mapper.RoleMapper;
+import com.coderman.api.system.mapper.UserMapper;
+import com.coderman.api.system.mapper.UserRoleMapper;
 import com.coderman.api.system.service.DepartmentService;
 import com.coderman.api.system.vo.DeanVO;
 import com.coderman.api.system.vo.DepartmentVO;
@@ -22,6 +25,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -72,7 +76,7 @@ public class DepartmentServiceImpl implements DepartmentService {
                 d.setMgrName(user.getUsername());
                 Example o1 = new Example(User.class);
                 o1.createCriteria().andEqualTo("departmentId",department.getId())
-                        .andNotEqualTo("type",0);
+                        .andNotEqualTo("type", UserTypeEnum.SYSTEM_ADMIN.getTypeCode());
                 d.setTotal(userMapper.selectCountByExample(o1));
                 departmentVOS.add(d);
             }
@@ -107,7 +111,7 @@ public class DepartmentServiceImpl implements DepartmentService {
                     for (Long userId : userIds) {
                         User user = userMapper.selectByPrimaryKey(userId);
                         //所有可用的
-                        if(user!=null&&user.getStatus()==1){
+                        if(user!=null&&user.getStatus()== UserStatusEnum.AVAILABLE.getStatusCode()){
                             DeanVO deanVO = new DeanVO();
                             deanVO.setName(user.getUsername());
                             deanVO.setId(user.getId());
@@ -126,11 +130,34 @@ public class DepartmentServiceImpl implements DepartmentService {
      */
     @Override
     public void add(DepartmentVO departmentVO) {
+        @NotNull(message = "系主任不能为空") Long mgrId = departmentVO.getMgrId();
+        checkMgr(mgrId);
         Department department = new Department();
         BeanUtils.copyProperties(departmentVO,department);
         department.setCreateTime(new Date());
         department.setModifiedTime(new Date());
         departmentMapper.insert(department);
+    }
+
+    /**
+     * 验证部门主任
+     * @param mgrId
+     */
+    private void checkMgr(@NotNull(message = "系主任不能为空") Long mgrId) {
+        User user = userMapper.selectByPrimaryKey(mgrId);
+        if (user==null){
+            throw new ServiceException("不存在该部门主任");
+        }
+        List<DeanVO> deanList = findDeanList();
+        boolean isMgr=false;
+        for (DeanVO deanVO : deanList) {
+            if(deanVO.getId().equals(user.getId())){
+                isMgr=true;
+            }
+        }
+        if(!isMgr){
+            throw new ServiceException("不存在该部门主任");
+        }
     }
 
     /**
@@ -141,17 +168,25 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public DepartmentVO edit(Long id) {
         Department department = departmentMapper.selectByPrimaryKey(id);
-        DepartmentVO departmentVO = DepartmentConverter.converterToDepartmentVO(department);
-        return departmentVO;
+        if(department==null){
+            throw new ServiceException("编辑的部门不存在");
+        }
+        return DepartmentConverter.converterToDepartmentVO(department);
     }
 
     /**
-     * 更新院系
+     * 更新部门
      * @param id
      * @param departmentVO
      */
     @Override
     public void update(Long id, DepartmentVO departmentVO) {
+        Department dbDepartment = departmentMapper.selectByPrimaryKey(id);
+        @NotNull(message = "系主任不能为空") Long mgrId = departmentVO.getMgrId();
+        if(dbDepartment==null){
+            throw new ServiceException("要更新的部门不存在");
+        }
+        checkMgr(mgrId);
         Department department = new Department();
         BeanUtils.copyProperties(departmentVO,department);
         department.setId(id);
@@ -159,8 +194,16 @@ public class DepartmentServiceImpl implements DepartmentService {
         departmentMapper.updateByPrimaryKeySelective(department);
     }
 
+    /**
+     * 删除部门信息
+     * @param id
+     */
     @Override
     public void delete(Long id) {
+        Department department = departmentMapper.selectByPrimaryKey(id);
+        if(department==null){
+            throw new ServiceException("要删除的部门不存在");
+        }
         departmentMapper.deleteByPrimaryKey(id);
     }
 

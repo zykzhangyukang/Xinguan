@@ -1,11 +1,12 @@
 package com.coderman.api.system.service.impl;
 
-import com.coderman.api.system.bean.ActiveUser;
-import com.coderman.api.system.mapper.LoginLogMapper;
+import com.coderman.api.common.bean.ActiveUser;
+import com.coderman.api.common.exception.ServiceException;
 import com.coderman.api.common.pojo.system.LoginLog;
-import com.coderman.api.system.service.LoginLogService;
 import com.coderman.api.common.utils.AddressUtil;
 import com.coderman.api.common.utils.IPUtil;
+import com.coderman.api.system.mapper.LoginLogMapper;
+import com.coderman.api.system.service.LoginLogService;
 import com.coderman.api.system.vo.LoginLogVO;
 import com.coderman.api.system.vo.PageVO;
 import com.coderman.api.system.vo.UserVO;
@@ -18,6 +19,7 @@ import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
@@ -80,6 +82,10 @@ public class LoginLogServiceImpl implements LoginLogService {
     @Override
     public void batchDelete(List<Long> list) {
         for (Long id : list) {
+            LoginLog loginLog = loginLogMapper.selectByPrimaryKey(id);
+            if(loginLog==null){
+                throw new ServiceException("id="+id+"登入日志不存在");
+            }
             delete(id);
         }
     }
@@ -98,6 +104,7 @@ public class LoginLogServiceImpl implements LoginLogService {
      * 插入登入日志
      * @param request
      */
+    @Transactional
     @Override
     public void add(HttpServletRequest request) {
         loginLogMapper.insert(createLoginLog(request));
@@ -128,8 +135,13 @@ public class LoginLogServiceImpl implements LoginLogService {
      * 删除登入日志
      * @param id
      */
+    @Transactional
     @Override
     public void delete(Long id) {
+        LoginLog loginLog = loginLogMapper.selectByPrimaryKey(id);
+        if(loginLog==null){
+            throw new ServiceException("登入日志不存在");
+        }
         loginLogMapper.deleteByPrimaryKey(id);
     }
 

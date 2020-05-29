@@ -3,7 +3,7 @@ package com.coderman.api.biz.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.coderman.api.system.bean.ResponseBean;
+import com.coderman.api.common.bean.ResponseBean;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

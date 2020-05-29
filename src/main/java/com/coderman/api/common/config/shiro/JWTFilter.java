@@ -1,6 +1,6 @@
 package com.coderman.api.common.config.shiro;
 
-import com.coderman.api.system.bean.ResponseBean;
+import com.coderman.api.common.bean.ResponseBean;
 import com.coderman.api.common.config.jwt.JWTToken;
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;

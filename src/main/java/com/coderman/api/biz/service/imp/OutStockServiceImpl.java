@@ -5,7 +5,7 @@ import com.coderman.api.biz.mapper.*;
 import com.coderman.api.biz.service.OutStockService;
 import com.coderman.api.biz.vo.*;
 import com.coderman.api.common.pojo.biz.*;
-import com.coderman.api.system.bean.ActiveUser;
+import com.coderman.api.common.bean.ActiveUser;
 import com.coderman.api.common.exception.ErrorCodeEnum;
 import com.coderman.api.common.exception.ServiceException;
 import com.coderman.api.system.vo.PageVO;

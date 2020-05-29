@@ -33,7 +33,7 @@ public interface UserService {
      * @param roles 用户的角色
      * @return
      */
-    List<Menu> findMenuById(List<Role> roles);
+    List<Menu> findMenuByRoles(List<Role> roles);
 
     /**
      * 加载用户菜单

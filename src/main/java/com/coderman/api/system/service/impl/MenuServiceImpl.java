@@ -1,5 +1,6 @@
 package com.coderman.api.system.service.impl;
 
+import com.coderman.api.common.exception.ServiceException;
 import com.coderman.api.system.converter.MenuConverter;
 import com.coderman.api.system.mapper.MenuMapper;
 import com.coderman.api.system.mapper.RoleMenuMapper;
@@ -63,6 +64,10 @@ public class MenuServiceImpl implements MenuService {
 
     @Override
     public void delete(Long id) {
+        Menu menu = menuMapper.selectByPrimaryKey(id);
+        if(menu==null){
+            throw new ServiceException("菜单节点不存在");
+        }
         menuMapper.deleteByPrimaryKey(id);
     }
 

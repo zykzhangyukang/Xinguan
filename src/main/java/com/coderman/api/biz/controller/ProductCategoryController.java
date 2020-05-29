@@ -3,7 +3,7 @@ package com.coderman.api.biz.controller;
 import com.coderman.api.biz.service.ProductCategoryService;
 import com.coderman.api.biz.vo.ProductCategoryTreeNodeVO;
 import com.coderman.api.common.annotation.ControllerEndpoint;
-import com.coderman.api.system.bean.ResponseBean;
+import com.coderman.api.common.bean.ResponseBean;
 import com.coderman.api.system.vo.PageVO;
 import com.coderman.api.biz.vo.ProductCategoryVO;
 import io.swagger.annotations.Api;

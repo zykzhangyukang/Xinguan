@@ -1,7 +1,7 @@
 package com.coderman.api.system.controller;
 
 import com.coderman.api.common.utils.CommonFileUtil;
-import com.coderman.api.system.bean.ResponseBean;
+import com.coderman.api.common.bean.ResponseBean;
 import com.coderman.api.system.mapper.ImageAttachmentMapper;
 import com.coderman.api.common.pojo.system.ImageAttachment;
 import com.coderman.api.system.vo.ImageAttachmentVO;

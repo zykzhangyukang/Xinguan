@@ -1,4 +1,4 @@
-package com.coderman.api.system.bean;
+package com.coderman.api.common.bean;
 
 import com.coderman.api.common.pojo.system.Menu;
 import com.coderman.api.common.pojo.system.Role;

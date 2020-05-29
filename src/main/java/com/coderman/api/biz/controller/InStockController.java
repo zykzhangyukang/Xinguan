@@ -7,7 +7,7 @@ import com.coderman.api.biz.vo.InStockDetailVO;
 import com.coderman.api.biz.vo.InStockVO;
 import com.coderman.api.biz.vo.SupplierVO;
 import com.coderman.api.common.annotation.ControllerEndpoint;
-import com.coderman.api.system.bean.ResponseBean;
+import com.coderman.api.common.bean.ResponseBean;
 import com.coderman.api.system.vo.PageVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

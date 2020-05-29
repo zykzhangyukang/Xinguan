@@ -1,7 +1,7 @@
 package com.coderman.api.system.controller;
 
 import com.coderman.api.common.annotation.ControllerEndpoint;
-import com.coderman.api.system.bean.ResponseBean;
+import com.coderman.api.common.bean.ResponseBean;
 import com.coderman.api.system.converter.RoleConverter;
 import com.coderman.api.common.pojo.system.Role;
 import com.coderman.api.common.pojo.system.User;
@@ -56,7 +56,7 @@ public class UserController {
      */
     @ApiOperation(value = "用户登入", notes = "接收参数用户名和密码,登入成功后,返回JWTToken")
     @PostMapping("/login")
-    public ResponseBean login(@NotBlank(message = "用户名必填") String username,
+    public ResponseBean login(@NotBlank(message = "账号必填") String username,
                               @NotBlank(message = "密码必填") String password,
                               HttpServletRequest request) {
         String token=userService.login(username,password);
@@ -192,13 +192,8 @@ public class UserController {
     @RequiresPermissions({"user:add"})
     @PostMapping("/add")
     public ResponseBean add(@RequestBody @Validated UserVO userVO) {
-        User user = userService.findUserByName(userVO.getUsername());
-        if (user == null) {
-            userService.add(userVO);
-            return ResponseBean.success();
-        } else {
-            return ResponseBean.error("用户名已被占用");
-        }
+        userService.add(userVO);
+        return ResponseBean.success();
     }
 
     /**

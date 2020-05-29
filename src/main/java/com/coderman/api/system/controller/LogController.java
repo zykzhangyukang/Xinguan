@@ -1,6 +1,6 @@
 package com.coderman.api.system.controller;
 
-import com.coderman.api.system.bean.ResponseBean;
+import com.coderman.api.common.bean.ResponseBean;
 import com.coderman.api.system.service.LogService;
 import com.coderman.api.system.vo.LogVO;
 import com.coderman.api.system.vo.PageVO;

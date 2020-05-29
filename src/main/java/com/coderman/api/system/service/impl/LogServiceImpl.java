@@ -1,8 +1,9 @@
 package com.coderman.api.system.service.impl;
 
-import com.coderman.api.system.mapper.LogMapper;
+import com.coderman.api.common.exception.ServiceException;
 import com.coderman.api.common.pojo.system.Log;
 import com.coderman.api.common.pojo.system.LoginLog;
+import com.coderman.api.system.mapper.LogMapper;
 import com.coderman.api.system.service.LogService;
 import com.coderman.api.system.vo.LogVO;
 import com.coderman.api.system.vo.PageVO;
@@ -38,6 +39,7 @@ public class LogServiceImpl implements LogService {
         logMapper.deleteByPrimaryKey(id);
     }
 
+
     @Override
     public PageVO<LogVO> findLogList(Integer pageNum, Integer pageSize, LogVO logVO) {
         PageHelper.startPage(pageNum,pageSize);
@@ -66,9 +68,17 @@ public class LogServiceImpl implements LogService {
         return new PageVO<>(info.getTotal(),logVOS);
     }
 
+    /**
+     * 批量删除
+     * @param list
+     */
     @Override
     public void batchDelete(List<Long> list) {
         for (Long id : list) {
+            Log log = logMapper.selectByPrimaryKey(id);
+            if(log==null){
+                throw new ServiceException("id="+id+",操作日志不存在");
+            }
             delete(id);
         }
     }

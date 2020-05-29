@@ -1,7 +1,7 @@
 package com.coderman.api.system.controller;
 
 import com.coderman.api.common.annotation.ControllerEndpoint;
-import com.coderman.api.system.bean.ResponseBean;
+import com.coderman.api.common.bean.ResponseBean;
 import com.coderman.api.system.service.LoginLogService;
 import com.coderman.api.system.vo.LoginLogVO;
 import com.coderman.api.system.vo.PageVO;
