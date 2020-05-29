@@ -19,9 +19,7 @@ public enum  ErrorCodeEnum implements BaseCodeInterface {
     SERVER_BUSY(503,"服务器正忙，请稍后再试!"),
     //用户相关：10000**
     USER_ACCOUNT_NOT_FOUND(10001, "账号不存在!"),
-    DELETE_ERROR(10002,"删除失败"),
-    UPDATE_ERROR(10003,"更新失败"),
-    ADD_ERROR(10004,"添加失败"),
+    DoNotAllowToDisableTheCurrentUser(10002,"不允许禁用当前用户"),
     //业务异常
     PRODUCT_IS_REMOVE(30001,"物资已移入回收站"),
     PRODUCT_NOT_FOUND(30002,"物资找不到"),

@@ -1,6 +1,6 @@
 package com.coderman.api.biz.service;
 
-import com.coderman.api.biz.pojo.Consumer;
+import com.coderman.api.common.pojo.biz.Consumer;
 import com.coderman.api.biz.vo.ConsumerVO;
 import com.coderman.api.system.vo.PageVO;
 

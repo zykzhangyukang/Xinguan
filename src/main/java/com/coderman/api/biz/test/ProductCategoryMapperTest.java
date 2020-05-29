@@ -2,7 +2,7 @@ package com.coderman.api.biz.test;
 
 import com.coderman.api.biz.mapper.ProductCategoryMapper;
 import com.coderman.api.biz.mapper.ProductStockMapper;
-import com.coderman.api.biz.pojo.ProductCategory;
+import com.coderman.api.common.pojo.biz.ProductCategory;
 import com.coderman.api.biz.vo.ProductStockVO;
 import com.coderman.api.biz.vo.ProductVO;
 import org.junit.Test;

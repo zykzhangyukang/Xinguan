@@ -1,6 +1,6 @@
 package com.coderman.api.system.converter;
 
-import com.coderman.api.system.pojo.Role;
+import com.coderman.api.common.pojo.system.Role;
 import com.coderman.api.system.vo.RoleTransferItemVO;
 import com.coderman.api.system.vo.RoleVO;
 import org.springframework.beans.BeanUtils;

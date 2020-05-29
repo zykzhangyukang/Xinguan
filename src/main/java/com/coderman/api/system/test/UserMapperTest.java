@@ -2,7 +2,7 @@ package com.coderman.api.system.test;
 
 import com.coderman.api.system.mapper.LoginLogMapper;
 import com.coderman.api.system.mapper.UserMapper;
-import com.coderman.api.system.pojo.User;
+import com.coderman.api.common.pojo.system.User;
 import com.coderman.api.system.vo.UserVO;
 import org.junit.Test;
 import org.junit.runner.RunWith;

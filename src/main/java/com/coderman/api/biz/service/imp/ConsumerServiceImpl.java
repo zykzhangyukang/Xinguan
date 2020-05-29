@@ -2,7 +2,7 @@ package com.coderman.api.biz.service.imp;
 
 import com.coderman.api.biz.converter.ConsumerConverter;
 import com.coderman.api.biz.mapper.ConsumerMapper;
-import com.coderman.api.biz.pojo.Consumer;
+import com.coderman.api.common.pojo.biz.Consumer;
 import com.coderman.api.biz.service.ConsumerService;
 import com.coderman.api.biz.vo.ConsumerVO;
 import com.coderman.api.system.vo.PageVO;

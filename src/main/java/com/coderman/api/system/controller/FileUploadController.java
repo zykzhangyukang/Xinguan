@@ -1,12 +1,10 @@
 package com.coderman.api.system.controller;
 
-import com.coderman.api.biz.utils.CommonFileUtil;
+import com.coderman.api.common.utils.CommonFileUtil;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.mapper.ImageAttachmentMapper;
-import com.coderman.api.system.pojo.ImageAttachment;
+import com.coderman.api.common.pojo.system.ImageAttachment;
 import com.coderman.api.system.vo.ImageAttachmentVO;
-import com.coderman.api.system.vo.PageVO;
-import com.coderman.api.system.vo.UserVO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
@@ -14,7 +12,6 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import tk.mybatis.mapper.entity.Example;

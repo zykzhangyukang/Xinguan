@@ -2,10 +2,10 @@ package com.coderman.api.system.service.impl;
 
 import com.coderman.api.biz.converter.ProductCategoryConverter;
 import com.coderman.api.biz.mapper.ProductCategoryMapper;
-import com.coderman.api.biz.pojo.ProductCategory;
+import com.coderman.api.common.pojo.biz.ProductCategory;
 import com.coderman.api.biz.service.ProductCategoryService;
-import com.coderman.api.biz.utils.CategoryTreeBuilder;
-import com.coderman.api.biz.utils.ListPageUtils;
+import com.coderman.api.common.utils.CategoryTreeBuilder;
+import com.coderman.api.common.utils.ListPageUtils;
 import com.coderman.api.biz.vo.ProductCategoryTreeNodeVO;
 import com.coderman.api.biz.vo.ProductCategoryVO;
 import com.coderman.api.system.vo.PageVO;
@@ -16,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
-import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 

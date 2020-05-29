@@ -1,7 +1,7 @@
 package com.coderman.api.biz.service.imp;
 
 import com.coderman.api.biz.mapper.HealthMapper;
-import com.coderman.api.biz.pojo.Health;
+import com.coderman.api.common.pojo.biz.Health;
 import com.coderman.api.biz.service.HealthService;
 import com.coderman.api.biz.vo.HealthVO;
 import com.coderman.api.system.exception.BizException;

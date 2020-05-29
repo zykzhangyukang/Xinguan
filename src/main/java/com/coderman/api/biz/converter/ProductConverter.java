@@ -1,11 +1,8 @@
 package com.coderman.api.biz.converter;
 
-import com.coderman.api.biz.mapper.ProductStockMapper;
-import com.coderman.api.biz.pojo.Product;
+import com.coderman.api.common.pojo.biz.Product;
 import com.coderman.api.biz.vo.ProductVO;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;

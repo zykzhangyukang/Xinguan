@@ -2,10 +2,10 @@ package com.coderman.api.system.service.impl;
 
 import com.coderman.api.system.bean.ActiveUser;
 import com.coderman.api.system.mapper.LoginLogMapper;
-import com.coderman.api.system.pojo.LoginLog;
+import com.coderman.api.common.pojo.system.LoginLog;
 import com.coderman.api.system.service.LoginLogService;
-import com.coderman.api.system.util.AddressUtil;
-import com.coderman.api.system.util.IPUtil;
+import com.coderman.api.common.utils.AddressUtil;
+import com.coderman.api.common.utils.IPUtil;
 import com.coderman.api.system.vo.LoginLogVO;
 import com.coderman.api.system.vo.PageVO;
 import com.coderman.api.system.vo.UserVO;

@@ -1,11 +1,10 @@
 package com.coderman.api.system.controller;
 
-import com.coderman.api.system.annotation.ControllerEndpoint;
+import com.coderman.api.common.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.converter.RoleConverter;
-import com.coderman.api.system.pojo.Role;
-import com.coderman.api.system.pojo.User;
-import com.coderman.api.system.service.DepartmentService;
+import com.coderman.api.common.pojo.system.Role;
+import com.coderman.api.common.pojo.system.User;
 import com.coderman.api.system.service.LoginLogService;
 import com.coderman.api.system.service.RoleService;
 import com.coderman.api.system.service.UserService;

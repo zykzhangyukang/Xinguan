@@ -1,8 +1,8 @@
 package com.coderman.api.biz.converter;
 
 import com.coderman.api.biz.mapper.SupplierMapper;
-import com.coderman.api.biz.pojo.InStock;
-import com.coderman.api.biz.pojo.Supplier;
+import com.coderman.api.common.pojo.biz.InStock;
+import com.coderman.api.common.pojo.biz.Supplier;
 import com.coderman.api.biz.vo.InStockVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

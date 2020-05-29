@@ -1,7 +1,7 @@
 package com.coderman.api.biz.converter;
 
-import com.coderman.api.biz.pojo.Consumer;
 import com.coderman.api.biz.vo.ConsumerVO;
+import com.coderman.api.common.pojo.biz.Consumer;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.CollectionUtils;
 

@@ -1,9 +1,9 @@
 package com.coderman.api.biz.controller;
 
-import com.coderman.api.biz.pojo.Health;
+import com.coderman.api.common.pojo.biz.Health;
 import com.coderman.api.biz.service.HealthService;
 import com.coderman.api.biz.vo.HealthVO;
-import com.coderman.api.system.annotation.ControllerEndpoint;
+import com.coderman.api.common.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ActiveUser;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.vo.PageVO;

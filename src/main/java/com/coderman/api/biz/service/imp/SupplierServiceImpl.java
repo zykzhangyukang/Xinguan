@@ -2,7 +2,7 @@ package com.coderman.api.biz.service.imp;
 
 import com.coderman.api.biz.converter.SupplierConverter;
 import com.coderman.api.biz.mapper.SupplierMapper;
-import com.coderman.api.biz.pojo.Supplier;
+import com.coderman.api.common.pojo.biz.Supplier;
 import com.coderman.api.biz.service.SupplierService;
 import com.coderman.api.biz.vo.SupplierVO;
 import com.coderman.api.system.vo.PageVO;

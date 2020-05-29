@@ -2,9 +2,9 @@ package com.coderman.api.biz.service.imp;
 
 import com.coderman.api.biz.converter.OutStockConverter;
 import com.coderman.api.biz.mapper.*;
-import com.coderman.api.biz.pojo.*;
 import com.coderman.api.biz.service.OutStockService;
 import com.coderman.api.biz.vo.*;
+import com.coderman.api.common.pojo.biz.*;
 import com.coderman.api.system.bean.ActiveUser;
 import com.coderman.api.system.enums.ErrorCodeEnum;
 import com.coderman.api.system.exception.BizException;

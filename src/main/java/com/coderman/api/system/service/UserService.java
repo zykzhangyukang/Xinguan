@@ -1,8 +1,8 @@
 package com.coderman.api.system.service;
 
-import com.coderman.api.system.pojo.Menu;
-import com.coderman.api.system.pojo.Role;
-import com.coderman.api.system.pojo.User;
+import com.coderman.api.common.pojo.system.Menu;
+import com.coderman.api.common.pojo.system.Role;
+import com.coderman.api.common.pojo.system.User;
 import com.coderman.api.system.vo.*;
 
 import java.util.List;

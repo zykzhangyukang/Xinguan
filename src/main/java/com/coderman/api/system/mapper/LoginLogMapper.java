@@ -1,6 +1,6 @@
 package com.coderman.api.system.mapper;
 
-import com.coderman.api.system.pojo.LoginLog;
+import com.coderman.api.common.pojo.system.LoginLog;
 import com.coderman.api.system.vo.UserVO;
 import tk.mybatis.mapper.common.Mapper;
 

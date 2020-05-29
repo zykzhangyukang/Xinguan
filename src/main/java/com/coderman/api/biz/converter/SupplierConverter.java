@@ -1,6 +1,6 @@
 package com.coderman.api.biz.converter;
 
-import com.coderman.api.biz.pojo.Supplier;
+import com.coderman.api.common.pojo.biz.Supplier;
 import com.coderman.api.biz.vo.SupplierVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.CollectionUtils;

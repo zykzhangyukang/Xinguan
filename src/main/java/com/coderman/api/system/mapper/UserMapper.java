@@ -1,6 +1,6 @@
 package com.coderman.api.system.mapper;
 
-import com.coderman.api.system.pojo.User;
+import com.coderman.api.common.pojo.system.User;
 import tk.mybatis.mapper.common.Mapper;
 
 /**

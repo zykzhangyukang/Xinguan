@@ -1,9 +1,8 @@
 package com.coderman.api.system.controller;
 
-import com.coderman.api.system.annotation.ControllerEndpoint;
+import com.coderman.api.common.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
-import com.coderman.api.system.pojo.Menu;
-import com.coderman.api.system.pojo.Role;
+import com.coderman.api.common.pojo.system.Role;
 import com.coderman.api.system.service.MenuService;
 import com.coderman.api.system.service.RoleService;
 import com.coderman.api.system.vo.*;
@@ -15,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.security.RolesAllowed;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;

@@ -21,7 +21,7 @@
 		</javaTypeResolver>
 
 		<!-- 指定javaBean生成的位置 -->
-		<javaModelGenerator targetPackage="com.coderman.api.biz.pojo"
+		<javaModelGenerator targetPackage="com.coderman.api.common.pojo.system"
 			targetProject=".\src\main\java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />

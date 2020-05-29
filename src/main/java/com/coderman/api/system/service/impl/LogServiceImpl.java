@@ -1,8 +1,8 @@
 package com.coderman.api.system.service.impl;
 
 import com.coderman.api.system.mapper.LogMapper;
-import com.coderman.api.system.pojo.Log;
-import com.coderman.api.system.pojo.LoginLog;
+import com.coderman.api.common.pojo.system.Log;
+import com.coderman.api.common.pojo.system.LoginLog;
 import com.coderman.api.system.service.LogService;
 import com.coderman.api.system.vo.LogVO;
 import com.coderman.api.system.vo.PageVO;

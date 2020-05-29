@@ -2,12 +2,12 @@ package com.coderman.api.biz.service.imp;
 
 import com.coderman.api.biz.converter.InStockConverter;
 import com.coderman.api.biz.mapper.*;
-import com.coderman.api.biz.pojo.*;
 import com.coderman.api.biz.service.InStockService;
 import com.coderman.api.biz.vo.InStockDetailVO;
 import com.coderman.api.biz.vo.InStockItemVO;
 import com.coderman.api.biz.vo.InStockVO;
 import com.coderman.api.biz.vo.SupplierVO;
+import com.coderman.api.common.pojo.biz.*;
 import com.coderman.api.system.bean.ActiveUser;
 import com.coderman.api.system.enums.ErrorCodeEnum;
 import com.coderman.api.system.exception.BizException;

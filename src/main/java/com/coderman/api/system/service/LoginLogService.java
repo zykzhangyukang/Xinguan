@@ -1,6 +1,5 @@
 package com.coderman.api.system.service;
 
-import com.coderman.api.system.pojo.LoginLog;
 import com.coderman.api.system.vo.LoginLogVO;
 import com.coderman.api.system.vo.PageVO;
 import com.coderman.api.system.vo.UserVO;

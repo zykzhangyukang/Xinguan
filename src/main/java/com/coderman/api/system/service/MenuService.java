@@ -1,6 +1,6 @@
 package com.coderman.api.system.service;
 
-import com.coderman.api.system.pojo.Menu;
+import com.coderman.api.common.pojo.system.Menu;
 import com.coderman.api.system.vo.MenuNodeVO;
 import com.coderman.api.system.vo.MenuVO;
 

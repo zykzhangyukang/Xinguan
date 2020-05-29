@@ -1,6 +1,6 @@
 package com.coderman.api.system.service;
 
-import com.coderman.api.system.pojo.Role;
+import com.coderman.api.common.pojo.system.Role;
 import com.coderman.api.system.vo.PageVO;
 import com.coderman.api.system.vo.RoleVO;
 

@@ -1,18 +1,20 @@
 package com.coderman.api.system.service.impl;
 
+import com.coderman.api.common.pojo.system.*;
 import com.coderman.api.system.bean.ActiveUser;
-import com.coderman.api.system.config.JWTToken;
+import com.coderman.api.common.config.jwt.JWTToken;
 import com.coderman.api.system.converter.MenuConverter;
 import com.coderman.api.system.converter.UserConverter;
 import com.coderman.api.system.enums.ErrorCodeEnum;
+import com.coderman.api.system.enums.UserStatusEnum;
+import com.coderman.api.system.enums.UserTypeEnum;
 import com.coderman.api.system.exception.BizException;
 import com.coderman.api.system.mapper.*;
-import com.coderman.api.system.pojo.*;
 import com.coderman.api.system.service.DepartmentService;
 import com.coderman.api.system.service.UserService;
-import com.coderman.api.system.util.JWTUtils;
-import com.coderman.api.system.util.MD5Utils;
-import com.coderman.api.system.util.MenuTreeBuilder;
+import com.coderman.api.common.utils.JWTUtils;
+import com.coderman.api.common.utils.MD5Utils;
+import com.coderman.api.common.utils.MenuTreeBuilder;
 import com.coderman.api.system.vo.*;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -143,13 +145,13 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public List<MenuNodeVO> findMenu() {
-        List<Menu> menus;
+        List<Menu> menus=null;
         List<MenuNodeVO> menuNodeVOS=new ArrayList<>();
         ActiveUser activeUser = (ActiveUser) SecurityUtils.getSubject().getPrincipal();
-        if(activeUser.getUser().getType()==0){
+        if(activeUser.getUser().getType()==UserTypeEnum.SYSTEM_ADMIN.getTypeCode()){
             //超级管理员
             menus=menuMapper.selectAll();
-        }else {
+        }else if(activeUser.getUser().getType()== UserTypeEnum.SYSTEM_USER.getTypeCode()){
             //普通系统用户
             menus= activeUser.getMenus();
         }
@@ -223,11 +225,12 @@ public class UserServiceImpl implements UserService {
         User dbUser = userMapper.selectByPrimaryKey(id);
         ActiveUser activeUser= (ActiveUser) SecurityUtils.getSubject().getPrincipal();
         if(dbUser.getId().equals(activeUser.getUser().getId())){
-            throw new BizException("不能禁用当前用户");
+            throw new BizException(ErrorCodeEnum.DoNotAllowToDisableTheCurrentUser);
         }else {
             User t = new User();
             t.setId(id);
-            t.setStatus(status?0:1);
+            t.setStatus(status? UserStatusEnum.DISABLE.getStatusCode() :
+                    UserStatusEnum.AVAILABLE.getStatusCode());
             userMapper.updateByPrimaryKeySelective(t);
         }
     }
@@ -245,8 +248,8 @@ public class UserServiceImpl implements UserService {
         user.setModifiedTime(new Date());
         user.setCreateTime(new Date());
         user.setSalt(salt);
-        user.setType(1);
-        user.setStatus(1);
+        user.setType(UserTypeEnum.SYSTEM_USER.getTypeCode());//添加的用户默认是普通用户
+        user.setStatus(UserStatusEnum.AVAILABLE.getStatusCode());//添加的用户默认启用
         user.setAvatar("http://badidol.com/uploads/images/avatars/201910/24/18_1571921832_HG9E55x9NY.jpg");
         userMapper.insert(user);
     }
@@ -375,7 +378,7 @@ public class UserServiceImpl implements UserService {
         List<String> roleNames = activeUser.getRoles().stream().map(Role::getRoleName).collect(Collectors.toList());
         userInfoVO.setRoles(roleNames);
         userInfoVO.setPerms(activeUser.getPermissions());
-        userInfoVO.setIsAdmin(activeUser.getUser().getType()==0);
+        userInfoVO.setIsAdmin(activeUser.getUser().getType()==UserTypeEnum.SYSTEM_ADMIN.getTypeCode());
         DepartmentVO dept = departmentService.edit(activeUser.getUser().getDepartmentId());
         if(dept!=null){
             userInfoVO.setDepartment(dept.getName());

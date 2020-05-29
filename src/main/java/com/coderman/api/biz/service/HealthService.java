@@ -1,6 +1,6 @@
 package com.coderman.api.biz.service;
 
-import com.coderman.api.biz.pojo.Health;
+import com.coderman.api.common.pojo.biz.Health;
 import com.coderman.api.biz.vo.HealthVO;
 import com.coderman.api.system.vo.PageVO;
 

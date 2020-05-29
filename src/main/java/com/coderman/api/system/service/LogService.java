@@ -1,13 +1,10 @@
 package com.coderman.api.system.service;
 
-import com.coderman.api.system.pojo.Log;
+import com.coderman.api.common.pojo.system.Log;
 import com.coderman.api.system.vo.LogVO;
 import com.coderman.api.system.vo.PageVO;
-import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.scheduling.annotation.Async;
 
-import javax.servlet.http.HttpServletRequest;
-import java.lang.reflect.Method;
 import java.util.List;
 
 /**

@@ -1,6 +1,6 @@
 package com.coderman.api.biz.converter;
 
-import com.coderman.api.biz.pojo.ProductCategory;
+import com.coderman.api.common.pojo.biz.ProductCategory;
 import com.coderman.api.biz.vo.ProductCategoryTreeNodeVO;
 import com.coderman.api.biz.vo.ProductCategoryVO;
 import org.springframework.beans.BeanUtils;

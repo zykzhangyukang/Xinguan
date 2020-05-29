@@ -1,12 +1,12 @@
 package com.coderman.api.biz.controller;
 
-import com.coderman.api.biz.pojo.Consumer;
+import com.coderman.api.common.pojo.biz.Consumer;
 import com.coderman.api.biz.service.ConsumerService;
 import com.coderman.api.biz.service.OutStockService;
 import com.coderman.api.biz.vo.ConsumerVO;
 import com.coderman.api.biz.vo.OutStockDetailVO;
 import com.coderman.api.biz.vo.OutStockVO;
-import com.coderman.api.system.annotation.ControllerEndpoint;
+import com.coderman.api.common.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.vo.PageVO;
 import io.swagger.annotations.Api;

@@ -1,6 +1,6 @@
 package com.coderman.api.biz.test;
 
-import com.coderman.api.biz.utils.CommonFileUtil;
+import com.coderman.api.common.utils.CommonFileUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

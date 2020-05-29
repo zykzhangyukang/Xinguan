@@ -1,9 +1,8 @@
 package com.coderman.api.system.controller;
 
-import com.coderman.api.system.annotation.ControllerEndpoint;
+import com.coderman.api.common.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
-import com.coderman.api.system.pojo.Department;
-import com.coderman.api.system.pojo.Role;
+import com.coderman.api.common.pojo.system.Department;
 import com.coderman.api.system.service.DepartmentService;
 import com.coderman.api.system.vo.DeanVO;
 import com.coderman.api.system.vo.DepartmentVO;

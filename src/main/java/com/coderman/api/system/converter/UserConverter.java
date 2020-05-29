@@ -1,8 +1,8 @@
 package com.coderman.api.system.converter;
 
 import com.coderman.api.system.mapper.DepartmentMapper;
-import com.coderman.api.system.pojo.Department;
-import com.coderman.api.system.pojo.User;
+import com.coderman.api.common.pojo.system.Department;
+import com.coderman.api.common.pojo.system.User;
 import com.coderman.api.system.vo.UserVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

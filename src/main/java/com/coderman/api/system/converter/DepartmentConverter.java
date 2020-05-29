@@ -1,6 +1,6 @@
 package com.coderman.api.system.converter;
 
-import com.coderman.api.system.pojo.Department;
+import com.coderman.api.common.pojo.system.Department;
 import com.coderman.api.system.vo.DepartmentVO;
 import org.springframework.beans.BeanUtils;
 

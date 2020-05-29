@@ -1,15 +1,15 @@
 package com.coderman.api.system.service.impl;
 
 import com.coderman.api.system.converter.DepartmentConverter;
-import com.coderman.api.system.enums.BizUserTypeEnum;
+import com.coderman.api.biz.enums.BizUserTypeEnum;
 import com.coderman.api.system.mapper.DepartmentMapper;
 import com.coderman.api.system.mapper.RoleMapper;
 import com.coderman.api.system.mapper.UserMapper;
 import com.coderman.api.system.mapper.UserRoleMapper;
-import com.coderman.api.system.pojo.Department;
-import com.coderman.api.system.pojo.Role;
-import com.coderman.api.system.pojo.User;
-import com.coderman.api.system.pojo.UserRole;
+import com.coderman.api.common.pojo.system.Department;
+import com.coderman.api.common.pojo.system.Role;
+import com.coderman.api.common.pojo.system.User;
+import com.coderman.api.common.pojo.system.UserRole;
 import com.coderman.api.system.service.DepartmentService;
 import com.coderman.api.system.vo.DeanVO;
 import com.coderman.api.system.vo.DepartmentVO;

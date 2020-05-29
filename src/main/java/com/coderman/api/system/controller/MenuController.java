@@ -1,9 +1,8 @@
 package com.coderman.api.system.controller;
 
-import com.coderman.api.system.annotation.ControllerEndpoint;
+import com.coderman.api.common.annotation.ControllerEndpoint;
 import com.coderman.api.system.bean.ResponseBean;
-import com.coderman.api.system.pojo.Menu;
-import com.coderman.api.system.pojo.User;
+import com.coderman.api.common.pojo.system.Menu;
 import com.coderman.api.system.service.MenuService;
 import com.coderman.api.system.vo.MenuNodeVO;
 import com.coderman.api.system.vo.MenuVO;

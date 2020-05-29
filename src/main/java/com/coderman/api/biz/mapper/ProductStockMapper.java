@@ -1,6 +1,6 @@
 package com.coderman.api.biz.mapper;
 
-import com.coderman.api.biz.pojo.ProductStock;
+import com.coderman.api.common.pojo.biz.ProductStock;
 import com.coderman.api.biz.vo.ProductStockVO;
 import com.coderman.api.biz.vo.ProductVO;
 import tk.mybatis.mapper.common.Mapper;

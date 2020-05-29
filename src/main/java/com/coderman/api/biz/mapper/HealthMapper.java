@@ -1,6 +1,6 @@
 package com.coderman.api.biz.mapper;
 
-import com.coderman.api.biz.pojo.Health;
+import com.coderman.api.common.pojo.biz.Health;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import tk.mybatis.mapper.common.Mapper;

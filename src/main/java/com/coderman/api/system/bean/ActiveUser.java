@@ -1,8 +1,8 @@
 package com.coderman.api.system.bean;
 
-import com.coderman.api.system.pojo.Menu;
-import com.coderman.api.system.pojo.Role;
-import com.coderman.api.system.pojo.User;
+import com.coderman.api.common.pojo.system.Menu;
+import com.coderman.api.common.pojo.system.Role;
+import com.coderman.api.common.pojo.system.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

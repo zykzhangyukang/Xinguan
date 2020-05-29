@@ -1,8 +1,8 @@
 package com.coderman.api.biz.converter;
 
 import com.coderman.api.biz.mapper.ConsumerMapper;
-import com.coderman.api.biz.pojo.Consumer;
-import com.coderman.api.biz.pojo.OutStock;
+import com.coderman.api.common.pojo.biz.Consumer;
+import com.coderman.api.common.pojo.biz.OutStock;
 import com.coderman.api.biz.vo.OutStockVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,8 @@
 package com.coderman.api.system.test;
 
 import com.coderman.api.system.mapper.UserMapper;
-import com.coderman.api.system.pojo.User;
-import com.coderman.api.system.util.MD5Utils;
+import com.coderman.api.common.pojo.system.User;
+import com.coderman.api.common.utils.MD5Utils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
