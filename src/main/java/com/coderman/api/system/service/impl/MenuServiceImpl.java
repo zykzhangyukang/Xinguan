@@ -1,8 +1,10 @@
 package com.coderman.api.system.service.impl;
 
 import com.coderman.api.common.exception.ServiceException;
+import com.coderman.api.common.pojo.system.Role;
 import com.coderman.api.system.converter.MenuConverter;
 import com.coderman.api.system.mapper.MenuMapper;
+import com.coderman.api.system.mapper.RoleMapper;
 import com.coderman.api.system.mapper.RoleMenuMapper;
 import com.coderman.api.common.pojo.system.Menu;
 import com.coderman.api.common.pojo.system.RoleMenu;
@@ -17,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
+import java.rmi.ServerException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -36,8 +39,12 @@ public class MenuServiceImpl implements MenuService {
     @Autowired
     private RoleMenuMapper roleMenuMapper;
 
+    @Autowired
+    private RoleMapper roleMapper;
+
     /**
      * 加载菜单树（按钮和菜单）
+     *
      * @return
      */
     @Override
@@ -49,6 +56,7 @@ public class MenuServiceImpl implements MenuService {
 
     /**
      * 添加菜单
+     *
      * @param menuVO
      */
     @Override
@@ -62,24 +70,44 @@ public class MenuServiceImpl implements MenuService {
         return menu;
     }
 
+    /**
+     * 删除菜单
+     * @param id
+     */
     @Override
     public void delete(Long id) {
         Menu menu = menuMapper.selectByPrimaryKey(id);
         if(menu==null){
-            throw new ServiceException("菜单节点不存在");
+            throw new ServiceException("要删除的菜单不存在");
         }
         menuMapper.deleteByPrimaryKey(id);
     }
 
+    /**
+     * 编辑菜单
+     * @param id
+     * @return
+     */
     @Override
     public MenuVO edit(Long id) {
         Menu menu = menuMapper.selectByPrimaryKey(id);
-        MenuVO menuVO = MenuConverter.converterToMenuVO(menu);
-        return menuVO;
+        if(menu==null){
+            throw new ServiceException("该编辑的菜单不存在");
+        }
+        return MenuConverter.converterToMenuVO(menu);
     }
 
+    /**
+     * 更新菜单
+     * @param id
+     * @param menuVO
+     */
     @Override
     public void update(Long id, MenuVO menuVO) {
+        Menu dbMenu = menuMapper.selectByPrimaryKey(id);
+        if(dbMenu==null){
+            throw new ServiceException("要更新的菜单不存在");
+        }
         Menu menu = new Menu();
         BeanUtils.copyProperties(menuVO,menu);
         menu.setId(id);
@@ -88,6 +116,11 @@ public class MenuServiceImpl implements MenuService {
         menuMapper.updateByPrimaryKeySelective(menu);
     }
 
+    /**
+     * 获取展开项
+     *
+     * @return
+     */
     @Override
     public List<Long> findOpenIds() {
         List<Long> ids=new ArrayList<>();
@@ -102,23 +135,7 @@ public class MenuServiceImpl implements MenuService {
         return ids;
     }
 
-    @Transactional
-    @Override
-    public void authority(Long id,Long[] mids) {
-        //先删除原来的权限
-        Example o = new Example(RoleMenu.class);
-        o.createCriteria().andEqualTo("roleId",id);
-        roleMenuMapper.deleteByExample(o);
 
-        if(mids.length>0){
-            for (Long mid : mids) {
-                RoleMenu roleMenu = new RoleMenu();
-                roleMenu.setRoleId(id);
-                roleMenu.setMenuId(mid);
-                roleMenuMapper.insertSelective(roleMenu);
-            }
-        }
-    }
 
     /**
      * 获取所有菜单

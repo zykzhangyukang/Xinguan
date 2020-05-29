@@ -49,7 +49,7 @@ public class RoleController {
     @RequiresPermissions({"role:authority"})
     @PostMapping("/authority/{id}")
     public ResponseBean authority(@PathVariable Long id, @RequestBody Long[] mids) {
-        menuService.authority(id, mids);
+        roleService.authority(id, mids);
         return ResponseBean.success();
     }
 

@@ -156,7 +156,7 @@ public class DepartmentServiceImpl implements DepartmentService {
             }
         }
         if(!isMgr){
-            throw new ServiceException("不存在该部门主任");
+            throw new ServiceException("该用户已无部门主任身份");
         }
     }
 

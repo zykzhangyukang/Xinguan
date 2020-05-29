@@ -1,10 +1,12 @@
 package com.coderman.api.system.service.impl;
 
 import com.coderman.api.common.exception.ServiceException;
+import com.coderman.api.common.pojo.system.Menu;
 import com.coderman.api.common.pojo.system.Role;
 import com.coderman.api.common.pojo.system.RoleMenu;
 import com.coderman.api.system.converter.RoleConverter;
 import com.coderman.api.system.enums.RoleStatusEnum;
+import com.coderman.api.system.mapper.MenuMapper;
 import com.coderman.api.system.mapper.RoleMapper;
 import com.coderman.api.system.mapper.RoleMenuMapper;
 import com.coderman.api.system.service.RoleService;
@@ -37,6 +39,10 @@ public class RoleServiceImpl implements RoleService {
 
     @Autowired
     private RoleMenuMapper roleMenuMapper;
+
+
+    @Autowired
+    private MenuMapper menuMapper;
 
     /**
      * 角色列表
@@ -171,6 +177,10 @@ public class RoleServiceImpl implements RoleService {
      */
     @Override
     public List<Long> findMenuIdsByRoleId(Long id) {
+        Role role = roleMapper.selectByPrimaryKey(id);
+        if(role==null){
+            throw new ServiceException("该角色已不存在");
+        }
         List<Long> ids=new ArrayList<>();
         Example o = new Example(RoleMenu.class);
         o.createCriteria().andEqualTo("roleId",id);
@@ -181,6 +191,38 @@ public class RoleServiceImpl implements RoleService {
             }
         }
         return ids;
+    }
+
+    /**
+     * 角色授权
+     * @param id
+     * @param mids
+     */
+    @Transactional
+    @Override
+    public void authority(Long id,Long[] mids) {
+        Role role = roleMapper.selectByPrimaryKey(id);
+        if(role==null){
+            throw new ServiceException("该角色不存在");
+        }
+        //先删除原来的权限
+        Example o = new Example(RoleMenu.class);
+        o.createCriteria().andEqualTo("roleId",id);
+        roleMenuMapper.deleteByExample(o);
+        //增加现在分配的角色
+        if(mids.length>0){
+            for (Long mid : mids) {
+                Menu menu = menuMapper.selectByPrimaryKey(mid);
+                if(menu==null){
+                    throw new ServiceException("menuId="+mid+",菜单权限不存在");
+                }else {
+                    RoleMenu roleMenu = new RoleMenu();
+                    roleMenu.setRoleId(id);
+                    roleMenu.setMenuId(mid);
+                    roleMenuMapper.insertSelective(roleMenu);
+                }
+            }
+        }
     }
 
 }

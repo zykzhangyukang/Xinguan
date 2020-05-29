@@ -1,9 +1,10 @@
 package com.coderman.api.system.controller;
 
-import com.coderman.api.common.utils.CommonFileUtil;
 import com.coderman.api.common.bean.ResponseBean;
-import com.coderman.api.system.mapper.ImageAttachmentMapper;
+import com.coderman.api.common.exception.ServiceException;
 import com.coderman.api.common.pojo.system.ImageAttachment;
+import com.coderman.api.common.utils.CommonFileUtil;
+import com.coderman.api.system.mapper.ImageAttachmentMapper;
 import com.coderman.api.system.vo.ImageAttachmentVO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -127,6 +128,9 @@ public class FileUploadController {
     @DeleteMapping("/delete/{id}")
     public ResponseBean delete(@PathVariable Long id){
         ImageAttachment imageAttachment = imageAttachmentMapper.selectByPrimaryKey(id);
+        if (imageAttachment==null){
+            throw new ServiceException("该附件不存在");
+        }
         imageAttachmentMapper.deleteByPrimaryKey(id);
         commonFileUtil.deleteFile(imageAttachment.getPath());
         return ResponseBean.success();

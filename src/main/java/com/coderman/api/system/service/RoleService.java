@@ -67,4 +67,10 @@ public interface RoleService {
      * @return
      */
     List<Long> findMenuIdsByRoleId(Long id);
+
+    /**
+     * 角色授权
+     * @param mids
+     */
+    void authority(Long id,Long[] mids);
 }

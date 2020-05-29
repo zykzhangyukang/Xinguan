@@ -29,13 +29,26 @@ public class LogServiceImpl implements LogService {
     @Autowired
     private LogMapper logMapper;
 
+    /**
+     * 保存登入日志
+     * @param log
+     */
     @Override
     public void saveLog(Log log) {
         logMapper.insert(log);
     }
 
+
+    /**
+     * 删除操作日志
+     * @param id
+     */
     @Override
     public void delete(Long id) {
+        Log log = logMapper.selectByPrimaryKey(id);
+        if(log==null){
+            throw new ServiceException("要删除的操作日志不存在");
+        }
         logMapper.deleteByPrimaryKey(id);
     }
 

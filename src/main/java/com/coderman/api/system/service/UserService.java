@@ -15,7 +15,8 @@ import java.util.List;
 public interface UserService {
 
     /**
-     *  查询用户
+     * 根据用户名查询用户
+     *
      * @param name 用户名
      * @return
      */
@@ -23,20 +24,24 @@ public interface UserService {
 
     /**
      * 查询用户角色
-     * @param id 用户ID
+     *
+     * @param id 用户id
      * @return
      */
      List<Role> findRolesById(Long id);
 
     /**
-     * 查询用户的权限(permissionCode)
+     * 根据用户角色查询用户的菜单
+     * 菜单: menu+button
+     *
      * @param roles 用户的角色
      * @return
      */
     List<Menu> findMenuByRoles(List<Role> roles);
 
     /**
-     * 加载用户菜单
+     * 加载菜单
+     *
      * @return
      */
     List<MenuNodeVO> findMenu();
@@ -49,13 +54,15 @@ public interface UserService {
     PageVO<UserVO> findUserList(Integer pageNum,Integer pageSize,UserVO userVO);
 
     /**
-     * 删除
+     * 删除用户
+     *
      * @param id
      */
     void deleteById(Long id);
 
     /**
-     * 更新用户状态
+     * 更新状态
+     *
      * @param id
      * @param status
      */
@@ -68,7 +75,8 @@ public interface UserService {
     void add(UserVO userVO);
 
     /**
-     * 更新用户信息
+     * 更新用户
+     *
      * @param id
      * @param userVO
      */
@@ -76,13 +84,15 @@ public interface UserService {
 
     /**
      * 编辑用户
+     *
      * @param id
      * @return
      */
     UserEditVO edit(Long id);
 
     /**
-     * 用户拥有的角色ID
+     * 已拥有的角色ids
+     *
      * @param id 用户id
      * @return
      */
@@ -90,19 +100,22 @@ public interface UserService {
 
     /**
      * 分配角色
+     *
      * @param id
      * @param rids
      */
     void assignRoles(Long id, Long[] rids);
 
     /**
-     * 全部用户
+     * 所有用户
+     *
      * @return
      */
     List<User> findAll();
 
     /**
      * 用户登入
+     *
      * @param username
      * @param password
      * @return
@@ -111,7 +124,8 @@ public interface UserService {
 
 
     /**
-     * 用户信息
+     * 用户详情
+     *
      * @return
      */
     UserInfoVO info();

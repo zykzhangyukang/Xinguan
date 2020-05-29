@@ -49,11 +49,6 @@ public interface MenuService {
      */
     List<Long> findOpenIds();
 
-    /**
-     * 角色授权
-     * @param mids
-     */
-    void authority(Long id,Long[] mids);
 
     /**
      * 获取所有菜单

@@ -70,12 +70,7 @@ public class UserServiceImpl implements UserService {
     public User findUserByName(String name) {
         User t = new User();
         t.setUsername(name);
-        List<User> select = userMapper.select(t);
-        if(!CollectionUtils.isEmpty(select)){
-            return select.get(0);
-        }else{
-            return null;
-        }
+        return userMapper.selectOne(t);
     }
 
     /**
@@ -215,9 +210,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteById(Long id) {
         User user = userMapper.selectByPrimaryKey(id);
+        ActiveUser activeUser = (ActiveUser) SecurityUtils.getSubject().getPrincipal();
+
         if(user==null){
             throw new ServiceException("要删除的用户不存在");
         }
+
+        if(user.getId().equals(activeUser.getUser().getId())){
+            throw new ServiceException("不能删除当前登入用户");
+        }
+
         userMapper.deleteByPrimaryKey(id);
         //删除对应[用户-角色]记录
         Example o = new Example(UserRole.class);
@@ -435,6 +437,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 用户详情
+     *
      * @return
      */
     @Override

@@ -97,7 +97,6 @@ public class UserController {
      *
      * @return
      */
-    @RequiresAuthentication
     @ApiOperation(value = "加载菜单", notes = "用户登入后,根据角色加载菜单树")
     @GetMapping("/findMenu")
     public ResponseBean findMenu() {
@@ -182,8 +181,7 @@ public class UserController {
     }
 
     /**
-     * 添加用户
-     *
+     * 添加用户信息
      * @param userVO
      * @return
      */
