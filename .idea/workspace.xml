@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="bc0098de-1555-475b-b0df-4f7e5b9cd099" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/OutStockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/OutStockController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/aspect/ControllerEndpointAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/aspect/ControllerEndpointAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/SSLConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/SSLConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/JWTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/JWTTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/OutStockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/OutStockServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,15 +58,11 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\sql" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\images" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\resources\mapper\system" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\system\config" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\resources" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.coderman.api.biz.vo" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.coderman.api.biz.mapper" />
@@ -76,8 +71,12 @@
       <recent name="com.coderman.api.biz.service.imp" />
       <recent name="com.coderman.api.system.controller" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.coderman.api.biz.vo" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\sql" />
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\images" />
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\resources\mapper\system" />
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\system\config" />
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\resources" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -2275,7 +2274,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.JWTTest.testMd5">
+  <component name="RunManager" selected="Spring Boot.VuePermission">
     <configuration name="HttpTest.testGetJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Xinguan" />
       <extension name="coverage">
@@ -2355,8 +2354,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JWTTest.testMd5" />
         <item itemvalue="Spring Boot.VuePermission" />
+        <item itemvalue="JUnit.JWTTest.testMd5" />
         <item itemvalue="JUnit.ProductCategoryMapperTest.test2" />
         <item itemvalue="JUnit.HttpTest.testGetJson" />
         <item itemvalue="JUnit.TestMbg.test" />
@@ -2448,6 +2447,9 @@
       <workItem from="1590392524102" duration="5349000" />
       <workItem from="1590454949172" duration="5467000" />
       <workItem from="1590677263281" duration="989000" />
+      <workItem from="1590679049957" duration="370000" />
+      <workItem from="1590723506721" duration="570000" />
+      <workItem from="1590724085074" duration="1685000" />
     </task>
     <servers />
   </component>
@@ -2476,10 +2478,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1589459569152" />
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1590455722392">
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1590724138780">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1590455722392" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1590724138780" />
     <state x="498" y="206" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588079205110">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -2492,38 +2494,38 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="524" y="119" key="#xdebugger.evaluate/0.0.1536.834@0.0.1536.834" timestamp="1588300742809" />
-    <state width="1493" height="368" key="GridCell.Tab.0.bottom" timestamp="1590678260654">
+    <state width="1493" height="385" key="GridCell.Tab.0.bottom" timestamp="1590725609291">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1590678260654" />
-    <state width="1493" height="368" key="GridCell.Tab.0.center" timestamp="1590678260654">
+    <state width="1493" height="385" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1590725609291" />
+    <state width="1493" height="385" key="GridCell.Tab.0.center" timestamp="1590725609291">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1590678260654" />
-    <state width="1493" height="368" key="GridCell.Tab.0.left" timestamp="1590678260654">
+    <state width="1493" height="385" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1590725609291" />
+    <state width="1493" height="385" key="GridCell.Tab.0.left" timestamp="1590725609291">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1590678260654" />
-    <state width="1493" height="368" key="GridCell.Tab.0.right" timestamp="1590678260654">
+    <state width="1493" height="385" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1590725609291" />
+    <state width="1493" height="385" key="GridCell.Tab.0.right" timestamp="1590725609291">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1590678260654" />
-    <state width="1493" height="368" key="GridCell.Tab.1.bottom" timestamp="1590458907575">
+    <state width="1493" height="385" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1590725609291" />
+    <state width="1493" height="385" key="GridCell.Tab.1.bottom" timestamp="1590725609291">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1590458907575" />
-    <state width="1493" height="368" key="GridCell.Tab.1.center" timestamp="1590458907575">
+    <state width="1493" height="385" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1590725609291" />
+    <state width="1493" height="385" key="GridCell.Tab.1.center" timestamp="1590725609291">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1590458907575" />
-    <state width="1493" height="368" key="GridCell.Tab.1.left" timestamp="1590458907575">
+    <state width="1493" height="385" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1590725609291" />
+    <state width="1493" height="385" key="GridCell.Tab.1.left" timestamp="1590725609291">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1590458907575" />
-    <state width="1493" height="368" key="GridCell.Tab.1.right" timestamp="1590458907575">
+    <state width="1493" height="385" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1590725609291" />
+    <state width="1493" height="385" key="GridCell.Tab.1.right" timestamp="1590725609291">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1590458907575" />
+    <state width="1493" height="385" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1590725609291" />
     <state width="1493" height="624" key="GridCell.Tab.2.bottom" timestamp="1590381858534">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -2544,10 +2546,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="212" height="477" key="HiddenNamespacesPopup/0.0.1536.834@0.0.1536.834" timestamp="1589459548093" />
-    <state x="346" y="75" key="SettingsEditor" timestamp="1588080543604">
+    <state x="346" y="75" key="SettingsEditor" timestamp="1590724559828">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="346" y="75" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1588080543604" />
+    <state x="346" y="75" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1590724559828" />
     <state x="499" y="176" key="extract.method.dialog" timestamp="1589461001246">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -2562,7 +2564,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/OutStockServiceImpl.java</url>
-          <line>264</line>
+          <line>260</line>
           <properties class="com.coderman.api.biz.service.imp.OutStockServiceImpl" method="publish">
             <option name="EMULATED" value="true" />
           </properties>

@@ -101,10 +101,6 @@ public class OutStockServiceImpl implements OutStockService {
                 Product dbProduct = productMapper.selectByPrimaryKey(productId);
                 if (dbProduct == null) {
                     throw new BizException(ErrorCodeEnum.PRODUCT_NOT_FOUND);
-                }else if(dbProduct.getStatus()==1) {
-                    throw new BizException(ErrorCodeEnum.PRODUCT_IS_REMOVE, dbProduct.getName() + "物资已被回收,无法发放");
-                } else if(dbProduct.getStatus()==2){
-                    throw new BizException(ErrorCodeEnum.PRODUCT_WAIT_PASS, dbProduct.getName() + "物资待审核,无法发放");
                 }else if(productNumber<=0){
                     throw new BizException(ErrorCodeEnum.PRODUCT_OUT_STOCK_NUMBER_ERROR,dbProduct.getName()+"发放数量不合法,无法入库");
                 } else {

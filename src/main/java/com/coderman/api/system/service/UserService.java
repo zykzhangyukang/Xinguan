@@ -3,10 +3,7 @@ package com.coderman.api.system.service;
 import com.coderman.api.system.pojo.Menu;
 import com.coderman.api.system.pojo.Role;
 import com.coderman.api.system.pojo.User;
-import com.coderman.api.system.vo.MenuNodeVO;
-import com.coderman.api.system.vo.PageVO;
-import com.coderman.api.system.vo.UserEditVO;
-import com.coderman.api.system.vo.UserVO;
+import com.coderman.api.system.vo.*;
 
 import java.util.List;
 
@@ -111,4 +108,12 @@ public interface UserService {
      * @return
      */
     String login(String username, String password);
+
+
+    /**
+     * 用户信息
+     * @return
+     */
+    UserInfoVO info();
+
 }

@@ -1,7 +1,6 @@
 package com.coderman.api.system.service.impl;
 
 import com.coderman.api.system.bean.ActiveUser;
-import com.coderman.api.system.bean.ResponseBean;
 import com.coderman.api.system.config.JWTToken;
 import com.coderman.api.system.converter.MenuConverter;
 import com.coderman.api.system.converter.UserConverter;
@@ -9,14 +8,12 @@ import com.coderman.api.system.enums.ErrorCodeEnum;
 import com.coderman.api.system.exception.BizException;
 import com.coderman.api.system.mapper.*;
 import com.coderman.api.system.pojo.*;
+import com.coderman.api.system.service.DepartmentService;
 import com.coderman.api.system.service.UserService;
 import com.coderman.api.system.util.JWTUtils;
 import com.coderman.api.system.util.MD5Utils;
 import com.coderman.api.system.util.MenuTreeBuilder;
-import com.coderman.api.system.vo.MenuNodeVO;
-import com.coderman.api.system.vo.PageVO;
-import com.coderman.api.system.vo.UserEditVO;
-import com.coderman.api.system.vo.UserVO;
+import com.coderman.api.system.vo.*;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.shiro.SecurityUtils;
@@ -29,6 +26,7 @@ import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @Author zhangyukang
@@ -152,6 +150,7 @@ public class UserServiceImpl implements UserService {
             //超级管理员
             menus=menuMapper.selectAll();
         }else {
+            //普通系统用户
             menus= activeUser.getMenus();
         }
         if(!CollectionUtils.isEmpty(menus)){
@@ -221,10 +220,16 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void updateStatus(Long id, Boolean status) {
-        User t = new User();
-        t.setId(id);
-        t.setStatus(status?0:1);
-        userMapper.updateByPrimaryKeySelective(t);
+        User dbUser = userMapper.selectByPrimaryKey(id);
+        ActiveUser activeUser= (ActiveUser) SecurityUtils.getSubject().getPrincipal();
+        if(dbUser.getId().equals(activeUser.getUser().getId())){
+            throw new BizException("不能禁用当前用户");
+        }else {
+            User t = new User();
+            t.setId(id);
+            t.setStatus(status?0:1);
+            userMapper.updateByPrimaryKeySelective(t);
+        }
     }
 
     /**
@@ -350,5 +355,31 @@ public class UserServiceImpl implements UserService {
             throw new BizException(ErrorCodeEnum.USER_ACCOUNT_NOT_FOUND);
         }
         return token;
+    }
+
+    @Autowired
+    private DepartmentService departmentService;
+
+    /**
+     * 用户详情
+     * @return
+     */
+    @Override
+    public UserInfoVO info() {
+        ActiveUser activeUser = (ActiveUser) SecurityUtils.getSubject().getPrincipal();
+        UserInfoVO userInfoVO = new UserInfoVO();
+        userInfoVO.setAvatar(activeUser.getUser().getAvatar());
+        userInfoVO.setUsername(activeUser.getUser().getUsername());
+        userInfoVO.setUrl(activeUser.getUrls());
+        userInfoVO.setNickname(activeUser.getUser().getNickname());
+        List<String> roleNames = activeUser.getRoles().stream().map(Role::getRoleName).collect(Collectors.toList());
+        userInfoVO.setRoles(roleNames);
+        userInfoVO.setPerms(activeUser.getPermissions());
+        userInfoVO.setIsAdmin(activeUser.getUser().getType()==0);
+        DepartmentVO dept = departmentService.edit(activeUser.getUser().getDepartmentId());
+        if(dept!=null){
+            userInfoVO.setDepartment(dept.getName());
+        }
+        return userInfoVO;
     }
 }

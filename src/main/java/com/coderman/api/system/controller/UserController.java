@@ -1,33 +1,19 @@
 package com.coderman.api.system.controller;
 
 import com.coderman.api.system.annotation.ControllerEndpoint;
-import com.coderman.api.system.bean.ActiveUser;
 import com.coderman.api.system.bean.ResponseBean;
-import com.coderman.api.system.config.JWTToken;
 import com.coderman.api.system.converter.RoleConverter;
-import com.coderman.api.system.enums.ErrorCodeEnum;
-import com.coderman.api.system.exception.BizException;
-import com.coderman.api.system.pojo.Department;
-import com.coderman.api.system.pojo.LoginLog;
 import com.coderman.api.system.pojo.Role;
 import com.coderman.api.system.pojo.User;
 import com.coderman.api.system.service.DepartmentService;
 import com.coderman.api.system.service.LoginLogService;
 import com.coderman.api.system.service.RoleService;
 import com.coderman.api.system.service.UserService;
-import com.coderman.api.system.util.AddressUtil;
-import com.coderman.api.system.util.IPUtil;
-import com.coderman.api.system.util.JWTUtils;
-import com.coderman.api.system.util.MD5Utils;
 import com.coderman.api.system.vo.*;
 import com.wuwenze.poi.ExcelKit;
-import eu.bitwalker.useragentutils.Browser;
-import eu.bitwalker.useragentutils.OperatingSystem;
-import eu.bitwalker.useragentutils.UserAgent;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -36,11 +22,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotBlank;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * @Author zhangyukang
@@ -64,23 +48,18 @@ public class UserController {
     private LoginLogService loginLogService;
 
 
-    @Autowired
-    private DepartmentService departmentService;
-
-
     /**
      * 用户登入
      *
-     * @param username
-     * @param password
+     * @param username: 用户名
+     * @param password: 密码
      * @return
      */
-    @ApiOperation(value = "用户登入", notes = "用户名和密码登入系统，登入成功后返回JWTToken")
+    @ApiOperation(value = "用户登入", notes = "接收参数用户名和密码,登入成功后,返回JWTToken")
     @PostMapping("/login")
     public ResponseBean login(@NotBlank(message = "用户名必填") String username,
                               @NotBlank(message = "密码必填") String password,
                               HttpServletRequest request) {
-        //用户登入
         String token=userService.login(username,password);
         loginLogService.add(request);
         return ResponseBean.success((Object) token);
@@ -110,20 +89,7 @@ public class UserController {
     @ApiOperation(value = "用户信息", notes = "用户登入信息")
     @GetMapping("/info")
     public ResponseBean info() {
-        ActiveUser activeUser = (ActiveUser) SecurityUtils.getSubject().getPrincipal();
-        UserInfoVO userInfoVO = new UserInfoVO();
-        userInfoVO.setAvatar(activeUser.getUser().getAvatar());
-        userInfoVO.setUsername(activeUser.getUser().getUsername());
-        userInfoVO.setUrl(activeUser.getUrls());
-        userInfoVO.setNickname(activeUser.getUser().getNickname());
-        List<String> roleNames = activeUser.getRoles().stream().map(Role::getRoleName).collect(Collectors.toList());
-        userInfoVO.setRoles(roleNames);
-        userInfoVO.setPerms(activeUser.getPermissions());
-        userInfoVO.setIsAdmin(activeUser.getUser().getType()==0);
-        DepartmentVO dept = departmentService.edit(activeUser.getUser().getDepartmentId());
-        if(dept!=null){
-            userInfoVO.setDepartment(dept.getName());
-        }
+        UserInfoVO userInfoVO=userService.info();
         return ResponseBean.success(userInfoVO);
     }
 
@@ -132,6 +98,7 @@ public class UserController {
      *
      * @return
      */
+    @RequiresAuthentication
     @ApiOperation(value = "加载菜单", notes = "用户登入后,根据角色加载菜单树")
     @GetMapping("/findMenu")
     public ResponseBean findMenu() {
@@ -172,6 +139,7 @@ public class UserController {
 
     /**
      * 更新状态
+     *
      * @param id
      * @param status
      * @return
@@ -235,7 +203,7 @@ public class UserController {
     }
 
     /**
-     * 拥有角色ID
+     * 用户角色信息
      * @param id
      * @return
      */
