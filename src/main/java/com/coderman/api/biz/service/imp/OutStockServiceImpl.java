@@ -6,8 +6,8 @@ import com.coderman.api.biz.service.OutStockService;
 import com.coderman.api.biz.vo.*;
 import com.coderman.api.common.pojo.biz.*;
 import com.coderman.api.system.bean.ActiveUser;
-import com.coderman.api.system.enums.ErrorCodeEnum;
-import com.coderman.api.system.exception.BizException;
+import com.coderman.api.common.exception.ErrorCodeEnum;
+import com.coderman.api.common.exception.ServiceException;
 import com.coderman.api.system.vo.PageVO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -100,19 +100,19 @@ public class OutStockServiceImpl implements OutStockService {
                 Integer productId = (Integer) item.get("productId");
                 Product dbProduct = productMapper.selectByPrimaryKey(productId);
                 if (dbProduct == null) {
-                    throw new BizException(ErrorCodeEnum.PRODUCT_NOT_FOUND);
+                    throw new ServiceException(ErrorCodeEnum.PRODUCT_NOT_FOUND);
                 }else if(productNumber<=0){
-                    throw new BizException(ErrorCodeEnum.PRODUCT_OUT_STOCK_NUMBER_ERROR,dbProduct.getName()+"发放数量不合法,无法入库");
+                    throw new ServiceException(ErrorCodeEnum.PRODUCT_OUT_STOCK_NUMBER_ERROR,dbProduct.getName()+"发放数量不合法,无法入库");
                 } else {
                     //校验库存
                     Example o=new Example(ProductStock.class);
                     o.createCriteria().andEqualTo("pNum",dbProduct.getPNum());
                     ProductStock productStock = productStockMapper.selectOneByExample(o);
                     if(productStock==null){
-                        throw new BizException("该物资在库存中不存在");
+                        throw new ServiceException("该物资在库存中不存在");
                     }
                     if(productNumber>productStock.getStock()){
-                        throw new BizException(ErrorCodeEnum.PRODUCT_STOCK_ERROR,dbProduct.getName()+"库存不足,库存剩余:"+productStock);
+                        throw new ServiceException(ErrorCodeEnum.PRODUCT_STOCK_ERROR,dbProduct.getName()+"库存不足,库存剩余:"+productStock);
                     }
                     itemNumber += productNumber;
                     //入库单明细
@@ -137,7 +137,7 @@ public class OutStockServiceImpl implements OutStockService {
             outStock.setStatus(2);
             outStockMapper.insert(outStock);
         }else {
-            throw new BizException(ErrorCodeEnum.PRODUCT_OUT_STOCK_EMPTY);
+            throw new ServiceException(ErrorCodeEnum.PRODUCT_OUT_STOCK_EMPTY);
         }
     }
 
@@ -149,12 +149,12 @@ public class OutStockServiceImpl implements OutStockService {
     public void remove(Long id) {
         OutStock outStock = outStockMapper.selectByPrimaryKey(id);
         if(outStock==null){
-            throw new BizException("发放单不存在");
+            throw new ServiceException("发放单不存在");
         }
         Integer status = outStock.getStatus();
         //只有status=0,正常的情况下,才可移入回收站
         if(status!=0){
-            throw new BizException("发放单状态不正确");
+            throw new ServiceException("发放单状态不正确");
         }else {
             OutStock out = new OutStock();
             out.setStatus(1);
@@ -173,7 +173,7 @@ public class OutStockServiceImpl implements OutStockService {
         t.setId(id);
         OutStock outStock = outStockMapper.selectByPrimaryKey(t);
         if(outStock.getStatus()!=1){
-            throw new BizException("发放单状态不正确");
+            throw new ServiceException("发放单状态不正确");
         }else {
             t.setStatus(0);
             outStockMapper.updateByPrimaryKeySelective(t);
@@ -192,12 +192,12 @@ public class OutStockServiceImpl implements OutStockService {
         OutStockDetailVO outStockDetailVO = new OutStockDetailVO();
         OutStock outStock = outStockMapper.selectByPrimaryKey(id);
         if(outStock==null){
-            throw new BizException("发放单不存在");
+            throw new ServiceException("发放单不存在");
         }
         BeanUtils.copyProperties(outStock,outStockDetailVO);
         Consumer consumer = consumerMapper.selectByPrimaryKey(outStock.getConsumerId());
         if(consumer==null){
-            throw new BizException("物资领取方不存在,或已被删除");
+            throw new ServiceException("物资领取方不存在,或已被删除");
         }
         ConsumerVO consumerVO = new ConsumerVO();
         BeanUtils.copyProperties(consumer,consumerVO);
@@ -224,11 +224,11 @@ public class OutStockServiceImpl implements OutStockService {
                     outStockItemVO.setCount(outStockInfo.getProductNumber());
                     outStockDetailVO.getItemVOS().add(outStockItemVO);
                 }else {
-                    throw new BizException("编号为:["+pNum+"]的物资找不到,或已被删除");
+                    throw new ServiceException("编号为:["+pNum+"]的物资找不到,或已被删除");
                 }
             }
         }else {
-            throw new BizException("发放编号为:["+outNum+"]的明细找不到,或已被删除");
+            throw new ServiceException("发放编号为:["+outNum+"]的明细找不到,或已被删除");
         }
         return outStockDetailVO;
     }
@@ -241,9 +241,9 @@ public class OutStockServiceImpl implements OutStockService {
     public void delete(Long id) {
         OutStock outStock = outStockMapper.selectByPrimaryKey(id);
         if(outStock==null){
-            throw new BizException("发放单不存在");
+            throw new ServiceException("发放单不存在");
         }else if(outStock.getStatus()!=1&&outStock.getStatus()!=2){
-            throw new BizException("发放单状态错误,无法删除");
+            throw new ServiceException("发放单状态错误,无法删除");
         }else {
            outStockMapper.deleteByPrimaryKey(id);
         }
@@ -262,13 +262,13 @@ public class OutStockServiceImpl implements OutStockService {
         OutStock outStock = outStockMapper.selectByPrimaryKey(id);
         Consumer consumer = consumerMapper.selectByPrimaryKey(outStock.getConsumerId());
         if(outStock==null){
-            throw new BizException("发放单不存在");
+            throw new ServiceException("发放单不存在");
         }
         if(outStock.getStatus()!=2){
-            throw new BizException("发放单状态错误");
+            throw new ServiceException("发放单状态错误");
         }
         if(consumer==null){
-            throw new BizException("发放来源信息错误");
+            throw new ServiceException("发放来源信息错误");
         }
         String outNum = outStock.getOutNum();//发放单号
         Example o = new Example(OutStockInfo.class);
@@ -292,23 +292,23 @@ public class OutStockServiceImpl implements OutStockService {
                         //更新数量
                         ProductStock productStock = productStocks.get(0);
                         if(productStock.getStock()<productNumber){
-                            throw new BizException("物资:"+product.getName()+"的库存不足");
+                            throw new ServiceException("物资:"+product.getName()+"的库存不足");
                         }
                         productStock.setStock(productStock.getStock()-productNumber);
                         productStockMapper.updateByPrimaryKey(productStock);
                     }else {
-                        throw new BizException("该物资在库存中找不到");
+                        throw new ServiceException("该物资在库存中找不到");
                     }
                     //修改入库单状态.
                     outStock.setCreateTime(new Date());
                     outStock.setStatus(0);
                     outStockMapper.updateByPrimaryKeySelective(outStock);
                 }else {
-                    throw new BizException("物资编号为:["+pNum+"]的物资不存在");
+                    throw new ServiceException("物资编号为:["+pNum+"]的物资不存在");
                 }
             }
         }else {
-            throw new BizException("发放的明细不能为空");
+            throw new ServiceException("发放的明细不能为空");
         }
     }
 }

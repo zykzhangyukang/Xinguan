@@ -1,4 +1,4 @@
-package com.coderman.api.system.enums;
+package com.coderman.api.common.exception;
 
 import lombok.Getter;
 

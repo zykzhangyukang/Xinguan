@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 调用第三方的接口
  * @Author zhangyukang
  * @Date 2020/5/1 11:23
  * @Version 1.0
@@ -91,6 +92,11 @@ public class NcovAPIController {
         return sb.toString();
     }
 
+    /**
+     * 处理JSON
+     * @param arr
+     * @return
+     */
     public List<JSONObject> getAllRumors(JSONArray arr) {
         List<JSONObject> list = new ArrayList<>();
         for (int i = 0; i < arr.size(); i++) {

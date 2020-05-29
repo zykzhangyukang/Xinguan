@@ -7,8 +7,8 @@ import com.coderman.api.common.pojo.biz.Product;
 import com.coderman.api.biz.service.ProductService;
 import com.coderman.api.biz.vo.ProductStockVO;
 import com.coderman.api.biz.vo.ProductVO;
-import com.coderman.api.system.enums.ErrorCodeEnum;
-import com.coderman.api.system.exception.BizException;
+import com.coderman.api.common.exception.ErrorCodeEnum;
+import com.coderman.api.common.exception.ServiceException;
 import com.coderman.api.system.vo.PageVO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -157,7 +157,7 @@ public class ProductServiceImpl implements ProductService {
         Product product = productMapper.selectByPrimaryKey(t);
         //只有物资处于回收站,或者待审核的情况下可删除
         if(product.getStatus()!=1&&product.getStatus()!=2){
-            throw new BizException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
+            throw new ServiceException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
         }else {
             productMapper.deleteByPrimaryKey(id);
         }
@@ -198,7 +198,7 @@ public class ProductServiceImpl implements ProductService {
         t.setId(id);
         Product product = productMapper.selectByPrimaryKey(t);
         if(product.getStatus()!=0){
-            throw new BizException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
+            throw new ServiceException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
         }else {
             t.setStatus(1);
             productMapper.updateByPrimaryKeySelective(t);
@@ -215,7 +215,7 @@ public class ProductServiceImpl implements ProductService {
         t.setId(id);
         Product product = productMapper.selectByPrimaryKey(t);
         if(product.getStatus()!=1){
-            throw new BizException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
+            throw new ServiceException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
         }else {
             t.setStatus(0);
             productMapper.updateByPrimaryKeySelective(t);
@@ -232,7 +232,7 @@ public class ProductServiceImpl implements ProductService {
         t.setId(id);
         Product product = productMapper.selectByPrimaryKey(t);
         if(product.getStatus()!=2){
-            throw new BizException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
+            throw new ServiceException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
         }else {
             t.setStatus(0);
             productMapper.updateByPrimaryKeySelective(t);

@@ -1,6 +1,6 @@
 package com.coderman.api.common.config.web;
 
-import com.coderman.api.system.exception.BizException;
+import com.coderman.api.common.exception.ServiceException;
 import com.coderman.api.system.bean.ResponseBean;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.ShiroException;
@@ -71,9 +71,9 @@ public class GlobalExceptionHandler {
      * @param e
      * @return
      */
-    @ExceptionHandler(value = BizException.class)
+    @ExceptionHandler(value = ServiceException.class)
     @ResponseBody
-    public  ResponseBean bizExceptionHandler(HttpServletRequest req, BizException e){
+    public  ResponseBean bizExceptionHandler(HttpServletRequest req, ServiceException e){
         log.error("业务异常=>{}",e.getErrorMsg());
         return ResponseBean.error(e.getErrorCode(),e.getErrorMsg());
     }

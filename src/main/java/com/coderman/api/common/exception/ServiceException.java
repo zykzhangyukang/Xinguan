@@ -1,6 +1,5 @@
-package com.coderman.api.system.exception;
+package com.coderman.api.common.exception;
 
-import com.coderman.api.system.enums.BaseCodeInterface;
 import lombok.Data;
 
 /**
@@ -10,7 +9,7 @@ import lombok.Data;
  * @Version 1.0
  **/
 @Data
-public class BizException  extends RuntimeException{
+public class ServiceException  extends RuntimeException{
 
     private static final long serialVersionUID = 1L;
 
@@ -24,23 +23,23 @@ public class BizException  extends RuntimeException{
      */
     protected String errorMsg;
 
-    public BizException() {
+    public ServiceException() {
         super();
     }
 
-    public BizException(String message) {
+    public ServiceException(String message) {
         super(message);
         this.errorMsg=message;
     }
 
 
 
-    public BizException(BaseCodeInterface errorInfoInterface) {
+    public ServiceException(BaseCodeInterface errorInfoInterface) {
         this.errorCode = errorInfoInterface.getResultCode();
         this.errorMsg = errorInfoInterface.getResultMsg();
     }
 
-    public BizException(BaseCodeInterface errorInfoInterface,String message) {
+    public ServiceException(BaseCodeInterface errorInfoInterface,String message) {
         this.errorCode = errorInfoInterface.getResultCode();
         this.errorMsg = message;
     }

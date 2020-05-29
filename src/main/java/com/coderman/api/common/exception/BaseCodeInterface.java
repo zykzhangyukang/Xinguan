@@ -1,4 +1,4 @@
-package com.coderman.api.system.enums;
+package com.coderman.api.common.exception;
 
 /**
  * 自定义的错误描述枚举类需实现该接口

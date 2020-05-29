@@ -1,20 +1,20 @@
 package com.coderman.api.system.service.impl;
 
-import com.coderman.api.common.pojo.system.*;
-import com.coderman.api.system.bean.ActiveUser;
 import com.coderman.api.common.config.jwt.JWTToken;
-import com.coderman.api.system.converter.MenuConverter;
-import com.coderman.api.system.converter.UserConverter;
-import com.coderman.api.system.enums.ErrorCodeEnum;
-import com.coderman.api.system.enums.UserStatusEnum;
-import com.coderman.api.system.enums.UserTypeEnum;
-import com.coderman.api.system.exception.BizException;
-import com.coderman.api.system.mapper.*;
-import com.coderman.api.system.service.DepartmentService;
-import com.coderman.api.system.service.UserService;
+import com.coderman.api.common.exception.ErrorCodeEnum;
+import com.coderman.api.common.exception.ServiceException;
+import com.coderman.api.common.pojo.system.*;
 import com.coderman.api.common.utils.JWTUtils;
 import com.coderman.api.common.utils.MD5Utils;
 import com.coderman.api.common.utils.MenuTreeBuilder;
+import com.coderman.api.system.bean.ActiveUser;
+import com.coderman.api.system.converter.MenuConverter;
+import com.coderman.api.system.converter.UserConverter;
+import com.coderman.api.system.enums.UserStatusEnum;
+import com.coderman.api.system.enums.UserTypeEnum;
+import com.coderman.api.system.mapper.*;
+import com.coderman.api.system.service.DepartmentService;
+import com.coderman.api.system.service.UserService;
 import com.coderman.api.system.vo.*;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -225,7 +225,7 @@ public class UserServiceImpl implements UserService {
         User dbUser = userMapper.selectByPrimaryKey(id);
         ActiveUser activeUser= (ActiveUser) SecurityUtils.getSubject().getPrincipal();
         if(dbUser.getId().equals(activeUser.getUser().getId())){
-            throw new BizException(ErrorCodeEnum.DoNotAllowToDisableTheCurrentUser);
+            throw new ServiceException(ErrorCodeEnum.DoNotAllowToDisableTheCurrentUser);
         }else {
             User t = new User();
             t.setId(id);
@@ -352,10 +352,10 @@ public class UserServiceImpl implements UserService {
             try {
                 SecurityUtils.getSubject().login(jwtToken);
             } catch (AuthenticationException e) {
-                throw new BizException(e.getMessage());
+                throw new ServiceException(e.getMessage());
             }
         } else {
-            throw new BizException(ErrorCodeEnum.USER_ACCOUNT_NOT_FOUND);
+            throw new ServiceException(ErrorCodeEnum.USER_ACCOUNT_NOT_FOUND);
         }
         return token;
     }

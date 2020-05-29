@@ -2,132 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc0098de-1555-475b-b0df-4f7e5b9cd099" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/config/jwt/JWTToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/config/shiro/JWTFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/config/shiro/ShiroConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/config/shiro/UserRealm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/config/web/ComponentImport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/config/web/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/config/web/FdfsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/config/web/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/UserStatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/UserTypeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mbg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mbg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ConsumerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ConsumerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/HealthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/HealthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/InStockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/InStockController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/OutStockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/OutStockController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductCategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/SupplierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/SupplierController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/ConsumerConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/ConsumerConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/InStockConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/InStockConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/OutStockConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/OutStockConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/ProductCategoryConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/ProductCategoryConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/ProductConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/ProductConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/SupplierConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/converter/SupplierConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ConsumerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ConsumerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/HealthMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/HealthMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/InStockInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/InStockInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/InStockMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/InStockMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/OutStockInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/OutStockInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/OutStockMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/OutStockMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductCategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductCategoryMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductStockMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/ProductStockMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/SupplierMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/mapper/SupplierMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/biz/Consumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Health.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/biz/Health.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/InStock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/biz/InStock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/InStockInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/biz/InStockInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/OutStock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/biz/OutStock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/OutStockInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/biz/OutStockInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/biz/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/ProductCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/biz/ProductCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/ProductStock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/biz/ProductStock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/pojo/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/biz/Supplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ConsumerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/ConsumerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/HealthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/HealthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/SupplierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/SupplierService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ConsumerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ConsumerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/NcovAPIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/controller/NcovAPIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/HealthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/HealthServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/InStockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/InStockServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/OutStockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/OutStockServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductCategoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/SupplierServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/SupplierServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/test/FastDFSTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/test/FastDFSTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/test/ProductCategoryMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/test/ProductCategoryMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/utils/CategoryTreeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/utils/CategoryTreeBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/utils/CommonFileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/utils/CommonFileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/utils/ListPageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/utils/ListPageUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/annotation/ControllerEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/annotation/ControllerEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/aspect/AspectSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/aspect/AspectSupport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/aspect/ControllerEndpointAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/aspect/ControllerEndpointAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/bean/ActiveUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/bean/ActiveUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/ComponentImport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/CorsConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/FdfsConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/JWTFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/JWTToken.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/SSLConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/ShiroConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/DepartmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/FileUploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/LoginLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/LoginLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/converter/DepartmentConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/converter/DepartmentConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/converter/MenuConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/converter/MenuConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/converter/RoleConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/converter/RoleConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/converter/UserConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/converter/UserConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/BizUserTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/biz/enums/BizUserTypeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/ErrorCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/ErrorCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/DepartmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/DepartmentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/ImageAttachmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/ImageAttachmentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/LogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/LogMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/LoginLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/LoginLogMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/MenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/MenuMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/RoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/RoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/RoleMenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/RoleMenuMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/UserRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/mapper/UserRoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/system/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/ImageAttachment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/system/ImageAttachment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/system/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/LoginLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/system/LoginLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/system/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/system/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/RoleMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/system/RoleMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/system/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/pojo/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/pojo/system/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/realm/MyRealm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/DepartmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/LogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/LoginLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/LoginLogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/MenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/RoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/DepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/DepartmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LoginLogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/LoginLogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/MenuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/config/web/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/config/web/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/BaseCodeInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/exception/BaseCodeInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/enums/ErrorCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/exception/ErrorCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/exception/BizException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/exception/BizException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/JWTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/JWTTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/TestMbg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/generator/GeneratorCoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/UserMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/test/UserMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/AddressUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/utils/AddressUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/BrowserUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/utils/BrowserUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/CreateVerifyCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/utils/CreateVerifyCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/IPUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/utils/IPUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/JWTUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/utils/JWTUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/MD5Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/utils/MD5Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/system/util/MenuTreeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/utils/MenuTreeBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -2574,6 +2458,7 @@
       <workItem from="1590679049957" duration="370000" />
       <workItem from="1590723506721" duration="570000" />
       <workItem from="1590724085074" duration="3820000" />
+      <workItem from="1590727928932" duration="460000" />
     </task>
     <servers />
   </component>
@@ -2626,38 +2511,38 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="524" y="119" key="#xdebugger.evaluate/0.0.1536.834@0.0.1536.834" timestamp="1588300742809" />
-    <state width="1493" height="385" key="GridCell.Tab.0.bottom" timestamp="1590727921435">
+    <state width="1493" height="385" key="GridCell.Tab.0.bottom" timestamp="1590728054914">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="385" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1590727921435" />
-    <state width="1493" height="385" key="GridCell.Tab.0.center" timestamp="1590727921435">
+    <state width="1493" height="385" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1590728054914" />
+    <state width="1493" height="385" key="GridCell.Tab.0.center" timestamp="1590728054914">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="385" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1590727921435" />
-    <state width="1493" height="385" key="GridCell.Tab.0.left" timestamp="1590727921435">
+    <state width="1493" height="385" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1590728054914" />
+    <state width="1493" height="385" key="GridCell.Tab.0.left" timestamp="1590728054914">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="385" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1590727921435" />
-    <state width="1493" height="385" key="GridCell.Tab.0.right" timestamp="1590727921435">
+    <state width="1493" height="385" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1590728054914" />
+    <state width="1493" height="385" key="GridCell.Tab.0.right" timestamp="1590728054914">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="385" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1590727921435" />
-    <state width="1493" height="385" key="GridCell.Tab.1.bottom" timestamp="1590727921436">
+    <state width="1493" height="385" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1590728054914" />
+    <state width="1493" height="385" key="GridCell.Tab.1.bottom" timestamp="1590728054914">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="385" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1590727921436" />
-    <state width="1493" height="385" key="GridCell.Tab.1.center" timestamp="1590727921436">
+    <state width="1493" height="385" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1590728054914" />
+    <state width="1493" height="385" key="GridCell.Tab.1.center" timestamp="1590728054914">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="385" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1590727921436" />
-    <state width="1493" height="385" key="GridCell.Tab.1.left" timestamp="1590727921436">
+    <state width="1493" height="385" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1590728054914" />
+    <state width="1493" height="385" key="GridCell.Tab.1.left" timestamp="1590728054914">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="385" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1590727921436" />
-    <state width="1493" height="385" key="GridCell.Tab.1.right" timestamp="1590727921436">
+    <state width="1493" height="385" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1590728054914" />
+    <state width="1493" height="385" key="GridCell.Tab.1.right" timestamp="1590728054914">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="385" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1590727921436" />
+    <state width="1493" height="385" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1590728054914" />
     <state width="1493" height="624" key="GridCell.Tab.2.bottom" timestamp="1590381858534">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -2690,20 +2575,6 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="178" y="27" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1589592795583" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/coderman/api/biz/service/imp/OutStockServiceImpl.java</url>
-          <line>260</line>
-          <properties class="com.coderman.api.biz.service.imp.OutStockServiceImpl" method="publish">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

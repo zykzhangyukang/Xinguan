@@ -9,8 +9,8 @@ import com.coderman.api.biz.vo.InStockVO;
 import com.coderman.api.biz.vo.SupplierVO;
 import com.coderman.api.common.pojo.biz.*;
 import com.coderman.api.system.bean.ActiveUser;
-import com.coderman.api.system.enums.ErrorCodeEnum;
-import com.coderman.api.system.exception.BizException;
+import com.coderman.api.common.exception.ErrorCodeEnum;
+import com.coderman.api.common.exception.ServiceException;
 import com.coderman.api.system.vo.PageVO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -98,12 +98,12 @@ public class InStockServiceImpl implements InStockService {
         InStockDetailVO inStockDetailVO = new InStockDetailVO();
         InStock inStock = inStockMapper.selectByPrimaryKey(id);
         if(inStock==null){
-            throw new BizException("入库单不存在");
+            throw new ServiceException("入库单不存在");
         }
         BeanUtils.copyProperties(inStock,inStockDetailVO);
         Supplier supplier = supplierMapper.selectByPrimaryKey(inStock.getSupplierId());
         if(supplier==null){
-            throw new BizException("提供物资方不存在,或已被删除");
+            throw new ServiceException("提供物资方不存在,或已被删除");
         }
         SupplierVO supplierVO = new SupplierVO();
         BeanUtils.copyProperties(supplier,supplierVO);
@@ -129,11 +129,11 @@ public class InStockServiceImpl implements InStockService {
                     inStockItemVO.setCount(inStockInfo.getProductNumber());
                     inStockDetailVO.getItemVOS().add(inStockItemVO);
                 }else {
-                    throw new BizException("编号为:["+pNum+"]的物资找不到,或已被删除");
+                    throw new ServiceException("编号为:["+pNum+"]的物资找不到,或已被删除");
                 }
             }
         }else {
-            throw new BizException("入库编号为:["+inNum+"]的明细找不到,或已被删除");
+            throw new ServiceException("入库编号为:["+inNum+"]的明细找不到,或已被删除");
         }
         return inStockDetailVO;
     }
@@ -146,9 +146,9 @@ public class InStockServiceImpl implements InStockService {
         InStock inStock = inStockMapper.selectByPrimaryKey(in);
         //只有处于回收站,或者待审核的情况下可删除
         if(inStock==null){
-            throw new BizException("入库单不存在");
+            throw new ServiceException("入库单不存在");
         }else if(inStock.getStatus()!=1&&inStock.getStatus()!=2){
-           throw new BizException("入库单状态错误,无法删除");
+           throw new ServiceException("入库单状态错误,无法删除");
         }else {
             int i = inStockMapper.deleteByPrimaryKey(id);
             System.out.println(i);
@@ -180,13 +180,13 @@ public class InStockServiceImpl implements InStockService {
                 Integer productId = (Integer) item.get("productId");
                 Product dbProduct = productMapper.selectByPrimaryKey(productId);
                 if (dbProduct == null) {
-                    throw new BizException(ErrorCodeEnum.PRODUCT_NOT_FOUND);
+                    throw new ServiceException(ErrorCodeEnum.PRODUCT_NOT_FOUND);
                 }else if(dbProduct.getStatus()==1) {
-                    throw new BizException(ErrorCodeEnum.PRODUCT_IS_REMOVE, dbProduct.getName() + "物资已被回收,无法入库");
+                    throw new ServiceException(ErrorCodeEnum.PRODUCT_IS_REMOVE, dbProduct.getName() + "物资已被回收,无法入库");
                 } else if(dbProduct.getStatus()==2){
-                    throw new BizException(ErrorCodeEnum.PRODUCT_WAIT_PASS, dbProduct.getName() + "物资待审核,无法入库");
+                    throw new ServiceException(ErrorCodeEnum.PRODUCT_WAIT_PASS, dbProduct.getName() + "物资待审核,无法入库");
                 }else if(productNumber<=0){
-                    throw new BizException(ErrorCodeEnum.PRODUCT_IN_STOCK_NUMBER_ERROR,dbProduct.getName()+"入库数量不合法,无法入库");
+                    throw new ServiceException(ErrorCodeEnum.PRODUCT_IN_STOCK_NUMBER_ERROR,dbProduct.getName()+"入库数量不合法,无法入库");
                 } else {
                     itemNumber += productNumber;
                     //插入入库单明细
@@ -213,7 +213,7 @@ public class InStockServiceImpl implements InStockService {
             inStock.setStatus(2);
             inStockMapper.insert(inStock);
         }else {
-            throw new BizException(ErrorCodeEnum.PRODUCT_IN_STOCK_EMPTY);
+            throw new ServiceException(ErrorCodeEnum.PRODUCT_IN_STOCK_EMPTY);
         }
     }
 
@@ -225,12 +225,12 @@ public class InStockServiceImpl implements InStockService {
     public void remove(Long id) {
         InStock inStock = inStockMapper.selectByPrimaryKey(id);
         if(inStock==null){
-            throw new BizException("入库单不存在");
+            throw new ServiceException("入库单不存在");
         }
         Integer status = inStock.getStatus();
         //只有status=0,正常的情况下,才可移入回收站
         if(status!=0){
-            throw new BizException("入库单状态不正确");
+            throw new ServiceException("入库单状态不正确");
         }else {
             InStock in = new InStock();
             in.setStatus(1);
@@ -249,7 +249,7 @@ public class InStockServiceImpl implements InStockService {
         t.setId(id);
         InStock inStock = inStockMapper.selectByPrimaryKey(t);
         if(inStock.getStatus()!=1){
-            throw new BizException("入库单状态不正确");
+            throw new ServiceException("入库单状态不正确");
         }else {
             t.setStatus(0);
             inStockMapper.updateByPrimaryKeySelective(t);
@@ -265,13 +265,13 @@ public class InStockServiceImpl implements InStockService {
         InStock inStock = inStockMapper.selectByPrimaryKey(id);
         Supplier supplier = supplierMapper.selectByPrimaryKey(inStock.getSupplierId());
         if(inStock==null){
-            throw new BizException("入库单不存在");
+            throw new ServiceException("入库单不存在");
         }
         if(inStock.getStatus()!=2){
-            throw new BizException("入库单状态错误");
+            throw new ServiceException("入库单状态错误");
         }
         if(supplier==null){
-            throw new BizException("入库来源信息错误");
+            throw new ServiceException("入库来源信息错误");
         }
         String inNum = inStock.getInNum();//单号
         Example o = new Example(InStockInfo.class);
@@ -307,11 +307,11 @@ public class InStockServiceImpl implements InStockService {
                     inStock.setStatus(0);
                     inStockMapper.updateByPrimaryKeySelective(inStock);
                 }else {
-                    throw new BizException("物资编号为:["+pNum+"]的物资不存在");
+                    throw new ServiceException("物资编号为:["+pNum+"]的物资不存在");
                 }
             }
         }else {
-            throw new BizException("入库的明细不能为空");
+            throw new ServiceException("入库的明细不能为空");
         }
     }
 }

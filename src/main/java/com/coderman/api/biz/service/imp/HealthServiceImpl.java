@@ -4,7 +4,7 @@ import com.coderman.api.biz.mapper.HealthMapper;
 import com.coderman.api.common.pojo.biz.Health;
 import com.coderman.api.biz.service.HealthService;
 import com.coderman.api.biz.vo.HealthVO;
-import com.coderman.api.system.exception.BizException;
+import com.coderman.api.common.exception.ServiceException;
 import com.coderman.api.system.vo.PageVO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -38,7 +38,7 @@ public class HealthServiceImpl implements HealthService {
         health.setCreateTime(new Date());
         Health report = isReport(healthVO.getUserId());
         if(report!=null){
-            throw new BizException("今日您已经打卡");
+            throw new ServiceException("今日您已经打卡");
         }else {
             healthMapper.insert(health);
         }
