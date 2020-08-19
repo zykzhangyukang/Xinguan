@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.lionsoul:ip2region:1.7">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/lionsoul/ip2region/1.7/ip2region-1.7.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/lionsoul/ip2region/1.7/ip2region-1.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/lionsoul/ip2region/1.7/ip2region-1.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
