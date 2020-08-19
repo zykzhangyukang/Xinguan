@@ -30,6 +30,4 @@ public class Department {
     @ExcelField(value = "修改时间", dateFormat = "yyyy年MM月dd日 HH:mm:ss", width = 180)
     private Date modifiedTime;
 
-    @ExcelField(value = "主管ID", width = 50)
-    private Long mgrId;
 }

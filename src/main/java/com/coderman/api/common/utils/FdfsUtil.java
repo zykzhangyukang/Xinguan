@@ -1,31 +1,31 @@
 package com.coderman.api.common.utils;
 
-/**
- * @Author zhangyukang
- * @Date 2020/3/18 15:28
- * @Version 1.0
- **/
-import com.coderman.api.common.config.web.FdfsConfig;
 import com.github.tobato.fastdfs.domain.MateData;
 import com.github.tobato.fastdfs.domain.StorePath;
+import com.github.tobato.fastdfs.exception.FdfsException;
+import com.github.tobato.fastdfs.exception.FdfsServerException;
 import com.github.tobato.fastdfs.exception.FdfsUnsupportStorePathException;
 import com.github.tobato.fastdfs.service.FastFileStorageClient;
 import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Set;
 
+/**
+ * @Author zhangyukang
+ * @Date 2020/8/9 11:50
+ * @Version 1.0
+ **/
 @Component
-public class CommonFileUtil {
-
-    private final Logger logger = LoggerFactory.getLogger(FdfsConfig.class);
+public class FdfsUtil {
+    private final Logger logger = LoggerFactory.getLogger(FdfsUtil.class);
 
     @Autowired
     private FastFileStorageClient storageClient;
@@ -78,7 +78,7 @@ public class CommonFileUtil {
      * @return
      */
     public String uploadFile(String content, String fileExtension) {
-        byte[] buff = content.getBytes(Charset.forName("UTF-8"));
+        byte[] buff = content.getBytes(StandardCharsets.UTF_8);
         ByteArrayInputStream stream = new ByteArrayInputStream(buff);
         StorePath path = storageClient.uploadFile(stream, buff.length, fileExtension, null);
         return getResAccessUrl(path);
@@ -90,15 +90,14 @@ public class CommonFileUtil {
      * @return
      */
     private String getResAccessUrl(StorePath storePath) {
-        String fileUrl = storePath.getFullPath();
-        return fileUrl;
+       return  storePath.getFullPath();
     }
 
     /**
      * 删除文件
      * @param fileUrl
      */
-    public void deleteFile(String fileUrl) {
+    public void deleteFile(String fileUrl) throws FdfsException {
         if (StringUtils.isEmpty(fileUrl)) {
             return;
         }
@@ -110,17 +109,8 @@ public class CommonFileUtil {
         }
     }
 
-    /**
-     * 上传图片
-     * @param is
-     * @param size
-     * @param fileExtName
-     * @param metaData
-     * @return
-     */
     public String upfileImage(InputStream is, long size, String fileExtName, Set<MateData> metaData) {
         StorePath path = storageClient.uploadImageAndCrtThumbImage(is, size, fileExtName, metaData);
         return getResAccessUrl(path);
     }
-
 }

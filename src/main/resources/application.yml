@@ -15,8 +15,8 @@ spring:
       max-wait: 60000
       stat-view-servlet:
         enabled: true
-        login-username: zhangyukang
-        login-password: zhangyukang
+        login-username: root
+        login-password: 123456
         allow:
         deny:
         url-pattern: /druid/*
@@ -31,4 +31,16 @@ mybatis:
   type-aliases-package: com.coderman.api.*.pojo
   configuration:
     map-underscore-to-camel-case: true
+fdfs:
+  resHost: https://www.zykhome.club/
+  storagePort: 80
+  connect-timeout: 1000
+  so-timeout: 1500
+  trackerList: 39.99.182.103:22122
+  thumbImage:
+    width: 100
+    height: 100
+  pool:
+    max-total: 500
+    max-wait-millis: 2000
 

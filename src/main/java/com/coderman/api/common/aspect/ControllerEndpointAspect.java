@@ -109,40 +109,6 @@ public class ControllerEndpointAspect extends AspectSupport {
         }
         return JSON.toJSONString(retVal);
     }
-
-
-
-
-    /**
-    @Around("pointcut()")
-    public Object around(ProceedingJoinPoint point)  {
-        //开始时间
-        long start = System.currentTimeMillis();
-        Object result;
-        Method targetMethod = resolveMethod(point);
-        ControllerEndpoint annotation = targetMethod.getAnnotation(ControllerEndpoint.class);
-
-
-        String operation = annotation.operation();
-
-        try {
-            result = point.proceed();
-            if (StringUtils.isNotBlank(operation)) {
-                ServletRequestAttributes requestAttributes = (ServletRequestAttributes)
-                        RequestContextHolder.getRequestAttributes();
-                assert requestAttributes != null;
-                HttpServletRequest request = requestAttributes.getRequest();
-                logService.saveLog(point, targetMethod, request, operation, start);
-            }
-            return result;
-        } catch (Throwable throwable) {
-            String message = throwable.getMessage();
-            return ResponseBean.error(message);
-        }
-    }
-    **/
-
-
 }
 
 

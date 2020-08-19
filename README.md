@@ -3,6 +3,7 @@
 ![https://img.shields.io/badge/springboot-2.2.1-yellow.svg?style=flat-square](https://img.shields.io/badge/springboot-2.2.1-yellow.svg?style=flat-square)
 ![https://img.shields.io/badge/shiro-1.4.2-orange.svg?longCache=true&style=flat-square](https://img.shields.io/badge/shiro-1.4.2-orange.svg?longCache=true&style=flat-square)
 
+
 #### 简单介绍
 
 该项目是一个以新冠疫情为主题开发的一个物资管理系统,主要分为系统模块和业务模块,业务模块是处理疫情期间,物资的发放,物资入库,以及查看物资的库存等.系统模块是一个后台通用的RBAC权限模块,可以精确的控制到后台API级别的权限控制,项目不定期更新中.武汉加油~~

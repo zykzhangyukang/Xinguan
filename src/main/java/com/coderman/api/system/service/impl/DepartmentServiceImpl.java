@@ -72,8 +72,6 @@ public class DepartmentServiceImpl implements DepartmentService {
             for (Department department : departments) {
                 DepartmentVO d = new DepartmentVO();
                 BeanUtils.copyProperties(department, d);
-                User user = userMapper.selectByPrimaryKey(d.getMgrId());
-                d.setMgrName(user.getUsername());
                 Example o1 = new Example(User.class);
                 o1.createCriteria().andEqualTo("departmentId",department.getId())
                         .andNotEqualTo("type", UserTypeEnum.SYSTEM_ADMIN.getTypeCode());
@@ -130,34 +128,11 @@ public class DepartmentServiceImpl implements DepartmentService {
      */
     @Override
     public void add(DepartmentVO departmentVO) {
-        @NotNull(message = "系主任不能为空") Long mgrId = departmentVO.getMgrId();
-        checkMgr(mgrId);
         Department department = new Department();
         BeanUtils.copyProperties(departmentVO,department);
         department.setCreateTime(new Date());
         department.setModifiedTime(new Date());
         departmentMapper.insert(department);
-    }
-
-    /**
-     * 验证部门主任
-     * @param mgrId
-     */
-    private void checkMgr(@NotNull(message = "系主任不能为空") Long mgrId) {
-        User user = userMapper.selectByPrimaryKey(mgrId);
-        if (user==null){
-            throw new ServiceException("不存在该部门主任");
-        }
-        List<DeanVO> deanList = findDeanList();
-        boolean isMgr=false;
-        for (DeanVO deanVO : deanList) {
-            if(deanVO.getId().equals(user.getId())){
-                isMgr=true;
-            }
-        }
-        if(!isMgr){
-            throw new ServiceException("该用户已无部门主任身份");
-        }
     }
 
     /**
@@ -182,11 +157,9 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public void update(Long id, DepartmentVO departmentVO) {
         Department dbDepartment = departmentMapper.selectByPrimaryKey(id);
-        @NotNull(message = "系主任不能为空") Long mgrId = departmentVO.getMgrId();
         if(dbDepartment==null){
             throw new ServiceException("要更新的部门不存在");
         }
-        checkMgr(mgrId);
         Department department = new Department();
         BeanUtils.copyProperties(departmentVO,department);
         department.setId(id);

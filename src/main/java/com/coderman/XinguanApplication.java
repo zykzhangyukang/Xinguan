@@ -1,19 +1,20 @@
 package com.coderman;
 
+import com.github.tobato.fastdfs.FdfsClientConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import tk.mybatis.spring.annotation.MapperScan;
 
-@EnableTransactionManagement
-@ComponentScan("com.coderman.*")
-@MapperScan("com.coderman.api.*.mapper")
+@EnableTransactionManagement  //开启事务管理
+@MapperScan("com.coderman.api.*.mapper") //扫描mapper
 @SpringBootApplication
-public class VuePermission {
+@Import(FdfsClientConfig.class)
+public class XinguanApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(VuePermission.class, args);
+        SpringApplication.run(XinguanApplication.class, args);
     }
 
 }

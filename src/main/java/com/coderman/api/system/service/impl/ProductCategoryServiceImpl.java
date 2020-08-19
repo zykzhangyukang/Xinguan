@@ -2,6 +2,11 @@ package com.coderman.api.system.service.impl;
 
 import com.coderman.api.biz.converter.ProductCategoryConverter;
 import com.coderman.api.biz.mapper.ProductCategoryMapper;
+import com.coderman.api.biz.mapper.ProductMapper;
+import com.coderman.api.biz.service.ProductService;
+import com.coderman.api.biz.vo.ProductVO;
+import com.coderman.api.common.exception.ServiceException;
+import com.coderman.api.common.pojo.biz.Product;
 import com.coderman.api.common.pojo.biz.ProductCategory;
 import com.coderman.api.biz.service.ProductCategoryService;
 import com.coderman.api.common.utils.CategoryTreeBuilder;
@@ -16,6 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
+import java.rmi.ServerException;
 import java.util.Date;
 import java.util.List;
 
@@ -30,6 +36,9 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
     @Autowired
     private ProductCategoryMapper productCategoryMapper;
+
+    @Autowired
+    private ProductMapper productMapper;
 
     /**
      * 商品类别列表
@@ -98,7 +107,27 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
      */
     @Override
     public void delete(Long id) {
-        productCategoryMapper.deleteByPrimaryKey(id);
+        ProductCategory category = productCategoryMapper.selectByPrimaryKey(id);
+        if(null==category){
+            throw new ServiceException("该分类不存在");
+        }else {
+            //检查是否存在子分类
+            Example o = new Example(ProductCategory.class);
+            o.createCriteria().andEqualTo("pid",id);
+            int childCount=productCategoryMapper.selectCountByExample(o);
+            if(childCount!=0){
+                throw  new ServiceException("存在子节点,无法直接删除");
+            }
+            //检查该分类是否有物资引用
+            Example o1 = new Example(Product.class);
+            o1.createCriteria().andEqualTo("oneCategoryId",id)
+                    .orEqualTo("twoCategoryId",id)
+                    .orEqualTo("threeCategoryId",id);
+           if(productMapper.selectCountByExample(o1)!=0){
+               throw new ServiceException("该分类存在物资引用,无法直接删除");
+           }
+            productCategoryMapper.deleteByPrimaryKey(id);
+        }
     }
 
     /**

@@ -26,8 +26,6 @@ public class DepartmentVO {
     @NotBlank(message = "办公地址不能为空")
     private String address;
 
-    @NotNull(message = "系主任不能为空")
-    private Long mgrId;
 
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
     private Date createTime;
@@ -35,8 +33,6 @@ public class DepartmentVO {
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
     private Date modifiedTime;
 
-    /** 系主任的名字*/
-    private String mgrName;
 
     /** 部门内人数**/
     private int total;

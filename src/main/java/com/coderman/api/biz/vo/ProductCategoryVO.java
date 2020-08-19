@@ -32,6 +32,7 @@ public class ProductCategoryVO {
     private Date modifiedTime;
 
     /** 父级分类id*/
+    @NotNull(message = "父级菜单不能为空")
     private Long pid;
 
 }
