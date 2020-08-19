@@ -46,8 +46,8 @@ public class FileUploadController {
      * @param file
      * @return
      */
-    @ApiOperation(value = "上传图片")
-    @RequiresPermissions({"upload:image"})
+    @ApiOperation(value = "上传文件")
+    @RequiresPermissions({"attachment:upload"})
     @PostMapping("/image")
     public ResponseBean image(MultipartFile file){
         if(file.isEmpty()){
@@ -124,7 +124,7 @@ public class FileUploadController {
      * @return
      */
     @ApiOperation(value = "删除图片", notes = "删除数据库记录,删除图片服务器上的图片")
-    @RequiresPermissions("image:delete")
+    @RequiresPermissions("attachment:delete")
     @DeleteMapping("/delete/{id}")
     public ResponseBean delete(@PathVariable Long id){
         ImageAttachment imageAttachment = imageAttachmentMapper.selectByPrimaryKey(id);

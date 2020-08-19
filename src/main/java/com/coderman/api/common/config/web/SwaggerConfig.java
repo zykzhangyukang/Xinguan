@@ -25,7 +25,7 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.coderman"))
                 .paths(PathSelectors.any())
-                .build();
+                .build().pathMapping("/api");
     }
     public ApiInfo apiInfo(){
         Contact contact=new Contact("zhangyukang","http://www.zykcoderman.xyz","3053161401@qq.com");

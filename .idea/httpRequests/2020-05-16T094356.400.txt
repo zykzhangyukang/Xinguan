@@ -1,2 +1,0 @@
-Bad Request
-This combination of host and port requires TLS.

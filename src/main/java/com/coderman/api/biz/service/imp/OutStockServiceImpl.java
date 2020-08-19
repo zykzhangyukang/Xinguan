@@ -94,7 +94,7 @@ public class OutStockServiceImpl implements OutStockService {
         if(!CollectionUtils.isEmpty(products)) {
             for (Object product : products) {
                 LinkedHashMap item = (LinkedHashMap) product;
-                //入库数量
+                //发放数量
                 int productNumber = (int) item.get("productNumber");
                 //物资编号
                 Integer productId = (Integer) item.get("productId");
