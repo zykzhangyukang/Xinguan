@@ -19,7 +19,7 @@ public class MD5Test {
         String salt= UUID.randomUUID().toString();
         String username="admin";
         String password="123456";
-        String s = MD5Utils.md5Encryption(password, salt)+username;
+        String s = MD5Utils.md5Encryption(password, salt);
         System.out.println("salt="+salt);
         System.out.println("password="+s);
     }
