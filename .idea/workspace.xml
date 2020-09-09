@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc0098de-1555-475b-b0df-4f7e5b9cd099" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/sql/xinguan.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/sql/xinguan.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/generator/GeneratorCoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/generator/GeneratorCoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/coderman/MD5Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/coderman/MD5Test.java" afterDir="false" />
-    </list>
+    <list default="true" id="bc0098de-1555-475b-b0df-4f7e5b9cd099" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +52,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../前端项目/Xinguan" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/doc/sql" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -2291,7 +2284,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.MD5Test.testMd5">
+    <configuration name="MD5Test.testMd5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Xinguan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.coderman.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.coderman" />
+      <option name="MAIN_CLASS_NAME" value="com.coderman.MD5Test" />
+      <option name="METHOD_NAME" value="testMd5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="XinguanApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Xinguan" />
       <extension name="coverage">
@@ -2307,6 +2316,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MD5Test.testMd5" />
         <item itemvalue="Spring Boot.XinguanApplication" />
       </list>
     </recent_temporary>
@@ -2414,7 +2424,7 @@
       <workItem from="1597816577884" duration="1073000" />
       <workItem from="1597817837396" duration="15351000" />
       <workItem from="1597836460212" duration="439000" />
-      <workItem from="1599653298940" duration="1672000" />
+      <workItem from="1599653298940" duration="1982000" />
     </task>
     <servers />
   </component>
@@ -2447,38 +2457,38 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="542" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599653657705" />
-    <state width="1495" height="297" key="GridCell.Tab.0.bottom" timestamp="1599654745175">
+    <state width="1495" height="297" key="GridCell.Tab.0.bottom" timestamp="1599655244965">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="297" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
-    <state width="1495" height="297" key="GridCell.Tab.0.center" timestamp="1599654745175">
+    <state width="1495" height="297" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599655244965" />
+    <state width="1495" height="297" key="GridCell.Tab.0.center" timestamp="1599655244965">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="297" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
-    <state width="1495" height="297" key="GridCell.Tab.0.left" timestamp="1599654745175">
+    <state width="1495" height="297" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599655244965" />
+    <state width="1495" height="297" key="GridCell.Tab.0.left" timestamp="1599655244965">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="297" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
-    <state width="1495" height="297" key="GridCell.Tab.0.right" timestamp="1599654745175">
+    <state width="1495" height="297" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599655244965" />
+    <state width="1495" height="297" key="GridCell.Tab.0.right" timestamp="1599655244965">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="297" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
-    <state width="1495" height="297" key="GridCell.Tab.1.bottom" timestamp="1599654745175">
+    <state width="1495" height="297" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599655244965" />
+    <state width="1495" height="297" key="GridCell.Tab.1.bottom" timestamp="1599655238279">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="297" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
-    <state width="1495" height="297" key="GridCell.Tab.1.center" timestamp="1599654745175">
+    <state width="1495" height="297" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599655238279" />
+    <state width="1495" height="297" key="GridCell.Tab.1.center" timestamp="1599655238279">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="297" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
-    <state width="1495" height="297" key="GridCell.Tab.1.left" timestamp="1599654745175">
+    <state width="1495" height="297" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1599655238279" />
+    <state width="1495" height="297" key="GridCell.Tab.1.left" timestamp="1599655238279">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="297" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
-    <state width="1495" height="297" key="GridCell.Tab.1.right" timestamp="1599654745175">
+    <state width="1495" height="297" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1599655238279" />
+    <state width="1495" height="297" key="GridCell.Tab.1.right" timestamp="1599655238279">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="297" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
+    <state width="1495" height="297" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1599655238279" />
     <state width="1495" height="396" key="GridCell.Tab.2.bottom" timestamp="1597836445723">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
