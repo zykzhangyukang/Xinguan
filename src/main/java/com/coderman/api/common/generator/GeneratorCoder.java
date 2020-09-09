@@ -1,6 +1,5 @@
 package com.coderman.api.common.generator;
 
-import org.junit.jupiter.api.Test;
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;

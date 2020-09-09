@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc0098de-1555-475b-b0df-4f7e5b9cd099" name="Default Changelist" comment="" />
+    <list default="true" id="bc0098de-1555-475b-b0df-4f7e5b9cd099" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/sql/xinguan.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/sql/xinguan.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/generator/GeneratorCoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coderman/api/common/generator/GeneratorCoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/coderman/MD5Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/coderman/MD5Test.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,13 +52,14 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588053406354" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../前端项目/Xinguan" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -70,19 +78,19 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\myworkspace\workspace_idea2\Xinguan\doc" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\common\config\web" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\common\utils" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\biz\vo" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\biz\controller" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\sql" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.coderman.api.biz.mapper" />
       <recent name="com.coderman.api.biz.controller" />
       <recent name="com.coderman.api.biz.converter" />
       <recent name="com.coderman.api.biz.service.imp" />
       <recent name="com.coderman.api.system.controller" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\doc\sql" />
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\common\config\web" />
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\common\utils" />
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\biz\vo" />
+      <recent name="D:\myworkspace\workspace_idea2\Xinguan\src\main\java\com\coderman\api\biz\controller" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.coderman.api.biz.vo" />
@@ -2405,7 +2413,8 @@
       <workItem from="1597665920320" duration="717000" />
       <workItem from="1597816577884" duration="1073000" />
       <workItem from="1597817837396" duration="15351000" />
-      <workItem from="1597836460212" duration="103000" />
+      <workItem from="1597836460212" duration="439000" />
+      <workItem from="1599653298940" duration="1672000" />
     </task>
     <servers />
   </component>
@@ -2430,54 +2439,46 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1597824153893" />
-    <state x="361" y="340" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1590756895047">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="361" y="340" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.834@0.0.1536.834" timestamp="1590756895047" />
-    <state x="539" y="284" width="457" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590727325009">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="539" y="284" width="457" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.834@0.0.1536.834" timestamp="1590727325009" />
     <state x="499" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597820033722">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="499" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1597820033722" />
-    <state x="542" y="172" key="FileChooserDialogImpl" timestamp="1597816945825">
+    <state x="542" y="172" key="FileChooserDialogImpl" timestamp="1599653657705">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="542" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1597816945825" />
-    <state width="1495" height="396" key="GridCell.Tab.0.bottom" timestamp="1597836445723">
+    <state x="542" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599653657705" />
+    <state width="1495" height="297" key="GridCell.Tab.0.bottom" timestamp="1599654745175">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="396" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1597836445723" />
-    <state width="1495" height="396" key="GridCell.Tab.0.center" timestamp="1597836445723">
+    <state width="1495" height="297" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
+    <state width="1495" height="297" key="GridCell.Tab.0.center" timestamp="1599654745175">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="396" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1597836445723" />
-    <state width="1495" height="396" key="GridCell.Tab.0.left" timestamp="1597836445723">
+    <state width="1495" height="297" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
+    <state width="1495" height="297" key="GridCell.Tab.0.left" timestamp="1599654745175">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="396" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1597836445723" />
-    <state width="1495" height="396" key="GridCell.Tab.0.right" timestamp="1597836445723">
+    <state width="1495" height="297" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
+    <state width="1495" height="297" key="GridCell.Tab.0.right" timestamp="1599654745175">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="396" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1597836445723" />
-    <state width="1495" height="396" key="GridCell.Tab.1.bottom" timestamp="1597836445723">
+    <state width="1495" height="297" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
+    <state width="1495" height="297" key="GridCell.Tab.1.bottom" timestamp="1599654745175">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="396" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1597836445723" />
-    <state width="1495" height="396" key="GridCell.Tab.1.center" timestamp="1597836445723">
+    <state width="1495" height="297" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
+    <state width="1495" height="297" key="GridCell.Tab.1.center" timestamp="1599654745175">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="396" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1597836445723" />
-    <state width="1495" height="396" key="GridCell.Tab.1.left" timestamp="1597836445723">
+    <state width="1495" height="297" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
+    <state width="1495" height="297" key="GridCell.Tab.1.left" timestamp="1599654745175">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="396" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1597836445723" />
-    <state width="1495" height="396" key="GridCell.Tab.1.right" timestamp="1597836445723">
+    <state width="1495" height="297" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
+    <state width="1495" height="297" key="GridCell.Tab.1.right" timestamp="1599654745175">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="396" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1597836445723" />
+    <state width="1495" height="297" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1599654745175" />
     <state width="1495" height="396" key="GridCell.Tab.2.bottom" timestamp="1597836445723">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -2494,10 +2495,6 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1495" height="396" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1597836445723" />
-    <state width="212" height="477" key="HiddenNamespacesPopup" timestamp="1589459548093">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="212" height="477" key="HiddenNamespacesPopup/0.0.1536.834@0.0.1536.834" timestamp="1589459548093" />
     <state x="346" y="0" key="SettingsEditor" timestamp="1597836565317">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -2506,14 +2503,6 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="487" y="101" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.834@0.0.1536.834" timestamp="1597819332239" />
-    <state x="499" y="176" key="extract.method.dialog" timestamp="1590745555824">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="499" y="176" key="extract.method.dialog/0.0.1536.834@0.0.1536.834" timestamp="1590745555824" />
-    <state x="178" y="27" key="new project wizard" timestamp="1589592795583">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="178" y="27" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1589592795583" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

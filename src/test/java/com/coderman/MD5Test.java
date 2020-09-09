@@ -1,7 +1,7 @@
 package com.coderman;
 
 import com.coderman.api.common.utils.MD5Utils;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
 
@@ -16,10 +16,10 @@ public class MD5Test {
      */
     @Test
     public void testMd5(){
-        String salt= UUID.randomUUID().toString();
         String username="admin";
+        String salt= UUID.randomUUID().toString()+username;
         String password="123456";
-        String s = MD5Utils.md5Encryption(password, salt)+username;
+        String s = MD5Utils.md5Encryption(password, salt);
         System.out.println("salt="+salt);
         System.out.println("password="+s);
     }
