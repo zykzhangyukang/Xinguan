@@ -137,6 +137,7 @@ export default {
         var $this = this;
         //构建表格条形统计图的数据
         this.tableData.forEach(function(e) {
+          console.log(e)
           $this.xData.push(e.name);
           $this.yData.push(e.stock);
         });

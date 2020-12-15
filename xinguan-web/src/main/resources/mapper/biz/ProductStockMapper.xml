@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.coderman.business.mapper.ProductStockMapper">
     <!--库存列表-->
-    <select id="findProductStocks"  parameterType="com.coderman.common.vo.business.ProductVO"
-            resultType="com.coderman.common.vo.business.ProductVO">
+    <select id="findProductStocks"  parameterType="com.coderman.common.vo.business.ProductStockVO"
+            resultType="com.coderman.common.vo.business.ProductStockVO">
         SELECT s.p_num,s.stock ,p.name,p.id,
         p.model,p.unit,p.image_url
         FROM biz_product_stock s
@@ -25,7 +25,7 @@
     </select>
     <!--所有库存信息-->
     <select id="findAllStocks"
-            resultType="com.coderman.common.vo.business.ProductVO">
+            resultType="com.coderman.common.vo.business.ProductStockVO">
         SELECT s.p_num,s.stock ,p.name,p.id,
         p.model,p.unit
         FROM biz_product_stock s
