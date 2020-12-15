@@ -13,7 +13,7 @@
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
 			connectionURL="jdbc:mysql://127.0.0.1:3306/xinguan" userId="root"
 			password="zhangyukang">
-			<property name="serverTimezone" value="UTC"></property>
+			<property name="serverTimezone" value="UTC"/>
 		</jdbcConnection>
 
 		<javaTypeResolver>
@@ -28,6 +28,6 @@
 		</javaModelGenerator>
 
 		<!-- table指定每个表的生成策略 -->
-		<table tableName="biz_out_stock_info" domainObjectName="OutStockInfo"></table>
+		<table tableName="biz_out_stock_info" domainObjectName="OutStockInfo"/>
 	</context>
 </generatorConfiguration>

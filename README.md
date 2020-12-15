@@ -9,18 +9,13 @@
 
 该项目是一个以新冠疫情为主题开发的一个物资管理系统,主要分为系统模块和业务模块,业务模块是处理疫情期间,物资的发放,物资入库,以及查看物资的库存等.系统模块是一个后台通用的RBAC权限模块,可以精确的控制到后台API级别的权限控制,项目不定期更新中.武汉加油~~
 
-#### 后台项目
-https://github.com/zykzhangyukang/Xinguan
-
-#### 前端项目
-https://github.com/zykzhangyukang/Vue-Xinguan
 
 #### 预览地址
-http://www.zykhome.club/#/login
+https://www.zykhome.club/#/login
 
 #### 技术栈
 
-SpringBoot,Shiro,mybatis,JWT,Mysql,通用mapper,Vue.js+element-ui,FastDFS,Nginx
+SpringBoot,Shiro,mybatis,JWT,Mysql,通用mapper,Vue.js+element-ui,FastDFS,Nginx,Node.js(v12.9.1版本)
 
 #### 演示页面
 
