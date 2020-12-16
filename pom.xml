@@ -9,6 +9,7 @@
         <module>xinguan-system</module>
         <module>xinguan-business</module>
         <module>xinguan-web</module>
+        <module>xinguan-generator</module>
     </modules>
 
     <parent>
