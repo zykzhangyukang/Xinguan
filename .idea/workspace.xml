@@ -2,9 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc0098de-1555-475b-b0df-4f7e5b9cd099" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/xinguan-generator/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xinguan-generator/src/main/java/com/coderman/generator/MybatisGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xinguan-vue/src/views/business/product/stock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-vue/src/views/business/product/stock.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/resources/mapper/biz/ProductStockMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/resources/mapper/biz/ProductStockMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/images/1.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/document/images/1.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/images/2.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/document/images/2.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/images/3.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/document/images/3.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/images/4.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/document/images/4.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mbg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-generator/src/main/resources/mybatis-generator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-business/xinguan-business.iml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-business/xinguan-business.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-common/xinguan-common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/xinguan-common.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/xinguan-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/xinguan-system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/xinguan-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/xinguan-web.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan.sql" beforeDir="false" afterPath="$PROJECT_DIR$/document/xinguan.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +76,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/xinguan-generator/src/main/java/com/coderman/generator" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -77,11 +93,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\doc" />
       <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\src\views\error" />
       <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\src\views\business\product" />
       <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\src\views\business" />
       <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\src\views\monitor" />
-      <recent name="D:\myworkspace\workspace_idea2\Xinguan\doc" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.coderman.system.shiro" />
@@ -91,11 +107,11 @@
       <recent name="com.coderman.common.response" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-generator\src\main\java\com\coderman\generator" />
+      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-generator\src\main\resources" />
       <recent name="D:\myworkspace\workspace_idea2\xinguan-api" />
       <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\src\views" />
       <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\src\views\business\covid19" />
-      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\src\views\system" />
-      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\src\views\monitor" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.coderman.api.biz.vo" />
@@ -2432,7 +2448,8 @@
       <workItem from="1608007704684" duration="292000" />
       <workItem from="1608008023525" duration="3187000" />
       <workItem from="1608012093553" duration="21295000" />
-      <workItem from="1608039255285" duration="1645000" />
+      <workItem from="1608039255285" duration="2098000" />
+      <workItem from="1608090675022" duration="562000" />
     </task>
     <servers />
   </component>
@@ -2449,10 +2466,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="249" y="0" key="#Project_Structure" timestamp="1608009455900">
+    <state x="249" y="0" key="#Project_Structure" timestamp="1608090888851">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="249" y="0" key="#Project_Structure/0.0.1536.834@0.0.1536.834" timestamp="1608009455900" />
+    <state x="249" y="0" key="#Project_Structure/0.0.1536.834@0.0.1536.834" timestamp="1608090888851" />
     <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608021207862">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -2469,54 +2486,54 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="542" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1607511929001" />
-    <state width="1495" height="428" key="GridCell.Tab.0.bottom" timestamp="1608042013818">
+    <state width="1495" height="337" key="GridCell.Tab.0.bottom" timestamp="1608042745340">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="428" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608042013818" />
-    <state width="1495" height="428" key="GridCell.Tab.0.center" timestamp="1608042013818">
+    <state width="1495" height="337" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
+    <state width="1495" height="337" key="GridCell.Tab.0.center" timestamp="1608042745340">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="428" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1608042013818" />
-    <state width="1495" height="428" key="GridCell.Tab.0.left" timestamp="1608042013818">
+    <state width="1495" height="337" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
+    <state width="1495" height="337" key="GridCell.Tab.0.left" timestamp="1608042745340">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="428" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1608042013818" />
-    <state width="1495" height="428" key="GridCell.Tab.0.right" timestamp="1608042013818">
+    <state width="1495" height="337" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
+    <state width="1495" height="337" key="GridCell.Tab.0.right" timestamp="1608042745340">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="428" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1608042013818" />
-    <state width="1495" height="428" key="GridCell.Tab.1.bottom" timestamp="1608042013818">
+    <state width="1495" height="337" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
+    <state width="1495" height="337" key="GridCell.Tab.1.bottom" timestamp="1608042745340">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="428" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608042013818" />
-    <state width="1495" height="428" key="GridCell.Tab.1.center" timestamp="1608042013818">
+    <state width="1495" height="337" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
+    <state width="1495" height="337" key="GridCell.Tab.1.center" timestamp="1608042745340">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="428" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1608042013818" />
-    <state width="1495" height="428" key="GridCell.Tab.1.left" timestamp="1608042013818">
+    <state width="1495" height="337" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
+    <state width="1495" height="337" key="GridCell.Tab.1.left" timestamp="1608042745340">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="428" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1608042013818" />
-    <state width="1495" height="428" key="GridCell.Tab.1.right" timestamp="1608042013818">
+    <state width="1495" height="337" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
+    <state width="1495" height="337" key="GridCell.Tab.1.right" timestamp="1608042745340">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="428" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1608042013818" />
-    <state width="1495" height="337" key="GridCell.Tab.2.bottom" timestamp="1608041904654">
+    <state width="1495" height="337" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
+    <state width="1495" height="337" key="GridCell.Tab.2.bottom" timestamp="1608042745340">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608041904654" />
-    <state width="1495" height="337" key="GridCell.Tab.2.center" timestamp="1608041904654">
+    <state width="1495" height="337" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
+    <state width="1495" height="337" key="GridCell.Tab.2.center" timestamp="1608042745340">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1608041904654" />
-    <state width="1495" height="337" key="GridCell.Tab.2.left" timestamp="1608041904654">
+    <state width="1495" height="337" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
+    <state width="1495" height="337" key="GridCell.Tab.2.left" timestamp="1608042745340">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1608041904654" />
-    <state width="1495" height="337" key="GridCell.Tab.2.right" timestamp="1608041904654">
+    <state width="1495" height="337" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
+    <state width="1495" height="337" key="GridCell.Tab.2.right" timestamp="1608042745340">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1608041904654" />
+    <state width="1495" height="337" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
     <state x="384" y="121" key="NewModule_or_Project.wizard" timestamp="1607511635086">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -2525,14 +2542,14 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="250" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1607512543267" />
-    <state x="194" y="65" width="1179" height="678" key="new project wizard" timestamp="1608008914459">
+    <state x="194" y="65" width="1179" height="678" key="new project wizard" timestamp="1608090853316">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="194" y="65" width="1179" height="678" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1608008914459" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1608041814127">
+    <state x="194" y="65" width="1179" height="678" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1608090853316" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1608042242615">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1608041814127" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1608042242615" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2541,11 +2558,6 @@
           <url>file://$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/aspect/ControllerEndpointAspect.java</url>
           <line>79</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/imp/ProductServiceImpl.java</url>
-          <line>176</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
