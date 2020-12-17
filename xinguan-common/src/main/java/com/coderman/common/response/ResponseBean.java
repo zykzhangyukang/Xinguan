@@ -3,62 +3,34 @@ package com.coderman.common.response;
 import lombok.Data;
 
 @Data
-public class ResponseBean {
+public class ResponseBean<T> {
 
     /** 200:操作成功  -1：操作失败**/
 
     // http 状态码
-    private int code;
-
-    // 返回信息
-    private String msg;
+    private boolean success;
 
     // 返回的数据
-    private Object data;
+    private T data;
 
-    public ResponseBean(){}
-
-    public ResponseBean(int code, String msg, Object data) {
-        this.code = code;
-        this.msg = msg;
-        this.data = data;
-    }
-
-    public static ResponseBean error(String message) {
-        ResponseBean responseBean = new ResponseBean();
-        responseBean.setMsg(message);
-        responseBean.setCode(-1);
-        return responseBean;
-    }
-
-    public static ResponseBean error(int code,String message) {
-        ResponseBean responseBean = new ResponseBean();
-        responseBean.setMsg(message);
-        responseBean.setCode(code);
-        return responseBean;
-    }
-
-    public static ResponseBean success(Object data) {
-        ResponseBean responseBean = new ResponseBean();
+    public static <T> ResponseBean<T> success(T data) {
+        ResponseBean<T> responseBean = new ResponseBean<>();
+        responseBean.setSuccess(true);
         responseBean.setData(data);
-        responseBean.setCode(200);
-        responseBean.setMsg("成功");
         return responseBean;
     }
 
-    public static ResponseBean success(String message) {
-        ResponseBean responseBean = new ResponseBean();
-        responseBean.setData(null);
-        responseBean.setCode(200);
-        responseBean.setMsg(message);
+
+    public static <T> ResponseBean<T> error(T errorData) {
+        ResponseBean<T> responseBean = new ResponseBean<>();
+        responseBean.setSuccess(false);
+        responseBean.setData(errorData);
         return responseBean;
     }
 
-    public static ResponseBean success() {
-        ResponseBean responseBean = new ResponseBean();
-        responseBean.setData(null);
-        responseBean.setCode(200);
-        responseBean.setMsg("Success");
+    public static <T> ResponseBean<T> success() {
+        ResponseBean<T> responseBean = new ResponseBean<>();
+        responseBean.setSuccess(true);
         return responseBean;
     }
 }

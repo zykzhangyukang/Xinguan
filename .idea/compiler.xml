@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="xinguan-generator" />
         <module name="xinguan-web" />
         <module name="xinguan-common" />
         <module name="xinguan-system" />
@@ -17,6 +18,7 @@
       <module name="xinguan-api" target="1.8" />
       <module name="xinguan-business" target="1.8" />
       <module name="xinguan-common" target="1.8" />
+      <module name="xinguan-generator" target="1.8" />
       <module name="xinguan-system" target="1.8" />
       <module name="xinguan-web" target="1.8" />
     </bytecodeTargetLevel>
@@ -26,6 +28,7 @@
       <module name="xinguan-api" options="-parameters" />
       <module name="xinguan-business" options="-parameters" />
       <module name="xinguan-common" options="-parameters" />
+      <module name="xinguan-generator" options="-parameters" />
       <module name="xinguan-system" options="-parameters" />
       <module name="xinguan-web" options="-parameters" />
     </option>

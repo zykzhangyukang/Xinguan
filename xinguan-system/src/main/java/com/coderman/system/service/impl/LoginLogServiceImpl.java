@@ -1,7 +1,8 @@
 package com.coderman.system.service.impl;
 
 
-import com.coderman.common.exception.ServiceException;
+import com.coderman.common.error.SystemCodeEnum;
+import com.coderman.common.error.SystemException;
 import com.coderman.common.model.system.LoginLog;
 import com.coderman.common.response.ActiveUser;
 import com.coderman.common.utils.AddressUtil;
@@ -81,11 +82,11 @@ public class LoginLogServiceImpl implements LoginLogService {
      * @param list
      */
     @Override
-    public void batchDelete(List<Long> list) {
+    public void batchDelete(List<Long> list) throws SystemException {
         for (Long id : list) {
             LoginLog loginLog = loginLogMapper.selectByPrimaryKey(id);
             if(loginLog==null){
-                throw new ServiceException("id="+id+"登入日志不存在");
+                throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"id="+id+"登入日志不存在");
             }
             delete(id);
         }
@@ -138,10 +139,10 @@ public class LoginLogServiceImpl implements LoginLogService {
      */
     @Transactional
     @Override
-    public void delete(Long id) {
+    public void delete(Long id) throws SystemException {
         LoginLog loginLog = loginLogMapper.selectByPrimaryKey(id);
         if(loginLog==null){
-            throw new ServiceException("登入日志不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"登入日志不存在");
         }
         loginLogMapper.deleteByPrimaryKey(id);
     }

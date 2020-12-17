@@ -14,6 +14,9 @@ import lombok.Getter;
 @Getter
 public enum  BusinessCodeEnum implements BaseError {
 
+    //通用的异常以0000开头
+    PARAMETER_ERROR(00001,"参数不合法"),
+
     // 数据操作错误定义
     BODY_NOT_MATCH(400,"请求的数据格式不符!"),
     SIGNATURE_NOT_MATCH(401,"请求的数字签名不匹配!"),
@@ -50,7 +53,7 @@ public enum  BusinessCodeEnum implements BaseError {
     }
 
     @Override
-    public String getErrorMessage() {
+    public String getErrorMsg() {
         return this.errorMsg;
     }
 
@@ -59,4 +62,5 @@ public enum  BusinessCodeEnum implements BaseError {
         this.errorMsg=errorMsg;
         return this;
     }
+
 }

@@ -2,8 +2,8 @@ package com.coderman.system.service.impl;
 
 import com.coderman.common.enums.system.UserStatusEnum;
 import com.coderman.common.enums.system.UserTypeEnum;
-import com.coderman.common.exception.ErrorCodeEnum;
-import com.coderman.common.exception.ServiceException;
+import com.coderman.common.error.SystemCodeEnum;
+import com.coderman.common.error.SystemException;
 import com.coderman.common.model.system.*;
 import com.coderman.common.response.ActiveUser;
 import com.coderman.common.utils.JWTUtils;
@@ -82,10 +82,10 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public List<Role> findRolesById(Long id) {
+    public List<Role> findRolesById(Long id) throws SystemException {
         User dbUser = userMapper.selectByPrimaryKey(id);
         if(dbUser==null){
-            throw new ServiceException("该用户不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"该用户不存在");
         }
         List<Role> roles=new ArrayList<>();
         UserRole t = new UserRole();
@@ -211,16 +211,16 @@ public class UserServiceImpl implements UserService {
      */
     @Transactional
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(Long id) throws SystemException {
         User user = userMapper.selectByPrimaryKey(id);
         ActiveUser activeUser = (ActiveUser) SecurityUtils.getSubject().getPrincipal();
 
         if(user==null){
-            throw new ServiceException("要删除的用户不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"要删除的用户不存在");
         }
 
         if(user.getId().equals(activeUser.getUser().getId())){
-            throw new ServiceException("不能删除当前登入用户");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"不能删除当前登入用户");
         }
 
         userMapper.deleteByPrimaryKey(id);
@@ -236,14 +236,14 @@ public class UserServiceImpl implements UserService {
      * @param status
      */
     @Override
-    public void updateStatus(Long id, Boolean status) {
+    public void updateStatus(Long id, Boolean status) throws SystemException {
         User dbUser = userMapper.selectByPrimaryKey(id);
         if(dbUser==null){
-            throw new ServiceException("要更新状态的用户不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"要更新状态的用户不存在");
         }
         ActiveUser activeUser= (ActiveUser) SecurityUtils.getSubject().getPrincipal();
         if(dbUser.getId().equals(activeUser.getUser().getId())){
-            throw new ServiceException(ErrorCodeEnum.DoNotAllowToDisableTheCurrentUser);
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"无法改变当前用户状态");
         }else {
             User t = new User();
             t.setId(id);
@@ -259,18 +259,18 @@ public class UserServiceImpl implements UserService {
      */
     @Transactional
     @Override
-    public void add(UserVO userVO) {
+    public void add(UserVO userVO) throws SystemException {
         @NotBlank(message = "用户名不能为空") String username = userVO.getUsername();
         @NotNull(message = "部门id不能为空") Long departmentId = userVO.getDepartmentId();
         Example o = new Example(User.class);
         o.createCriteria().andEqualTo("username",username);
         int i = userMapper.selectCountByExample(o);
         if(i!=0){
-            throw new ServiceException("该用户名已被占用");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"该用户名已被占用");
         }
         Department department = departmentMapper.selectByPrimaryKey(departmentId);
         if(department==null){
-            throw new ServiceException("该部门不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"该部门不存在");
         }
         User user = new User();
         BeanUtils.copyProperties(userVO,user);
@@ -292,23 +292,23 @@ public class UserServiceImpl implements UserService {
      */
     @Transactional
     @Override
-    public void update(Long id, UserEditVO userVO) {
+    public void update(Long id, UserEditVO userVO) throws SystemException {
         User dbUser = userMapper.selectByPrimaryKey(id);
         @NotBlank(message = "用户名不能为空") String username = userVO.getUsername();
         @NotNull(message = "部门不能为空") Long departmentId = userVO.getDepartmentId();
         if(dbUser==null){
-            throw new ServiceException("要删除的用户不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"要删除的用户不存在");
         }
         Department department = departmentMapper.selectByPrimaryKey(departmentId);
         if(department==null){
-            throw new ServiceException("该部门不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"该部门不存在");
         }
         Example o = new Example(User.class);
         o.createCriteria().andEqualTo("username",username);
         List<User> users = userMapper.selectByExample(o);
         if(!CollectionUtils.isEmpty(users)){
             if(!users.get(0).getId().equals(id)){
-                throw new ServiceException("该用户名已被占用");
+                throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"该用户名已被占用");
             }
         }
         User user = new User();
@@ -325,10 +325,10 @@ public class UserServiceImpl implements UserService {
      */
     @Transactional
     @Override
-    public UserEditVO edit(Long id) {
+    public UserEditVO edit(Long id) throws SystemException {
         User user = userMapper.selectByPrimaryKey(id);
         if(user==null){
-            throw new ServiceException("要编辑的用户不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"要编辑的用户不存在");
         }
         UserEditVO userEditVO = new UserEditVO();
         BeanUtils.copyProperties(user,userEditVO);
@@ -346,10 +346,10 @@ public class UserServiceImpl implements UserService {
      */
     @Transactional
     @Override
-    public List<Long> roles(Long id) {
+    public List<Long> roles(Long id) throws SystemException {
         User user = userMapper.selectByPrimaryKey(id);
         if(user==null){
-            throw new ServiceException("该用户不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"该用户不存在");
         }
         Example o = new Example(UserRole.class);
         o.createCriteria().andEqualTo("userId",user.getId());
@@ -373,11 +373,11 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     @Transactional
-    public void assignRoles(Long id, Long[] rids) {
+    public void assignRoles(Long id, Long[] rids) throws SystemException {
         //删除之前用户的所有角色
         User user = userMapper.selectByPrimaryKey(id);
         if(user==null){
-            throw new ServiceException("用户不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"用户不存在");
         }
         //删除之前分配的
         Example o = new Example(UserRole.class);
@@ -388,11 +388,11 @@ public class UserServiceImpl implements UserService {
             for (Long rid : rids) {
                 Role role = roleMapper.selectByPrimaryKey(rid);
                 if(role==null){
-                    throw new ServiceException("roleId="+rid+",该角色不存在");
+                    throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"roleId="+rid+",该角色不存在");
                 }
                 //判断角色状态
                 if(role.getStatus()==0){
-                    throw new ServiceException("roleName="+role.getRoleName()+",该角色已禁用");
+                    throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"roleName="+role.getRoleName()+",该角色已禁用");
                 }
                 UserRole userRole = new UserRole();
                 userRole.setUserId(id);
@@ -414,7 +414,7 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public String login(String username, String password) {
+    public String login(String username, String password) throws SystemException {
         String token;
         User user = findUserByName(username);
         if (user != null) {
@@ -427,10 +427,10 @@ public class UserServiceImpl implements UserService {
             try {
                 SecurityUtils.getSubject().login(jwtToken);
             } catch (AuthenticationException e) {
-                throw new ServiceException(e.getMessage());
+                throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,e.getMessage());
             }
         } else {
-            throw new ServiceException(ErrorCodeEnum.USER_ACCOUNT_NOT_FOUND);
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"用户不存在");
         }
         return token;
     }
@@ -441,7 +441,7 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public UserInfoVO info() {
+    public UserInfoVO info() throws SystemException {
         ActiveUser activeUser = (ActiveUser) SecurityUtils.getSubject().getPrincipal();
         UserInfoVO userInfoVO = new UserInfoVO();
         userInfoVO.setAvatar(activeUser.getUser().getAvatar());

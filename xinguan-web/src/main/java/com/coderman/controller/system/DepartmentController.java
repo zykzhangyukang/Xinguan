@@ -1,6 +1,7 @@
 package com.coderman.controller.system;
 
 import com.coderman.common.annotation.ControllerEndpoint;
+import com.coderman.common.error.SystemException;
 import com.coderman.common.model.system.Department;
 import com.coderman.common.response.ResponseBean;
 import com.coderman.common.vo.system.DeanVO;
@@ -25,9 +26,9 @@ import java.util.List;
  * @Date 2020/3/15 14:11
  * @Version 1.0
  **/
-@Api(tags = "系统部门接口")
+@Api(tags = "系统模块-部门相关接口")
 @RestController
-@RequestMapping("/department")
+@RequestMapping("/system/department")
 public class DepartmentController {
 
 
@@ -41,7 +42,7 @@ public class DepartmentController {
      */
     @ApiOperation(value = "部门列表", notes = "部门列表,根据部门名模糊查询")
     @GetMapping("/findDepartmentList")
-    public ResponseBean findDepartmentList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+    public ResponseBean<PageVO<DepartmentVO>> findDepartmentList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                            @RequestParam(value = "pageSize") Integer pageSize,
                                            DepartmentVO departmentVO) {
         PageVO<DepartmentVO> departmentsList = departmentService.findDepartmentList(pageNum, pageSize, departmentVO);
@@ -55,7 +56,7 @@ public class DepartmentController {
      */
     @ApiOperation(value = "所有部门")
     @GetMapping("/findAll")
-    public ResponseBean findAll() {
+    public ResponseBean<List<DepartmentVO>> findAll() {
         List<DepartmentVO> departmentVOS = departmentService.findAllVO();
         return ResponseBean.success(departmentVOS);
     }
@@ -67,7 +68,7 @@ public class DepartmentController {
      */
     @ApiOperation(value = "部门主任", notes = "查找部门主任,排除掉已经禁用的用户")
     @GetMapping("/findDeanList")
-    public ResponseBean findDeanList() {
+    public ResponseBean<List<DeanVO>> findDeanList() {
         List<DeanVO> managerList = departmentService.findDeanList();
         return ResponseBean.success(managerList);
     }
@@ -95,7 +96,7 @@ public class DepartmentController {
     @ApiOperation(value = "编辑部门")
     @RequiresPermissions({"department:edit"})
     @GetMapping("/edit/{id}")
-    public ResponseBean edit(@PathVariable Long id) {
+    public ResponseBean edit(@PathVariable Long id) throws SystemException {
         DepartmentVO departmentVO = departmentService.edit(id);
         return ResponseBean.success(departmentVO);
     }
@@ -109,7 +110,7 @@ public class DepartmentController {
     @ApiOperation(value = "更新部门")
     @RequiresPermissions({"department:update"})
     @PutMapping("/update/{id}")
-    public ResponseBean update(@PathVariable Long id, @RequestBody @Validated DepartmentVO departmentVO) {
+    public ResponseBean update(@PathVariable Long id, @RequestBody @Validated DepartmentVO departmentVO) throws SystemException {
         departmentService.update(id, departmentVO);
         return ResponseBean.success();
     }
@@ -124,7 +125,7 @@ public class DepartmentController {
     @ApiOperation(value = "删除部门")
     @RequiresPermissions({"department:delete"})
     @DeleteMapping("/delete/{id}")
-    public ResponseBean delete(@PathVariable Long id) {
+    public ResponseBean delete(@PathVariable Long id) throws SystemException {
         departmentService.delete(id);
         return ResponseBean.success();
     }

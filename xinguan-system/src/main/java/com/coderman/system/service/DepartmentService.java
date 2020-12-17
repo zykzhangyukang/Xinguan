@@ -1,6 +1,7 @@
 package com.coderman.system.service;
 
 
+import com.coderman.common.error.SystemException;
 import com.coderman.common.model.system.Department;
 import com.coderman.common.vo.system.DeanVO;
 import com.coderman.common.vo.system.DepartmentVO;
@@ -40,20 +41,20 @@ public interface DepartmentService {
      * @param id
      * @return
      */
-    DepartmentVO edit(Long id);
+    DepartmentVO edit(Long id) throws SystemException;
 
     /**
      * 更新院部门
      * @param id
      * @param departmentVO
      */
-    void update(Long id, DepartmentVO departmentVO);
+    void update(Long id, DepartmentVO departmentVO) throws SystemException;
 
     /**
      * 删除院部门
      * @param id
      */
-    void delete(Long id);
+    void delete(Long id) throws SystemException;
 
     /**
      * 所有部门

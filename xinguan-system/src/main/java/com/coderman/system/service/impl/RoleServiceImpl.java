@@ -1,7 +1,8 @@
 package com.coderman.system.service.impl;
 
 import com.coderman.common.enums.system.RoleStatusEnum;
-import com.coderman.common.exception.ServiceException;
+import com.coderman.common.error.SystemCodeEnum;
+import com.coderman.common.error.SystemException;
 import com.coderman.common.model.system.Menu;
 import com.coderman.common.model.system.Role;
 import com.coderman.common.model.system.RoleMenu;
@@ -70,13 +71,13 @@ public class RoleServiceImpl implements RoleService {
      * @param roleVO
      */
     @Override
-    public void add(RoleVO roleVO) {
+    public void add(RoleVO roleVO) throws SystemException {
         @NotBlank(message = "角色名必填") String roleName = roleVO.getRoleName();
         Example o = new Example(Role.class);
         o.createCriteria().andEqualTo("roleName",roleName);
         int i = roleMapper.selectCountByExample(o);
         if(i!=0){
-            throw new ServiceException("该角色名已被占用");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"该角色名已被占用");
         }
         Role role = new Role();
         BeanUtils.copyProperties(roleVO,role);
@@ -92,10 +93,10 @@ public class RoleServiceImpl implements RoleService {
      */
     @Transactional
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(Long id) throws SystemException {
         Role role = roleMapper.selectByPrimaryKey(id);
         if(role==null){
-            throw new ServiceException("要删除的角色不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"要删除的角色不存在");
         }
         roleMapper.deleteByPrimaryKey(id);
         //删除对应的[角色-菜单]记录
@@ -110,10 +111,10 @@ public class RoleServiceImpl implements RoleService {
      * @return
      */
     @Override
-    public RoleVO edit(Long id) {
+    public RoleVO edit(Long id) throws SystemException {
         Role role = roleMapper.selectByPrimaryKey(id);
         if(role==null){
-            throw new ServiceException("编辑的角色不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"编辑的角色不存在");
         }
         RoleVO roleVO = new RoleVO();
         BeanUtils.copyProperties(role,roleVO);
@@ -126,11 +127,11 @@ public class RoleServiceImpl implements RoleService {
      * @param roleVO
      */
     @Override
-    public void update(Long id, RoleVO roleVO) {
+    public void update(Long id, RoleVO roleVO) throws SystemException {
         @NotBlank(message = "角色名必填") String roleName = roleVO.getRoleName();
         Role dbRole = roleMapper.selectByPrimaryKey(id);
         if(dbRole==null){
-            throw new ServiceException("要更新的角色不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"要更新的角色不存在");
         }
         Example o = new Example(Role.class);
         o.createCriteria().andEqualTo("roleName",roleName);
@@ -138,7 +139,7 @@ public class RoleServiceImpl implements RoleService {
         if(!CollectionUtils.isEmpty(roles)){
             Role role = roles.get(0);
             if(!role.getId().equals(id)){
-                throw new ServiceException("该角色名已被占用");
+                throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"该角色名已被占用");
             }
         }
         Role role = new Role();
@@ -153,10 +154,10 @@ public class RoleServiceImpl implements RoleService {
      * @param status
      */
     @Override
-    public void updateStatus(Long id, Boolean status) {
+    public void updateStatus(Long id, Boolean status) throws SystemException {
         Role role = roleMapper.selectByPrimaryKey(id);
         if(role==null){
-            throw new ServiceException("角色不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"角色不存在");
         }
         Role t = new Role();
         t.setId(id);
@@ -176,10 +177,10 @@ public class RoleServiceImpl implements RoleService {
      * @return
      */
     @Override
-    public List<Long> findMenuIdsByRoleId(Long id) {
+    public List<Long> findMenuIdsByRoleId(Long id) throws SystemException {
         Role role = roleMapper.selectByPrimaryKey(id);
         if(role==null){
-            throw new ServiceException("该角色已不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"该角色已不存在");
         }
         List<Long> ids=new ArrayList<>();
         Example o = new Example(RoleMenu.class);
@@ -200,10 +201,10 @@ public class RoleServiceImpl implements RoleService {
      */
     @Transactional
     @Override
-    public void authority(Long id,Long[] mids) {
+    public void authority(Long id,Long[] mids) throws SystemException {
         Role role = roleMapper.selectByPrimaryKey(id);
         if(role==null){
-            throw new ServiceException("该角色不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"该角色不存在");
         }
         //先删除原来的权限
         Example o = new Example(RoleMenu.class);
@@ -214,7 +215,7 @@ public class RoleServiceImpl implements RoleService {
             for (Long mid : mids) {
                 Menu menu = menuMapper.selectByPrimaryKey(mid);
                 if(menu==null){
-                    throw new ServiceException("menuId="+mid+",菜单权限不存在");
+                    throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"menuId="+mid+",菜单权限不存在");
                 }else {
                     RoleMenu roleMenu = new RoleMenu();
                     roleMenu.setRoleId(id);

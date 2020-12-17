@@ -1,6 +1,7 @@
 package com.coderman.system.service;
 
 
+import com.coderman.common.error.SystemException;
 import com.coderman.common.vo.system.LoginLogVO;
 import com.coderman.common.vo.system.PageVO;
 import com.coderman.common.vo.system.UserVO;
@@ -27,7 +28,7 @@ public interface LoginLogService {
      * 删除登入日志
      * @param id
      */
-    void delete(Long id);
+    void delete(Long id) throws SystemException;
 
 
     /**
@@ -43,7 +44,7 @@ public interface LoginLogService {
      * 批量删除登入日志
      * @param list
      */
-    void batchDelete(List<Long> list);
+    void batchDelete(List<Long> list) throws SystemException;
 
     /**
      * 用户登入报表

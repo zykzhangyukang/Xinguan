@@ -2,6 +2,7 @@ package com.coderman.controller.business;
 
 import com.coderman.business.service.HealthService;
 import com.coderman.common.annotation.ControllerEndpoint;
+import com.coderman.common.error.BusinessException;
 import com.coderman.common.model.business.Health;
 import com.coderman.common.response.ActiveUser;
 import com.coderman.common.response.ResponseBean;
@@ -20,9 +21,9 @@ import org.springframework.web.bind.annotation.*;
  * @Date 2020/5/7 10:14
  * @Version 1.0
  **/
-@Api(tags = "健康上报接口")
+@Api(tags = "业务模块-健康上报相关接口")
 @RestController
-@RequestMapping("/health")
+@RequestMapping("/business/health")
 public class HealthController {
 
     @Autowired
@@ -37,7 +38,7 @@ public class HealthController {
     @ApiOperation(value = "健康上报",notes = "用户健康上报")
     @RequiresPermissions({"health:report"})
     @PostMapping("/report")
-    public ResponseBean report(@Validated @RequestBody HealthVO healthVO){
+    public ResponseBean report(@Validated @RequestBody HealthVO healthVO) throws BusinessException {
         ActiveUser activeUser = (ActiveUser) SecurityUtils.getSubject().getPrincipal();
         healthVO.setUserId(activeUser.getUser().getId());
         healthService.report(healthVO);

@@ -10,6 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -96,6 +98,7 @@ public class FdfsUtil {
      * 删除文件
      * @param fileUrl
      */
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void deleteFile(String fileUrl) throws FdfsException {
         if (StringUtils.isEmpty(fileUrl)) {
             return;
@@ -104,7 +107,7 @@ public class FdfsUtil {
             StorePath storePath = StorePath.praseFromUrl(fileUrl);
             storageClient.deleteFile(storePath.getGroup(), storePath.getPath());
         } catch (FdfsUnsupportStorePathException e) {
-            logger.warn(e.getMessage());
+            logger.warn("删除图片错误："+e.getMessage());
         }
     }
 

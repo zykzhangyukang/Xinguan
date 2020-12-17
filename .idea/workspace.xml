@@ -1,26 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:xinguan-vue" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bc0098de-1555-475b-b0df-4f7e5b9cd099" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/xinguan-generator/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xinguan-generator/src/main/java/com/coderman/generator/MybatisGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/images/1.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/document/images/1.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/images/2.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/document/images/2.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/images/3.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/document/images/3.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/images/4.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/document/images/4.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mbg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-generator/src/main/resources/mybatis-generator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document/xinguan.sql" beforeDir="false" afterPath="$PROJECT_DIR$/document/xinguan.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/HealthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/HealthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/InStockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/InStockService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/OutStockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/OutStockService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/ProductCategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/ProductCategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/imp/HealthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/imp/HealthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/imp/InStockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/imp/InStockServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/imp/OutStockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/imp/OutStockServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/imp/ProductCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/imp/ProductCategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/imp/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-business/src/main/java/com/coderman/business/service/imp/ProductServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xinguan-business/xinguan-business.iml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-business/xinguan-business.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xinguan-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/dto/UserLoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/dto/UserLoginDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/error/BaseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/error/BaseError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/error/BusinessCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/error/BusinessCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/error/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/error/BusinessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/error/SystemCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/error/SystemCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/error/SystemException.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/error/SystemException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/response/ResponseBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/response/ResponseBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/utils/AddressUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/utils/AddressUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/utils/FdfsUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/utils/FdfsUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/utils/IPUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/utils/IPUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/vo/system/UserInfoVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/vo/system/UserInfoVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xinguan-common/xinguan-common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/xinguan-common.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/DepartmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/LogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/LoginLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/LoginLogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/UploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/UploadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/impl/DepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/impl/DepartmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/impl/LogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/impl/LogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/impl/LoginLogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/impl/LoginLogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/impl/UploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/impl/UploadServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/shiro/JWTFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/shiro/JWTFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/shiro/ShiroConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/shiro/UserRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/shiro/UserRealm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xinguan-system/xinguan-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-system/xinguan-system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/config/MyMebMvcConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/config/MyMebMvcConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/config/SSLConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/config/SSLConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/business/ConsumerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/business/ConsumerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/business/HealthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/business/HealthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/business/InStockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/business/InStockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/business/OutStockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/business/OutStockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/business/ProductCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/business/ProductCategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/business/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/business/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/business/SupplierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/business/SupplierController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/system/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/system/DepartmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/system/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/system/LogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/system/LoginLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/system/LoginLogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/system/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/system/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/system/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/system/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/system/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/system/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/system/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/controller/system/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xinguan-web/xinguan-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/xinguan-web.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xinguan.sql" beforeDir="false" afterPath="$PROJECT_DIR$/document/xinguan.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +119,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,7 +144,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -76,7 +164,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/xinguan-generator/src/main/java/com/coderman/generator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/document" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -93,11 +181,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\doc" />
-      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\src\views\error" />
-      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\src\views\business\product" />
-      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\src\views\business" />
+      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-web\src\main\resources\static" />
       <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\src\views\monitor" />
+      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-common\src\main\resources" />
+      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-web\src\main\resources\json" />
+      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\doc" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.coderman.system.shiro" />
@@ -107,11 +195,11 @@
       <recent name="com.coderman.common.response" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-generator\src\main\java\com\coderman\generator" />
-      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-generator\src\main\resources" />
-      <recent name="D:\myworkspace\workspace_idea2\xinguan-api" />
-      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\src\views" />
-      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\src\views\business\covid19" />
+      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\document" />
+      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-vue\public\js" />
+      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-web\src\main\java\com\coderman\config" />
+      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-web\src\main\resources\ip2region" />
+      <recent name="D:\myworkspace\workspace_idea2\xinguan-api\xinguan-web\src\main\resources" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.coderman.api.biz.vo" />
@@ -2449,8 +2537,19 @@
       <workItem from="1608008023525" duration="3187000" />
       <workItem from="1608012093553" duration="21295000" />
       <workItem from="1608039255285" duration="2098000" />
-      <workItem from="1608090675022" duration="562000" />
+      <workItem from="1608090675022" duration="5750000" />
+      <workItem from="1608103262264" duration="129000" />
+      <workItem from="1608114625205" duration="13438000" />
+      <workItem from="1608201379872" duration="13538000" />
     </task>
+    <task id="LOCAL-00001" summary="添加代码生成器">
+      <created>1608091380480</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608091380480</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2465,15 +2564,39 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="添加代码生成器" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加代码生成器" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="249" y="0" key="#Project_Structure" timestamp="1608090888851">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="249" y="0" key="#Project_Structure/0.0.1536.834@0.0.1536.834" timestamp="1608090888851" />
-    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608021207862">
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608117167242">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1608021207862" />
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1608117167242" />
+    <state x="418" y="219" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608116812301">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="418" y="219" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1608116812301" />
+    <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1608094896779">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1608094896779" />
     <state x="499" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608034809535">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -2482,58 +2605,62 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="350" y="241" width="707" height="593" key="#xdebugger.evaluate/0.0.1536.834@0.0.1536.834" timestamp="1608020791750" />
+    <state x="206" y="0" key="CommitChangelistDialog2" timestamp="1608091377600">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="206" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1608091377600" />
     <state x="542" y="172" key="FileChooserDialogImpl" timestamp="1607511929001">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="542" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1607511929001" />
-    <state width="1495" height="337" key="GridCell.Tab.0.bottom" timestamp="1608042745340">
+    <state width="1495" height="336" key="GridCell.Tab.0.bottom" timestamp="1608215778730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
-    <state width="1495" height="337" key="GridCell.Tab.0.center" timestamp="1608042745340">
+    <state width="1495" height="336" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608215778730" />
+    <state width="1495" height="336" key="GridCell.Tab.0.center" timestamp="1608215778730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
-    <state width="1495" height="337" key="GridCell.Tab.0.left" timestamp="1608042745340">
+    <state width="1495" height="336" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1608215778730" />
+    <state width="1495" height="336" key="GridCell.Tab.0.left" timestamp="1608215778730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
-    <state width="1495" height="337" key="GridCell.Tab.0.right" timestamp="1608042745340">
+    <state width="1495" height="336" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1608215778730" />
+    <state width="1495" height="336" key="GridCell.Tab.0.right" timestamp="1608215778730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
-    <state width="1495" height="337" key="GridCell.Tab.1.bottom" timestamp="1608042745340">
+    <state width="1495" height="336" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1608215778730" />
+    <state width="1495" height="336" key="GridCell.Tab.1.bottom" timestamp="1608215778730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
-    <state width="1495" height="337" key="GridCell.Tab.1.center" timestamp="1608042745340">
+    <state width="1495" height="336" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608215778730" />
+    <state width="1495" height="336" key="GridCell.Tab.1.center" timestamp="1608215778730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
-    <state width="1495" height="337" key="GridCell.Tab.1.left" timestamp="1608042745340">
+    <state width="1495" height="336" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1608215778730" />
+    <state width="1495" height="336" key="GridCell.Tab.1.left" timestamp="1608215778730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
-    <state width="1495" height="337" key="GridCell.Tab.1.right" timestamp="1608042745340">
+    <state width="1495" height="336" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1608215778730" />
+    <state width="1495" height="336" key="GridCell.Tab.1.right" timestamp="1608215778730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
-    <state width="1495" height="337" key="GridCell.Tab.2.bottom" timestamp="1608042745340">
+    <state width="1495" height="336" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1608215778730" />
+    <state width="1495" height="336" key="GridCell.Tab.2.bottom" timestamp="1608215778730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
-    <state width="1495" height="337" key="GridCell.Tab.2.center" timestamp="1608042745340">
+    <state width="1495" height="336" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608215778730" />
+    <state width="1495" height="336" key="GridCell.Tab.2.center" timestamp="1608215778730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
-    <state width="1495" height="337" key="GridCell.Tab.2.left" timestamp="1608042745340">
+    <state width="1495" height="336" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1608215778730" />
+    <state width="1495" height="336" key="GridCell.Tab.2.left" timestamp="1608215778730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
-    <state width="1495" height="337" key="GridCell.Tab.2.right" timestamp="1608042745340">
+    <state width="1495" height="336" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1608215778730" />
+    <state width="1495" height="336" key="GridCell.Tab.2.right" timestamp="1608215778730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="337" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1608042745340" />
+    <state width="1495" height="336" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1608215778730" />
     <state x="384" y="121" key="NewModule_or_Project.wizard" timestamp="1607511635086">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -2542,14 +2669,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="250" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1607512543267" />
+    <state x="490" y="159" width="540" height="524" key="StructurePopup" timestamp="1608116424660">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="490" y="159" width="540" height="524" key="StructurePopup/0.0.1536.834@0.0.1536.834" timestamp="1608116424660" />
+    <state x="460" y="157" width="671" height="578" key="find.popup" timestamp="1608093171158">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="460" y="157" width="671" height="578" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1608093171158" />
     <state x="194" y="65" width="1179" height="678" key="new project wizard" timestamp="1608090853316">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="194" y="65" width="1179" height="678" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1608090853316" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1608042242615">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1608215565042">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1608042242615" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1608215565042" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2558,6 +2693,16 @@
           <url>file://$PROJECT_DIR$/xinguan-system/src/main/java/com/coderman/system/aspect/ControllerEndpointAspect.java</url>
           <line>79</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/error/SystemException.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/error/SystemException.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

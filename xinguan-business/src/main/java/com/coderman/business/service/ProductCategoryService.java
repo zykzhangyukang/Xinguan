@@ -1,6 +1,7 @@
 package com.coderman.business.service;
 
 
+import com.coderman.common.error.BusinessException;
 import com.coderman.common.vo.business.ProductCategoryTreeNodeVO;
 import com.coderman.common.vo.business.ProductCategoryVO;
 import com.coderman.common.vo.system.PageVO;
@@ -49,7 +50,7 @@ public interface ProductCategoryService {
      * 删除物资类别
      * @param id
      */
-    void delete(Long id);
+    void delete(Long id) throws BusinessException;
 
     /**
      * 查询所物资类别

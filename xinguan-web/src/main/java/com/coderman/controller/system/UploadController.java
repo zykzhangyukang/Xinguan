@@ -1,6 +1,7 @@
 package com.coderman.controller.system;
 
 
+import com.coderman.common.error.SystemException;
 import com.coderman.common.model.system.ImageAttachment;
 import com.coderman.common.response.ResponseBean;
 import com.coderman.common.vo.system.ImageAttachmentVO;
@@ -25,9 +26,9 @@ import java.util.List;
  * @Version 1.0
  **/
 @Slf4j
-@Api(tags = "文件上传接口")
+@Api(tags = "系统模块-文件上传相关接口")
 @RestController
-@RequestMapping("/upload")
+@RequestMapping("/system/upload")
 public class UploadController {
 
 
@@ -43,7 +44,7 @@ public class UploadController {
     @ApiOperation(value = "上传文件")
     @RequiresPermissions({"upload:image"})
     @PostMapping("/image")
-    public ResponseBean uploadImage(MultipartFile file) throws IOException {
+    public ResponseBean<String> uploadImage(MultipartFile file) throws IOException, SystemException {
         String realPath=uploadService.uploadImage(file);
         return ResponseBean.success(realPath);
     }
@@ -56,7 +57,7 @@ public class UploadController {
      */
     @ApiOperation(value = "附件列表", notes = "模糊查询附件列表")
     @GetMapping("/findImageList")
-    public ResponseBean findImageList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+    public ResponseBean<PageInfo<ImageAttachment>> findImageList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                      @RequestParam(value = "pageSize", defaultValue = "8") Integer pageSize,
                                       ImageAttachmentVO imageAttachmentVO) {
         PageHelper.startPage(pageNum,pageSize);
@@ -73,7 +74,7 @@ public class UploadController {
     @ApiOperation(value = "删除图片", notes = "删除数据库记录,删除图片服务器上的图片")
     @RequiresPermissions("attachment:delete")
     @DeleteMapping("/delete/{id}")
-    public ResponseBean delete(@PathVariable Long id){
+    public ResponseBean delete(@PathVariable Long id) throws SystemException {
         uploadService.delete(id);
         return ResponseBean.success();
     }

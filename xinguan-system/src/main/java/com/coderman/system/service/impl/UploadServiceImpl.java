@@ -1,6 +1,7 @@
 package com.coderman.system.service.impl;
 
-import com.coderman.common.exception.ServiceException;
+import com.coderman.common.error.SystemCodeEnum;
+import com.coderman.common.error.SystemException;
 import com.coderman.common.model.system.ImageAttachment;
 import com.coderman.common.utils.FdfsUtil;
 import com.coderman.common.vo.system.ImageAttachmentVO;
@@ -8,6 +9,7 @@ import com.coderman.system.mapper.ImageAttachmentMapper;
 import com.coderman.system.service.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import tk.mybatis.mapper.entity.Example;
 
@@ -36,9 +38,9 @@ public class UploadServiceImpl implements UploadService {
     private FdfsUtil fdfsUtil;
 
     @Override
-    public String uploadImage(MultipartFile file) throws IOException {
+    public String uploadImage(MultipartFile file) throws IOException, SystemException {
         if (file.isEmpty()) {
-            throw new ServiceException("上传的文件不能为空");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"上传的文件不能为空");
         }
         InputStream inputStream = file.getInputStream();
         //文件的原名称
@@ -74,21 +76,21 @@ public class UploadServiceImpl implements UploadService {
             criteria.andLike("path", "%" + imageAttachmentVO.getPath() + "%");
         }
         //拼装图片真实路径
-        List<ImageAttachment> attachments = attachmentMapper.selectByExample(o);
-//        for (ImageAttachment attachment : attachments) {
+        //        for (ImageAttachment attachment : attachments) {
 //            attachment.setPath(config.getResHost()+attachment.getPath());
 //        }
-        return attachments;
+        return attachmentMapper.selectByExample(o);
     }
 
     @Override
-    public void delete(Long id) {
+    @Transactional
+    public void delete(Long id) throws SystemException {
         ImageAttachment image = attachmentMapper.selectByPrimaryKey(id);
         if(image==null){
-            throw new ServiceException("图片不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"图片不存在");
         }else {
             attachmentMapper.deleteByPrimaryKey(id);
-            fdfsUtil.deleteFile(image.getPath());
+//            fdfsUtil.deleteFile(image.getPath());
         }
     }
 }

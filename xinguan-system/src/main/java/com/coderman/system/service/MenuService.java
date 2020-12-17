@@ -1,6 +1,7 @@
 package com.coderman.system.service;
 
 
+import com.coderman.common.error.SystemException;
 import com.coderman.common.model.system.Menu;
 import com.coderman.common.vo.system.MenuNodeVO;
 import com.coderman.common.vo.system.MenuVO;
@@ -29,20 +30,20 @@ public interface MenuService {
      * 删除节点
      * @param id
      */
-    void delete(Long id);
+    void delete(Long id) throws SystemException;
 
     /**
      * 编辑节点
      * @param id
      * @return
      */
-    MenuVO edit(Long id);
+    MenuVO edit(Long id) throws SystemException;
 
     /**
      * 更新节点
      * @param id
      */
-    void update(Long id, MenuVO menuVO);
+    void update(Long id, MenuVO menuVO) throws SystemException;
 
     /**
      * 所有展开菜单的ID

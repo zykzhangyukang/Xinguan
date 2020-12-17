@@ -1,6 +1,7 @@
 package com.coderman.controller.system;
 
 import com.coderman.common.annotation.ControllerEndpoint;
+import com.coderman.common.error.SystemException;
 import com.coderman.common.model.system.Role;
 import com.coderman.common.response.ResponseBean;
 import com.coderman.common.vo.system.MenuNodeVO;
@@ -26,9 +27,9 @@ import java.util.Map;
  * @Date 2020/3/9 16:21
  * @Version 1.0
  **/
-@Api(tags = "系统角色接口")
+@Api(tags = "系统模块-角色相关接口")
 @RestController
-@RequestMapping("/role")
+@RequestMapping("/system/role")
 public class RoleController {
 
 
@@ -50,7 +51,7 @@ public class RoleController {
     @ApiOperation(value = "角色授权")
     @RequiresPermissions({"role:authority"})
     @PostMapping("/authority/{id}")
-    public ResponseBean authority(@PathVariable Long id, @RequestBody Long[] mids) {
+    public ResponseBean authority(@PathVariable Long id, @RequestBody Long[] mids) throws SystemException {
         roleService.authority(id, mids);
         return ResponseBean.success();
     }
@@ -63,7 +64,7 @@ public class RoleController {
      */
     @ApiOperation(value = "角色菜单")
     @GetMapping("/findRoleMenu/{id}")
-    public ResponseBean findRoleMenu(@PathVariable Long id) {
+    public ResponseBean<Map<String, Object>> findRoleMenu(@PathVariable Long id) throws SystemException {
         List<MenuNodeVO> tree = menuService.findMenuTree();
         //角色拥有的菜单id
         List<Long> mids = roleService.findMenuIdsByRoleId(id);
@@ -82,7 +83,7 @@ public class RoleController {
      */
     @ApiOperation(value = "角色列表")
     @GetMapping("/findRoleList")
-    public ResponseBean findRoleList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+    public ResponseBean<PageVO<RoleVO>> findRoleList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                      @RequestParam(value = "pageSize", defaultValue = "7") Integer pageSize,
                                      RoleVO roleVO) {
         PageVO<RoleVO> roleList = roleService.findRoleList(pageNum, pageSize, roleVO);
@@ -99,7 +100,7 @@ public class RoleController {
     @ApiOperation(value = "添加角色")
     @RequiresPermissions({"role:add"})
     @PostMapping("/add")
-    public ResponseBean add(@RequestBody @Validated RoleVO roleVO) {
+    public ResponseBean add(@RequestBody @Validated RoleVO roleVO) throws SystemException {
         roleService.add(roleVO);
         return ResponseBean.success();
     }
@@ -114,7 +115,7 @@ public class RoleController {
     @ApiOperation(value = "删除角色", notes = "根据id删除角色信息")
     @RequiresPermissions({"role:delete"})
     @DeleteMapping("/delete/{id}")
-    public ResponseBean delete(@PathVariable Long id) {
+    public ResponseBean delete(@PathVariable Long id) throws SystemException {
         roleService.deleteById(id);
         return ResponseBean.success();
     }
@@ -129,7 +130,7 @@ public class RoleController {
     @ApiOperation(value = "编辑用户", notes = "根据id更新角色信息")
     @GetMapping("/edit/{id}")
     @RequiresPermissions({"role:edit"})
-    public ResponseBean edit(@PathVariable Long id) {
+    public ResponseBean<RoleVO> edit(@PathVariable Long id) throws SystemException {
         RoleVO roleVO = roleService.edit(id);
         return ResponseBean.success(roleVO);
     }
@@ -145,7 +146,7 @@ public class RoleController {
     @ApiOperation(value = "更新角色", notes = "根据id更新角色信息")
     @RequiresPermissions({"role:update"})
     @PutMapping("/update/{id}")
-    public ResponseBean update(@PathVariable Long id, @RequestBody @Validated RoleVO roleVO) {
+    public ResponseBean update(@PathVariable Long id, @RequestBody @Validated RoleVO roleVO) throws SystemException {
         roleService.update(id, roleVO);
         return ResponseBean.success();
     }
@@ -161,7 +162,7 @@ public class RoleController {
     @ApiOperation(value = "更新状态", notes = "禁用和更新两种状态")
     @RequiresPermissions({"role:status"})
     @PutMapping("/updateStatus/{id}/{status}")
-    public ResponseBean updateStatus(@PathVariable Long id, @PathVariable Boolean status) {
+    public ResponseBean updateStatus(@PathVariable Long id, @PathVariable Boolean status) throws SystemException {
         roleService.updateStatus(id, status);
         return ResponseBean.success();
     }

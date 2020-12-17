@@ -1,6 +1,7 @@
 package com.coderman.system.service.impl;
 
-import com.coderman.common.exception.ServiceException;
+import com.coderman.common.error.SystemCodeEnum;
+import com.coderman.common.error.SystemException;
 import com.coderman.common.model.system.Menu;
 import com.coderman.common.utils.MenuTreeBuilder;
 import com.coderman.common.vo.system.MenuNodeVO;
@@ -30,12 +31,6 @@ public class MenuServiceImpl implements MenuService {
     @Autowired
     private MenuMapper menuMapper;
 
-
-    @Autowired
-    private RoleMenuMapper roleMenuMapper;
-
-    @Autowired
-    private RoleMapper roleMapper;
 
     /**
      * 加载菜单树（按钮和菜单）
@@ -70,10 +65,10 @@ public class MenuServiceImpl implements MenuService {
      * @param id
      */
     @Override
-    public void delete(Long id) {
+    public void delete(Long id) throws SystemException {
         Menu menu = menuMapper.selectByPrimaryKey(id);
         if(menu==null){
-            throw new ServiceException("要删除的菜单不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"要删除的菜单不存在");
         }
         menuMapper.deleteByPrimaryKey(id);
     }
@@ -84,10 +79,10 @@ public class MenuServiceImpl implements MenuService {
      * @return
      */
     @Override
-    public MenuVO edit(Long id) {
+    public MenuVO edit(Long id) throws SystemException {
         Menu menu = menuMapper.selectByPrimaryKey(id);
         if(menu==null){
-            throw new ServiceException("该编辑的菜单不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"该编辑的菜单不存在");
         }
         return MenuConverter.converterToMenuVO(menu);
     }
@@ -98,10 +93,10 @@ public class MenuServiceImpl implements MenuService {
      * @param menuVO
      */
     @Override
-    public void update(Long id, MenuVO menuVO) {
+    public void update(Long id, MenuVO menuVO) throws SystemException {
         Menu dbMenu = menuMapper.selectByPrimaryKey(id);
         if(dbMenu==null){
-            throw new ServiceException("要更新的菜单不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"要更新的菜单不存在");
         }
         Menu menu = new Menu();
         BeanUtils.copyProperties(menuVO,menu);

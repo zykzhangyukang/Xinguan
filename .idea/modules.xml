@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/xinguan-api.iml" filepath="$PROJECT_DIR$/xinguan-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/xinguan-business/xinguan-business.iml" filepath="$PROJECT_DIR$/xinguan-business/xinguan-business.iml" />
       <module fileurl="file://$PROJECT_DIR$/xinguan-common/xinguan-common.iml" filepath="$PROJECT_DIR$/xinguan-common/xinguan-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xinguan-generator/xinguan-generator.iml" filepath="$PROJECT_DIR$/xinguan-generator/xinguan-generator.iml" />
       <module fileurl="file://$PROJECT_DIR$/xinguan-system/xinguan-system.iml" filepath="$PROJECT_DIR$/xinguan-system/xinguan-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/xinguan-web/xinguan-web.iml" filepath="$PROJECT_DIR$/xinguan-web/xinguan-web.iml" />
     </modules>

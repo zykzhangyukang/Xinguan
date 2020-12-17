@@ -1,6 +1,7 @@
 package com.coderman.business.service;
 
 
+import com.coderman.common.error.BusinessException;
 import com.coderman.common.vo.business.ProductStockVO;
 import com.coderman.common.vo.business.ProductVO;
 import com.coderman.common.vo.system.PageVO;
@@ -49,7 +50,7 @@ public interface ProductService {
      * 删除商品
      * @param id
      */
-    void delete(Long id);
+    void delete(Long id) throws BusinessException;
 
     /**
      * 库存列表
@@ -70,19 +71,19 @@ public interface ProductService {
      * 移入回收站
      * @param id
      */
-    void remove(Long id);
+    void remove(Long id) throws BusinessException;
 
     /**
      * 从回收站恢复数据
      * @param id
      */
-    void back(Long id);
+    void back(Long id) throws BusinessException;
 
     /**
      * 物资添加审核
      * @param id
      */
-    void publish(Long id);
+    void publish(Long id) throws BusinessException;
 
 
 }

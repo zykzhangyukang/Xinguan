@@ -4,7 +4,8 @@ package com.coderman.system.service.impl;
 import com.coderman.common.enums.buisiness.BizUserTypeEnum;
 import com.coderman.common.enums.system.UserStatusEnum;
 import com.coderman.common.enums.system.UserTypeEnum;
-import com.coderman.common.exception.ServiceException;
+import com.coderman.common.error.SystemCodeEnum;
+import com.coderman.common.error.SystemException;
 import com.coderman.common.model.system.Department;
 import com.coderman.common.model.system.Role;
 import com.coderman.common.model.system.User;
@@ -141,10 +142,10 @@ public class DepartmentServiceImpl implements DepartmentService {
      * @return
      */
     @Override
-    public DepartmentVO edit(Long id) {
+    public DepartmentVO edit(Long id) throws SystemException {
         Department department = departmentMapper.selectByPrimaryKey(id);
         if(department==null){
-            throw new ServiceException("编辑的部门不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"编辑的部门不存在");
         }
         return DepartmentConverter.converterToDepartmentVO(department);
     }
@@ -155,10 +156,10 @@ public class DepartmentServiceImpl implements DepartmentService {
      * @param departmentVO
      */
     @Override
-    public void update(Long id, DepartmentVO departmentVO) {
+    public void update(Long id, DepartmentVO departmentVO) throws SystemException {
         Department dbDepartment = departmentMapper.selectByPrimaryKey(id);
         if(dbDepartment==null){
-            throw new ServiceException("要更新的部门不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"要更新的部门不存在");
         }
         Department department = new Department();
         BeanUtils.copyProperties(departmentVO,department);
@@ -172,10 +173,10 @@ public class DepartmentServiceImpl implements DepartmentService {
      * @param id
      */
     @Override
-    public void delete(Long id) {
+    public void delete(Long id) throws SystemException {
         Department department = departmentMapper.selectByPrimaryKey(id);
         if(department==null){
-            throw new ServiceException("要删除的部门不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"要删除的部门不存在");
         }
         departmentMapper.deleteByPrimaryKey(id);
     }

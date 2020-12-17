@@ -4,8 +4,8 @@ import com.coderman.business.converter.ProductConverter;
 import com.coderman.business.mapper.ProductMapper;
 import com.coderman.business.mapper.ProductStockMapper;
 import com.coderman.business.service.ProductService;
-import com.coderman.common.exception.ErrorCodeEnum;
-import com.coderman.common.exception.ServiceException;
+import com.coderman.common.error.BusinessCodeEnum;
+import com.coderman.common.error.BusinessException;
 import com.coderman.common.model.business.Product;
 import com.coderman.common.vo.business.ProductStockVO;
 import com.coderman.common.vo.business.ProductVO;
@@ -151,13 +151,13 @@ public class ProductServiceImpl implements ProductService {
      * @param id
      */
     @Override
-    public void delete(Long id) {
+    public void delete(Long id) throws BusinessException {
         Product t = new Product();
         t.setId(id);
         Product product = productMapper.selectByPrimaryKey(t);
         //只有物资处于回收站,或者待审核的情况下可删除
         if(product.getStatus()!=1&&product.getStatus()!=2){
-            throw new ServiceException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
+            throw new BusinessException(BusinessCodeEnum.PRODUCT_STATUS_ERROR);
         }else {
             productMapper.deleteByPrimaryKey(id);
         }
@@ -193,12 +193,12 @@ public class ProductServiceImpl implements ProductService {
      * @param id
      */
     @Override
-    public void remove(Long id) {
+    public void remove(Long id) throws BusinessException {
         Product t = new Product();
         t.setId(id);
         Product product = productMapper.selectByPrimaryKey(t);
         if(product.getStatus()!=0){
-            throw new ServiceException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
+            throw new BusinessException(BusinessCodeEnum.PRODUCT_STATUS_ERROR);
         }else {
             t.setStatus(1);
             productMapper.updateByPrimaryKeySelective(t);
@@ -210,12 +210,12 @@ public class ProductServiceImpl implements ProductService {
      * @param id
      */
     @Override
-    public void back(Long id) {
+    public void back(Long id) throws BusinessException {
         Product t = new Product();
         t.setId(id);
         Product product = productMapper.selectByPrimaryKey(t);
         if(product.getStatus()!=1){
-            throw new ServiceException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
+            throw new BusinessException(BusinessCodeEnum.PRODUCT_STATUS_ERROR);
         }else {
             t.setStatus(0);
             productMapper.updateByPrimaryKeySelective(t);
@@ -227,12 +227,12 @@ public class ProductServiceImpl implements ProductService {
      * @param id
      */
     @Override
-    public void publish(Long id) {
+    public void publish(Long id) throws BusinessException {
         Product t = new Product();
         t.setId(id);
         Product product = productMapper.selectByPrimaryKey(t);
         if(product.getStatus()!=2){
-            throw new ServiceException(ErrorCodeEnum.PRODUCT_STATUS_ERROR);
+            throw new BusinessException(BusinessCodeEnum.PRODUCT_STATUS_ERROR);
         }else {
             t.setStatus(0);
             productMapper.updateByPrimaryKeySelective(t);

@@ -1,5 +1,7 @@
 package com.coderman.system.shiro;
 
+import com.coderman.common.error.SystemCodeEnum;
+import com.coderman.common.error.SystemException;
 import com.coderman.common.response.ResponseBean;
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 
 @Component
 @Slf4j
@@ -93,7 +96,11 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
         httpServletResponse.setCharacterEncoding("UTF-8");
         httpServletResponse.setContentType("application/json; charset=utf-8");
         try (PrintWriter out = httpServletResponse.getWriter()) {
-            String data = new Gson().toJson(new ResponseBean(4001,   msg, null));
+            HashMap<String, Object> errorData = new HashMap<>();
+            errorData.put("errorCode", SystemCodeEnum.TOKEN_ERROR.getErrorCode());
+            errorData.put("errorMsg",SystemCodeEnum.TOKEN_ERROR.getErrorMsg());
+            ResponseBean<HashMap<String, Object>> result = ResponseBean.error(errorData);
+            String data = new Gson().toJson(result);
             out.append(data);
         } catch (IOException e) {
             e.printStackTrace();

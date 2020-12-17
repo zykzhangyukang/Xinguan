@@ -3,8 +3,8 @@ package com.coderman.business.service.imp;
 import com.coderman.business.converter.OutStockConverter;
 import com.coderman.business.mapper.*;
 import com.coderman.business.service.OutStockService;
-import com.coderman.common.exception.ErrorCodeEnum;
-import com.coderman.common.exception.ServiceException;
+import com.coderman.common.error.BusinessCodeEnum;
+import com.coderman.common.error.BusinessException;
 import com.coderman.common.model.business.*;
 import com.coderman.common.response.ActiveUser;
 import com.coderman.common.vo.business.ConsumerVO;
@@ -88,7 +88,7 @@ public class OutStockServiceImpl implements OutStockService {
      */
     @Transactional
     @Override
-    public void addOutStock(OutStockVO outStockVO) {
+    public void addOutStock(OutStockVO outStockVO) throws BusinessException {
         //随机生成发放单号
         String OUT_STOCK_NUM = UUID.randomUUID().toString().substring(0, 32).replace("-","");
         int itemNumber=0;//记录该单的总数
@@ -103,19 +103,19 @@ public class OutStockServiceImpl implements OutStockService {
                 Integer productId = (Integer) item.get("productId");
                 Product dbProduct = productMapper.selectByPrimaryKey(productId);
                 if (dbProduct == null) {
-                    throw new ServiceException(ErrorCodeEnum.PRODUCT_NOT_FOUND);
+                    throw new BusinessException(BusinessCodeEnum.PRODUCT_NOT_FOUND);
                 }else if(productNumber<=0){
-                    throw new ServiceException(ErrorCodeEnum.PRODUCT_OUT_STOCK_NUMBER_ERROR,dbProduct.getName()+"发放数量不合法,无法入库");
+                    throw new BusinessException(BusinessCodeEnum.PRODUCT_OUT_STOCK_NUMBER_ERROR,dbProduct.getName()+"发放数量不合法,无法入库");
                 } else {
                     //校验库存
                     Example o=new Example(ProductStock.class);
                     o.createCriteria().andEqualTo("pNum",dbProduct.getPNum());
                     ProductStock productStock = productStockMapper.selectOneByExample(o);
                     if(productStock==null){
-                        throw new ServiceException("该物资在库存中不存在");
+                        throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"该物资在库存中不存在");
                     }
                     if(productNumber>productStock.getStock()){
-                        throw new ServiceException(ErrorCodeEnum.PRODUCT_STOCK_ERROR,dbProduct.getName()+"库存不足,库存剩余:"+productStock);
+                        throw new BusinessException(BusinessCodeEnum.PRODUCT_STOCK_ERROR,dbProduct.getName()+"库存不足,库存剩余:"+productStock);
                     }
                     itemNumber += productNumber;
                     //入库单明细
@@ -140,7 +140,7 @@ public class OutStockServiceImpl implements OutStockService {
             outStock.setStatus(2);
             outStockMapper.insert(outStock);
         }else {
-            throw new ServiceException(ErrorCodeEnum.PRODUCT_OUT_STOCK_EMPTY);
+            throw new BusinessException(BusinessCodeEnum.PRODUCT_OUT_STOCK_EMPTY);
         }
     }
 
@@ -149,15 +149,15 @@ public class OutStockServiceImpl implements OutStockService {
      * @param id
      */
     @Override
-    public void remove(Long id) {
+    public void remove(Long id) throws BusinessException {
         OutStock outStock = outStockMapper.selectByPrimaryKey(id);
         if(outStock==null){
-            throw new ServiceException("发放单不存在");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"发放单不存在");
         }
         Integer status = outStock.getStatus();
         //只有status=0,正常的情况下,才可移入回收站
         if(status!=0){
-            throw new ServiceException("发放单状态不正确");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"发放单状态不正确");
         }else {
             OutStock out = new OutStock();
             out.setStatus(1);
@@ -171,12 +171,12 @@ public class OutStockServiceImpl implements OutStockService {
      * @param id
      */
     @Override
-    public void back(Long id) {
+    public void back(Long id) throws BusinessException {
         OutStock t = new OutStock();
         t.setId(id);
         OutStock outStock = outStockMapper.selectByPrimaryKey(t);
         if(outStock.getStatus()!=1){
-            throw new ServiceException("发放单状态不正确");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"发放单状态不正确");
         }else {
             t.setStatus(0);
             outStockMapper.updateByPrimaryKeySelective(t);
@@ -191,16 +191,16 @@ public class OutStockServiceImpl implements OutStockService {
      * @return
      */
     @Override
-    public OutStockDetailVO detail(Long id, Integer pageNum, Integer pageSize) {
+    public OutStockDetailVO detail(Long id, Integer pageNum, Integer pageSize) throws BusinessException {
         OutStockDetailVO outStockDetailVO = new OutStockDetailVO();
         OutStock outStock = outStockMapper.selectByPrimaryKey(id);
         if(outStock==null){
-            throw new ServiceException("发放单不存在");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"发放单不存在");
         }
         BeanUtils.copyProperties(outStock,outStockDetailVO);
         Consumer consumer = consumerMapper.selectByPrimaryKey(outStock.getConsumerId());
         if(consumer==null){
-            throw new ServiceException("物资领取方不存在,或已被删除");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"物资领取方不存在,或已被删除");
         }
         ConsumerVO consumerVO = new ConsumerVO();
         BeanUtils.copyProperties(consumer,consumerVO);
@@ -227,11 +227,11 @@ public class OutStockServiceImpl implements OutStockService {
                     outStockItemVO.setCount(outStockInfo.getProductNumber());
                     outStockDetailVO.getItemVOS().add(outStockItemVO);
                 }else {
-                    throw new ServiceException("编号为:["+pNum+"]的物资找不到,或已被删除");
+                    throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"编号为:["+pNum+"]的物资找不到,或已被删除");
                 }
             }
         }else {
-            throw new ServiceException("发放编号为:["+outNum+"]的明细找不到,或已被删除");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"发放编号为:["+outNum+"]的明细找不到,或已被删除");
         }
         return outStockDetailVO;
     }
@@ -241,12 +241,12 @@ public class OutStockServiceImpl implements OutStockService {
      * @param id
      */
     @Override
-    public void delete(Long id) {
+    public void delete(Long id) throws BusinessException {
         OutStock outStock = outStockMapper.selectByPrimaryKey(id);
         if(outStock==null){
-            throw new ServiceException("发放单不存在");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"发放单不存在");
         }else if(outStock.getStatus()!=1&&outStock.getStatus()!=2){
-            throw new ServiceException("发放单状态错误,无法删除");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"发放单状态错误,无法删除");
         }else {
            outStockMapper.deleteByPrimaryKey(id);
         }
@@ -261,17 +261,17 @@ public class OutStockServiceImpl implements OutStockService {
      * @param id
      */
     @Override
-    public void publish(Long id) {
+    public void publish(Long id) throws BusinessException {
         OutStock outStock = outStockMapper.selectByPrimaryKey(id);
         Consumer consumer = consumerMapper.selectByPrimaryKey(outStock.getConsumerId());
         if(outStock==null){
-            throw new ServiceException("发放单不存在");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"发放单不存在");
         }
         if(outStock.getStatus()!=2){
-            throw new ServiceException("发放单状态错误");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"发放单状态错误");
         }
         if(consumer==null){
-            throw new ServiceException("发放来源信息错误");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"发放来源信息错误");
         }
         String outNum = outStock.getOutNum();//发放单号
         Example o = new Example(OutStockInfo.class);
@@ -295,23 +295,23 @@ public class OutStockServiceImpl implements OutStockService {
                         //更新数量
                         ProductStock productStock = productStocks.get(0);
                         if(productStock.getStock()<productNumber){
-                            throw new ServiceException("物资:"+product.getName()+"的库存不足");
+                            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"物资:"+product.getName()+"的库存不足");
                         }
                         productStock.setStock(productStock.getStock()-productNumber);
                         productStockMapper.updateByPrimaryKey(productStock);
                     }else {
-                        throw new ServiceException("该物资在库存中找不到");
+                        throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"该物资在库存中找不到");
                     }
                     //修改入库单状态.
                     outStock.setCreateTime(new Date());
                     outStock.setStatus(0);
                     outStockMapper.updateByPrimaryKeySelective(outStock);
                 }else {
-                    throw new ServiceException("物资编号为:["+pNum+"]的物资不存在");
+                    throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"物资编号为:["+pNum+"]的物资不存在");
                 }
             }
         }else {
-            throw new ServiceException("发放的明细不能为空");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"发放的明细不能为空");
         }
     }
 }

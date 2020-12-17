@@ -1,6 +1,7 @@
 package com.coderman.business.service;
 
 
+import com.coderman.common.error.BusinessException;
 import com.coderman.common.model.business.Health;
 import com.coderman.common.vo.business.HealthVO;
 import com.coderman.common.vo.system.PageVO;
@@ -16,7 +17,7 @@ public interface HealthService {
      * 健康上报
      * @param healthVO
      */
-    void report(HealthVO healthVO);
+    void report(HealthVO healthVO) throws BusinessException;
 
     /**
      * 今日是否已经报备

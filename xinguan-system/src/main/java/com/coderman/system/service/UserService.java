@@ -1,5 +1,6 @@
 package com.coderman.system.service;
 
+import com.coderman.common.error.SystemException;
 import com.coderman.common.model.system.Menu;
 import com.coderman.common.model.system.Role;
 import com.coderman.common.model.system.User;
@@ -28,7 +29,7 @@ public interface UserService {
      * @param id 用户id
      * @return
      */
-     List<Role> findRolesById(Long id);
+     List<Role> findRolesById(Long id) throws SystemException;
 
     /**
      * 根据用户角色查询用户的菜单
@@ -58,7 +59,7 @@ public interface UserService {
      *
      * @param id
      */
-    void deleteById(Long id);
+    void deleteById(Long id) throws SystemException;
 
     /**
      * 更新状态
@@ -66,13 +67,13 @@ public interface UserService {
      * @param id
      * @param status
      */
-    void updateStatus(Long id, Boolean status);
+    void updateStatus(Long id, Boolean status) throws SystemException;
 
     /**
      * 添加用户
      * @param userVO
      */
-    void add(UserVO userVO);
+    void add(UserVO userVO) throws SystemException;
 
     /**
      * 更新用户
@@ -80,7 +81,7 @@ public interface UserService {
      * @param id
      * @param userVO
      */
-    void update(Long id, UserEditVO userVO);
+    void update(Long id, UserEditVO userVO) throws SystemException;
 
     /**
      * 编辑用户
@@ -88,7 +89,7 @@ public interface UserService {
      * @param id
      * @return
      */
-    UserEditVO edit(Long id);
+    UserEditVO edit(Long id) throws SystemException;
 
     /**
      * 已拥有的角色ids
@@ -96,7 +97,7 @@ public interface UserService {
      * @param id 用户id
      * @return
      */
-    List<Long> roles(Long id);
+    List<Long> roles(Long id) throws SystemException;
 
     /**
      * 分配角色
@@ -104,7 +105,7 @@ public interface UserService {
      * @param id
      * @param rids
      */
-    void assignRoles(Long id, Long[] rids);
+    void assignRoles(Long id, Long[] rids) throws SystemException;
 
     /**
      * 所有用户
@@ -120,7 +121,7 @@ public interface UserService {
      * @param password
      * @return
      */
-    String login(String username, String password);
+    String login(String username, String password) throws SystemException;
 
 
     /**
@@ -128,6 +129,6 @@ public interface UserService {
      *
      * @return
      */
-    UserInfoVO info();
+    UserInfoVO info() throws SystemException;
 
 }

@@ -18,7 +18,7 @@ public interface BaseError {
      * 获取错误信息
      * @return
      */
-    String getErrorMessage();
+    String getErrorMsg();
 
 
     /**
@@ -26,5 +26,5 @@ public interface BaseError {
      * @param message
      * @return
      */
-    BaseError setErrorMessage(String message);
+    BaseError setErrorMsg(String message);
 }

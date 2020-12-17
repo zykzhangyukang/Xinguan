@@ -21,9 +21,9 @@ import java.util.List;
  * @Date 2020/3/16 20:18
  * @Version 1.0
  **/
-@Api(tags = "物资来源接口")
+@Api(tags = "业务模块-物资来源相关接口")
 @RestController
-@RequestMapping("/supplier")
+@RequestMapping("/business/supplier")
 public class SupplierController {
 
 
@@ -56,7 +56,7 @@ public class SupplierController {
     @PostMapping("/add")
     public ResponseBean add(@RequestBody @Validated SupplierVO supplierVO) {
         supplierService.add(supplierVO);
-        return ResponseBean.success("添加来源成功");
+        return ResponseBean.success();
     }
 
     /**
@@ -68,7 +68,7 @@ public class SupplierController {
     @ApiOperation(value = "编辑来源", notes = "编辑来源信息")
     @RequiresPermissions({"supplier:edit"})
     @GetMapping("/edit/{id}")
-    public ResponseBean edit(@PathVariable Long id) {
+    public ResponseBean<SupplierVO> edit(@PathVariable Long id) {
         SupplierVO supplierVO = supplierService.edit(id);
         return ResponseBean.success(supplierVO);
     }
@@ -84,7 +84,7 @@ public class SupplierController {
     @PutMapping("/update/{id}")
     public ResponseBean update(@PathVariable Long id, @RequestBody @Validated SupplierVO supplierVO) {
         supplierService.update(id, supplierVO);
-        return ResponseBean.success("更新来源成功");
+        return ResponseBean.success();
     }
 
     /**
@@ -99,7 +99,7 @@ public class SupplierController {
     @DeleteMapping("/delete/{id}")
     public ResponseBean delete(@PathVariable Long id) {
         supplierService.delete(id);
-        return ResponseBean.success("删除来源成功");
+        return ResponseBean.success();
     }
 
     /**
@@ -109,7 +109,7 @@ public class SupplierController {
      */
     @ApiOperation(value = "所有来源", notes = "所有来源列表")
     @GetMapping("/findAll")
-    public ResponseBean findAll() {
+    public ResponseBean<List<SupplierVO>> findAll() {
         List<SupplierVO> supplierVOS = supplierService.findAll();
         return ResponseBean.success(supplierVOS);
     }

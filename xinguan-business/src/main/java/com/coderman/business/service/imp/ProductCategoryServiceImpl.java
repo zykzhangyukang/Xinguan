@@ -4,7 +4,8 @@ import com.coderman.business.converter.ProductCategoryConverter;
 import com.coderman.business.mapper.ProductCategoryMapper;
 import com.coderman.business.mapper.ProductMapper;
 import com.coderman.business.service.ProductCategoryService;
-import com.coderman.common.exception.ServiceException;
+import com.coderman.common.error.BusinessCodeEnum;
+import com.coderman.common.error.BusinessException;
 import com.coderman.common.model.business.Product;
 import com.coderman.common.model.business.ProductCategory;
 import com.coderman.common.utils.CategoryTreeBuilder;
@@ -103,17 +104,17 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
      * @param id
      */
     @Override
-    public void delete(Long id) {
+    public void delete(Long id) throws BusinessException {
         ProductCategory category = productCategoryMapper.selectByPrimaryKey(id);
         if(null==category){
-            throw new ServiceException("该分类不存在");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"该分类不存在");
         }else {
             //检查是否存在子分类
             Example o = new Example(ProductCategory.class);
             o.createCriteria().andEqualTo("pid",id);
             int childCount=productCategoryMapper.selectCountByExample(o);
             if(childCount!=0){
-                throw  new ServiceException("存在子节点,无法直接删除");
+                throw  new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"存在子节点,无法直接删除");
             }
             //检查该分类是否有物资引用
             Example o1 = new Example(Product.class);
@@ -121,7 +122,7 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
                     .orEqualTo("twoCategoryId",id)
                     .orEqualTo("threeCategoryId",id);
            if(productMapper.selectCountByExample(o1)!=0){
-               throw new ServiceException("该分类存在物资引用,无法直接删除");
+               throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"该分类存在物资引用,无法直接删除");
            }
             productCategoryMapper.deleteByPrimaryKey(id);
         }

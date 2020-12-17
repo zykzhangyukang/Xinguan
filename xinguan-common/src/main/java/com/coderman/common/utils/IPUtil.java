@@ -9,10 +9,6 @@ public class IPUtil {
 
 	private static final String UNKNOWN = "unknown";
 
-	protected IPUtil(){
-
-	}
-
 	/**
 	 * 获取 IP地址
 	 * 使用 Nginx等反向代理软件， 则不能通过 request.getRemoteAddr()获取 IP地址
@@ -29,6 +25,9 @@ public class IPUtil {
 		}
 		if (ip == null || ip.length() == 0 || UNKNOWN.equalsIgnoreCase(ip)) {
 			ip = request.getRemoteAddr();
+		}
+		if(ip.contains(",")) {
+			ip=ip.split(",")[0];
 		}
 		return "0:0:0:0:0:0:0:1".equals(ip) ? "127.0.0.1" : ip;
 	}

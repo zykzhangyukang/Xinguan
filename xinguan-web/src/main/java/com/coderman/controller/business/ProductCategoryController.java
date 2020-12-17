@@ -2,6 +2,7 @@ package com.coderman.controller.business;
 
 import com.coderman.business.service.ProductCategoryService;
 import com.coderman.common.annotation.ControllerEndpoint;
+import com.coderman.common.error.BusinessException;
 import com.coderman.common.response.ResponseBean;
 import com.coderman.common.vo.business.ProductCategoryTreeNodeVO;
 import com.coderman.common.vo.business.ProductCategoryVO;
@@ -23,9 +24,9 @@ import java.util.List;
  * @Date 2020/3/16 17:16
  * @Version 1.0
  **/
-@Api(tags = "物资类别接口")
+@Api(tags = "业务模块-物资类别相关接口")
 @RestController
-@RequestMapping("/productCategory")
+@RequestMapping("/business/productCategory")
 public class ProductCategoryController {
 
     @Autowired
@@ -137,7 +138,7 @@ public class ProductCategoryController {
     @ApiOperation(value = "删除分类")
     @RequiresPermissions({"productCategory:delete"})
     @DeleteMapping("/delete/{id}")
-    public ResponseBean delete(@PathVariable Long id) {
+    public ResponseBean delete(@PathVariable Long id) throws BusinessException {
         productCategoryService.delete(id);
         return ResponseBean.success();
     }

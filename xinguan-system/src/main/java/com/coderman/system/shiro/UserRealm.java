@@ -6,6 +6,7 @@ import com.coderman.common.model.system.User;
 import com.coderman.common.response.ActiveUser;
 import com.coderman.common.utils.JWTUtils;
 import com.coderman.system.service.UserService;
+import lombok.SneakyThrows;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -71,6 +72,7 @@ public class UserRealm extends AuthorizingRealm {
     /**
      * 默认使用此方法进行用户名正确与否验证，错误抛出异常即可。
      */
+    @SneakyThrows
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken auth) throws AuthenticationException {
         String token = (String) auth.getCredentials();

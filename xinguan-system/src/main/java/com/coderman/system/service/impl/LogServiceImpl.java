@@ -1,6 +1,7 @@
 package com.coderman.system.service.impl;
 
-import com.coderman.common.exception.ServiceException;
+import com.coderman.common.error.SystemCodeEnum;
+import com.coderman.common.error.SystemException;
 import com.coderman.common.model.system.Log;
 import com.coderman.common.model.system.LoginLog;
 import com.coderman.common.vo.system.LogVO;
@@ -44,10 +45,10 @@ public class LogServiceImpl implements LogService {
      * @param id
      */
     @Override
-    public void delete(Long id) {
+    public void delete(Long id) throws SystemException {
         Log log = logMapper.selectByPrimaryKey(id);
         if(log==null){
-            throw new ServiceException("要删除的操作日志不存在");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"要删除的操作日志不存在");
         }
         logMapper.deleteByPrimaryKey(id);
     }
@@ -86,11 +87,11 @@ public class LogServiceImpl implements LogService {
      * @param list
      */
     @Override
-    public void batchDelete(List<Long> list) {
+    public void batchDelete(List<Long> list) throws SystemException {
         for (Long id : list) {
             Log log = logMapper.selectByPrimaryKey(id);
             if(log==null){
-                throw new ServiceException("id="+id+",操作日志不存在");
+                throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"id="+id+",操作日志不存在");
             }
             delete(id);
         }

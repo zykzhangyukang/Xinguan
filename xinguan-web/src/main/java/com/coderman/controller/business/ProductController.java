@@ -2,6 +2,8 @@ package com.coderman.controller.business;
 
 import com.coderman.business.service.ProductService;
 import com.coderman.common.annotation.ControllerEndpoint;
+import com.coderman.common.error.BusinessCodeEnum;
+import com.coderman.common.error.BusinessException;
 import com.coderman.common.response.ResponseBean;
 import com.coderman.common.vo.business.ProductStockVO;
 import com.coderman.common.vo.business.ProductVO;
@@ -20,9 +22,9 @@ import java.util.List;
  * @Date 2020/3/17 09:19
  * @Version 1.0
  **/
-@Api(tags = "物资资料接口")
+@Api(tags = "业务模块-物资资料相关接口")
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/business/product")
 public class ProductController {
 
 
@@ -129,9 +131,9 @@ public class ProductController {
     @ApiOperation(value = "添加物资")
     @RequiresPermissions({"product:add"})
     @PostMapping("/add")
-    public ResponseBean add(@RequestBody @Validated ProductVO productVO) {
+    public ResponseBean add(@RequestBody @Validated ProductVO productVO) throws BusinessException {
         if (productVO.getCategoryKeys().length != 3) {
-            return ResponseBean.error("物资需要3级分类");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"物资需要3级分类");
         }
         productService.add(productVO);
         return ResponseBean.success();
@@ -159,9 +161,9 @@ public class ProductController {
     @ApiOperation(value = "更新物资", notes = "更新物资信息")
     @RequiresPermissions({"product:update"})
     @PutMapping("/update/{id}")
-    public ResponseBean update(@PathVariable Long id, @RequestBody ProductVO productVO) {
+    public ResponseBean update(@PathVariable Long id, @RequestBody ProductVO productVO) throws BusinessException {
         if (productVO.getCategoryKeys().length != 3) {
-            return ResponseBean.error("物资需要3级分类");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"物资需要3级分类");
         }
         productService.update(id, productVO);
         return ResponseBean.success();
@@ -176,7 +178,7 @@ public class ProductController {
     @ApiOperation(value = "删除物资", notes = "删除物资信息")
     @RequiresPermissions({"product:delete"})
     @DeleteMapping("/delete/{id}")
-    public ResponseBean delete(@PathVariable Long id) {
+    public ResponseBean delete(@PathVariable Long id) throws BusinessException {
         productService.delete(id);
         return ResponseBean.success();
     }
@@ -192,7 +194,7 @@ public class ProductController {
     @ApiOperation(value = "移入回收站", notes = "移入回收站")
     @RequiresPermissions({"product:remove"})
     @PutMapping("/remove/{id}")
-    public ResponseBean remove(@PathVariable Long id) {
+    public ResponseBean remove(@PathVariable Long id) throws BusinessException {
         productService.remove(id);
         return ResponseBean.success();
     }
@@ -205,7 +207,7 @@ public class ProductController {
     @ApiOperation(value = "物资添加审核", notes = "物资添加审核")
     @RequiresPermissions({"product:publish"})
     @PutMapping("/publish/{id}")
-    public ResponseBean publish(@PathVariable Long id) {
+    public ResponseBean publish(@PathVariable Long id) throws BusinessException {
         productService.publish(id);
         return ResponseBean.success();
     }
@@ -218,7 +220,7 @@ public class ProductController {
     @ApiOperation(value = "恢复物资", notes = "从回收站中恢复物资")
     @RequiresPermissions({"product:back"})
     @PutMapping("/back/{id}")
-    public ResponseBean back(@PathVariable Long id) {
+    public ResponseBean back(@PathVariable Long id) throws BusinessException {
         productService.back(id);
         return ResponseBean.success();
     }

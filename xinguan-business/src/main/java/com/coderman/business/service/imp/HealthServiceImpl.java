@@ -2,7 +2,8 @@ package com.coderman.business.service.imp;
 
 import com.coderman.business.mapper.HealthMapper;
 import com.coderman.business.service.HealthService;
-import com.coderman.common.exception.ServiceException;
+import com.coderman.common.error.BusinessCodeEnum;
+import com.coderman.common.error.BusinessException;
 import com.coderman.common.model.business.Health;
 import com.coderman.common.vo.business.HealthVO;
 import com.coderman.common.vo.system.PageVO;
@@ -32,16 +33,15 @@ public class HealthServiceImpl implements HealthService {
      * @param healthVO
      */
     @Override
-    public void report(HealthVO healthVO) {
+    public void report(HealthVO healthVO) throws BusinessException {
+        Health report = isReport(healthVO.getUserId());
+        if(report!=null) {
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "今日已经打卡,无法重复打卡！");
+        }
         Health health = new Health();
         BeanUtils.copyProperties(healthVO,health);
         health.setCreateTime(new Date());
-        Health report = isReport(healthVO.getUserId());
-        if(report!=null){
-            throw new ServiceException("今日您已经打卡");
-        }else {
-            healthMapper.insert(health);
-        }
+        healthMapper.insert(health);
     }
 
     /**
@@ -51,7 +51,6 @@ public class HealthServiceImpl implements HealthService {
      */
     @Override
     public Health isReport(Long id) {
-
         List<Health> health=healthMapper.isReport(id);
         if(health.size()>0){
             return  health.get(0);

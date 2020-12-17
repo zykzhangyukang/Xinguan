@@ -35,20 +35,15 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("com.coderman"))
                 .paths(PathSelectors.any())
                 .build().apiInfo(new ApiInfoBuilder()
-                        .title("在线课程视频学习网站API文档")
-                        .description("这是小章同学的毕业设计，在线课程视频学习网站API文档，时间：2021年7月。")
-                        .version("1.0")
-                        .license("The Apache License")
                         .build())
                 .securitySchemes(securitySchemes())
-                .securityContexts(securityContexts())
-                ;
+                .securityContexts(securityContexts());
     }
 
 
     private List<ApiKey> securitySchemes() {
         ArrayList<ApiKey> apiKeyList = Lists.newArrayList();
-        apiKeyList.add(new ApiKey("JSON WEB TOKEN(秘钥)", "jwtToken", "header"));
+        apiKeyList.add(new ApiKey("JSON WEB TOKEN(秘钥)", "Authorization", "header"));
         return apiKeyList;
     }
 

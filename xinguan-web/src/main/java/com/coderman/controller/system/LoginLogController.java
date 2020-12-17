@@ -1,6 +1,7 @@
 package com.coderman.controller.system;
 
 import com.coderman.common.annotation.ControllerEndpoint;
+import com.coderman.common.error.SystemException;
 import com.coderman.common.response.ResponseBean;
 import com.coderman.common.vo.system.LoginLogVO;
 import com.coderman.common.vo.system.PageVO;
@@ -24,9 +25,9 @@ import java.util.Map;
  * @Date 2020/3/22 21:03
  * @Version 1.0
  **/
-@Api(tags = "登入日志接口")
+@Api(tags = "系统模块-登入日志相关接口")
 @RestController
-@RequestMapping("/loginLog")
+@RequestMapping("/system/loginLog")
 public class LoginLogController {
 
 
@@ -57,7 +58,7 @@ public class LoginLogController {
     @ApiOperation(value = "删除日志")
     @RequiresPermissions({"loginLog:delete"})
     @DeleteMapping("/delete/{id}")
-    public ResponseBean delete(@PathVariable Long id) {
+    public ResponseBean delete(@PathVariable Long id) throws SystemException {
         loginLogService.delete(id);
         return ResponseBean.success();
     }
@@ -72,7 +73,7 @@ public class LoginLogController {
     @ApiOperation(value = "批量删除")
     @RequiresPermissions({"loginLog:batchDelete"})
     @DeleteMapping("/batchDelete/{ids}")
-    public ResponseBean batchDelete(@PathVariable String ids) {
+    public ResponseBean batchDelete(@PathVariable String ids) throws SystemException {
         String[] idList = ids.split(",");
         List<Long> list = new ArrayList<>();
         if (idList.length > 0) {

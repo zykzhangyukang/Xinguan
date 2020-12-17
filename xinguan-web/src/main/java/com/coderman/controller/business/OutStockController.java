@@ -3,6 +3,8 @@ package com.coderman.controller.business;
 import com.coderman.business.service.ConsumerService;
 import com.coderman.business.service.OutStockService;
 import com.coderman.common.annotation.ControllerEndpoint;
+import com.coderman.common.error.BusinessCodeEnum;
+import com.coderman.common.error.BusinessException;
 import com.coderman.common.model.business.Consumer;
 import com.coderman.common.response.ResponseBean;
 import com.coderman.common.vo.business.ConsumerVO;
@@ -23,9 +25,9 @@ import org.springframework.web.bind.annotation.*;
  * @Date 2020/5/10 14:23
  * @Version 1.0
  **/
-@Api(tags = "物资出库接口")
+@Api(tags = "业务模块-物资出库相关接口")
 @RestController
-@RequestMapping("/outStock")
+@RequestMapping("/business/outStock")
 public class OutStockController {
 
     @Autowired
@@ -43,25 +45,25 @@ public class OutStockController {
     @ApiOperation("提交发放单")
     @PostMapping("/addOutStock")
     @RequiresPermissions({"outStock:out"})
-    public ResponseBean addOutStock(@RequestBody @Validated OutStockVO outStockVO){
+    public ResponseBean addOutStock(@RequestBody @Validated OutStockVO outStockVO) throws BusinessException {
         if(outStockVO.getConsumerId()==null){
             //说明现在添加物资来源
             ConsumerVO consumerVO = new ConsumerVO();
             BeanUtils.copyProperties(outStockVO,consumerVO);
             if("".equals(consumerVO.getName())||consumerVO.getName()==null){
-                return ResponseBean.error("物资去向名不能为空");
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"物资去向名不能为空");
             }
             if("".equals(consumerVO.getContact())||consumerVO.getContact()==null){
-                return ResponseBean.error("联系人不能为空");
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"联系人不能为空");
             }
             if("".equals(consumerVO.getAddress())||consumerVO.getAddress()==null){
-                return ResponseBean.error("地址不能为空");
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"地址不能为空");
             }
             if("".equals(consumerVO.getPhone())||consumerVO.getPhone()==null){
-                return ResponseBean.error("联系方式不能为空");
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"联系方式不能为空");
             }
             if(consumerVO.getSort()==null){
-                return ResponseBean.error("排序不能为空");
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"排序不能为空");
             }
             Consumer consumer = consumerService.add(consumerVO);
             outStockVO.setConsumerId(consumer.getId());
@@ -98,7 +100,7 @@ public class OutStockController {
     @ApiOperation(value = "移入回收站", notes = "移入回收站")
     @RequiresPermissions({"outStock:remove"})
     @PutMapping("/remove/{id}")
-    public ResponseBean remove(@PathVariable Long id) {
+    public ResponseBean remove(@PathVariable Long id) throws BusinessException {
         outStockService.remove(id);
         return ResponseBean.success();
     }
@@ -113,7 +115,7 @@ public class OutStockController {
     @GetMapping("/detail/{id}")
     public ResponseBean detail(@PathVariable Long id,
                                @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
-                               @RequestParam(value = "pageSize",defaultValue = "3") Integer pageSize) {
+                               @RequestParam(value = "pageSize",defaultValue = "3") Integer pageSize) throws BusinessException {
         OutStockDetailVO detail = outStockService.detail(id,pageNum,pageSize);
         return ResponseBean.success(detail);
     }
@@ -128,7 +130,7 @@ public class OutStockController {
     @RequiresPermissions({"outStock:delete"})
     @ApiOperation(value = "删除物资发放单")
     @GetMapping("/delete/{id}")
-    public ResponseBean delete(@PathVariable Long id) {
+    public ResponseBean delete(@PathVariable Long id) throws BusinessException {
         outStockService.delete(id);
         return ResponseBean.success();
     }
@@ -143,7 +145,7 @@ public class OutStockController {
     @ApiOperation(value = "入库审核")
     @PutMapping("/publish/{id}")
     @RequiresPermissions({"outStock:publish"})
-    public ResponseBean publish(@PathVariable Long id) {
+    public ResponseBean publish(@PathVariable Long id) throws BusinessException {
         outStockService.publish(id);
         return ResponseBean.success();
     }
@@ -159,7 +161,7 @@ public class OutStockController {
     @ApiOperation(value = "恢复数据", notes = "从回收站中恢复入库单")
     @RequiresPermissions({"outStock:back"})
     @PutMapping("/back/{id}")
-    public ResponseBean back(@PathVariable Long id) {
+    public ResponseBean back(@PathVariable Long id) throws BusinessException {
         outStockService.back(id);
         return ResponseBean.success();
     }
