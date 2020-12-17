@@ -123,18 +123,18 @@ export default {
      * 加载库存信息
      */
     async getStockList() {
-      const { data: res } = await this.$http.get("product/findProductStocks", {
+      const { data: res } = await this.$http.get("business/product/findProductStocks", {
         params: this.queryMap
       });
-      if (res.code !== 200) {
-        return this.$message.error("获取物资库存列表失败");
+      if (!res.success) {
+        return this.$message.error("获取物资库存列表失败:"+res.data.errorMsg);
       } else {
         this.total = res.data.total;
         this.tableData = res.data.rows;
         this.xData = [];
         this.yData = [];
         this.selected = {};
-        var $this = this;
+        const $this = this;
         //构建表格条形统计图的数据
         this.tableData.forEach(function(e) {
           console.log(e)
@@ -277,11 +277,11 @@ export default {
      * 物资所有的库存信息
      */
     async findAllProductStocks() {
-      const { data: res } = await this.$http.get("product/findAllStocks", {
+      const { data: res } = await this.$http.get("business/product/findAllStocks", {
         params: this.queryMap
       });
-      if (res.code !== 200) {
-        return this.$message.error("获取物资所有库存失败");
+      if (!res.success) {
+        return this.$message.error("获取物资所有库存失败:"+res.data.errorMsg);
       } else {
         this.legendData = [];
         this.selected = {};
@@ -313,10 +313,10 @@ export default {
      */
     async getCatetorys() {
       const { data: res } = await this.$http.get(
-              "productCategory/categoryTree"
+              "business/productCategory/categoryTree"
       );
-      if (res.code !== 200) {
-        return this.$message.error("获取物资类别失败");
+      if (!res.success) {
+        return this.$message.error("获取物资类别失败:"+res.data.errorMsg);
       } else {
         this.catetorys = res.data.rows;
       }

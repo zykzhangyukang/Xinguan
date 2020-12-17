@@ -356,13 +356,13 @@
     export default {
         data() {
             return {
-                uploadApi:'https://www.zykhome.club/api/upload/image',
-                // uploadApi:'http://localhost:8081/upload/image',
+                // uploadApi:'https://www.zykhome.club/api/system/upload/image',
+                uploadApi:'http://localhost:8081/upload/image',
                 btnLoading: false,
                 btnDisabled: false,
                 loading: true,
                 headerObject: {
-                    Authorization: window.localStorage.getItem("JWT_TOKEN")
+                    Authorization: LocalStorage.get(LOCAL_KEY_XINGUAN_ACCESS_TOKEN)
                 }, //图片上传请求头
                 catetorys: [], //类别选择
                 selectProps: {
@@ -460,11 +460,11 @@
              * 物资添加审核
              */
             async publish(id) {
-                const {data: res} = await this.$http.put("product/publish/" + id);
-                if (res.code !== 200) {
-                    return this.$message.error("审核失败:" + res.msg);
+                const {data: res} = await this.$http.put("business/product/publish/" + id);
+                if (!res.success) {
+                    return this.$message.error("审核失败:" + res.data.errorMsg);
                 } else {
-                    this.getproductList();
+                    await this.getproductList();
                     return this.$message.success("物资已审核通过");
                 }
             },
@@ -487,12 +487,12 @@
                     });
                 });
                 if (res === "confirm") {
-                    const {data: res} = await this.$http.delete("product/delete/" + id);
-                    if (res.code === 200) {
+                    const {data: res} = await this.$http.delete("business/product/delete/" + id);
+                    if (res.success) {
                         this.$message.success("物资删除成功");
-                        this.getproductList();
+                        await this.getproductList();
                     } else {
-                        this.$message.error(res.msg);
+                        this.$message.error(res.data.errorMsg);
                     }
                 }
             },
@@ -507,19 +507,19 @@
                         this.btnDisabled = true;
                         this.btnLoading = true;
                         const {data: res} = await this.$http.put(
-                            "product/update/" + this.editRuleForm.id,
+                            "business/product/update/" + this.editRuleForm.id,
                             this.editRuleForm
                         );
-                        if (res.code == 200) {
+                        if (res.success) {
                             this.$notify({
                                 title: "成功",
                                 message: "物资信息更新",
                                 type: "success"
                             });
                             this.editRuleForm = {};
-                            this.getproductList();
+                            await this.getproductList();
                         } else {
-                            this.$message.error("物资信息更新失败:" + res.msg);
+                            this.$message.error("物资信息更新失败:" + res.data.errorMsg);
                         }
                         this.editDialogVisible = false;
                         this.btnDisabled = false;
@@ -531,19 +531,19 @@
              * 编辑物资
              */
             async edit(id) {
-                const {data: res} = await this.$http.get("product/edit/" + id);
-                if (res.code == 200) {
+                const {data: res} = await this.$http.get("business/product/edit/" + id);
+                if (res.success) {
                     this.editRuleForm = res.data;
-                    var item = res.data;
+                    const item = res.data;
                     this.imgFilesList.push({
                         url: "https://www.zykhome.club/" + item.imageUrl,
                         name: item.name,
                         id: item.id
                     });
                 } else {
-                    return this.$message.error("物资信息编辑失败" + res.msg);
+                    return this.$message.error("物资信息编辑失败" + res.data.errorMsg);
                 }
-                var array = [];
+                const array = [];
                 array.push(res.data.oneCategoryId);
                 array.push(res.data.twoCategoryId);
                 array.push(res.data.threeCategoryId);
@@ -565,12 +565,12 @@
                             "product/add",
                             this.addRuleForm
                         );
-                        if (res.code == 200) {
+                        if (res.success) {
                             this.$message.success("物资添加成功");
                             this.addRuleForm = {};
-                            this.getproductList();
+                            await this.getproductList();
                         } else {
-                            return this.$message.error("物资添加失败:" + res.msg);
+                            return this.$message.error("物资添加失败:" + res.data.errorMsg);
                         }
                         this.addDialogVisible = false;
                         this.btnDisabled = false;
@@ -582,11 +582,11 @@
              * 移除回收站
              */
             async remove(id) {
-                const {data: res} = await this.$http.put("product/remove/" + id);
-                if (res.code !== 200) {
-                    return this.$message.error("移入回收站失败:" + res.msg);
+                const {data: res} = await this.$http.put("business/product/remove/" + id);
+                if (!res.success) {
+                    return this.$message.error("移入回收站失败:" + res.data.errorMsg);
                 } else {
-                    this.getproductList();
+                    await this.getproductList();
                     return this.$message.success("移入回收站成功");
                 }
             },
@@ -595,10 +595,10 @@
              */
             async back(id) {
                 const {data: res} = await this.$http.put("product/back/" + id);
-                if (res.code !== 200) {
-                    return this.$message.error("从回收站恢复失败:" + res.msg);
+                if (!res.success) {
+                    return this.$message.error("从回收站恢复失败:" + res.data.errorMsg);
                 } else {
-                    this.getproductList();
+                    await this.getproductList();
                     return this.$message.success("从回收站中已恢复");
                 }
             },
@@ -606,10 +606,10 @@
              * 加载物资列表
              */
             async getproductList() {
-                const {data: res} = await this.$http.get("product/findProductList", {
+                const {data: res} = await this.$http.get("business/product/findProductList", {
                     params: this.queryMap
                 });
-                if (res.code !== 200) {
+                if (!res.success) {
                     return this.$message.error("获取物资列表失败");
                 } else {
                     this.total = res.data.total;
@@ -621,9 +621,9 @@
              */
             async getCatetorys() {
                 const {data: res} = await this.$http.get(
-                    "productCategory/categoryTree"
+                    "business/productCategory/categoryTree"
                 );
-                if (res.code !== 200) {
+                if (!res.success) {
                     return this.$message.error("获取物资类别失败");
                 } else {
                     this.catetorys = res.data.rows;
@@ -669,19 +669,6 @@
             //编辑
             editHandleSuccess(response, file, fileList) {
                 this.editRuleForm.imageUrl = response.msg;
-            },
-            /**
-             * 加载物资类别
-             */
-            async getCatetorys() {
-                const {data: res} = await this.$http.get(
-                    "productCategory/categoryTree"
-                );
-                if (res.code !== 200) {
-                    return this.$message.error("获取物资类别失败");
-                } else {
-                    this.catetorys = res.data.rows;
-                }
             },
             /**
              * 分类搜索改变时

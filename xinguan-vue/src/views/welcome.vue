@@ -43,7 +43,7 @@
                     <el-card style="height:125px;">
                         <el-col :span="6">
                             <div class="grid-content bg-purple">
-                                <router-link to="/products">
+                                <router-link to="/business/product/list">
                                     <img
                                             src="../assets/1.svg"
                                             alt
@@ -56,7 +56,7 @@
                         </el-col>
                         <el-col :span="6">
                             <div class="grid-content bg-purple-light">
-                                <router-link to="/stocks">
+                                <router-link to="/business/product/stocks">
                                     <img
                                             src="../assets/2.svg"
                                             alt
@@ -70,7 +70,7 @@
 
                         <el-col :span="6">
                             <div class="grid-content bg-purple-light">
-                                <router-link to="/inStocks">
+                                <router-link to="/business/product/add-stocks">
                                     <img
                                             src="../assets/3.svg"
                                             alt
@@ -84,7 +84,7 @@
                         </el-col>
                         <el-col :span="6">
                             <div class="grid-content bg-purple"></div>
-                            <router-link to="/outStocks">
+                            <router-link to="/business/product/publish">
                                 <img
                                         src="../assets/4.svg"
                                         alt
@@ -203,29 +203,17 @@
                 const w = window.open("about:blank");
                 w.location.href = url;
             },
-
-            // async loadMusicList() {
-            //   const { data: res } = await this.$http.get(
-            //     "music/getPlayList?listId=629987891"
-            //   );
-            //   if(res.code===200) {
-            //     this.musicList = res;
-            //   }else {
-            //
-            //   }
-            //
-            // },
             /**
              * 加载登入报表数据
              */
             async loginReport(username) {
-                const { data: res } = await this.$http.post("loginLog/loginReport", {
+                const { data: res } = await this.$http.post("system/loginLog/loginReport", {
                     username: username
                 });
-                if (res.code !== 200) {
+                if(!res.success){
                     return this.$message.error("获取登入报表数据失败:" + res.msg);
                 } else {
-                    var $this = this;
+                    const $this = this;
                     this.xData = [];
                     this.yData = [];
                     this.myData = [];
@@ -234,9 +222,9 @@
                         $this.yData.push(e1.count);
                     });
 
-                    for (var i = 0; i < this.xData.length; i++) {
-                        var count = 0;
-                        for (var j = 0; j < res.data.me.length; j++) {
+                    for (let i = 0; i < this.xData.length; i++) {
+                        let count = 0;
+                        for (let j = 0; j < res.data.me.length; j++) {
                             if ($this.xData[i] === res.data.me[j].days) {
                                 count = res.data.me[j].count;
                                 break;
@@ -254,9 +242,9 @@
              * 绘制登入报表
              */
             draw() {
-                var myChart = echarts.init(document.getElementById("loginReport"));
+                const myChart = echarts.init(document.getElementById("loginReport"));
                 // 指定图表的配置项和数据
-                var option = {
+                const option = {
                     title: {
                         text: "用户登入统计"
                     },
@@ -266,8 +254,8 @@
                             dataZoom: {
                                 yAxisIndex: "none"
                             },
-                            dataView: { readOnly: false }, //  缩放
-                            magicType: { type: ["bar", "line"] }, ///　　折线  直方图切换
+                            dataView: {readOnly: false}, //  缩放
+                            magicType: {type: ["bar", "line"]}, ///　　折线  直方图切换
                             restore: {}, // 重置
                             saveAsImage: {} // 导出图片
                         }
@@ -282,7 +270,7 @@
                         }
                     },
                     legend: {
-                        type:'plain',
+                        type: 'plain',
                         data: ["全部", "我"]
                     },
                     xAxis: {
@@ -322,14 +310,13 @@
 
         created() {
             this.userInfo = this.$store.state.userInfo;
-            var roles = this.userInfo.isAdmin ? "超级管理员" : this.userInfo.roles;
+            const roles = this.userInfo.isAdmin ? "超级管理员" : this.userInfo.roles;
             this.tableInfo.push({
                 username: this.userInfo.username,
                 nickname: this.userInfo.nickname,
                 department: this.userInfo.department,
                 roles: roles
             });
-            this.loadMusicList();
         },
         mounted: function() {
             this.loginReport(this.userInfo.username);

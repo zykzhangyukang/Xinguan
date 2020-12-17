@@ -129,7 +129,7 @@
                         </span>
 
                             <!--                        给审核员使用的按钮-->
-                            <span v-if="scope.row.status==2">
+                            <span v-if="scope.row.status===2">
                           <el-popconfirm
                                   style="margin-left:20px;"
                                   @onConfirm="publish(scope.row.id)"
@@ -265,11 +265,12 @@
              *物资发放审核
              */
             async publish(id){
-                const { data: res } = await this.$http.put("outStock/publish/"+id);
-                if (res.code !== 200) {
-                    return this.$message.error("审核失败:"+res.msg);
+
+                const { data: res } = await this.$http.put("business/outStock/publish/"+id);
+                if (!res.success) {
+                    return this.$message.error("审核失败:"+res.data.errorMsg);
                 } else {
-                    this.loadTableData();
+                    await this.loadTableData();
                     return this.$message.success("发放已审核通过");
                 }
             },
@@ -293,10 +294,9 @@
              */
             async detail(id) {
                 this.detailId=id;
-                const {data: res} = await this.$http.get("outStock/detail/" + id+"?pageNum="+this.pageNum);
-                if (res.code !== 200) {
-                    this.$message.error("获取明细失败:" + res.msg);
-
+                const {data: res} = await this.$http.get("business/outStock/detail/" + id+"?pageNum="+this.pageNum);
+                if (!res.success) {
+                    this.$message.error("获取明细失败:" + res.data.errorMsg);
                 } else {
                     this.detailTable = res.data.itemVOS;
                     this.detailTotal = res.data.total;
@@ -311,11 +311,11 @@
              * 从回收站恢复
              */
             async back(id){
-                const { data: res } = await this.$http.put("outStock/back/"+id);
-                if (res.code !== 200) {
-                    return this.$message.error("从回收站恢复失败:"+res.msg);
+                const { data: res } = await this.$http.put("business/outStock/back/"+id);
+                if (!res.success) {
+                    return this.$message.error("从回收站恢复失败:"+res.data.errorMsg);
                 } else {
-                    this.loadTableData();
+                    await this.loadTableData();
                     return this.$message.success("从回收站中已恢复");
                 }
             },
@@ -324,11 +324,11 @@
              * 移除回收站
              */
             async remove(id) {
-                const {data: res} = await this.$http.put("outStock/remove/" + id);
-                if (res.code !== 200) {
-                    return this.$message.error("移入回收站失败:" + res.msg);
+                const {data: res} = await this.$http.put("business/outStock/remove/" + id);
+                if (!res.success) {
+                    return this.$message.error("移入回收站失败:" + res.data.errorMsg);
                 } else {
-                    this.loadTableData();
+                    await this.loadTableData();
                     return this.$message.success("移入回收站成功");
                 }
             },
@@ -337,17 +337,17 @@
              * 重置查询表单
              */
             reset(){
-                this.queryMap={pageNum:1,pageSize:7 ,status: 0,};
+                this.queryMap={pageNum:1,pageSize:10 ,status: 0,};
             },
             /**
              * 加载表格数据
              */
             async loadTableData() {
-                const {data: res} = await this.$http.get("outStock/findOutStockList", {
+                const {data: res} = await this.$http.get("business/outStock/findOutStockList", {
                     params: this.queryMap
                 });
-                if (res.code !== 200) {
-                    return this.$message.error("获取列表失败");
+                if (!res.success) {
+                    return this.$message.error("获取列表失败:"+res.data.errorMsg);
                 } else {
                     this.total = res.data.total;
                     this.tableData = res.data.rows;
@@ -376,11 +376,11 @@
             /**删除明细
              */
             async del(id) {
-                const {data: res} = await this.$http.get("outStock/delete/" + id);
-                if (res.code !== 200) {
-                    return this.$message.error("删除失败:" + res.msg);
+                const {data: res} = await this.$http.get("business/outStock/delete/" + id);
+                if (!res.success) {
+                    return this.$message.error("删除失败:" + res.data.errorMsg);
                 } else {
-                    this.loadTableData();
+                    await this.loadTableData();
                     return this.$message.success("删除发放单记录成功");
                 }
             },

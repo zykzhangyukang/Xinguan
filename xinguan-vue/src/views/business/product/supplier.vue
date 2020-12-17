@@ -355,7 +355,7 @@
             },
             //删除来源
             async del(id) {
-                var res = await this.$confirm(
+                const res = await this.$confirm(
                     "此操作将永久删除该用户, 是否继续?",
                     "提示",
                     {
@@ -369,13 +369,13 @@
                         message: "已取消删除"
                     });
                 });
-                if (res == "confirm") {
-                    const { data: res } = await this.$http.delete("supplier/delete/" + id);
-                    if (res.code == 200) {
+                if (res === "confirm") {
+                    const { data: res } = await this.$http.delete("business/supplier/delete/" + id);
+                    if (res.success) {
                         this.$message.success("来源删除成功");
-                        this.getSupplierList();
+                        await this.getSupplierList();
                     } else {
-                        this.$message.error(res.msg);
+                        this.$message.error(res.data.errorMsg);
                     }
                 }
             },
@@ -387,19 +387,19 @@
                     } else {
 
                         const { data: res } = await this.$http.put(
-                            "supplier/update/" + this.editRuleForm.id,
+                            "business/supplier/update/" + this.editRuleForm.id,
                             this.editRuleForm
                         );
-                        if (res.code == 200) {
+                        if (res.success) {
                             this.$notify({
                                 title: "成功",
                                 message: "来源信息更新",
                                 type: "success"
                             });
                             this.editRuleForm = {};
-                            this.getSupplierList();
+                            await this.getSupplierList();
                         } else {
-                            this.$message.error("来源信息更新失败:" + res.msg);
+                            this.$message.error("来源信息更新失败:" + res.data.errorMsg);
                         }
 
                         this.editDialogVisible = false;
@@ -408,11 +408,11 @@
             },
             //编辑
             async edit(id) {
-                const { data: res } = await this.$http.get("supplier/edit/" + id);
-                if (res.code == 200) {
+                const { data: res } = await this.$http.get("business/supplier/edit/" + id);
+                if (res.success) {
                     this.editRuleForm = res.data;
                 } else {
-                    return this.$message.error("来源信息编辑失败" + res.msg);
+                    return this.$message.error("来源信息编辑失败" + res.data.errorMsg);
                 }
                 this.editDialogVisible = true;
             },
@@ -429,15 +429,15 @@
                             "/" +
                             this.addRuleForm.origin;
                         const { data: res } = await this.$http.post(
-                            "supplier/add",
+                            "business/supplier/add",
                             this.addRuleForm
                         );
-                        if (res.code == 200) {
+                        if (res.success) {
                             this.$message.success("来源添加成功");
                             this.addRuleForm = {};
-                            this.getSupplierList();
+                            await this.getSupplierList();
                         } else {
-                            return this.$message.error("来源添加失败:" + res.msg);
+                            return this.$message.error("来源添加失败:" + res.data.errorMsg);
                         }
                         this.addDialogVisible = false;
                     }
@@ -445,11 +445,11 @@
             },
             //加载系别列表
             async getSupplierList() {
-                const { data: res } = await this.$http.get("supplier/findSupplierList", {
+                const { data: res } = await this.$http.get("business/supplier/findSupplierList", {
                     params: this.queryMap
                 });
-                if (res.code !== 200) {
-                    return this.$message.error("获取用户列表失败");
+                if (!res.success) {
+                    return this.$message.error("获取用户列表失败:"+res.data.errorMsg);
                 } else {
                     this.total = res.data.total;
                     this.supplierData = res.data.rows;

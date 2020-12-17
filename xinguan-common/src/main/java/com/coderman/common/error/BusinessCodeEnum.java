@@ -1,4 +1,4 @@
-package com.coderman.common.exception;
+package com.coderman.common.error;
 
 import lombok.Getter;
 
@@ -12,7 +12,7 @@ import lombok.Getter;
  * @Version 1.0
  **/
 @Getter
-public enum  ErrorCodeEnum implements BaseCodeInterface {
+public enum  BusinessCodeEnum implements BaseError {
 
     // 数据操作错误定义
     BODY_NOT_MATCH(400,"请求的数据格式不符!"),
@@ -34,14 +34,29 @@ public enum  ErrorCodeEnum implements BaseCodeInterface {
     PRODUCT_OUT_STOCK_EMPTY(30007,"物资发放不能为空"),
     PRODUCT_STOCK_ERROR(30009,"物资库存不足");
     /** 错误码 */
-    private int resultCode;
+    private int errorCode;
 
     /** 错误描述 */
-    private String resultMsg;
+    private String errorMsg;
 
-    ErrorCodeEnum(int resultCode, String resultMsg) {
-        this.resultCode = resultCode;
-        this.resultMsg = resultMsg;
+    BusinessCodeEnum(int errorCode, String errorMsg) {
+        this.errorCode = errorCode;
+        this.errorMsg = errorMsg;
     }
 
+    @Override
+    public int getErrorCode() {
+        return this.errorCode;
+    }
+
+    @Override
+    public String getErrorMessage() {
+        return this.errorMsg;
+    }
+
+    @Override
+    public BaseError setErrorMsg(String errorMsg) {
+        this.errorMsg=errorMsg;
+        return this;
+    }
 }

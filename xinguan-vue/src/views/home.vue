@@ -93,8 +93,8 @@
                     });
                 });
                 if (res === "confirm") {
-                    window.localStorage.clear();
-                    this.$router.push("/login");
+                    LocalStorage.clearAll();
+                    await this.$router.push("/login");
                 }
             },
             /**
@@ -107,21 +107,21 @@
              加载菜单数据
              */
             async getMenuList() {
-                const { data: res } = await this.$http.get("user/findMenu");
-                if (res.code !== 200)
+                const { data: res } = await this.$http.get("system/user/findMenu");
+                if(!res.success){
                     return this.$message.error("获取菜单失败:" + res.msg);
+                }
                 this.menuList = res.data;
             },
             /**
              获取用户信息
              */
             async getUserInfo() {
-                const { data: res } = await this.$http.get("user/info");
-                if (res.code !== 200) {
+                const { data: res } = await this.$http.get("system/user/info");
+                if(!res.success){
                     return this.$message.error("获取用户信息失败:" + res.msg);
                 } else {
                     this.userInfo = res.data;
-                    //保存用户
                     this.$store.commit("setUserInfo", res.data);
                 }
             },
@@ -131,7 +131,6 @@
             toggleMenu() {
                 this.isOpen = !this.isOpen;
             },
-
             /**
              * 点击交流
              */
@@ -139,7 +138,6 @@
                 const w = window.open('about:blank');
                 w.location.href = 'https://www.zykcoderman.xyz/';
             }
-
         },
         mounted() {
             this.getUserInfo();

@@ -115,8 +115,8 @@
 export default {
   data() {
     return {
-      //https://www.zykhome.club/api/upload/image
-      uploadUrl:'https://www.zykhome.club/api/upload/image',
+      uploadUrl:"http://localhost:8081/system/upload/image",
+      // uploadUrl:'https://www.zykhome.club/api/system/upload/image',
       centerDialogVisible: false,
       loading: true,
       total: 0,
@@ -125,7 +125,7 @@ export default {
       list: [],
       srcList: [],
       headerObject: {
-        Authorization: window.localStorage.getItem("JWT_TOKEN")
+        Authorization: LocalStorage.get(LOCAL_KEY_XINGUAN_ACCESS_TOKEN)
       }, //图片上传请求头
     };
   },
@@ -141,11 +141,12 @@ export default {
      * 上传之后的回调
      */
     handleUploadSuccess: function (response, file, fileList) {
-      if (200 !== response.code) {
+      console.log(response)
+      if (!response.success) {
         this.$refs.upload.clearFiles();
-        return this.$message.error("上传失败:" + response.msg);
+        return this.$message.error("上传失败:" + response.data.errorMsg);
       } else {
-        this.getImgeList();
+        this.ageImageList();
       }
     },
     /**
@@ -159,25 +160,25 @@ export default {
      * 删除图片
      */
     del: async function (id) {
-      const {data: res} = await this.$http.delete("upload/delete/" + id);
-      if (res.code === 200) {
+      const {data: res} = await this.$http.delete("system/upload/delete/" + id);
+      if (res.success) {
         this.$message.success("删除图片成功");
-        this.getImgeList();
+        await this.ageImageList();
       } else {
-        this.$message.error(res.msg);
+        this.$message.error(res.data.errorMsg);
       }
     },
     /**
      * 加载附件列表
      */
-    async getImgeList() {
-      const { data: res } = await this.$http.get("upload/findImageList", {
+    async ageImageList() {
+      const { data: res } = await this.$http.get("system/upload/findImageList", {
         params: this.queryMap
       });
-      if (res.code !== 200) {
-        return this.$message.error("获取附件列表失败:"+res.msg);
+      if (!res.success) {
+        return this.$message.error("获取附件列表失败:"+res.data.errorMsg);
       } else {
-        var $this = this;
+        const $this = this;
         this.total = res.data.total;
         this.list = res.data.list;
         this.srcList = [];
@@ -189,19 +190,19 @@ export default {
     //改变页码
     handleSizeChange(newSize) {
       this.queryMap.pageSize = newSize;
-      this.getImgeList();
+      this.ageImageList();
     },
     //翻页
     handleCurrentChange(current) {
       this.queryMap.pageNum = current;
-      this.getImgeList();
+      this.ageImageList();
     },
     /**
      * 搜索
      */
     search() {
       this.queryMap.pageNum = 1;
-      this.getImgeList();
+      this.ageImageList();
     },
     /**
      * 超出允许上传的时候
@@ -211,7 +212,7 @@ export default {
     }
   },
   created() {
-    this.getImgeList();
+    this.ageImageList();
     setTimeout(() => {
       this.loading = false;
     }, 500);

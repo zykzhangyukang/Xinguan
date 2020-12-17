@@ -3,8 +3,8 @@
         <!-- 面包导航 -->
         <el-breadcrumb separator="/" style="padding-left:10px;padding-bottom:10px;font-size:12px;">
             <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item :to="{ path: '/inStocks' }">物资管理</el-breadcrumb-item>
-            <el-breadcrumb-item :to="{ path: '/inStocks' }">物资入库</el-breadcrumb-item>
+            <el-breadcrumb-item >业务管理</el-breadcrumb-item>
+            <el-breadcrumb-item :to="{ path: '/business/product/in-stocks' }">物资入库</el-breadcrumb-item>
             <el-breadcrumb-item >添加入库</el-breadcrumb-item>
         </el-breadcrumb>
         <!-- 卡片区域 -->
@@ -447,7 +447,7 @@
             },
             //改变来源选择
             supplerSelectChange(supplierId){
-                var obj=this.suppliers.find(function (x) {
+                const obj = this.suppliers.find(function (x) {
                     return x.id === supplierId;
                 });
                 this.supplierInfo=obj;
@@ -480,10 +480,10 @@
                             this.addRuleForm.city +
                             "/" +
                             this.addRuleForm.origin;
-                        var car = [];
+                        const car = [];
                         this.products.forEach(row => {
-                            if (row.number != undefined) {
-                                var item = { productId: row.id, productNumber: row.number };
+                            if (row.number !== undefined) {
+                                const item = {productId: row.id, productNumber: row.number};
                                 car.push(item);
                             }
                         });
@@ -494,7 +494,7 @@
                                 "入库商品的数量不能为空，请勾选物资后在明细中添加数量"
                             );
                         }
-                        var res = await this.$confirm("此操作将提交入库单, 是否继续?", "提示", {
+                        const res = await this.$confirm("此操作将提交入库单, 是否继续?", "提示", {
                             confirmButtonText: "确定",
                             cancelButtonText: "取消",
                             type: "warning"
@@ -504,16 +504,16 @@
                                 message: "已取消删除"
                             });
                         });
-                        if (res == "confirm") {
+                        if (res === "confirm") {
                             const { data: res } = await this.$http.post(
-                                "inStock/addIntoStock",
+                                "business/inStock/addIntoStock",
                                 this.addRuleForm
                             );
-                            if (res.code == 200) {
+                            if (res.success) {
                                 this.$message.warning("物资入库进入审核状态");
-                                this.$router.push("/inStocks");
+                                await this.$router.push("/business/product/in-stocks");
                             } else {
-                                return this.$message.error("商品入库失败:" + res.msg);
+                                return this.$message.error("商品入库失败:" + res.data.errorMsg);
                             }
                         }
 
@@ -525,10 +525,10 @@
              * 加载商品列表(可入库)
              */
             async loadTableData() {
-                const { data: res } = await this.$http.get("product/findProducts", {
+                const { data: res } = await this.$http.get("business/product/findProducts", {
                     params: this.queryMap
                 });
-                if (res.code !== 200) {
+                if (!res.success) {
                     return this.$message.error("获取商品列表失败");
                 } else {
                     this.total = res.data.total;
@@ -539,8 +539,8 @@
              * 分类搜索改变时
              */
             selectChange() {
-                var str = "";
-                for (var i = 0; i < this.categorykeys.length; i++) {
+                let str = "";
+                for (let i = 0; i < this.categorykeys.length; i++) {
                     str += this.categorykeys[i] + ",";
                 }
                 str = str.substring(0, str.length - 1);
@@ -551,9 +551,9 @@
              */
             async getCatetorys() {
                 const { data: res } = await this.$http.get(
-                    "productCategory/categoryTree"
+                    "business/productCategory/categoryTree"
                 );
-                if (res.code !== 200) {
+                if (!res.success) {
                     return this.$message.error("获取商品类别失败");
                 } else {
                     this.catetorys = res.data.rows;
@@ -562,9 +562,9 @@
             /**加载来源数据
              */
             async getSuppliers() {
-                const { data: res } = await this.$http.get("supplier/findAll");
-                if (res.code !== 200) {
-                    return this.$message.error("获取来源数据失败");
+                const { data: res } = await this.$http.get("business/supplier/findAll");
+                if (!res.success) {
+                    return this.$message.error("获取来源数据失败:"+res.data.errorMsg);
                 } else {
                     this.suppliers = res.data;
                 }
@@ -619,7 +619,7 @@
              */
             removeItem(val) {
                 this.products.forEach(row => {
-                    if (row.id == val) {
+                    if (row.id === val) {
                         this.$refs.dataTable.toggleRowSelection(row, false);
                     }
                 });

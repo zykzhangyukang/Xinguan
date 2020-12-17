@@ -214,7 +214,7 @@
                 }, //添加表单验证规则
                 pNode: {}, //父节点
                 data: JSON.parse(JSON.stringify(data)),
-                data: JSON.parse(JSON.stringify(data)),
+
                 defaultProps: {
                     children: "children",
                     label: "menuName"
@@ -245,7 +245,7 @@
                         }
                         const data = res.data;
                         let url = window.URL.createObjectURL(data); // 将二进制文件转化为可访问的url
-                        var a = document.createElement("a");
+                        const a = document.createElement("a");
                         document.body.appendChild(a);
                         a.href = url;
                         a.download = "菜单列表.xls";
@@ -264,10 +264,10 @@
                         this.btnLoading = true;
                         this.btnDisabled = true;
                         const { data: res } = await this.$http.put(
-                            "menu/update/" + this.editForm.id,
+                            "system/menu/update/" + this.editForm.id,
                             this.editForm
                         );
-                        if (res.code == 200) {
+                        if (res.success) {
                             this.$message({
                                 title: "成功",
                                 message: "节点信息更新",
@@ -275,11 +275,11 @@
                             });
                             this.editForm = {};
                             this.editlogVisible = false;
+                            await this.getMenuTree();
+                        } else {
                             this.btnLoading = false;
                             this.btnDisabled = false;
-                            this.getMenuTree();
-                        } else {
-                            return this.$message.error(res.msg);
+                            return this.$message.error("更新菜单失败"+res.data.errorMsg);
                         }
                     }
                 });
@@ -287,12 +287,12 @@
             //点击编辑节点
             async edit(data) {
                 this.editTitle = "编辑：【" + data.menuName + "】";
-                const { data: res } = await this.$http.get("menu/edit/" + data.id);
-                if (res.code == 200) {
+                const { data: res } = await this.$http.get("system/menu/edit/" + data.id);
+                if (res.success) {
                     this.editForm = res.data;
                     this.editlogVisible = true;
                 } else {
-                    return this.$message.error("节点编辑失败:" + res.msg);
+                    return this.$message.error("节点编辑失败:" + res.data.errorMsg);
                 }
             },
             //过滤节点
@@ -311,8 +311,8 @@
             },
             //加载菜单树
             async getMenuTree() {
-                const { data: res } = await this.$http.get("menu/tree");
-                if (res.code == 200) {
+                const { data: res } = await this.$http.get("system/menu/tree");
+                if (res.success) {
                     this.data = res.data.tree;
                     this.open = res.data.open;
                 }
@@ -332,7 +332,7 @@
             },
             //点击删除按钮
             async delNode(node, data) {
-                var res = await this.$confirm(
+                const res = await this.$confirm(
                     "此操作将永久删除该节点, 是否继续?",
                     "提示",
                     {
@@ -346,16 +346,16 @@
                         message: "已取消删除"
                     });
                 });
-                if (res == "confirm") {
+                if (res === "confirm") {
                     console.log(node);
                     const { data: res } = await this.$http.delete(
-                        "menu/delete/" + node.data.id
+                        "system/menu/delete/" + node.data.id
                     );
-                    if (res.code == 200) {
+                    if (res.success) {
                         this.$message.success("节点删除成功");
-                        this.getMenuTree();
+                        await this.getMenuTree();
                     } else {
-                        this.$message.error("节点删除失败:" + res.msg);
+                        this.$message.error("节点删除失败:" + res.data.errorMsg);
                     }
                 }
             },
@@ -367,16 +367,16 @@
                     } else {
                         this.btnLoading = true;
                         this.btnDisabled = true;
-                        const { data: res } = await this.$http.post("menu/add", this.addForm);
-                        if (res.code == 200) {
+                        const { data: res } = await this.$http.post("system/menu/add", this.addForm);
+                        if (res.success) {
                             this.$message.success("节点添加成功");
                             this.addDialogVisible = false;
-                            this.btnLoading = false;
-                            this.btnDisabled = false;
-                            this.getMenuTree();
+                            await this.getMenuTree();
                         } else {
-                            this.$message.error("节点添加失败");
+                            this.$message.error("节点添加失败:"+res.data.errorMsg);
                         }
+                        this.btnLoading=false;
+                        this.btnDisabled = false;
                     }
                 });
             },

@@ -93,7 +93,7 @@
                 <el-table-column prop="username" label="用户名" width="110"></el-table-column>
                 <el-table-column prop="sex" :formatter="showSex" label="性别" width="100">
                     <template slot-scope="scope">
-                        <el-tag size="small" type="success" v-if="scope.row.sex==1">帅哥</el-tag>
+                        <el-tag size="small" type="success" v-if="scope.row.sex===1">帅哥</el-tag>
                         <el-tag size="small"  type="warning" v-else>美女</el-tag>
                     </template>
                 </el-table-column>
@@ -349,7 +349,7 @@
     import axios from "axios";
     export default {
         data() {
-            var checkEmail = (rule, value, callback) => {
+            const checkEmail = (rule, value, callback) => {
                 const mailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
                 if (!value) {
                     return callback(new Error("邮箱不能为空"));
@@ -362,15 +362,12 @@
                     }
                 }, 100);
             };
-            var checkPhone = (rule, value, callback) => {
+            const checkPhone = (rule, value, callback) => {
                 const phoneReg = /^1[34578]\d{9}$$/;
                 if (!value) {
                     return callback(new Error("电话号码不能为空"));
                 }
                 setTimeout(() => {
-                    // Number.isInteger是es6验证数字是否为整数的方法,实际输入的数字总是识别成字符串
-                    // 所以在前面加了一个+实现隐式转换
-
                     if (!Number.isInteger(+value)) {
                         callback(new Error("请输入数字值"));
                     } else {
@@ -463,10 +460,10 @@
              * 加载用户表格
              */
             downExcel() {
-                var $this = this;
+                const $this = this;
                 const res = axios
                     .request({
-                        url: "/user/excel",
+                        url: "system/user/excel",
                         method: "post",
                         responseType: "blob"
                     })
@@ -478,7 +475,7 @@
                         }
                         const data = res.data;
                         let url = window.URL.createObjectURL(data); // 将二进制文件转化为可访问的url
-                        var a = document.createElement("a");
+                        const a = document.createElement("a");
                         document.body.appendChild(a);
                         a.href = url;
                         a.download = "用户列表.xls";
@@ -496,16 +493,17 @@
                     spinner: "el-icon-loading",
                     background: "rgba(0, 0, 0, 0.7)"
                 });
-                const { data: res } = await this.$http.get("user/" + id + "/roles");
-                if (res.code == 200) {
+                const { data: res } = await this.$http.get("system/user/" + id + "/roles");
+                if (res.success) {
                     this.roles = res.data.roles;
                     this.value = res.data.values;
                     this.uid = id;
-
                     setTimeout(() => {
                         loading.close();
                         this.assignDialogVisible = true;
                     }, 400);
+                } else {
+                    this.$message.error("分配角色失败:" + res.data.errorMsg);
                 }
             },
             /**
@@ -516,16 +514,16 @@
                 this.btnLoading = true;
                 this.btnDisabled = true;
                 const { data: res } = await this.$http.post(
-                    "user/" + this.uid + "/assignRoles",
+                    "system/user/" + this.uid + "/assignRoles",
                     this.value
                 );
-                if (res.code == 200) {
+                if(res.success){
                     this.$notify.success({
                         title:'操作成功',
                         message:'用户分配角色成功',
                     });
                 } else {
-                    this.$message.error("分配角色失败:" + res.msg);
+                    this.$message.error("分配角色失败:" + res.data.errorMsg);
                 }
                 this.assignDialogVisible = false;
                 this.btnLoading = false;
@@ -535,21 +533,21 @@
              * 加载用户列表
              */
             async getUserList() {
-                const { data: res } = await this.$http.get("user/findUserList", {
+                const { data: res } = await this.$http.get("system/user/findUserList", {
                     params: this.queryMap
                 });
-                if (res.code !== 200) return this.$message.error("获取用户列表失败");
+                if(!res.success){
+                    return this.$message.error("获取用户列表失败:"+res.data.errorMsg);
+                }
                 this.total = res.data.total;
                 this.userList = res.data.rows;
             },
-            showSex(row, column) {
-                return row.sex === 1 ? "帅哥" : "美女";
-            },
+
             /**
              * 删除用户
              */
             async del(id) {
-                var res = await this.$confirm(
+                const res = await this.$confirm(
                     "此操作将永久删除该用户, 是否继续?",
                     "提示",
                     {
@@ -563,18 +561,18 @@
                         message: "已取消删除"
                     });
                 });
-                if (res == "confirm") {
-                    const { data: res } = await this.$http.delete("user/delete/" + id);
+                if (res === "confirm") {
+                    const { data: res } = await this.$http.delete("system/user/delete/" + id);
                     console.log(res);
-                    if (res.code == 200) {
+                    if(res.success){
                         this.$notify.success({
                             title:'操作成功',
                             message:'用户删除成功',
                         });
-                        this.getUserList();
-                        this.getDepartmets();
-                    } else {
-                        this.$message.error(res.msg);
+                        await this.getUserList();
+                        await this.getDepartmets();
+                    }else {
+                        this.$message.error(res.data.errorMsg);
                     }
                 }
             },
@@ -588,17 +586,17 @@
                     } else {
                         this.btnLoading = true;
                         this.btnDisabled = true;
-                        const { data: res } = await this.$http.post("user/add", this.addForm);
-                        if (res.code == 200) {
+                        const { data: res } = await this.$http.post("system/user/add", this.addForm);
+                        if(res.success){
                             this.$notify.success({
                                 title:'操作成功',
                                 message:'用户添加成功',
                             });
                             this.addForm = {};
-                            this.getUserList();
-                            this.getDepartmets();
+                            await this.getUserList();
+                            await this.getDepartmets();
                         } else {
-                            return this.$message.error("用户添加失败:" + res.msg);
+                            return this.$message.error("用户添加失败:" + res.data.errorMsg);
                         }
                         this.addDialogVisible = false;
                         this.btnLoading = false;
@@ -617,20 +615,20 @@
                         this.btnLoading = true;
                         this.btnDisabled = true;
                         const { data: res } = await this.$http.put(
-                            "user/update/" + this.editForm.id,
+                            "system/user/update/" + this.editForm.id,
                             this.editForm
                         );
-                        if (res.code == 200) {
+                        if(res.success){
                             this.$notify({
                                 title: "操作成功",
                                 message: "用户基本信息已更新",
                                 type: "success"
                             });
                             this.editForm = {};
-                            this.getUserList();
-                            this.getDepartmets();
+                            await this.getUserList();
+                            await this.getDepartmets();
                         } else {
-                            this.$message.error("用户信息更新失败:" + res.msg);
+                            this.$message.error("用户信息更新失败:" + res.data.errorMsg);
                         }
                         this.editDialogVisible = false;
                         this.btnLoading = false;
@@ -649,12 +647,12 @@
              * 修改用户信息
              */
             async edit(id) {
-                const { data: res } = await this.$http.get("user/edit/" + id);
-                if (res.code == 200) {
+                const { data: res } = await this.$http.get("system/user/edit/" + id);
+                if(res.success){
                     this.editForm = res.data;
                     this.editDialogVisible = true;
                 } else {
-                    return this.$message.error("用户信息编辑失败:" + res.msg);
+                    return this.$message.error("用户信息编辑失败:" + res.data.errorMsg);
                 }
             },
             /**
@@ -692,13 +690,13 @@
              */
             async changUserStatus(row) {
                 const { data: res } = await this.$http.put(
-                    "user/updateStatus/" + row.id + "/" + row.status
+                    "system/user/updateStatus/" + row.id + "/" + row.status
                 );
-                if (res.code !== 200) {
-                    this.$message.error("更新用户状态失败:" + res.msg);
+                if(!res.success){
+                    this.$message.error("更新用户状态失败:" + res.data.errorMsg);
                     row.status = !row.status;
                 } else {
-                    var message=row.status?'用户状态已禁用':'用户状态已启用';
+                    const message = row.status ? '用户状态已禁用' : '用户状态已启用';
                     this.$notify.success({
                         title: '操作成功',
                         message: message,
@@ -709,15 +707,17 @@
              * 加载所有部门
              */
             async getDepartmets() {
-                const { data: res } = await this.$http.get("department/findAll");
-                if (res.code !== 200) return this.$message.error("获取部门列表失败");
+                const { data: res } = await this.$http.get("system/department/findAll");
+                if(!res.success){
+                    return this.$message.error("获取部门列表失败:"+res.data.errorMsg);
+                }
                 this.departments = res.data;
             },
             /**
              * 显示用户性别
              */
             showSex(row, column) {
-                return row.sex == 1 ? "帅哥" : "美女";
+                return row.sex === 1 ? "帅哥" : "美女";
             },
         },
         created() {

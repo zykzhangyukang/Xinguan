@@ -54,7 +54,7 @@
             <!-- 添加弹出框 -->
             <el-dialog title="添加分类" :visible.sync="addDialogVisible" @close="addCloseDialog" width="50%">
         <span>
-          <el-form size="mini" :model="addRuleForm" :rules="addRules" ref="addRuleFormRef" label-width="100px">
+          <el-form  :model="addRuleForm" :rules="addRules" ref="addRuleFormRef" label-width="100px">
             <el-form-item label="分类名称" prop="name">
               <el-input v-model="addRuleForm.name"></el-input>
             </el-form-item>
@@ -185,18 +185,18 @@
                         this.btnLoading = true;
                         this.btnDisabled = true;
                         const {data: res} = await this.$http.put(
-                            "productCategory/update/" + this.editRuleForm.id,
+                            "business/productCategory/update/" + this.editRuleForm.id,
                             this.editRuleForm
                         );
-                        if (res.code === 200) {
+                        if (res.success) {
                             this.$notify({
                                 title: "成功",
                                 message: "分类信息更新",
                                 type: "success"
                             });
-                            this.getCategoryList();
+                            await this.getCategoryList();
                         } else {
-                            this.$message.error("分类信息更新失败:" + res.msg);
+                            this.$message.error("分类信息更新失败:" + res.data.errorMsg);
                         }
                         this.btnLoading = false;
                         this.btnDisabled = false;
@@ -206,17 +206,17 @@
             },
             //修改
             async edit(id) {
-                const { data: res } = await this.$http.get("productCategory/edit/" + id);
-                if (res.code === 200) {
+                const { data: res } = await this.$http.get("business/productCategory/edit/" + id);
+                if (res.success) {
                     this.editRuleForm = res.data;
                 } else {
-                    return this.$message.error("分类信息编辑失败"+res.msg);
+                    return this.$message.error("分类信息编辑失败"+res.data.errorMsg);
                 }
                 this.editDialogVisible = true;
             },
             //删除分类
             async del(id) {
-                var res = await this.$confirm(
+                const res = await this.$confirm(
                     "此操作将永久删除该分类, 是否继续?",
                     "提示",
                     {
@@ -232,21 +232,21 @@
                 });
                 if (res === "confirm") {
                     const { data: res } = await this.$http.delete(
-                        "productCategory/delete/" + id
+                        "business/productCategory/delete/" + id
                     );
                     console.log(res);
-                    if (res.code === 200) {
+                    if (res.success) {
                         this.$message.success("分类删除成功");
-                        this.getCategoryList();
+                        await this.getCategoryList();
                     } else {
-                        this.$message.error(res.msg);
+                        this.$message.error(res.data.errorMsg);
                     }
                 }
             },
 
             //父级分类中改变
             selectParentChange() {
-                var len = this.pKeys.length;
+                const len = this.pKeys.length;
                 if (len > 0) {
                     this.addRuleForm.pid = this.pKeys[len - 1];
                 }else{
@@ -256,21 +256,21 @@
             //加载分类数据
             async getCategoryList() {
                 const { data: res } = await this.$http.get(
-                    "productCategory/categoryTree",
+                    "business/productCategory/categoryTree",
                     {
                         params: this.queryMap
                     }
                 );
-                if (res.code !== 200) return this.$message.error("分类列表失败");
+                if (!res.success) return this.$message.error("分类列表失败");
                 this.categorys = res.data.rows;
                 this.total = res.data.total;
             },
             //加载父级分类数据
             async getParentCategoryList() {
                 const { data: res } = await this.$http.get(
-                    "productCategory/getParentCategoryTree"
+                    "business/productCategory/getParentCategoryTree"
                 );
-                if (res.code !== 200) return this.$message.error("父级分类列表失败");
+                if (!res.success) return this.$message.error("父级分类列表失败:"+res.data.errorMsg);
                 this.parentCategorys = res.data;
             },
             //添加分类
@@ -285,14 +285,14 @@
                             this.addRuleForm.pid=0;
                         }
                         const { data: res } = await this.$http.post(
-                            "productCategory/add",
+                            "business/productCategory/add",
                             this.addRuleForm
                         );
-                        if (res.code === 200) {
+                        if (res.success) {
                             this.$message.success("分类添加成功");
-                            this.getCategoryList();
+                            await this.getCategoryList();
                         } else {
-                            return this.$message.error("分类添加失败:" + res.msg);
+                            return this.$message.error("分类添加失败:" + res.data.errorMsg);
                         }
                         this.addDialogVisible = false;
                         this.btnLoading=false;

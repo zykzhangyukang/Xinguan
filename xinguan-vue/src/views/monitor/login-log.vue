@@ -101,13 +101,13 @@ export default {
           message: "已取消删除"
         });
       });
-      if (res == "confirm") {
-        const { data: res } = await this.$http.delete("loginLog/batchDelete/" + ids);
-        if (res.code == 200) {
+      if (res === "confirm") {
+        const { data: res } = await this.$http.delete("system/loginLog/batchDelete/" + ids);
+        if (res.success) {
           this.$message.success("登入日志删除成功");
-          this.getLoginLogList();
+          await this.getLoginLogList();
         } else {
-          this.$message.error(res.msg);
+          this.$message.error(res.data.errorMsg);
         }
       }
     },
@@ -122,11 +122,11 @@ export default {
 
     //加载登入日志列表
     async getLoginLogList() {
-      const { data: res } = await this.$http.get("loginLog/findLoginLogList", {
+      const { data: res } = await this.$http.get("system/loginLog/findLoginLogList", {
         params: this.queryMap
       });
-      if (res.code !== 200) {
-        return this.$message.error("获取列表失败");
+      if (!res.success) {
+        return this.$message.error("获取列表失败:"+res.data.errorMsg);
       } else {
         this.total = res.data.total;
         this.LoginLogData = res.data.rows;
@@ -134,14 +134,14 @@ export default {
     },
     //删除登入日志
     async del(id) {
-      var res = await this.$confirm(
-        "此操作将永久删除该登入日志, 是否继续?",
-        "提示",
-        {
-          confirmButtonText: "确定",
-          cancelButtonText: "取消",
-          type: "warning"
-        }
+      const res = await this.$confirm(
+              "此操作将永久删除该登入日志, 是否继续?",
+              "提示",
+              {
+                confirmButtonText: "确定",
+                cancelButtonText: "取消",
+                type: "warning"
+              }
       ).catch(() => {
         this.$message({
           type: "info",
@@ -149,12 +149,12 @@ export default {
         });
       });
       if (res === "confirm") {
-        const { data: res } = await this.$http.delete("loginLog/delete/" + id);
-        if (res.code === 200) {
+        const { data: res } = await this.$http.delete("system/loginLog/delete/" + id);
+        if (res.success) {
           this.$message.success("登入日志删除成功");
-          this.getLoginLogList();
+          await this.getLoginLogList();
         } else {
-          this.$message.error(res.msg);
+          this.$message.error(res.data.errorMsg);
         }
       }
     },

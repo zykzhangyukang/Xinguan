@@ -87,7 +87,7 @@
                     @size-change="handleSizeChange"
                     @current-change="handleCurrentChange"
                     :current-page="queryMap.pageNum"
-                    :page-sizes="[7, 16, 32, 64]"
+                    :page-sizes="[8, 16, 32, 64]"
                     :page-size="queryMap.pageSize"
                     layout="total, sizes, prev, pager, next, jumper"
                     :total="total"
@@ -172,7 +172,7 @@
                 btnDisabled: false,
                 loading: true,
                 total: 0,
-                queryMap: { roleName: "", pageNum: 1, pageSize: 7 }, //查询条件
+                queryMap: { roleName: "", pageNum: 1, pageSize: 8 }, //查询条件
                 roleData: [], //角色表格数据
                 addForm: {}, //添加数据
                 editForm: {}, //编辑数据
@@ -204,9 +204,9 @@
              * 加载菜单表格
              */
             downExcel() {
-                var $this = this;
+                const $this = this;
                 const res = axios.request({
-                    url: "/role/excel",
+                    url: "system/role/excel",
                     method: "post",
                     responseType: "blob"
                 })
@@ -216,7 +216,7 @@
                         }
                         const data = res.data;
                         let url = window.URL.createObjectURL(data); // 将二进制文件转化为可访问的url
-                        var a = document.createElement("a");
+                        const a = document.createElement("a");
                         document.body.appendChild(a);
                         a.href = url;
                         a.download = "角色列表.xls";
@@ -230,16 +230,16 @@
                 this.btnDisabled = true;
                 this.btnLoading = true;
                 const { data: res } = await this.$http.post(
-                    "role/authority/" + this.grantId,
+                    "system/role/authority/" + this.grantId,
                     [].concat(
                         this.$refs.tree.getCheckedKeys(),
                         this.$refs.tree.getHalfCheckedKeys()
                     )
                 );
-                if (res.code == 200) {
+                if (res.success) {
                     this.$message.success("角色授权成功");
                 } else {
-                    this.$message.error("角色授权失败:" + res.msg);
+                    this.$message.error("角色授权失败:" + res.data.errorMsg);
                 }
                 this.btnDisabled = false;
                 this.btnLoading = false;
@@ -249,8 +249,8 @@
             //用户授权
             async grant(id) {
                 //加载所有菜单以及用户拥有的菜单权限id
-                const { data: res } = await this.$http.get("role/findRoleMenu/" + id);
-                if (res.code == 200) {
+                const { data: res } = await this.$http.get("system/role/findRoleMenu/" + id);
+                if (res.success) {
                     //默认选中的树的数据
                     let that = this;
                     setTimeout(function() {
@@ -266,10 +266,10 @@
             },
             //加载用户列表
             async getRoleList() {
-                const { data: res } = await this.$http.get("role/findRoleList", {
+                const { data: res } = await this.$http.get("system/role/findRoleList", {
                     params: this.queryMap
                 });
-                if (res.code == 200) {
+                if (res.success) {
                     this.roleData = res.data.rows;
                     this.total = res.data.total;
                 }
@@ -296,28 +296,28 @@
                     } else {
                         this.btnDisabled = true;
                         this.btnLoading = true;
-                        const { data: res } = await this.$http.post("role/add", this.addForm);
-                        if (res.code == 200) {
+                        const { data: res } = await this.$http.post("system/role/add", this.addForm);
+                        if (res.success) {
                             this.$message.success("添加成功");
                             this.addDialogVisible = false;
                             this.btnDisabled = false;
                             this.btnLoading = false;
                             this.addForm = {};
-                            this.getRoleList();
+                            await this.getRoleList();
                         } else {
-                            return this.$message.error("角色添加失败:" + res.msg);
+                            return this.$message.error("角色添加失败:" + res.data.errorMsg);
                         }
                     }
                 });
             },
             //编辑
             async edit(id) {
-                const { data: res } = await this.$http.get("role/edit/" + id);
-                if (res.code == 200) {
+                const { data: res } = await this.$http.get("system/role/edit/" + id);
+                if (res.success) {
                     this.editForm = res.data;
                     this.editDialogVisible = true;
                 } else {
-                    return this.$message.error("角色编辑失败:" + res.msg);
+                    return this.$message.error("角色编辑失败:" + res.data.errorMsg);
                 }
             },
             //更新用户
@@ -329,18 +329,18 @@
                         this.btnDisabled = true;
                         this.btnLoading = true;
                         const { data: res } = await this.$http.put(
-                            "role/update/" + this.editForm.id,
+                            "system/role/update/" + this.editForm.id,
                             this.editForm
                         );
-                        if (res.code == 200) {
+                        if (res.success) {
                             this.$notify({
                                 title: "成功",
                                 message: "角色信息更新",
                                 type: "success"
                             });
-                            this.getRoleList();
+                            await this.getRoleList();
                         } else {
-                            this.$message.error("角色信息更新失败:" + res.msg);
+                            this.$message.error("角色信息更新失败:" + res.data.errorMsg);
                         }
 
                         this.editDialogVisible = false;
@@ -367,24 +367,24 @@
                         message: "已取消删除"
                     });
                 });
-                if (res == "confirm") {
-                    const { data: res } = await this.$http.delete("role/delete/" + id);
+                if (res === "confirm") {
+                    const { data: res } = await this.$http.delete("system/role/delete/" + id);
                     console.log(res);
-                    if (res.code == 200) {
+                    if (res.success) {
                         this.$message.success("删除成功");
-                        this.getRoleList();
+                        await this.getRoleList();
                     } else {
-                        this.$message.error("删除失败:" + res.msg);
+                        this.$message.error("删除失败:" + res.data.errorMsg);
                     }
                 }
             },
             //改变用户禁用状态
             async changRoleStatus(row) {
                 const { data: res } = await this.$http.put(
-                    "role/updateStatus/" + row.id + "/" + row.status
+                    "system/role/updateStatus/" + row.id + "/" + row.status
                 );
-                if (res.code !== 200) {
-                    this.$message.error("更新状态失败:" + res.msg);
+                if (!res.success) {
+                    this.$message.error("更新状态失败:" + res.data.errorMsg);
                     row.status = !row.status;
                 } else {
                     this.$message.success("更新状态成功");

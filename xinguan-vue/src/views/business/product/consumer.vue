@@ -239,7 +239,7 @@
 <script>
 export default {
   data() {
-    var checkPhone = (rule, value, callback) => {
+    const checkPhone = (rule, value, callback) => {
       const phoneReg = /^1[34578]\d{9}$$/;
       if (!value) {
         return callback(new Error("电话号码不能为空"));
@@ -332,13 +332,13 @@ export default {
           message: "已取消删除"
         });
       });
-      if (res == "confirm") {
-        const { data: res } = await this.$http.delete("consumer/delete/" + id);
-        if (res.code == 200) {
+      if (res === "confirm") {
+        const { data: res } = await this.$http.delete("business/consumer/delete/" + id);
+        if (res.success) {
           this.$message.success("物资去处删除成功");
-          this.getConsumerList();
+          await this.getConsumerList();
         } else {
-          this.$message.error(res.msg);
+          this.$message.error(res.data.errorMsg);
         }
       }
     },
@@ -349,19 +349,19 @@ export default {
           return;
         } else {
           const { data: res } = await this.$http.put(
-            "consumer/update/" + this.editRuleForm.id,
+            "business/consumer/update/" + this.editRuleForm.id,
             this.editRuleForm
           );
-          if (res.code == 200) {
+          if (res.success) {
             this.$notify({
               title: "成功",
               message: "物资去处更新",
               type: "success"
             });
             this.editRuleForm = {};
-            this.getConsumerList();
+            await this.getConsumerList();
           } else {
-            this.$message.error("物资去处更新失败:" + res.msg);
+            this.$message.error("物资去处更新失败:" + res.data.errorMsg);
           }
 
           this.editDialogVisible = false;
@@ -373,11 +373,11 @@ export default {
      */
     async edit(id) {
       this._getJsonData();
-      const { data: res } = await this.$http.get("consumer/edit/" + id);
-      if (res.code == 200) {
+      const { data: res } = await this.$http.get("business/consumer/edit/" + id);
+      if (res.success) {
         this.editRuleForm = res.data;
       } else {
-        return this.$message.error("物资去处编辑失败" + res.msg);
+        return this.$message.error("物资去处编辑失败" + res.data.errorMsg);
       }
       this.editDialogVisible = true;
     },
@@ -398,12 +398,12 @@ export default {
             "consumer/add",
             this.addRuleForm
           );
-          if (res.code == 200) {
+          if (res.success) {
             this.$message.success("物资去处添加成功");
             this.addRuleForm = {};
-            this.getConsumerList();
+            await this.getConsumerList();
           } else {
-            return this.$message.error("物资去处添加失败:" + res.msg);
+            return this.$message.error("物资去处添加失败:" + res.data.errorMsg);
           }
           this.addDialogVisible = false;
         }
@@ -413,11 +413,11 @@ export default {
      * 加载物资去处列表
      */
     async getConsumerList() {
-      const { data: res } = await this.$http.get("consumer/findConsumerList", {
+      const { data: res } = await this.$http.get("business/consumer/findConsumerList", {
         params: this.queryMap
       });
-      if (res.code !== 200) {
-        return this.$message.error("获取用户列表失败");
+      if (!res.success) {
+        return this.$message.error("获取用户列表失败:"+res.data.errorMsg);
       } else {
         this.total = res.data.total;
         this.consumerData = res.data.rows;

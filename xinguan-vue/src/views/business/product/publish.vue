@@ -3,7 +3,7 @@
         <!-- 面包导航 -->
         <el-breadcrumb separator="/" style="padding-left:10px;padding-bottom:10px;font-size:12px;">
             <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item :to="{ path: '/outStocks' }">出库记录</el-breadcrumb-item>
+            <el-breadcrumb-item :to="{ path: '/business/product/out-stocks' }">出库记录</el-breadcrumb-item>
             <el-breadcrumb-item>发放物资</el-breadcrumb-item>
         </el-breadcrumb>
         <!-- 卡片区域 -->
@@ -464,8 +464,8 @@
                 const { data: res } = await this.$http.get(
                     "productCategory/categoryTree"
                 );
-                if (res.code !== 200) {
-                    return this.$message.error("获取商品类别失败");
+                if (!res.success) {
+                    return this.$message.error("获取商品类别失败:"+res.data.errorMsg);
                 } else {
                     this.catetorys = res.data.rows;
                 }
@@ -474,11 +474,11 @@
              * 加载商品列表(可出库)
              */
             async loadTableData() {
-                const { data: res } = await this.$http.get("product/findProductStocks", {
+                const { data: res } = await this.$http.get("business/product/findProductStocks", {
                     params: this.queryMap
                 });
-                if (res.code !== 200) {
-                    return this.$message.error("获取商品列表失败");
+                if (!res.success) {
+                    return this.$message.error("获取商品列表失败:"+res.data.errorMsg);
                 } else {
                     this.total = res.data.total;
                     this.tableData = res.data.rows;
@@ -639,8 +639,8 @@
              */
             async getConsumers() {
                 const { data: res } = await this.$http.get("consumer/findAll");
-                if (res.code !== 200) {
-                    return this.$message.error("获取去向数据失败");
+                if (!res.success) {
+                    return this.$message.error("获取去向数据失败:"+res.data.errorMsg);
                 } else {
                     this.consumers = res.data;
                 }
@@ -650,7 +650,7 @@
              */
             removeItem(val) {
                 this.products.forEach(row => {
-                    if (row.pnum == val) {
+                    if (row.pnum === val) {
                         this.$refs.dataTable.toggleRowSelection(row, false);
                     }
                 });
@@ -666,7 +666,7 @@
                 this.products=[];
             },
             outStockNumberChange(currentValue, stock){
-                if(currentValue==stock){
+                if(currentValue===stock){
                     this.$message.warning("已达到可申请发放该物资数量的阈值");
                 }
             },
@@ -687,7 +687,7 @@
                             this.addRuleForm.origin;
                         var car = [];
                         this.products.forEach(row => {
-                            if (row.number != undefined) {
+                            if (row.number !== undefined) {
                                 var item = { productId: row.id, productNumber: row.number };
                                 car.push(item);
                             }
@@ -709,16 +709,16 @@
                                 message: "已取消删除"
                             });
                         });
-                        if (res == "confirm") {
+                        if (res === "confirm") {
                             const { data: res } = await this.$http.post(
                                 "outStock/addOutStock",
                                 this.addRuleForm
                             );
-                            if (res.code == 200) {
+                            if (res.success) {
                                 this.$message.warning("物资发放进入审核状态");
-                                this.$router.push("/outStocks");
+                                await this.$router.push("/outStocks");
                             } else {
-                                return this.$message.error("商品发放失败:" + res.msg);
+                                return this.$message.error("商品发放失败:" + res.data.errorMsg);
                             }
                         }
 

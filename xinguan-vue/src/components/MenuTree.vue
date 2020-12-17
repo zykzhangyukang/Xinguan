@@ -38,7 +38,7 @@ export default {
   name: "MenuTree", //模板名称
   data() {
     return {
-     
+
     };
   },
   beforeMount() {},
@@ -51,7 +51,7 @@ export default {
     },
   },
   created(){
-   
+
   }
 };
 </script>

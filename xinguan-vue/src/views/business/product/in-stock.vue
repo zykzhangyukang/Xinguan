@@ -333,7 +333,7 @@
                 this.pageNum=1;
             },
             clearTime(){
-                this.queryMap= {pageNum: 1, pageSize: 5, status: 0};
+                this.queryMap= {pageNum: 1, pageSize: 10, status: 0};
                 this.queryMap.startTime=null;
                 this.queryMap.endTime=null;
                 this.range=[];
@@ -350,11 +350,11 @@
              *物资入库审核
              */
             async publish(id){
-                const { data: res } = await this.$http.put("inStock/publish/"+id);
-                if (res.code !== 200) {
-                    return this.$message.error("审核失败:"+res.msg);
+                const { data: res } = await this.$http.put("business/inStock/publish/"+id);
+                if (!res.success) {
+                    return this.$message.error("审核失败:"+res.data.errorMsg);
                 } else {
-                    this.loadTableData();
+                    await this.loadTableData();
                     return this.$message.success("入库已审核通过");
                 }
             },
@@ -362,11 +362,11 @@
              * 从回收站恢复
              */
             async back(id){
-                const { data: res } = await this.$http.put("inStock/back/"+id);
-                if (res.code !== 200) {
-                    return this.$message.error("从回收站恢复失败:"+res.msg);
+                const { data: res } = await this.$http.put("business/inStock/back/"+id);
+                if (!res.success) {
+                    return this.$message.error("从回收站恢复失败:"+res.data.errorMsg);
                 } else {
-                    this.loadTableData();
+                    await this.loadTableData();
                     return this.$message.success("从回收站中已恢复");
                 }
             },
@@ -374,22 +374,22 @@
              * 移除回收站
              */
             async remove(id) {
-                const {data: res} = await this.$http.put("inStock/remove/" + id);
-                if (res.code !== 200) {
-                    return this.$message.error("移入回收站失败:" + res.msg);
+                const {data: res} = await this.$http.put("business/inStock/remove/" + id);
+                if (!res.success) {
+                    return this.$message.error("移入回收站失败:" + res.data.errorMsg);
                 } else {
-                    this.loadTableData();
+                    await this.loadTableData();
                     return this.$message.success("移入回收站成功");
                 }
             },
             /**删除明细
              */
             async del(id) {
-                const {data: res} = await this.$http.get("inStock/delete/" + id);
-                if (res.code !== 200) {
-                    return this.$message.error("删除失败:" + res.msg);
+                const {data: res} = await this.$http.get("business/inStock/delete/" + id);
+                if (!res.success) {
+                    return this.$message.error("删除失败:" + res.data.errorMsg);
                 } else {
-                    this.loadTableData();
+                    await this.loadTableData();
                     return this.$message.success("删除入库单记录成功");
                 }
             },
@@ -398,10 +398,9 @@
              */
             async detail(id) {
                 this.detailId=id;
-                const {data: res} = await this.$http.get("inStock/detail/" + id+"?pageNum="+this.pageNum);
-                if (res.code !== 200) {
-                    this.$message.error("获取明细失败:" + res.msg);
-
+                const {data: res} = await this.$http.get("business/inStock/detail/" + id+"?pageNum="+this.pageNum);
+                if (!res.success) {
+                    this.$message.error("获取明细失败:" + res.data.errorMsg);
                 } else {
                     this.detailTable = res.data.itemVOS;
                     this.detailTotal = res.data.total;
@@ -424,11 +423,11 @@
                     this.queryMap.endTime=this.range[1];
                 }
 
-                const {data: res} = await this.$http.get("inStock/findInStockList", {
+                const {data: res} = await this.$http.get("business/inStock/findInStockList", {
                     params: this.queryMap
                 });
-                if (res.code !== 200) {
-                    return this.$message.error("获取列表失败");
+                if (!res.success) {
+                    return this.$message.error("获取列表失败:"+res.data.errorMsg);
                 } else {
                     this.total = res.data.total;
                     this.tableData = res.data.rows;

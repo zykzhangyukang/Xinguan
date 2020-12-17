@@ -167,7 +167,7 @@
     import axios from "axios";
     export default {
         data() {
-            var checkPhone = (rule, value, callback) => {
+            const checkPhone = (rule, value, callback) => {
                 const phoneReg = /^1[34578]\d{9}$$/;
                 if (!value) {
                     return callback(new Error("电话号码不能为空"));
@@ -220,10 +220,10 @@
              * 加载部门表格
              */
             downExcel() {
-                var $this = this;
+                const $this = this;
                 const res = axios
                     .request({
-                        url: "/department/excel",
+                        url: "system/department/excel",
                         method: "post",
                         responseType: "blob"
                     })
@@ -270,13 +270,13 @@
                 });
                 if ("confirm" === res) {
                     const {data: res} = await this.$http.delete(
-                        "department/delete/" + id
+                        "system/department/delete/" + id
                     );
-                    if (res.code === 200) {
+                    if (res.success) {
                         this.$message.success("部门删除成功");
-                        this.getDepartmentList();
+                        await this.getDepartmentList();
                     } else {
-                        this.$message.error(res.msg);
+                        this.$message.error(res.data.errorMsg);
                     }
                 }
             },
@@ -290,7 +290,7 @@
                     } else {
                         (this.btnLoading = true), (this.btnDisabled = true);
                         const {data: res} = await this.$http.put(
-                            "department/update/" + this.editRuleForm.id,
+                            "system/department/update/" + this.editRuleForm.id,
                             this.editRuleForm
                         );
                         if (res.code === 200) {
@@ -299,9 +299,9 @@
                                 message: "部门信息更新",
                                 type: "success"
                             });
-                            this.getDepartmentList();
+                            await this.getDepartmentList();
                         } else {
-                            this.$message.error("部门信息更新失败:" + res.msg);
+                            this.$message.error("部门信息更新失败:" + res.data.errorMsg);
                         }
                         this.editRuleForm = {};
                         this.btnDisabled = false;
@@ -315,11 +315,11 @@
              * @param {Object} id
              */
             edit: async function (id) {
-                const {data: res} = await this.$http.get("department/edit/" + id);
-                if (res.code === 200) {
+                const {data: res} = await this.$http.get("system/department/edit/" + id);
+                if (res.success) {
                     this.editRuleForm = res.data;
                 } else {
-                    return this.$message.error("部门信息编辑失败" + res.msg);
+                    return this.$message.error("部门信息编辑失败" + res.data.errorMsg);
                 }
                 this.editDialogVisible = true;
             },
@@ -331,15 +331,15 @@
                     } else {
                         (this.btnLoading = true), (this.btnDisabled = true);
                         const {data: res} = await this.$http.post(
-                            "department/add",
+                            "system/department/add",
                             this.addRuleForm
                         );
-                        if (res.code === 200) {
+                        if (res.success) {
                             this.$message.success("部门添加成功");
                             this.addRuleForm = {};
-                            this.getDepartmentList();
+                            await this.getDepartmentList();
                         } else {
-                            return this.$message.error("部门添加失败:" + res.msg);
+                            return this.$message.error("部门添加失败:" + res.data.errorMsg);
                         }
                         this.addDialogVisible = false;
                         (this.btnLoading = false), (this.btnDisabled = false);
@@ -349,13 +349,13 @@
             //加载部门别列表
             async getDepartmentList() {
                 const { data: res } = await this.$http.get(
-                    "department/findDepartmentList",
+                    "system/department/findDepartmentList",
                     {
                         params: this.queryMap
                     }
                 );
-                if (res.code !== 200) {
-                    return this.$message.error("获取用户列表失败");
+                if (!res.success) {
+                    return this.$message.error("获取用户列表失败:"+res.data.errorMsg);
                 } else {
                     this.total = res.data.total;
                     this.departmentData = res.data.rows;

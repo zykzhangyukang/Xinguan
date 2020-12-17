@@ -147,10 +147,16 @@ const router = new VueRouter({
 
 import store from '../store'//引入store
 
+//白名单页面
+const whiteList=[
+    '/business/product/add-stocks',
+    '/business/product/publish'
+];
+
 //路由导航守卫
 router.beforeEach((to, from, next) => {
 
-    const token = window.localStorage.getItem('JWT_TOKEN');
+    const token = LocalStorage.get(LOCAL_KEY_XINGUAN_ACCESS_TOKEN);
     if (to.path === '/login') {
         if (!token) {
             return next();
@@ -172,7 +178,7 @@ router.beforeEach((to, from, next) => {
         if (store.state.userInfo.isAdmin) {
             return next();
         } else {
-            if (urls.indexOf(to.path) > -1) {
+            if (urls.indexOf(to.path) > -1|| whiteList.indexOf(to.path)>-1) {
                 //则包含该元素
                 window.sessionStorage.setItem("activePath", to.path);
                 return next();
