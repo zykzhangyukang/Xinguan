@@ -41,19 +41,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc0098de-1555-475b-b0df-4f7e5b9cd099" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/xinguan-web/src/main/resources/application-dev.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../前端项目/xinguan-vue/xinguan-vue.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/utils/AddressUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-common/src/main/java/com/coderman/common/utils/AddressUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/config/CorsConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/config/MyMebMvcConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/config/MyMebMvcConfigurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/java/com/coderman/config/SSLConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xinguan-web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/xinguan-web/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../前端项目/xinguan-vue/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../前端项目/xinguan-vue/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../前端项目/xinguan-vue/src/views/business/covid19/health.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../前端项目/xinguan-vue/src/views/business/covid19/health.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../前端项目/xinguan-vue/src/views/business/product/consumer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../前端项目/xinguan-vue/src/views/business/product/consumer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../前端项目/xinguan-vue/src/views/business/product/in-stock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../前端项目/xinguan-vue/src/views/business/product/in-stock.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../前端项目/xinguan-vue/src/views/business/product/list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../前端项目/xinguan-vue/src/views/business/product/list.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../前端项目/xinguan-vue/src/views/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../前端项目/xinguan-vue/src/views/home.vue" afterDir="false" />
@@ -78,7 +69,8 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../前端项目/xinguan-vue" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -2494,7 +2486,7 @@
       <workItem from="1608216056375" duration="1237000" />
       <workItem from="1609650302212" duration="420000" />
       <workItem from="1611299003291" duration="824000" />
-      <workItem from="1611914795348" duration="3702000" />
+      <workItem from="1611914795348" duration="4008000" />
     </task>
     <task id="LOCAL-00001" summary="添加代码生成器">
       <created>1608091380480</created>
@@ -2567,38 +2559,38 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="542" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1611915132645" />
-    <state width="1495" height="389" key="GridCell.Tab.0.bottom" timestamp="1611917445601">
+    <state width="1495" height="389" key="GridCell.Tab.0.bottom" timestamp="1611918851236">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="389" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1611917445601" />
-    <state width="1495" height="389" key="GridCell.Tab.0.center" timestamp="1611917445601">
+    <state width="1495" height="389" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1611918851236" />
+    <state width="1495" height="389" key="GridCell.Tab.0.center" timestamp="1611918851236">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="389" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1611917445601" />
-    <state width="1495" height="389" key="GridCell.Tab.0.left" timestamp="1611917445601">
+    <state width="1495" height="389" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1611918851236" />
+    <state width="1495" height="389" key="GridCell.Tab.0.left" timestamp="1611918851236">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="389" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1611917445601" />
-    <state width="1495" height="389" key="GridCell.Tab.0.right" timestamp="1611917445601">
+    <state width="1495" height="389" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1611918851236" />
+    <state width="1495" height="389" key="GridCell.Tab.0.right" timestamp="1611918851236">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="389" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1611917445601" />
-    <state width="1495" height="389" key="GridCell.Tab.1.bottom" timestamp="1611917445601">
+    <state width="1495" height="389" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1611918851236" />
+    <state width="1495" height="389" key="GridCell.Tab.1.bottom" timestamp="1611918843342">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="389" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1611917445601" />
-    <state width="1495" height="389" key="GridCell.Tab.1.center" timestamp="1611917445601">
+    <state width="1495" height="389" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1611918843342" />
+    <state width="1495" height="389" key="GridCell.Tab.1.center" timestamp="1611918843342">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="389" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1611917445601" />
-    <state width="1495" height="389" key="GridCell.Tab.1.left" timestamp="1611917445601">
+    <state width="1495" height="389" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1611918843342" />
+    <state width="1495" height="389" key="GridCell.Tab.1.left" timestamp="1611918843342">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="389" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1611917445601" />
-    <state width="1495" height="389" key="GridCell.Tab.1.right" timestamp="1611917445601">
+    <state width="1495" height="389" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1611918843342" />
+    <state width="1495" height="389" key="GridCell.Tab.1.right" timestamp="1611918843342">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1495" height="389" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1611917445601" />
+    <state width="1495" height="389" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1611918843342" />
     <state width="1495" height="336" key="GridCell.Tab.2.bottom" timestamp="1608215778730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -2635,10 +2627,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="194" y="65" width="1179" height="678" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1608090853316" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1611918718954">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1611918809250">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1611918718954" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1611918809250" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
