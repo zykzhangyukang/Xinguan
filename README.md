@@ -30,12 +30,16 @@ SpringBoot, Shiro ,Swagger-UI,mybatis,JWT,Mysql,通用mapper,Vue.js+element-ui,F
 
 - 后台系统首页
 
-![2](https://coderman-blog.oss-cn-beijing.aliyuncs.com/2_1588596638463.PNG)
+![2](https://www.zykhome.club/group1/M00/00/13/rBofMmAT9W2AfurCAAbpCxg4Ryw771.PNG)
 
+
+- 附件管理
+
+![3](https://www.zykhome.club/group1/M00/00/13/rBofMmAT9Z-AAZx3AAmL5u2dO1U985.PNG)
 
 - 物资库存管理
 
-![5](https://coderman-blog.oss-cn-beijing.aliyuncs.com/5_1588596788159.PNG)
+![5](https://www.zykhome.club/group1/M00/00/13/rBofMmAT9TSAELlUAAM8r-W_KnQ759.PNG)
 
 - 物资入库管理
 
