@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.NoHandlerFoundException;
@@ -49,7 +50,11 @@ public class MyMebMvcConfigurer implements WebMvcConfigurer {
                 UnauthorizedException unauthorizedException = (UnauthorizedException) e;
                 logger.info("系统模块-错误码：{},错误信息:{}", HttpStatus.UNAUTHORIZED.value(), unauthorizedException.getMessage());
                 errorData.put("errorCode", HttpStatus.UNAUTHORIZED.value());
-                errorData.put("errorMsg", "(+﹏+)没有对应的权限");
+                errorData.put("errorMsg", "服务器向你抛了一个异常,并表示（操作无权限）");
+            }else if(e instanceof HttpRequestMethodNotSupportedException){
+                logger.info("系统模块-错误码：{},错误信息:{}", HttpStatus.BAD_REQUEST.value(), e.getMessage());
+                errorData.put("errorCode", HttpStatus.BAD_REQUEST.value());
+                errorData.put("errorMsg", "不支持该http请求方式");
             }else if(e instanceof NoHandlerFoundException){
                 logger.error("接口不存在-错误码：{},错误信息:{}", HttpStatus.NOT_FOUND.value(),e.getMessage());
                 errorData.put("errorCode", HttpStatus.NOT_FOUND.value());
