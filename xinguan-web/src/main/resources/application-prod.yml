@@ -1,9 +1,9 @@
 server:
   port: 8989
   ssl:
-    key-store: classpath:5097484_zykcoderman.xyz.pfx
+    key-store: classpath:3828034_www.zykhome.club.pfx
     key-store-type: PKCS12
-    key-store-password: 0jv6d7x9
+    key-store-password: stpnsPTW
 spring:
   datasource:
     username: root
